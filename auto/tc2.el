@@ -14,6 +14,8 @@
     "chap-ai"
     "chap-simulation"
     "chap-modeling"
+    "chap-implementation"
+    "chap-results"
     "chap-cronograma"
     "chap-conclusion"
     "tcc"
