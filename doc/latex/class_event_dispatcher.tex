@@ -1,0 +1,99 @@
+\hypertarget{class_event_dispatcher}{}\section{Event\+Dispatcher Class Reference}
+\label{class_event_dispatcher}\index{Event\+Dispatcher@{Event\+Dispatcher}}
+
+
+{\ttfamily \#include $<$Event\+Dispatcher.\+h$>$}
+
+
+
+Inheritance diagram for Event\+Dispatcher\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=202pt]{class_event_dispatcher__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Event\+Dispatcher\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=202pt]{class_event_dispatcher__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_event_dispatcher_aec174a9e25796e5727e59f5452817cda}{Event\+Dispatcher} ()
+\item 
+virtual \hyperlink{class_event_dispatcher_abb5f401014e87f03027d6c4450964e55}{$\sim$\+Event\+Dispatcher} ()
+\item 
+void \hyperlink{class_event_dispatcher_a2664ed4e9f1eca1f239bbd40add82f45}{broadcast} (const std\+::shared\+\_\+ptr$<$ const \hyperlink{class_event}{Event} $>$ event) const 
+\item 
+void \hyperlink{class_event_dispatcher_a0cd1157fb6213be48fbdadc749088231}{subscribe} (std\+::shared\+\_\+ptr$<$ \hyperlink{class_event_observer}{Event\+Observer} $>$ event\+Observer)
+\item 
+void \hyperlink{class_event_dispatcher_a3242f22a220dd58964835544c799c4fa}{unsubscribe} (std\+::shared\+\_\+ptr$<$ \hyperlink{class_event_observer}{Event\+Observer} $>$ event\+Observer)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_event_dispatcher_aec174a9e25796e5727e59f5452817cda}{}\index{Event\+Dispatcher@{Event\+Dispatcher}!Event\+Dispatcher@{Event\+Dispatcher}}
+\index{Event\+Dispatcher@{Event\+Dispatcher}!Event\+Dispatcher@{Event\+Dispatcher}}
+\subsubsection[{Event\+Dispatcher}]{\setlength{\rightskip}{0pt plus 5cm}Event\+Dispatcher\+::\+Event\+Dispatcher (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_event_dispatcher_aec174a9e25796e5727e59f5452817cda}
+\hypertarget{class_event_dispatcher_abb5f401014e87f03027d6c4450964e55}{}\index{Event\+Dispatcher@{Event\+Dispatcher}!````~Event\+Dispatcher@{$\sim$\+Event\+Dispatcher}}
+\index{````~Event\+Dispatcher@{$\sim$\+Event\+Dispatcher}!Event\+Dispatcher@{Event\+Dispatcher}}
+\subsubsection[{$\sim$\+Event\+Dispatcher}]{\setlength{\rightskip}{0pt plus 5cm}Event\+Dispatcher\+::$\sim$\+Event\+Dispatcher (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_event_dispatcher_abb5f401014e87f03027d6c4450964e55}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_event_dispatcher_a2664ed4e9f1eca1f239bbd40add82f45}{}\index{Event\+Dispatcher@{Event\+Dispatcher}!broadcast@{broadcast}}
+\index{broadcast@{broadcast}!Event\+Dispatcher@{Event\+Dispatcher}}
+\subsubsection[{broadcast}]{\setlength{\rightskip}{0pt plus 5cm}void Event\+Dispatcher\+::broadcast (
+\begin{DoxyParamCaption}
+\item[{const std\+::shared\+\_\+ptr$<$ const {\bf Event} $>$}]{event}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_event_dispatcher_a2664ed4e9f1eca1f239bbd40add82f45}
+
+
+Implements \hyperlink{class_event_notifier_af6a63fe66700be838c3027bba458294a}{Event\+Notifier}.
+
+\hypertarget{class_event_dispatcher_a0cd1157fb6213be48fbdadc749088231}{}\index{Event\+Dispatcher@{Event\+Dispatcher}!subscribe@{subscribe}}
+\index{subscribe@{subscribe}!Event\+Dispatcher@{Event\+Dispatcher}}
+\subsubsection[{subscribe}]{\setlength{\rightskip}{0pt plus 5cm}void Event\+Dispatcher\+::subscribe (
+\begin{DoxyParamCaption}
+\item[{std\+::shared\+\_\+ptr$<$ {\bf Event\+Observer} $>$}]{event\+Observer}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_event_dispatcher_a0cd1157fb6213be48fbdadc749088231}
+
+
+Implements \hyperlink{class_event_notifier_a769469c36337d28f08cc5b7250885a0c}{Event\+Notifier}.
+
+\hypertarget{class_event_dispatcher_a3242f22a220dd58964835544c799c4fa}{}\index{Event\+Dispatcher@{Event\+Dispatcher}!unsubscribe@{unsubscribe}}
+\index{unsubscribe@{unsubscribe}!Event\+Dispatcher@{Event\+Dispatcher}}
+\subsubsection[{unsubscribe}]{\setlength{\rightskip}{0pt plus 5cm}void Event\+Dispatcher\+::unsubscribe (
+\begin{DoxyParamCaption}
+\item[{std\+::shared\+\_\+ptr$<$ {\bf Event\+Observer} $>$}]{event\+Observer}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_event_dispatcher_a3242f22a220dd58964835544c799c4fa}
+
+
+Implements \hyperlink{class_event_notifier_a80e222d382981380c86cd61c52142e78}{Event\+Notifier}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{_event_dispatcher_8h}{Event\+Dispatcher.\+h}\item 
+src/\hyperlink{_event_dispatcher_8cpp}{Event\+Dispatcher.\+cpp}\end{DoxyCompactItemize}

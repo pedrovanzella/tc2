@@ -1,0 +1,4 @@
+<map id="Scheduler" name="Scheduler">
+<area shape="rect" id="node3" href="$class_planning_scheduler.html" title="{PlanningScheduler\n||+ schedule()\l}" alt="" coords="5,307,147,385"/>
+<area shape="rect" id="node4" href="$class_simple_scheduler.html" title="{SimpleScheduler\n||+ SimpleScheduler()\l+ schedule()\l}" alt="" coords="171,300,325,392"/>
+</map>

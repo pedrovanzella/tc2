@@ -1,0 +1,205 @@
+\hypertarget{class_scenario}{}\section{Scenario Class Reference}
+\label{class_scenario}\index{Scenario@{Scenario}}
+
+
+{\ttfamily \#include $<$Scenario.\+h$>$}
+
+
+
+Collaboration diagram for Scenario\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=217pt]{class_scenario__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_scenario_a2ede6a692c79f88786dd28315ebcad5d}{Scenario} (std\+::string name, int duration, int elevator\+Count, int capacity, int floor\+Count, \hyperlink{_scheduler_type_8h_a38e49b4d2a59c90c891c884c009e9135}{Scheduler\+Type} scheduler\+Type, \hyperlink{_cost_function_type_8h_a7590c187782ef6d6bcba32749db5daa1}{Cost\+Function\+Type} cost\+Function\+Type, std\+::string seed, std\+::vector$<$ float $>$ floors, std\+::time\+\_\+t timestamp)
+\item 
+virtual \hyperlink{class_scenario_aa7e7548858cbc52614d46723c0333038}{$\sim$\+Scenario} ()
+\item 
+const std\+::string \hyperlink{class_scenario_a57ce787b9fe879c37f479b6658db0876}{get\+Name} () const 
+\item 
+const int \hyperlink{class_scenario_a117c99f5ad9cfc83406d54e14ecb8359}{get\+Duration} () const 
+\item 
+const int \hyperlink{class_scenario_a8479d2d429dc31564f73bb1d2935be29}{get\+Elevator\+Count} () const 
+\item 
+const int \hyperlink{class_scenario_af73b2c30106f7c4c6515b10ed048fa30}{get\+Capacity} () const 
+\item 
+const int \hyperlink{class_scenario_aa34a32b4a1c23891f7aa6f7a17b3594b}{get\+Floor\+Count} () const 
+\item 
+const \hyperlink{_scheduler_type_8h_a38e49b4d2a59c90c891c884c009e9135}{Scheduler\+Type} \hyperlink{class_scenario_a397fce5332d2a78ee3311abcddd1617a}{get\+Scheduler\+Type} () const 
+\item 
+const \hyperlink{_cost_function_type_8h_a7590c187782ef6d6bcba32749db5daa1}{Cost\+Function\+Type} \hyperlink{class_scenario_ae73d9b2ba0a5a02202a4cff22c6910d2}{get\+Cost\+Function\+Type} () const 
+\item 
+const std\+::vector$<$ float $>$ \hyperlink{class_scenario_af89b8c0a3fcb7f9d4290a09c99a68a8e}{get\+Floors} () const 
+\item 
+const std\+::string \hyperlink{class_scenario_aafd7c8f587cd5bd66cae341f4e1c4a39}{get\+Seed} () const 
+\item 
+const std\+::string \hyperlink{class_scenario_a34696f294405ce97dcb2e7174f2360e0}{get\+Base\+Path} () const 
+\item 
+const std\+::string \hyperlink{class_scenario_a4d82ef21d5fab6baa8848a79041c0074}{get\+Path} () const 
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::shared\+\_\+ptr$<$ std\+::vector$<$ std\+::shared\+\_\+ptr$<$ const \hyperlink{class_scenario}{Scenario} $>$ $>$ $>$ \hyperlink{class_scenario_a41d702c1205ca0780fe2901beb7b28ab}{Load} (std\+::string file)
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_scenario_a2ede6a692c79f88786dd28315ebcad5d}{}\index{Scenario@{Scenario}!Scenario@{Scenario}}
+\index{Scenario@{Scenario}!Scenario@{Scenario}}
+\subsubsection[{Scenario}]{\setlength{\rightskip}{0pt plus 5cm}Scenario\+::\+Scenario (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{name, }
+\item[{int}]{duration, }
+\item[{int}]{elevator\+Count, }
+\item[{int}]{capacity, }
+\item[{int}]{floor\+Count, }
+\item[{{\bf Scheduler\+Type}}]{scheduler\+Type, }
+\item[{{\bf Cost\+Function\+Type}}]{cost\+Function\+Type, }
+\item[{std\+::string}]{seed, }
+\item[{std\+::vector$<$ float $>$}]{floors, }
+\item[{std\+::time\+\_\+t}]{timestamp}
+\end{DoxyParamCaption}
+)}\label{class_scenario_a2ede6a692c79f88786dd28315ebcad5d}
+\hypertarget{class_scenario_aa7e7548858cbc52614d46723c0333038}{}\index{Scenario@{Scenario}!````~Scenario@{$\sim$\+Scenario}}
+\index{````~Scenario@{$\sim$\+Scenario}!Scenario@{Scenario}}
+\subsubsection[{$\sim$\+Scenario}]{\setlength{\rightskip}{0pt plus 5cm}Scenario\+::$\sim$\+Scenario (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_scenario_aa7e7548858cbc52614d46723c0333038}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_scenario_a34696f294405ce97dcb2e7174f2360e0}{}\index{Scenario@{Scenario}!get\+Base\+Path@{get\+Base\+Path}}
+\index{get\+Base\+Path@{get\+Base\+Path}!Scenario@{Scenario}}
+\subsubsection[{get\+Base\+Path}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::string Scenario\+::get\+Base\+Path (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{class_scenario_a34696f294405ce97dcb2e7174f2360e0}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=349pt]{class_scenario_a34696f294405ce97dcb2e7174f2360e0_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_scenario_af73b2c30106f7c4c6515b10ed048fa30}{}\index{Scenario@{Scenario}!get\+Capacity@{get\+Capacity}}
+\index{get\+Capacity@{get\+Capacity}!Scenario@{Scenario}}
+\subsubsection[{get\+Capacity}]{\setlength{\rightskip}{0pt plus 5cm}const int Scenario\+::get\+Capacity (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{class_scenario_af73b2c30106f7c4c6515b10ed048fa30}
+\hypertarget{class_scenario_ae73d9b2ba0a5a02202a4cff22c6910d2}{}\index{Scenario@{Scenario}!get\+Cost\+Function\+Type@{get\+Cost\+Function\+Type}}
+\index{get\+Cost\+Function\+Type@{get\+Cost\+Function\+Type}!Scenario@{Scenario}}
+\subsubsection[{get\+Cost\+Function\+Type}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Cost\+Function\+Type} Scenario\+::get\+Cost\+Function\+Type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{class_scenario_ae73d9b2ba0a5a02202a4cff22c6910d2}
+\hypertarget{class_scenario_a117c99f5ad9cfc83406d54e14ecb8359}{}\index{Scenario@{Scenario}!get\+Duration@{get\+Duration}}
+\index{get\+Duration@{get\+Duration}!Scenario@{Scenario}}
+\subsubsection[{get\+Duration}]{\setlength{\rightskip}{0pt plus 5cm}const int Scenario\+::get\+Duration (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{class_scenario_a117c99f5ad9cfc83406d54e14ecb8359}
+\hypertarget{class_scenario_a8479d2d429dc31564f73bb1d2935be29}{}\index{Scenario@{Scenario}!get\+Elevator\+Count@{get\+Elevator\+Count}}
+\index{get\+Elevator\+Count@{get\+Elevator\+Count}!Scenario@{Scenario}}
+\subsubsection[{get\+Elevator\+Count}]{\setlength{\rightskip}{0pt plus 5cm}const int Scenario\+::get\+Elevator\+Count (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{class_scenario_a8479d2d429dc31564f73bb1d2935be29}
+\hypertarget{class_scenario_aa34a32b4a1c23891f7aa6f7a17b3594b}{}\index{Scenario@{Scenario}!get\+Floor\+Count@{get\+Floor\+Count}}
+\index{get\+Floor\+Count@{get\+Floor\+Count}!Scenario@{Scenario}}
+\subsubsection[{get\+Floor\+Count}]{\setlength{\rightskip}{0pt plus 5cm}const int Scenario\+::get\+Floor\+Count (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{class_scenario_aa34a32b4a1c23891f7aa6f7a17b3594b}
+\hypertarget{class_scenario_af89b8c0a3fcb7f9d4290a09c99a68a8e}{}\index{Scenario@{Scenario}!get\+Floors@{get\+Floors}}
+\index{get\+Floors@{get\+Floors}!Scenario@{Scenario}}
+\subsubsection[{get\+Floors}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::vector$<$ float $>$ Scenario\+::get\+Floors (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{class_scenario_af89b8c0a3fcb7f9d4290a09c99a68a8e}
+\hypertarget{class_scenario_a57ce787b9fe879c37f479b6658db0876}{}\index{Scenario@{Scenario}!get\+Name@{get\+Name}}
+\index{get\+Name@{get\+Name}!Scenario@{Scenario}}
+\subsubsection[{get\+Name}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::string Scenario\+::get\+Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{class_scenario_a57ce787b9fe879c37f479b6658db0876}
+\hypertarget{class_scenario_a4d82ef21d5fab6baa8848a79041c0074}{}\index{Scenario@{Scenario}!get\+Path@{get\+Path}}
+\index{get\+Path@{get\+Path}!Scenario@{Scenario}}
+\subsubsection[{get\+Path}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::string Scenario\+::get\+Path (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{class_scenario_a4d82ef21d5fab6baa8848a79041c0074}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=349pt]{class_scenario_a4d82ef21d5fab6baa8848a79041c0074_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_scenario_a397fce5332d2a78ee3311abcddd1617a}{}\index{Scenario@{Scenario}!get\+Scheduler\+Type@{get\+Scheduler\+Type}}
+\index{get\+Scheduler\+Type@{get\+Scheduler\+Type}!Scenario@{Scenario}}
+\subsubsection[{get\+Scheduler\+Type}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Scheduler\+Type} Scenario\+::get\+Scheduler\+Type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{class_scenario_a397fce5332d2a78ee3311abcddd1617a}
+\hypertarget{class_scenario_aafd7c8f587cd5bd66cae341f4e1c4a39}{}\index{Scenario@{Scenario}!get\+Seed@{get\+Seed}}
+\index{get\+Seed@{get\+Seed}!Scenario@{Scenario}}
+\subsubsection[{get\+Seed}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::string Scenario\+::get\+Seed (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{class_scenario_aafd7c8f587cd5bd66cae341f4e1c4a39}
+\hypertarget{class_scenario_a41d702c1205ca0780fe2901beb7b28ab}{}\index{Scenario@{Scenario}!Load@{Load}}
+\index{Load@{Load}!Scenario@{Scenario}}
+\subsubsection[{Load}]{\setlength{\rightskip}{0pt plus 5cm}std\+::shared\+\_\+ptr$<$ std\+::vector$<$ std\+::shared\+\_\+ptr$<$ const {\bf Scenario} $>$ $>$ $>$ Scenario\+::\+Load (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{file}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{class_scenario_a41d702c1205ca0780fe2901beb7b28ab}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=244pt]{class_scenario_a41d702c1205ca0780fe2901beb7b28ab_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{_scenario_8h}{Scenario.\+h}\item 
+src/\hyperlink{_scenario_8cpp}{Scenario.\+cpp}\end{DoxyCompactItemize}

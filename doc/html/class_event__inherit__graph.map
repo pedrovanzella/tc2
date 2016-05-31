@@ -1,0 +1,4 @@
+<map id="Event" name="Event">
+<area shape="rect" id="node2" href="$class_client_arrival.html" title="{ClientArrival\n||+ ClientArrival()\l+ getClient()\l+ str()\l}" alt="" coords="5,233,147,340"/>
+<area shape="rect" id="node3" href="$class_finish_simulation.html" title="{FinishSimulation\n||+ FinishSimulation()\l+ str()\l}" alt="" coords="171,241,333,333"/>
+</map>

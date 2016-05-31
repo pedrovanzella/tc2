@@ -1,0 +1,69 @@
+\hypertarget{class_stop_manager}{}\section{Stop\+Manager Class Reference}
+\label{class_stop_manager}\index{Stop\+Manager@{Stop\+Manager}}
+
+
+{\ttfamily \#include $<$Stop\+Manager.\+h$>$}
+
+
+
+Collaboration diagram for Stop\+Manager\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=160pt]{class_stop_manager__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::shared\+\_\+ptr$<$ \hyperlink{class_elevator}{Elevator} $>$ \hyperlink{class_stop_manager_adab473b58ab3505cbf849b9f05939637}{get} (std\+::shared\+\_\+ptr$<$ \hyperlink{class_floor}{Floor} $>$ floor, \hyperlink{_direction_8h_a224b9163917ac32fc95a60d8c1eec3aa}{Direction} direction) const 
+\item 
+void \hyperlink{class_stop_manager_a2c22b4194c71d20793efbb69be1ba548}{set} (std\+::shared\+\_\+ptr$<$ \hyperlink{class_floor}{Floor} $>$ floor, \hyperlink{_direction_8h_a224b9163917ac32fc95a60d8c1eec3aa}{Direction} direction, std\+::shared\+\_\+ptr$<$ \hyperlink{class_elevator}{Elevator} $>$ elevator)
+\item 
+void \hyperlink{class_stop_manager_aa96aaa6138287dc5aec23ece32fccf8e}{clear} (std\+::shared\+\_\+ptr$<$ \hyperlink{class_floor}{Floor} $>$ floor, \hyperlink{_direction_8h_a224b9163917ac32fc95a60d8c1eec3aa}{Direction} direction)
+\item 
+std\+::set$<$ std\+::shared\+\_\+ptr$<$ \hyperlink{class_floor}{Floor} $>$ $>$ \hyperlink{class_stop_manager_a17f374de474e4de6ba1488220dcc7c72}{get\+Stops} (std\+::shared\+\_\+ptr$<$ \hyperlink{class_elevator}{Elevator} $>$ elevator, \hyperlink{_direction_8h_a224b9163917ac32fc95a60d8c1eec3aa}{Direction} direction)
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_stop_manager_aa96aaa6138287dc5aec23ece32fccf8e}{}\index{Stop\+Manager@{Stop\+Manager}!clear@{clear}}
+\index{clear@{clear}!Stop\+Manager@{Stop\+Manager}}
+\subsubsection[{clear}]{\setlength{\rightskip}{0pt plus 5cm}void Stop\+Manager\+::clear (
+\begin{DoxyParamCaption}
+\item[{std\+::shared\+\_\+ptr$<$ {\bf Floor} $>$}]{floor, }
+\item[{{\bf Direction}}]{direction}
+\end{DoxyParamCaption}
+)}\label{class_stop_manager_aa96aaa6138287dc5aec23ece32fccf8e}
+\hypertarget{class_stop_manager_adab473b58ab3505cbf849b9f05939637}{}\index{Stop\+Manager@{Stop\+Manager}!get@{get}}
+\index{get@{get}!Stop\+Manager@{Stop\+Manager}}
+\subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}std\+::shared\+\_\+ptr$<$ {\bf Elevator} $>$ Stop\+Manager\+::get (
+\begin{DoxyParamCaption}
+\item[{std\+::shared\+\_\+ptr$<$ {\bf Floor} $>$}]{floor, }
+\item[{{\bf Direction}}]{direction}
+\end{DoxyParamCaption}
+) const}\label{class_stop_manager_adab473b58ab3505cbf849b9f05939637}
+\hypertarget{class_stop_manager_a17f374de474e4de6ba1488220dcc7c72}{}\index{Stop\+Manager@{Stop\+Manager}!get\+Stops@{get\+Stops}}
+\index{get\+Stops@{get\+Stops}!Stop\+Manager@{Stop\+Manager}}
+\subsubsection[{get\+Stops}]{\setlength{\rightskip}{0pt plus 5cm}std\+::set$<$ std\+::shared\+\_\+ptr$<$ {\bf Floor} $>$ $>$ Stop\+Manager\+::get\+Stops (
+\begin{DoxyParamCaption}
+\item[{std\+::shared\+\_\+ptr$<$ {\bf Elevator} $>$}]{elevator, }
+\item[{{\bf Direction}}]{direction}
+\end{DoxyParamCaption}
+)}\label{class_stop_manager_a17f374de474e4de6ba1488220dcc7c72}
+\hypertarget{class_stop_manager_a2c22b4194c71d20793efbb69be1ba548}{}\index{Stop\+Manager@{Stop\+Manager}!set@{set}}
+\index{set@{set}!Stop\+Manager@{Stop\+Manager}}
+\subsubsection[{set}]{\setlength{\rightskip}{0pt plus 5cm}void Stop\+Manager\+::set (
+\begin{DoxyParamCaption}
+\item[{std\+::shared\+\_\+ptr$<$ {\bf Floor} $>$}]{floor, }
+\item[{{\bf Direction}}]{direction, }
+\item[{std\+::shared\+\_\+ptr$<$ {\bf Elevator} $>$}]{elevator}
+\end{DoxyParamCaption}
+)}\label{class_stop_manager_a2c22b4194c71d20793efbb69be1ba548}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{_stop_manager_8h}{Stop\+Manager.\+h}\item 
+src/\hyperlink{_stop_manager_8cpp}{Stop\+Manager.\+cpp}\end{DoxyCompactItemize}

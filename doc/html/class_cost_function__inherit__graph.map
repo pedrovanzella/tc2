@@ -1,0 +1,7 @@
+<map id="CostFunction" name="CostFunction">
+<area shape="rect" id="node2" href="$class_better_nearest_neighbour_cost_function.html" title="{BetterNearestNeighbourCost\lFunction\n||+ calculate()\l}" alt="" coords="5,131,209,223"/>
+<area shape="rect" id="node3" href="$class_dummy_cost_function.html" title="{DummyCostFunction\n||+ calculate()\l}" alt="" coords="234,138,375,215"/>
+<area shape="rect" id="node4" href="$class_nearest_neighbour_cost_function.html" title="{NearestNeighbourCostFunction\n||+ calculate()\l}" alt="" coords="399,138,618,215"/>
+<area shape="rect" id="node5" href="$class_random_cost_function.html" title="{RandomCostFunction\n||+ RandomCostFunction()\l+ calculate()\l}" alt="" coords="642,131,818,223"/>
+<area shape="rect" id="node6" href="$class_weighted_cost_function.html" title="{WeightedCostFunction\n||+ calculate()\l}" alt="" coords="842,138,1005,215"/>
+</map>
