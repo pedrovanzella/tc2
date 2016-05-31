@@ -1,4 +1,4 @@
-\hypertarget{class_event_notifier}{}\section{Event\+Notifier Class Reference}
+\section{Event\+Notifier Class Reference}
 \label{class_event_notifier}\index{Event\+Notifier@{Event\+Notifier}}
 
 
@@ -11,7 +11,7 @@ Inheritance diagram for Event\+Notifier\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=202pt]{class_event_notifier__inherit__graph}
+\includegraphics[width=154pt]{class_event_notifier__inherit__graph}
 \end{center}
 \end{figure}
 
@@ -21,22 +21,29 @@ Collaboration diagram for Event\+Notifier\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=175pt]{class_event_notifier__coll__graph}
+\includegraphics[width=127pt]{class_event_notifier__coll__graph}
 \end{center}
 \end{figure}
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-virtual void \hyperlink{class_event_notifier_a769469c36337d28f08cc5b7250885a0c}{subscribe} (std\+::shared\+\_\+ptr$<$ \hyperlink{class_event_observer}{Event\+Observer} $>$ observer)=0
+virtual void {\bf subscribe} (std\+::shared\+\_\+ptr$<$ {\bf Event\+Observer} $>$ observer)=0
 \item 
-virtual void \hyperlink{class_event_notifier_a80e222d382981380c86cd61c52142e78}{unsubscribe} (std\+::shared\+\_\+ptr$<$ \hyperlink{class_event_observer}{Event\+Observer} $>$ observer)=0
+virtual void {\bf unsubscribe} (std\+::shared\+\_\+ptr$<$ {\bf Event\+Observer} $>$ observer)=0
 \item 
-virtual void \hyperlink{class_event_notifier_af6a63fe66700be838c3027bba458294a}{broadcast} (const std\+::shared\+\_\+ptr$<$ const \hyperlink{class_event}{Event} $>$ event) const =0
+virtual void {\bf broadcast} (const std\+::shared\+\_\+ptr$<$ const {\bf Event} $>$ event) const =0
 \end{DoxyCompactItemize}
 
 
+\subsection{Detailed Description}
+
+
+Definition at line 8 of file Event\+Notifier.\+h.
+
+
+
 \subsection{Member Function Documentation}
-\hypertarget{class_event_notifier_af6a63fe66700be838c3027bba458294a}{}\index{Event\+Notifier@{Event\+Notifier}!broadcast@{broadcast}}
+\index{Event\+Notifier@{Event\+Notifier}!broadcast@{broadcast}}
 \index{broadcast@{broadcast}!Event\+Notifier@{Event\+Notifier}}
 \subsubsection[{broadcast}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Event\+Notifier\+::broadcast (
 \begin{DoxyParamCaption}
@@ -45,9 +52,9 @@ virtual void \hyperlink{class_event_notifier_af6a63fe66700be838c3027bba458294a}{
 ) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}\label{class_event_notifier_af6a63fe66700be838c3027bba458294a}
 
 
-Implemented in \hyperlink{class_event_dispatcher_a2664ed4e9f1eca1f239bbd40add82f45}{Event\+Dispatcher}.
+Implemented in {\bf Event\+Dispatcher} \doxyref{}{p.}{class_event_dispatcher_a2664ed4e9f1eca1f239bbd40add82f45}.
 
-\hypertarget{class_event_notifier_a769469c36337d28f08cc5b7250885a0c}{}\index{Event\+Notifier@{Event\+Notifier}!subscribe@{subscribe}}
+\index{Event\+Notifier@{Event\+Notifier}!subscribe@{subscribe}}
 \index{subscribe@{subscribe}!Event\+Notifier@{Event\+Notifier}}
 \subsubsection[{subscribe}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Event\+Notifier\+::subscribe (
 \begin{DoxyParamCaption}
@@ -56,9 +63,9 @@ Implemented in \hyperlink{class_event_dispatcher_a2664ed4e9f1eca1f239bbd40add82f
 )\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}\label{class_event_notifier_a769469c36337d28f08cc5b7250885a0c}
 
 
-Implemented in \hyperlink{class_event_dispatcher_a0cd1157fb6213be48fbdadc749088231}{Event\+Dispatcher}.
+Implemented in {\bf Event\+Dispatcher} \doxyref{}{p.}{class_event_dispatcher_a0cd1157fb6213be48fbdadc749088231}.
 
-\hypertarget{class_event_notifier_a80e222d382981380c86cd61c52142e78}{}\index{Event\+Notifier@{Event\+Notifier}!unsubscribe@{unsubscribe}}
+\index{Event\+Notifier@{Event\+Notifier}!unsubscribe@{unsubscribe}}
 \index{unsubscribe@{unsubscribe}!Event\+Notifier@{Event\+Notifier}}
 \subsubsection[{unsubscribe}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Event\+Notifier\+::unsubscribe (
 \begin{DoxyParamCaption}
@@ -67,10 +74,10 @@ Implemented in \hyperlink{class_event_dispatcher_a0cd1157fb6213be48fbdadc7490882
 )\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}\label{class_event_notifier_a80e222d382981380c86cd61c52142e78}
 
 
-Implemented in \hyperlink{class_event_dispatcher_a3242f22a220dd58964835544c799c4fa}{Event\+Dispatcher}.
+Implemented in {\bf Event\+Dispatcher} \doxyref{}{p.}{class_event_dispatcher_a3242f22a220dd58964835544c799c4fa}.
 
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-include/\hyperlink{_event_notifier_8h}{Event\+Notifier.\+h}\end{DoxyCompactItemize}
+include/{\bf Event\+Notifier.\+h}\end{DoxyCompactItemize}

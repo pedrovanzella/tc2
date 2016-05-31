@@ -1,17 +1,17 @@
 <map id="src/Statistics.cpp" name="src/Statistics.cpp">
-<area shape="rect" id="node2" href="$_statistics_8h.html" title="Statistics.h" alt="" coords="571,80,678,107"/>
-<area shape="rect" id="node9" href="$_arrival_8h.html" title="Arrival.h" alt="" coords="1355,80,1441,107"/>
-<area shape="rect" id="node11" href="$_client_8h.html" title="Client.h" alt="" coords="281,80,360,107"/>
-<area shape="rect" id="node13" href="$_client_arrival_8h.html" title="ClientArrival.h" alt="" coords="79,80,205,107"/>
-<area shape="rect" id="node14" href="$_event_8h.html" title="Event.h" alt="" coords="5,155,76,181"/>
-<area shape="rect" id="node17" href="$_scheduler_type_8h.html" title="SchedulerType.h" alt="" coords="1204,80,1331,107"/>
-<area shape="rect" id="node19" href="$_cost_function_type_8h.html" title="CostFunctionType.h" alt="" coords="1264,155,1412,181"/>
-<area shape="rect" id="node21" href="$_elevator_8h.html" title="Elevator.h" alt="" coords="941,80,1033,107"/>
-<area shape="rect" id="node24" href="$_floor_8h.html" title="Floor.h" alt="" coords="1057,80,1128,107"/>
-<area shape="rect" id="node26" href="$_scenario_8h.html" title="Scenario.h" alt="" coords="793,80,885,107"/>
-<area shape="rect" id="node27" href="$_trip_8h.html" title="Trip.h" alt="" coords="1465,80,1529,107"/>
-<area shape="rect" id="node3" href="$_event_observer_8h.html" title="EventObserver.h" alt="" coords="448,155,575,181"/>
-<area shape="rect" id="node15" href="$_event_type_8h.html" title="EventType.h" alt="" coords="223,229,322,256"/>
-<area shape="rect" id="node18" href="$_missing_scheduler_error_8h.html" title="MissingSchedulerError.h" alt="" coords="1359,229,1541,256"/>
-<area shape="rect" id="node20" href="$_missing_cost_function_error_8h.html" title="MissingCostFunctionError.h" alt="" coords="1131,229,1335,256"/>
+<area shape="rect" id="node2" href="$_statistics_8h.html" title="Statistics.h" alt="" coords="547,80,635,107"/>
+<area shape="rect" id="node9" href="$_arrival_8h.html" title="Arrival.h" alt="" coords="1299,80,1370,107"/>
+<area shape="rect" id="node11" href="$_client_8h.html" title="Client.h" alt="" coords="255,80,321,107"/>
+<area shape="rect" id="node13" href="$_client_arrival_8h.html" title="ClientArrival.h" alt="" coords="76,80,180,107"/>
+<area shape="rect" id="node14" href="$_event_8h.html" title="Event.h" alt="" coords="5,155,72,181"/>
+<area shape="rect" id="node17" href="$_scheduler_type_8h.html" title="SchedulerType.h" alt="" coords="1155,80,1275,107"/>
+<area shape="rect" id="node19" href="$_cost_function_type_8h.html" title="CostFunctionType.h" alt="" coords="1217,155,1357,181"/>
+<area shape="rect" id="node21" href="$_elevator_8h.html" title="Elevator.h" alt="" coords="911,80,993,107"/>
+<area shape="rect" id="node24" href="$_floor_8h.html" title="Floor.h" alt="" coords="1017,80,1079,107"/>
+<area shape="rect" id="node26" href="$_scenario_8h.html" title="Scenario.h" alt="" coords="751,80,835,107"/>
+<area shape="rect" id="node27" href="$_trip_8h.html" title="Trip.h" alt="" coords="1394,80,1449,107"/>
+<area shape="rect" id="node3" href="$_event_observer_8h.html" title="EventObserver.h" alt="" coords="427,155,547,181"/>
+<area shape="rect" id="node15" href="$_event_type_8h.html" title="EventType.h" alt="" coords="205,229,301,256"/>
+<area shape="rect" id="node18" href="$_missing_scheduler_error_8h.html" title="MissingSchedulerError.h" alt="" coords="1313,229,1477,256"/>
+<area shape="rect" id="node20" href="$_missing_cost_function_error_8h.html" title="MissingCostFunctionError.h" alt="" coords="1104,229,1288,256"/>
 </map>

@@ -8,6 +8,14 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -26,7 +34,7 @@
    <div id="projectname">intelevator
    &#160;<span id="projectnumber">0.1</span>
    </div>
-   <div id="projectbrief">Welcome to intelevator, the inteligent elevator.</div>
+   <div id="projectbrief">Welcome to intelevator, the inteligent elevator!</div>
   </td>
  </tr>
  </tbody>
@@ -67,6 +75,21 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('_trip_8h_source.html','');});
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -81,11 +104,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">Trip.h</div>  </div>
@@ -108,23 +126,27 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="struct_trip.html#a3238343db8bab2184a01b15f4c08f381">printToFile</a>(std::ofstream &amp;f);</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;};</div>
-<div class="ttc" id="struct_trip_html_a198b5036c3d1a9ea374353a64380a38d"><div class="ttname"><a href="struct_trip.html#a198b5036c3d1a9ea374353a64380a38d">Trip::arrivalFloor</a></div><div class="ttdeci">int arrivalFloor</div><div class="ttdef"><b>Definition:</b> Trip.h:9</div></div>
-<div class="ttc" id="struct_trip_html_aa8fbdf14714f874eeab3b8b56681840a"><div class="ttname"><a href="struct_trip.html#aa8fbdf14714f874eeab3b8b56681840a">Trip::partySize</a></div><div class="ttdeci">int partySize</div><div class="ttdef"><b>Definition:</b> Trip.h:11</div></div>
-<div class="ttc" id="struct_trip_html_a3238343db8bab2184a01b15f4c08f381"><div class="ttname"><a href="struct_trip.html#a3238343db8bab2184a01b15f4c08f381">Trip::printToFile</a></div><div class="ttdeci">void printToFile(std::ofstream &amp;f)</div><div class="ttdef"><b>Definition:</b> Trip.cpp:5</div></div>
-<div class="ttc" id="struct_trip_html_aa698c9522767f86364bffda768c48b7e"><div class="ttname"><a href="struct_trip.html#aa698c9522767f86364bffda768c48b7e">Trip::dropOffFloor</a></div><div class="ttdeci">int dropOffFloor</div><div class="ttdef"><b>Definition:</b> Trip.h:10</div></div>
-<div class="ttc" id="struct_trip_html_ab24fb09ff870245973d166fb41130342"><div class="ttname"><a href="struct_trip.html#ab24fb09ff870245973d166fb41130342">Trip::createTime</a></div><div class="ttdeci">long createTime</div><div class="ttdef"><b>Definition:</b> Trip.h:7</div></div>
-<div class="ttc" id="struct_trip_html_aa67b77d0d2de622ed5eb9e9cad34db8f"><div class="ttname"><a href="struct_trip.html#aa67b77d0d2de622ed5eb9e9cad34db8f">Trip::Trip</a></div><div class="ttdeci">Trip()</div><div class="ttdef"><b>Definition:</b> Trip.cpp:3</div></div>
-<div class="ttc" id="struct_trip_html"><div class="ttname"><a href="struct_trip.html">Trip</a></div><div class="ttdef"><b>Definition:</b> Trip.h:4</div></div>
-<div class="ttc" id="struct_trip_html_a32dff92efdcabc7294328d8e23b238af"><div class="ttname"><a href="struct_trip.html#a32dff92efdcabc7294328d8e23b238af">Trip::dropoffTime</a></div><div class="ttdeci">long dropoffTime</div><div class="ttdef"><b>Definition:</b> Trip.h:5</div></div>
-<div class="ttc" id="struct_trip_html_a9cb92b360488aee5194aa781beac880d"><div class="ttname"><a href="struct_trip.html#a9cb92b360488aee5194aa781beac880d">Trip::pickupTime</a></div><div class="ttdeci">long pickupTime</div><div class="ttdef"><b>Definition:</b> Trip.h:6</div></div>
-<div class="ttc" id="struct_trip_html_a734134f36b0e7d28e79ed51209033505"><div class="ttname"><a href="struct_trip.html#a734134f36b0e7d28e79ed51209033505">Trip::elevatorID</a></div><div class="ttdeci">int elevatorID</div><div class="ttdef"><b>Definition:</b> Trip.h:8</div></div>
-<div class="ttc" id="struct_trip_html_a439a16d8f60a6f0082fe013471e95f8e"><div class="ttname"><a href="struct_trip.html#a439a16d8f60a6f0082fe013471e95f8e">Trip::clientID</a></div><div class="ttdeci">int clientID</div><div class="ttdef"><b>Definition:</b> Trip.h:12</div></div>
+<div class="ttc" id="struct_trip_html_a198b5036c3d1a9ea374353a64380a38d"><div class="ttname"><a href="struct_trip.html#a198b5036c3d1a9ea374353a64380a38d">Trip::arrivalFloor</a></div><div class="ttdeci">int arrivalFloor</div><div class="ttdef"><b>Definition:</b> <a href="_trip_8h_source.html#l00009">Trip.h:9</a></div></div>
+<div class="ttc" id="struct_trip_html_aa8fbdf14714f874eeab3b8b56681840a"><div class="ttname"><a href="struct_trip.html#aa8fbdf14714f874eeab3b8b56681840a">Trip::partySize</a></div><div class="ttdeci">int partySize</div><div class="ttdef"><b>Definition:</b> <a href="_trip_8h_source.html#l00011">Trip.h:11</a></div></div>
+<div class="ttc" id="struct_trip_html_a3238343db8bab2184a01b15f4c08f381"><div class="ttname"><a href="struct_trip.html#a3238343db8bab2184a01b15f4c08f381">Trip::printToFile</a></div><div class="ttdeci">void printToFile(std::ofstream &amp;f)</div><div class="ttdef"><b>Definition:</b> <a href="_trip_8cpp_source.html#l00005">Trip.cpp:5</a></div></div>
+<div class="ttc" id="struct_trip_html_aa698c9522767f86364bffda768c48b7e"><div class="ttname"><a href="struct_trip.html#aa698c9522767f86364bffda768c48b7e">Trip::dropOffFloor</a></div><div class="ttdeci">int dropOffFloor</div><div class="ttdef"><b>Definition:</b> <a href="_trip_8h_source.html#l00010">Trip.h:10</a></div></div>
+<div class="ttc" id="struct_trip_html_ab24fb09ff870245973d166fb41130342"><div class="ttname"><a href="struct_trip.html#ab24fb09ff870245973d166fb41130342">Trip::createTime</a></div><div class="ttdeci">long createTime</div><div class="ttdef"><b>Definition:</b> <a href="_trip_8h_source.html#l00007">Trip.h:7</a></div></div>
+<div class="ttc" id="struct_trip_html_aa67b77d0d2de622ed5eb9e9cad34db8f"><div class="ttname"><a href="struct_trip.html#aa67b77d0d2de622ed5eb9e9cad34db8f">Trip::Trip</a></div><div class="ttdeci">Trip()</div><div class="ttdef"><b>Definition:</b> <a href="_trip_8cpp_source.html#l00003">Trip.cpp:3</a></div></div>
+<div class="ttc" id="struct_trip_html"><div class="ttname"><a href="struct_trip.html">Trip</a></div><div class="ttdef"><b>Definition:</b> <a href="_trip_8h_source.html#l00004">Trip.h:4</a></div></div>
+<div class="ttc" id="struct_trip_html_a32dff92efdcabc7294328d8e23b238af"><div class="ttname"><a href="struct_trip.html#a32dff92efdcabc7294328d8e23b238af">Trip::dropoffTime</a></div><div class="ttdeci">long dropoffTime</div><div class="ttdef"><b>Definition:</b> <a href="_trip_8h_source.html#l00005">Trip.h:5</a></div></div>
+<div class="ttc" id="struct_trip_html_a9cb92b360488aee5194aa781beac880d"><div class="ttname"><a href="struct_trip.html#a9cb92b360488aee5194aa781beac880d">Trip::pickupTime</a></div><div class="ttdeci">long pickupTime</div><div class="ttdef"><b>Definition:</b> <a href="_trip_8h_source.html#l00006">Trip.h:6</a></div></div>
+<div class="ttc" id="struct_trip_html_a734134f36b0e7d28e79ed51209033505"><div class="ttname"><a href="struct_trip.html#a734134f36b0e7d28e79ed51209033505">Trip::elevatorID</a></div><div class="ttdeci">int elevatorID</div><div class="ttdef"><b>Definition:</b> <a href="_trip_8h_source.html#l00008">Trip.h:8</a></div></div>
+<div class="ttc" id="struct_trip_html_a439a16d8f60a6f0082fe013471e95f8e"><div class="ttname"><a href="struct_trip.html#a439a16d8f60a6f0082fe013471e95f8e">Trip::clientID</a></div><div class="ttdeci">int clientID</div><div class="ttdef"><b>Definition:</b> <a href="_trip_8h_source.html#l00012">Trip.h:12</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.9.1
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="_trip_8h.html">Trip.h</a></li>
+    <li class="footer">Generated by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.9.1 </li>
+  </ul>
+</div>
 </body>
 </html>

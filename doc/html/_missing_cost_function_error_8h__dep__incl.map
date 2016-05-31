@@ -1,8 +1,8 @@
 <map id="include/MissingCostFunctionError.h" name="include/MissingCostFunctionError.h">
-<area shape="rect" id="node2" href="$_scenario_8cpp.html" title="src/Scenario.cpp" alt="" coords="5,169,140,196"/>
-<area shape="rect" id="node3" href="$_cost_function_type_8h.html" title="include/CostFunctionType.h" alt="" coords="181,95,385,121"/>
-<area shape="rect" id="node4" href="$_reporter_8cpp.html" title="src/Reporter.cpp" alt="" coords="164,169,299,196"/>
-<area shape="rect" id="node5" href="$_simulator_8cpp.html" title="src/Simulator.cpp" alt="" coords="427,244,569,271"/>
-<area shape="rect" id="node6" href="$_statistics_8cpp.html" title="src/Statistics.cpp" alt="" coords="375,169,523,196"/>
-<area shape="rect" id="node7" href="$_cost_function_creator_8h.html" title="include/CostFunctionCreator.h" alt="" coords="547,169,772,196"/>
+<area shape="rect" id="node2" href="$_scenario_8cpp.html" title="src/Scenario.cpp" alt="" coords="5,169,125,196"/>
+<area shape="rect" id="node3" href="$_cost_function_type_8h.html" title="include/CostFunctionType.h" alt="" coords="165,95,350,121"/>
+<area shape="rect" id="node4" href="$_reporter_8cpp.html" title="src/Reporter.cpp" alt="" coords="150,169,269,196"/>
+<area shape="rect" id="node5" href="$_simulator_8cpp.html" title="src/Simulator.cpp" alt="" coords="387,244,511,271"/>
+<area shape="rect" id="node6" href="$_statistics_8cpp.html" title="src/Statistics.cpp" alt="" coords="345,169,469,196"/>
+<area shape="rect" id="node7" href="$_cost_function_creator_8h.html" title="include/CostFunctionCreator.h" alt="" coords="493,169,691,196"/>
 </map>

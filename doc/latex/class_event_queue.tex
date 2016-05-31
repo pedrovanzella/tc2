@@ -1,4 +1,4 @@
-\hypertarget{class_event_queue}{}\section{Event\+Queue Class Reference}
+\section{Event\+Queue Class Reference}
 \label{class_event_queue}\index{Event\+Queue@{Event\+Queue}}
 
 
@@ -11,37 +11,48 @@ Collaboration diagram for Event\+Queue\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=181pt]{class_event_queue__coll__graph}
+\includegraphics[width=138pt]{class_event_queue__coll__graph}
 \end{center}
 \end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{class_event_queue_ab7de5a41befc94aac0f461391e67f14a}{Event\+Queue} ()
+{\bf Event\+Queue} ()
 \item 
-virtual \hyperlink{class_event_queue_ac57db8e2366f2c6c594e6afc975e3b59}{$\sim$\+Event\+Queue} ()
+virtual {\bf $\sim$\+Event\+Queue} ()
 \item 
-bool \hyperlink{class_event_queue_ad439103ef84d177e2cd37eab36bbb606}{has\+Next\+Event} () const 
+bool {\bf has\+Next\+Event} () const 
 \item 
-std\+::shared\+\_\+ptr$<$ \hyperlink{class_event}{Event} $>$ \hyperlink{class_event_queue_af633f824cb4f4c3ff99d8e0601b61ce6}{top} () const 
+std\+::shared\+\_\+ptr$<$ {\bf Event} $>$ {\bf top} () const 
 \item 
-std\+::shared\+\_\+ptr$<$ \hyperlink{class_event}{Event} $>$ \hyperlink{class_event_queue_a63042846b35c5071f876ceecbfe56ade}{pop} ()
+std\+::shared\+\_\+ptr$<$ {\bf Event} $>$ {\bf pop} ()
 \item 
-void \hyperlink{class_event_queue_a826f8fd05053a782f45c568feb76dbd7}{push} (std\+::shared\+\_\+ptr$<$ \hyperlink{class_event}{Event} $>$ event)
+void {\bf push} (std\+::shared\+\_\+ptr$<$ {\bf Event} $>$ event)
 \item 
-void \hyperlink{class_event_queue_a0a9d0f11be898266a61bbd8d569369a5}{refresh} (const unsigned long current\+Time)
+void {\bf refresh} (const unsigned long current\+Time)
 \end{DoxyCompactItemize}
 
 
+\subsection{Detailed Description}
+
+
+Definition at line 10 of file Event\+Queue.\+h.
+
+
+
 \subsection{Constructor \& Destructor Documentation}
-\hypertarget{class_event_queue_ab7de5a41befc94aac0f461391e67f14a}{}\index{Event\+Queue@{Event\+Queue}!Event\+Queue@{Event\+Queue}}
+\index{Event\+Queue@{Event\+Queue}!Event\+Queue@{Event\+Queue}}
 \index{Event\+Queue@{Event\+Queue}!Event\+Queue@{Event\+Queue}}
 \subsubsection[{Event\+Queue}]{\setlength{\rightskip}{0pt plus 5cm}Event\+Queue\+::\+Event\+Queue (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
 )}\label{class_event_queue_ab7de5a41befc94aac0f461391e67f14a}
-\hypertarget{class_event_queue_ac57db8e2366f2c6c594e6afc975e3b59}{}\index{Event\+Queue@{Event\+Queue}!````~Event\+Queue@{$\sim$\+Event\+Queue}}
+
+
+Definition at line 6 of file Event\+Queue.\+cpp.
+
+\index{Event\+Queue@{Event\+Queue}!````~Event\+Queue@{$\sim$\+Event\+Queue}}
 \index{````~Event\+Queue@{$\sim$\+Event\+Queue}!Event\+Queue@{Event\+Queue}}
 \subsubsection[{$\sim$\+Event\+Queue}]{\setlength{\rightskip}{0pt plus 5cm}Event\+Queue\+::$\sim$\+Event\+Queue (
 \begin{DoxyParamCaption}
@@ -50,36 +61,56 @@ void \hyperlink{class_event_queue_a0a9d0f11be898266a61bbd8d569369a5}{refresh} (c
 )\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_event_queue_ac57db8e2366f2c6c594e6afc975e3b59}
 
 
+Definition at line 8 of file Event\+Queue.\+cpp.
+
+
+
 \subsection{Member Function Documentation}
-\hypertarget{class_event_queue_ad439103ef84d177e2cd37eab36bbb606}{}\index{Event\+Queue@{Event\+Queue}!has\+Next\+Event@{has\+Next\+Event}}
+\index{Event\+Queue@{Event\+Queue}!has\+Next\+Event@{has\+Next\+Event}}
 \index{has\+Next\+Event@{has\+Next\+Event}!Event\+Queue@{Event\+Queue}}
 \subsubsection[{has\+Next\+Event}]{\setlength{\rightskip}{0pt plus 5cm}bool Event\+Queue\+::has\+Next\+Event (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
 ) const}\label{class_event_queue_ad439103ef84d177e2cd37eab36bbb606}
-\hypertarget{class_event_queue_a63042846b35c5071f876ceecbfe56ade}{}\index{Event\+Queue@{Event\+Queue}!pop@{pop}}
+
+
+Definition at line 14 of file Event\+Queue.\+cpp.
+
+\index{Event\+Queue@{Event\+Queue}!pop@{pop}}
 \index{pop@{pop}!Event\+Queue@{Event\+Queue}}
 \subsubsection[{pop}]{\setlength{\rightskip}{0pt plus 5cm}std\+::shared\+\_\+ptr$<$ {\bf Event} $>$ Event\+Queue\+::pop (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
 )}\label{class_event_queue_a63042846b35c5071f876ceecbfe56ade}
-\hypertarget{class_event_queue_a826f8fd05053a782f45c568feb76dbd7}{}\index{Event\+Queue@{Event\+Queue}!push@{push}}
+
+
+Definition at line 23 of file Event\+Queue.\+cpp.
+
+\index{Event\+Queue@{Event\+Queue}!push@{push}}
 \index{push@{push}!Event\+Queue@{Event\+Queue}}
 \subsubsection[{push}]{\setlength{\rightskip}{0pt plus 5cm}void Event\+Queue\+::push (
 \begin{DoxyParamCaption}
 \item[{std\+::shared\+\_\+ptr$<$ {\bf Event} $>$}]{event}
 \end{DoxyParamCaption}
 )}\label{class_event_queue_a826f8fd05053a782f45c568feb76dbd7}
-\hypertarget{class_event_queue_a0a9d0f11be898266a61bbd8d569369a5}{}\index{Event\+Queue@{Event\+Queue}!refresh@{refresh}}
+
+
+Definition at line 33 of file Event\+Queue.\+cpp.
+
+\index{Event\+Queue@{Event\+Queue}!refresh@{refresh}}
 \index{refresh@{refresh}!Event\+Queue@{Event\+Queue}}
 \subsubsection[{refresh}]{\setlength{\rightskip}{0pt plus 5cm}void Event\+Queue\+::refresh (
 \begin{DoxyParamCaption}
 \item[{const unsigned long}]{current\+Time}
 \end{DoxyParamCaption}
 )}\label{class_event_queue_a0a9d0f11be898266a61bbd8d569369a5}
-\hypertarget{class_event_queue_af633f824cb4f4c3ff99d8e0601b61ce6}{}\index{Event\+Queue@{Event\+Queue}!top@{top}}
+
+
+Definition at line 37 of file Event\+Queue.\+cpp.
+
+\index{Event\+Queue@{Event\+Queue}!top@{top}}
 \index{top@{top}!Event\+Queue@{Event\+Queue}}
 \subsubsection[{top}]{\setlength{\rightskip}{0pt plus 5cm}std\+::shared\+\_\+ptr$<$ {\bf Event} $>$ Event\+Queue\+::top (
 \begin{DoxyParamCaption}
@@ -88,7 +119,11 @@ void \hyperlink{class_event_queue_a0a9d0f11be898266a61bbd8d569369a5}{refresh} (c
 ) const}\label{class_event_queue_af633f824cb4f4c3ff99d8e0601b61ce6}
 
 
+Definition at line 16 of file Event\+Queue.\+cpp.
+
+
+
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-include/\hyperlink{_event_queue_8h}{Event\+Queue.\+h}\item 
-src/\hyperlink{_event_queue_8cpp}{Event\+Queue.\+cpp}\end{DoxyCompactItemize}
+include/{\bf Event\+Queue.\+h}\item 
+src/{\bf Event\+Queue.\+cpp}\end{DoxyCompactItemize}

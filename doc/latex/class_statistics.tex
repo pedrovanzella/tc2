@@ -1,4 +1,4 @@
-\hypertarget{class_statistics}{}\section{Statistics Class Reference}
+\section{Statistics Class Reference}
 \label{class_statistics}\index{Statistics@{Statistics}}
 
 
@@ -11,7 +11,7 @@ Inheritance diagram for Statistics\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=207pt]{class_statistics__inherit__graph}
+\includegraphics[width=151pt]{class_statistics__inherit__graph}
 \end{center}
 \end{figure}
 
@@ -21,59 +21,70 @@ Collaboration diagram for Statistics\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=207pt]{class_statistics__coll__graph}
+\includegraphics[width=151pt]{class_statistics__coll__graph}
 \end{center}
 \end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{class_statistics_affbe803d713a70b26d450879049fc40c}{Statistics} (std\+::shared\+\_\+ptr$<$ const \hyperlink{class_scenario}{Scenario} $>$ scenario)
+{\bf Statistics} (std\+::shared\+\_\+ptr$<$ const {\bf Scenario} $>$ scenario)
 \item 
-virtual \hyperlink{class_statistics_ab68ede75479e44d5c35b78ec1284065b}{$\sim$\+Statistics} ()
+virtual {\bf $\sim$\+Statistics} ()
 \item 
-bool \hyperlink{class_statistics_a13b7527baab6a472c7444a0ab5f4cf20}{keep\+Running} () const 
+bool {\bf keep\+Running} () const 
 \item 
-std\+::shared\+\_\+ptr$<$ const \hyperlink{class_scenario}{Scenario} $>$ \hyperlink{class_statistics_a917c7263fd8f43a6dbb42548cb307113}{get\+Scenario} () const 
+std\+::shared\+\_\+ptr$<$ const {\bf Scenario} $>$ {\bf get\+Scenario} () const 
 \item 
-int \hyperlink{class_statistics_a62124212973c28f1b46f51bdc4ae9472}{get\+Clients\+Arrived} () const 
+int {\bf get\+Clients\+Arrived} () const 
 \item 
-int \hyperlink{class_statistics_ac226bbe5bf342f9c0da5cf3e205492f1}{get\+Clients\+Served} () const 
+int {\bf get\+Clients\+Served} () const 
 \item 
-double \hyperlink{class_statistics_aa9a9a9daa51c577da9732823b8720ac4}{get\+Total\+W\+T} () const 
+double {\bf get\+Total\+W\+T} () const 
 \item 
-double \hyperlink{class_statistics_afe9ebbfbf81e5abee5080eea6f586731}{get\+Total\+J\+T} () const 
+double {\bf get\+Total\+J\+T} () const 
 \item 
-double \hyperlink{class_statistics_a5ed129f73662604d79465dade30577cc}{get\+Avg\+W\+T} () const 
+double {\bf get\+Avg\+W\+T} () const 
 \item 
-double \hyperlink{class_statistics_a5921e47905fd106e6030066456a31a10}{get\+Avg\+J\+T} () const 
+double {\bf get\+Avg\+J\+T} () const 
 \item 
-double \hyperlink{class_statistics_ad855ad97545c2edcc2f344efe8f8d152}{get\+Dev\+W\+T} () const 
+double {\bf get\+Dev\+W\+T} () const 
 \item 
-double \hyperlink{class_statistics_a7f560ff5b5c152e06a3e5e831455da91}{get\+Dev\+J\+T} () const 
+double {\bf get\+Dev\+J\+T} () const 
 \item 
-const std\+::vector$<$ \hyperlink{struct_trip}{Trip} $>$ \& \hyperlink{class_statistics_a38e0cef8c314aa51948e7889831e3894}{get\+Trips} () const 
+const std\+::vector$<$ {\bf Trip} $>$ \& {\bf get\+Trips} () const 
 \item 
-const std\+::vector$<$ \hyperlink{struct_arrival}{Arrival} $>$ \& \hyperlink{class_statistics_a12ae4864b00ec11dcbf92af52703473f}{get\+Arrivals} () const 
+const std\+::vector$<$ {\bf Arrival} $>$ \& {\bf get\+Arrivals} () const 
 \item 
-void \hyperlink{class_statistics_a75d0a1191341fe95e94bf50a6b69a5a3}{notify} (const std\+::shared\+\_\+ptr$<$ const \hyperlink{class_event}{Event} $>$ event)
+void {\bf notify} (const std\+::shared\+\_\+ptr$<$ const {\bf Event} $>$ event)
 \item 
-void \hyperlink{class_statistics_a3f373c2e55495b70b0825ed5f80623a4}{log\+Drop\+Off} (const unsigned long drop\+Off\+Time, std\+::shared\+\_\+ptr$<$ \hyperlink{class_elevator}{Elevator} $>$ elevator, std\+::shared\+\_\+ptr$<$ std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \hyperlink{class_client}{Client} $>$$>$$>$ dropped\+Passengers)
+void {\bf log\+Drop\+Off} (const unsigned long drop\+Off\+Time, std\+::shared\+\_\+ptr$<$ {\bf Elevator} $>$ elevator, std\+::shared\+\_\+ptr$<$ std\+::vector$<$ std\+::shared\+\_\+ptr$<$ {\bf Client} $>$$>$$>$ dropped\+Passengers)
 \item 
-void \hyperlink{class_statistics_a426b71708d3ef427c525355c5ec55eea}{add\+Trip} (const unsigned long drop\+Off\+Time, const std\+::shared\+\_\+ptr$<$ \hyperlink{class_elevator}{Elevator} $>$ elevator, const std\+::shared\+\_\+ptr$<$ \hyperlink{class_client}{Client} $>$ passenger)
+void {\bf add\+Trip} (const unsigned long drop\+Off\+Time, const std\+::shared\+\_\+ptr$<$ {\bf Elevator} $>$ elevator, const std\+::shared\+\_\+ptr$<$ {\bf Client} $>$ passenger)
 \item 
-void \hyperlink{class_statistics_a487dd5b2e941134aa22e1fe0c52b5888}{log\+Arrival} (std\+::shared\+\_\+ptr$<$ const \hyperlink{class_client_arrival}{Client\+Arrival} $>$ \hyperlink{_event_type_8h_a2628ea8d12e8b2563c32f05dc7fff6faa5082bd1bb24d7f3de37e24ba1ef3a3d0}{client\+Arrival})
+void {\bf log\+Arrival} (std\+::shared\+\_\+ptr$<$ const {\bf Client\+Arrival} $>$ {\bf client\+Arrival})
 \end{DoxyCompactItemize}
 
 
+\subsection{Detailed Description}
+
+
+Definition at line 19 of file Statistics.\+h.
+
+
+
 \subsection{Constructor \& Destructor Documentation}
-\hypertarget{class_statistics_affbe803d713a70b26d450879049fc40c}{}\index{Statistics@{Statistics}!Statistics@{Statistics}}
+\index{Statistics@{Statistics}!Statistics@{Statistics}}
 \index{Statistics@{Statistics}!Statistics@{Statistics}}
 \subsubsection[{Statistics}]{\setlength{\rightskip}{0pt plus 5cm}Statistics\+::\+Statistics (
 \begin{DoxyParamCaption}
 \item[{std\+::shared\+\_\+ptr$<$ const {\bf Scenario} $>$}]{scenario}
 \end{DoxyParamCaption}
 )}\label{class_statistics_affbe803d713a70b26d450879049fc40c}
-\hypertarget{class_statistics_ab68ede75479e44d5c35b78ec1284065b}{}\index{Statistics@{Statistics}!````~Statistics@{$\sim$\+Statistics}}
+
+
+Definition at line 16 of file Statistics.\+cpp.
+
+\index{Statistics@{Statistics}!````~Statistics@{$\sim$\+Statistics}}
 \index{````~Statistics@{$\sim$\+Statistics}!Statistics@{Statistics}}
 \subsubsection[{$\sim$\+Statistics}]{\setlength{\rightskip}{0pt plus 5cm}Statistics\+::$\sim$\+Statistics (
 \begin{DoxyParamCaption}
@@ -82,8 +93,12 @@ void \hyperlink{class_statistics_a487dd5b2e941134aa22e1fe0c52b5888}{log\+Arrival
 )\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_statistics_ab68ede75479e44d5c35b78ec1284065b}
 
 
+Definition at line 20 of file Statistics.\+cpp.
+
+
+
 \subsection{Member Function Documentation}
-\hypertarget{class_statistics_a426b71708d3ef427c525355c5ec55eea}{}\index{Statistics@{Statistics}!add\+Trip@{add\+Trip}}
+\index{Statistics@{Statistics}!add\+Trip@{add\+Trip}}
 \index{add\+Trip@{add\+Trip}!Statistics@{Statistics}}
 \subsubsection[{add\+Trip}]{\setlength{\rightskip}{0pt plus 5cm}void Statistics\+::add\+Trip (
 \begin{DoxyParamCaption}
@@ -94,24 +109,32 @@ void \hyperlink{class_statistics_a487dd5b2e941134aa22e1fe0c52b5888}{log\+Arrival
 )}\label{class_statistics_a426b71708d3ef427c525355c5ec55eea}
 
 
+Definition at line 49 of file Statistics.\+cpp.
+
+
+
 Here is the caller graph for this function\+:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{class_statistics_a426b71708d3ef427c525355c5ec55eea_icgraph}
+\includegraphics[width=287pt]{class_statistics_a426b71708d3ef427c525355c5ec55eea_icgraph}
 \end{center}
 \end{figure}
 
 
-\hypertarget{class_statistics_a12ae4864b00ec11dcbf92af52703473f}{}\index{Statistics@{Statistics}!get\+Arrivals@{get\+Arrivals}}
+\index{Statistics@{Statistics}!get\+Arrivals@{get\+Arrivals}}
 \index{get\+Arrivals@{get\+Arrivals}!Statistics@{Statistics}}
 \subsubsection[{get\+Arrivals}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::vector$<$ {\bf Arrival} $>$ \& Statistics\+::get\+Arrivals (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
 ) const}\label{class_statistics_a12ae4864b00ec11dcbf92af52703473f}
-\hypertarget{class_statistics_a5921e47905fd106e6030066456a31a10}{}\index{Statistics@{Statistics}!get\+Avg\+J\+T@{get\+Avg\+J\+T}}
+
+
+Definition at line 134 of file Statistics.\+cpp.
+
+\index{Statistics@{Statistics}!get\+Avg\+J\+T@{get\+Avg\+J\+T}}
 \index{get\+Avg\+J\+T@{get\+Avg\+J\+T}!Statistics@{Statistics}}
 \subsubsection[{get\+Avg\+J\+T}]{\setlength{\rightskip}{0pt plus 5cm}double Statistics\+::get\+Avg\+J\+T (
 \begin{DoxyParamCaption}
@@ -120,17 +143,21 @@ Here is the caller graph for this function\+:
 ) const}\label{class_statistics_a5921e47905fd106e6030066456a31a10}
 
 
+Definition at line 103 of file Statistics.\+cpp.
+
+
+
 Here is the call graph for this function\+:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{class_statistics_a5921e47905fd106e6030066456a31a10_cgraph}
+\includegraphics[width=296pt]{class_statistics_a5921e47905fd106e6030066456a31a10_cgraph}
 \end{center}
 \end{figure}
 
 
-\hypertarget{class_statistics_a5ed129f73662604d79465dade30577cc}{}\index{Statistics@{Statistics}!get\+Avg\+W\+T@{get\+Avg\+W\+T}}
+\index{Statistics@{Statistics}!get\+Avg\+W\+T@{get\+Avg\+W\+T}}
 \index{get\+Avg\+W\+T@{get\+Avg\+W\+T}!Statistics@{Statistics}}
 \subsubsection[{get\+Avg\+W\+T}]{\setlength{\rightskip}{0pt plus 5cm}double Statistics\+::get\+Avg\+W\+T (
 \begin{DoxyParamCaption}
@@ -139,12 +166,16 @@ Here is the call graph for this function\+:
 ) const}\label{class_statistics_a5ed129f73662604d79465dade30577cc}
 
 
+Definition at line 99 of file Statistics.\+cpp.
+
+
+
 Here is the call graph for this function\+:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{class_statistics_a5ed129f73662604d79465dade30577cc_cgraph}
+\includegraphics[width=305pt]{class_statistics_a5ed129f73662604d79465dade30577cc_cgraph}
 \end{center}
 \end{figure}
 
@@ -156,32 +187,44 @@ Here is the caller graph for this function\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{class_statistics_a5ed129f73662604d79465dade30577cc_icgraph}
+\includegraphics[width=301pt]{class_statistics_a5ed129f73662604d79465dade30577cc_icgraph}
 \end{center}
 \end{figure}
 
 
-\hypertarget{class_statistics_a62124212973c28f1b46f51bdc4ae9472}{}\index{Statistics@{Statistics}!get\+Clients\+Arrived@{get\+Clients\+Arrived}}
+\index{Statistics@{Statistics}!get\+Clients\+Arrived@{get\+Clients\+Arrived}}
 \index{get\+Clients\+Arrived@{get\+Clients\+Arrived}!Statistics@{Statistics}}
 \subsubsection[{get\+Clients\+Arrived}]{\setlength{\rightskip}{0pt plus 5cm}int Statistics\+::get\+Clients\+Arrived (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
 ) const}\label{class_statistics_a62124212973c28f1b46f51bdc4ae9472}
-\hypertarget{class_statistics_ac226bbe5bf342f9c0da5cf3e205492f1}{}\index{Statistics@{Statistics}!get\+Clients\+Served@{get\+Clients\+Served}}
+
+
+Definition at line 76 of file Statistics.\+cpp.
+
+\index{Statistics@{Statistics}!get\+Clients\+Served@{get\+Clients\+Served}}
 \index{get\+Clients\+Served@{get\+Clients\+Served}!Statistics@{Statistics}}
 \subsubsection[{get\+Clients\+Served}]{\setlength{\rightskip}{0pt plus 5cm}int Statistics\+::get\+Clients\+Served (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
 ) const}\label{class_statistics_ac226bbe5bf342f9c0da5cf3e205492f1}
-\hypertarget{class_statistics_a7f560ff5b5c152e06a3e5e831455da91}{}\index{Statistics@{Statistics}!get\+Dev\+J\+T@{get\+Dev\+J\+T}}
+
+
+Definition at line 80 of file Statistics.\+cpp.
+
+\index{Statistics@{Statistics}!get\+Dev\+J\+T@{get\+Dev\+J\+T}}
 \index{get\+Dev\+J\+T@{get\+Dev\+J\+T}!Statistics@{Statistics}}
 \subsubsection[{get\+Dev\+J\+T}]{\setlength{\rightskip}{0pt plus 5cm}double Statistics\+::get\+Dev\+J\+T (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
 ) const}\label{class_statistics_a7f560ff5b5c152e06a3e5e831455da91}
+
+
+Definition at line 119 of file Statistics.\+cpp.
+
 
 
 Here is the call graph for this function\+:
@@ -194,13 +237,17 @@ Here is the call graph for this function\+:
 \end{figure}
 
 
-\hypertarget{class_statistics_ad855ad97545c2edcc2f344efe8f8d152}{}\index{Statistics@{Statistics}!get\+Dev\+W\+T@{get\+Dev\+W\+T}}
+\index{Statistics@{Statistics}!get\+Dev\+W\+T@{get\+Dev\+W\+T}}
 \index{get\+Dev\+W\+T@{get\+Dev\+W\+T}!Statistics@{Statistics}}
 \subsubsection[{get\+Dev\+W\+T}]{\setlength{\rightskip}{0pt plus 5cm}double Statistics\+::get\+Dev\+W\+T (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
 ) const}\label{class_statistics_ad855ad97545c2edcc2f344efe8f8d152}
+
+
+Definition at line 108 of file Statistics.\+cpp.
+
 
 
 Here is the call graph for this function\+:
@@ -213,14 +260,18 @@ Here is the call graph for this function\+:
 \end{figure}
 
 
-\hypertarget{class_statistics_a917c7263fd8f43a6dbb42548cb307113}{}\index{Statistics@{Statistics}!get\+Scenario@{get\+Scenario}}
+\index{Statistics@{Statistics}!get\+Scenario@{get\+Scenario}}
 \index{get\+Scenario@{get\+Scenario}!Statistics@{Statistics}}
 \subsubsection[{get\+Scenario}]{\setlength{\rightskip}{0pt plus 5cm}std\+::shared\+\_\+ptr$<$ const {\bf Scenario} $>$ Statistics\+::get\+Scenario (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
 ) const}\label{class_statistics_a917c7263fd8f43a6dbb42548cb307113}
-\hypertarget{class_statistics_afe9ebbfbf81e5abee5080eea6f586731}{}\index{Statistics@{Statistics}!get\+Total\+J\+T@{get\+Total\+J\+T}}
+
+
+Definition at line 22 of file Statistics.\+cpp.
+
+\index{Statistics@{Statistics}!get\+Total\+J\+T@{get\+Total\+J\+T}}
 \index{get\+Total\+J\+T@{get\+Total\+J\+T}!Statistics@{Statistics}}
 \subsubsection[{get\+Total\+J\+T}]{\setlength{\rightskip}{0pt plus 5cm}double Statistics\+::get\+Total\+J\+T (
 \begin{DoxyParamCaption}
@@ -229,23 +280,31 @@ Here is the call graph for this function\+:
 ) const}\label{class_statistics_afe9ebbfbf81e5abee5080eea6f586731}
 
 
+Definition at line 91 of file Statistics.\+cpp.
+
+
+
 Here is the caller graph for this function\+:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{class_statistics_afe9ebbfbf81e5abee5080eea6f586731_icgraph}
+\includegraphics[width=296pt]{class_statistics_afe9ebbfbf81e5abee5080eea6f586731_icgraph}
 \end{center}
 \end{figure}
 
 
-\hypertarget{class_statistics_aa9a9a9daa51c577da9732823b8720ac4}{}\index{Statistics@{Statistics}!get\+Total\+W\+T@{get\+Total\+W\+T}}
+\index{Statistics@{Statistics}!get\+Total\+W\+T@{get\+Total\+W\+T}}
 \index{get\+Total\+W\+T@{get\+Total\+W\+T}!Statistics@{Statistics}}
 \subsubsection[{get\+Total\+W\+T}]{\setlength{\rightskip}{0pt plus 5cm}double Statistics\+::get\+Total\+W\+T (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
 ) const}\label{class_statistics_aa9a9a9daa51c577da9732823b8720ac4}
+
+
+Definition at line 84 of file Statistics.\+cpp.
+
 
 
 Here is the caller graph for this function\+:
@@ -258,21 +317,29 @@ Here is the caller graph for this function\+:
 \end{figure}
 
 
-\hypertarget{class_statistics_a38e0cef8c314aa51948e7889831e3894}{}\index{Statistics@{Statistics}!get\+Trips@{get\+Trips}}
+\index{Statistics@{Statistics}!get\+Trips@{get\+Trips}}
 \index{get\+Trips@{get\+Trips}!Statistics@{Statistics}}
 \subsubsection[{get\+Trips}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::vector$<$ {\bf Trip} $>$ \& Statistics\+::get\+Trips (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
 ) const}\label{class_statistics_a38e0cef8c314aa51948e7889831e3894}
-\hypertarget{class_statistics_a13b7527baab6a472c7444a0ab5f4cf20}{}\index{Statistics@{Statistics}!keep\+Running@{keep\+Running}}
+
+
+Definition at line 130 of file Statistics.\+cpp.
+
+\index{Statistics@{Statistics}!keep\+Running@{keep\+Running}}
 \index{keep\+Running@{keep\+Running}!Statistics@{Statistics}}
 \subsubsection[{keep\+Running}]{\setlength{\rightskip}{0pt plus 5cm}bool Statistics\+::keep\+Running (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
 ) const}\label{class_statistics_a13b7527baab6a472c7444a0ab5f4cf20}
-\hypertarget{class_statistics_a487dd5b2e941134aa22e1fe0c52b5888}{}\index{Statistics@{Statistics}!log\+Arrival@{log\+Arrival}}
+
+
+Definition at line 24 of file Statistics.\+cpp.
+
+\index{Statistics@{Statistics}!log\+Arrival@{log\+Arrival}}
 \index{log\+Arrival@{log\+Arrival}!Statistics@{Statistics}}
 \subsubsection[{log\+Arrival}]{\setlength{\rightskip}{0pt plus 5cm}void Statistics\+::log\+Arrival (
 \begin{DoxyParamCaption}
@@ -281,17 +348,21 @@ Here is the caller graph for this function\+:
 )}\label{class_statistics_a487dd5b2e941134aa22e1fe0c52b5888}
 
 
+Definition at line 65 of file Statistics.\+cpp.
+
+
+
 Here is the caller graph for this function\+:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{class_statistics_a487dd5b2e941134aa22e1fe0c52b5888_icgraph}
+\includegraphics[width=272pt]{class_statistics_a487dd5b2e941134aa22e1fe0c52b5888_icgraph}
 \end{center}
 \end{figure}
 
 
-\hypertarget{class_statistics_a3f373c2e55495b70b0825ed5f80623a4}{}\index{Statistics@{Statistics}!log\+Drop\+Off@{log\+Drop\+Off}}
+\index{Statistics@{Statistics}!log\+Drop\+Off@{log\+Drop\+Off}}
 \index{log\+Drop\+Off@{log\+Drop\+Off}!Statistics@{Statistics}}
 \subsubsection[{log\+Drop\+Off}]{\setlength{\rightskip}{0pt plus 5cm}void Statistics\+::log\+Drop\+Off (
 \begin{DoxyParamCaption}
@@ -302,17 +373,21 @@ Here is the caller graph for this function\+:
 )}\label{class_statistics_a3f373c2e55495b70b0825ed5f80623a4}
 
 
+Definition at line 37 of file Statistics.\+cpp.
+
+
+
 Here is the call graph for this function\+:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{class_statistics_a3f373c2e55495b70b0825ed5f80623a4_cgraph}
+\includegraphics[width=287pt]{class_statistics_a3f373c2e55495b70b0825ed5f80623a4_cgraph}
 \end{center}
 \end{figure}
 
 
-\hypertarget{class_statistics_a75d0a1191341fe95e94bf50a6b69a5a3}{}\index{Statistics@{Statistics}!notify@{notify}}
+\index{Statistics@{Statistics}!notify@{notify}}
 \index{notify@{notify}!Statistics@{Statistics}}
 \subsubsection[{notify}]{\setlength{\rightskip}{0pt plus 5cm}void Statistics\+::notify (
 \begin{DoxyParamCaption}
@@ -321,7 +396,11 @@ Here is the call graph for this function\+:
 )\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_statistics_a75d0a1191341fe95e94bf50a6b69a5a3}
 
 
-Implements \hyperlink{class_event_observer_a81b3c545084ba3c8eaa8c83f5a0a4eb8}{Event\+Observer}.
+Implements {\bf Event\+Observer} \doxyref{}{p.}{class_event_observer_a81b3c545084ba3c8eaa8c83f5a0a4eb8}.
+
+
+
+Definition at line 26 of file Statistics.\+cpp.
 
 
 
@@ -330,7 +409,7 @@ Here is the call graph for this function\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{class_statistics_a75d0a1191341fe95e94bf50a6b69a5a3_cgraph}
+\includegraphics[width=272pt]{class_statistics_a75d0a1191341fe95e94bf50a6b69a5a3_cgraph}
 \end{center}
 \end{figure}
 
@@ -339,5 +418,5 @@ Here is the call graph for this function\+:
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-include/\hyperlink{_statistics_8h}{Statistics.\+h}\item 
-src/\hyperlink{_statistics_8cpp}{Statistics.\+cpp}\end{DoxyCompactItemize}
+include/{\bf Statistics.\+h}\item 
+src/{\bf Statistics.\+cpp}\end{DoxyCompactItemize}

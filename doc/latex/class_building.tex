@@ -1,4 +1,4 @@
-\hypertarget{class_building}{}\section{Building Class Reference}
+\section{Building Class Reference}
 \label{class_building}\index{Building@{Building}}
 
 
@@ -11,7 +11,7 @@ Inheritance diagram for Building\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=316pt]{class_building__inherit__graph}
+\includegraphics[width=260pt]{class_building__inherit__graph}
 \end{center}
 \end{figure}
 
@@ -21,32 +21,39 @@ Collaboration diagram for Building\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=316pt]{class_building__coll__graph}
+\includegraphics[width=260pt]{class_building__coll__graph}
 \end{center}
 \end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{class_building_a7b82d219d50105ca73fd18fb72f7d97d}{Building} (std\+::shared\+\_\+ptr$<$ const \hyperlink{class_simulator}{Simulator} $>$ simulator, std\+::shared\+\_\+ptr$<$ std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \hyperlink{class_floor}{Floor} $>$$>$$>$ floors, std\+::shared\+\_\+ptr$<$ std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \hyperlink{class_elevator}{Elevator} $>$$>$$>$ elevators, std\+::shared\+\_\+ptr$<$ \hyperlink{class_scheduler}{Scheduler} $>$ scheduler, std\+::shared\+\_\+ptr$<$ \hyperlink{class_cost_function}{Cost\+Function} $>$ cost\+Function)
+{\bf Building} (std\+::shared\+\_\+ptr$<$ const {\bf Simulator} $>$ simulator, std\+::shared\+\_\+ptr$<$ std\+::vector$<$ std\+::shared\+\_\+ptr$<$ {\bf Floor} $>$$>$$>$ floors, std\+::shared\+\_\+ptr$<$ std\+::vector$<$ std\+::shared\+\_\+ptr$<$ {\bf Elevator} $>$$>$$>$ elevators, std\+::shared\+\_\+ptr$<$ {\bf Scheduler} $>$ scheduler, std\+::shared\+\_\+ptr$<$ {\bf Cost\+Function} $>$ cost\+Function)
 \item 
-virtual \hyperlink{class_building_ab675c6a382e110b84031956cda708439}{$\sim$\+Building} ()
+virtual {\bf $\sim$\+Building} ()
 \item 
-const std\+::shared\+\_\+ptr$<$ std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \hyperlink{class_elevator}{Elevator} $>$ $>$ $>$ \hyperlink{class_building_a6cf389ad55a55b0d3681808025625c4a}{get\+Elevators} () const 
+const std\+::shared\+\_\+ptr$<$ std\+::vector$<$ std\+::shared\+\_\+ptr$<$ {\bf Elevator} $>$ $>$ $>$ {\bf get\+Elevators} () const 
 \item 
-const std\+::shared\+\_\+ptr$<$ std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \hyperlink{class_floor}{Floor} $>$ $>$ $>$ \hyperlink{class_building_a1271cef8df030a441d37eec8f8245928}{get\+Floors} () const 
+const std\+::shared\+\_\+ptr$<$ std\+::vector$<$ std\+::shared\+\_\+ptr$<$ {\bf Floor} $>$ $>$ $>$ {\bf get\+Floors} () const 
 \item 
-const std\+::shared\+\_\+ptr$<$ \hyperlink{class_floor}{Floor} $>$ \hyperlink{class_building_a55712da518a32920146db267072362f2}{get\+Floor} (int number) const 
+const std\+::shared\+\_\+ptr$<$ {\bf Floor} $>$ {\bf get\+Floor} (int number) const 
 \item 
-const std\+::shared\+\_\+ptr$<$ \hyperlink{class_elevator}{Elevator} $>$ \hyperlink{class_building_aea6f1c1241ae910793a4a80bf0cadc02}{get\+Elevator} (int number) const 
+const std\+::shared\+\_\+ptr$<$ {\bf Elevator} $>$ {\bf get\+Elevator} (int number) const 
 \item 
-void \hyperlink{class_building_a380e65fcb24d40d82077edc0572df3c1}{notify} (const std\+::shared\+\_\+ptr$<$ const \hyperlink{class_event}{Event} $>$ event)
+void {\bf notify} (const std\+::shared\+\_\+ptr$<$ const {\bf Event} $>$ event)
 \item 
-void \hyperlink{class_building_ad92eb27909cc8e59a2a775d7b214d13c}{initialize\+Arrivals} ()
+void {\bf initialize\+Arrivals} ()
 \end{DoxyCompactItemize}
 
 
+\subsection{Detailed Description}
+
+
+Definition at line 21 of file Building.\+h.
+
+
+
 \subsection{Constructor \& Destructor Documentation}
-\hypertarget{class_building_a7b82d219d50105ca73fd18fb72f7d97d}{}\index{Building@{Building}!Building@{Building}}
+\index{Building@{Building}!Building@{Building}}
 \index{Building@{Building}!Building@{Building}}
 \subsubsection[{Building}]{\setlength{\rightskip}{0pt plus 5cm}Building\+::\+Building (
 \begin{DoxyParamCaption}
@@ -57,7 +64,11 @@ void \hyperlink{class_building_ad92eb27909cc8e59a2a775d7b214d13c}{initialize\+Ar
 \item[{std\+::shared\+\_\+ptr$<$ {\bf Cost\+Function} $>$}]{cost\+Function}
 \end{DoxyParamCaption}
 )}\label{class_building_a7b82d219d50105ca73fd18fb72f7d97d}
-\hypertarget{class_building_ab675c6a382e110b84031956cda708439}{}\index{Building@{Building}!````~Building@{$\sim$\+Building}}
+
+
+Definition at line 20 of file Building.\+cpp.
+
+\index{Building@{Building}!````~Building@{$\sim$\+Building}}
 \index{````~Building@{$\sim$\+Building}!Building@{Building}}
 \subsubsection[{$\sim$\+Building}]{\setlength{\rightskip}{0pt plus 5cm}Building\+::$\sim$\+Building (
 \begin{DoxyParamCaption}
@@ -66,43 +77,67 @@ void \hyperlink{class_building_ad92eb27909cc8e59a2a775d7b214d13c}{initialize\+Ar
 )\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_building_ab675c6a382e110b84031956cda708439}
 
 
+Definition at line 30 of file Building.\+cpp.
+
+
+
 \subsection{Member Function Documentation}
-\hypertarget{class_building_aea6f1c1241ae910793a4a80bf0cadc02}{}\index{Building@{Building}!get\+Elevator@{get\+Elevator}}
+\index{Building@{Building}!get\+Elevator@{get\+Elevator}}
 \index{get\+Elevator@{get\+Elevator}!Building@{Building}}
 \subsubsection[{get\+Elevator}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::shared\+\_\+ptr$<$ {\bf Elevator} $>$ Building\+::get\+Elevator (
 \begin{DoxyParamCaption}
 \item[{int}]{number}
 \end{DoxyParamCaption}
 ) const}\label{class_building_aea6f1c1241ae910793a4a80bf0cadc02}
-\hypertarget{class_building_a6cf389ad55a55b0d3681808025625c4a}{}\index{Building@{Building}!get\+Elevators@{get\+Elevators}}
+
+
+Definition at line 42 of file Building.\+cpp.
+
+\index{Building@{Building}!get\+Elevators@{get\+Elevators}}
 \index{get\+Elevators@{get\+Elevators}!Building@{Building}}
 \subsubsection[{get\+Elevators}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::shared\+\_\+ptr$<$ std\+::vector$<$ std\+::shared\+\_\+ptr$<$ {\bf Elevator} $>$ $>$ $>$ Building\+::get\+Elevators (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
 ) const}\label{class_building_a6cf389ad55a55b0d3681808025625c4a}
-\hypertarget{class_building_a55712da518a32920146db267072362f2}{}\index{Building@{Building}!get\+Floor@{get\+Floor}}
+
+
+Definition at line 32 of file Building.\+cpp.
+
+\index{Building@{Building}!get\+Floor@{get\+Floor}}
 \index{get\+Floor@{get\+Floor}!Building@{Building}}
 \subsubsection[{get\+Floor}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::shared\+\_\+ptr$<$ {\bf Floor} $>$ Building\+::get\+Floor (
 \begin{DoxyParamCaption}
 \item[{int}]{number}
 \end{DoxyParamCaption}
 ) const}\label{class_building_a55712da518a32920146db267072362f2}
-\hypertarget{class_building_a1271cef8df030a441d37eec8f8245928}{}\index{Building@{Building}!get\+Floors@{get\+Floors}}
+
+
+Definition at line 36 of file Building.\+cpp.
+
+\index{Building@{Building}!get\+Floors@{get\+Floors}}
 \index{get\+Floors@{get\+Floors}!Building@{Building}}
 \subsubsection[{get\+Floors}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::shared\+\_\+ptr$<$ std\+::vector$<$ std\+::shared\+\_\+ptr$<$ {\bf Floor} $>$ $>$ $>$ Building\+::get\+Floors (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
 ) const}\label{class_building_a1271cef8df030a441d37eec8f8245928}
-\hypertarget{class_building_ad92eb27909cc8e59a2a775d7b214d13c}{}\index{Building@{Building}!initialize\+Arrivals@{initialize\+Arrivals}}
+
+
+Definition at line 34 of file Building.\+cpp.
+
+\index{Building@{Building}!initialize\+Arrivals@{initialize\+Arrivals}}
 \index{initialize\+Arrivals@{initialize\+Arrivals}!Building@{Building}}
 \subsubsection[{initialize\+Arrivals}]{\setlength{\rightskip}{0pt plus 5cm}void Building\+::initialize\+Arrivals (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
 )}\label{class_building_ad92eb27909cc8e59a2a775d7b214d13c}
-\hypertarget{class_building_a380e65fcb24d40d82077edc0572df3c1}{}\index{Building@{Building}!notify@{notify}}
+
+
+Definition at line 87 of file Building.\+cpp.
+
+\index{Building@{Building}!notify@{notify}}
 \index{notify@{notify}!Building@{Building}}
 \subsubsection[{notify}]{\setlength{\rightskip}{0pt plus 5cm}void Building\+::notify (
 \begin{DoxyParamCaption}
@@ -111,11 +146,15 @@ void \hyperlink{class_building_ad92eb27909cc8e59a2a775d7b214d13c}{initialize\+Ar
 )\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_building_a380e65fcb24d40d82077edc0572df3c1}
 
 
-Implements \hyperlink{class_event_observer_a81b3c545084ba3c8eaa8c83f5a0a4eb8}{Event\+Observer}.
+Implements {\bf Event\+Observer} \doxyref{}{p.}{class_event_observer_a81b3c545084ba3c8eaa8c83f5a0a4eb8}.
+
+
+
+Definition at line 48 of file Building.\+cpp.
 
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-include/\hyperlink{_building_8h}{Building.\+h}\item 
-src/\hyperlink{_building_8cpp}{Building.\+cpp}\end{DoxyCompactItemize}
+include/{\bf Building.\+h}\item 
+src/{\bf Building.\+cpp}\end{DoxyCompactItemize}

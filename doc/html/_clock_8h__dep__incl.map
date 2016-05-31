@@ -1,7 +1,7 @@
 <map id="include/Clock.h" name="include/Clock.h">
-<area shape="rect" id="node2" href="$_building_8cpp.html" title="src/Building.cpp" alt="" coords="5,80,140,107"/>
-<area shape="rect" id="node3" href="$_clock_8cpp.html" title="src/Clock.cpp" alt="" coords="164,80,277,107"/>
-<area shape="rect" id="node4" href="$_event_factory_8cpp.html" title="src/EventFactory.cpp" alt="" coords="302,80,465,107"/>
-<area shape="rect" id="node5" href="$_event_queue_8cpp.html" title="src/EventQueue.cpp" alt="" coords="489,80,637,107"/>
-<area shape="rect" id="node6" href="$_simulator_8cpp.html" title="src/Simulator.cpp" alt="" coords="661,80,802,107"/>
+<area shape="rect" id="node2" href="$_building_8cpp.html" title="src/Building.cpp" alt="" coords="5,80,120,107"/>
+<area shape="rect" id="node3" href="$_clock_8cpp.html" title="src/Clock.cpp" alt="" coords="145,80,247,107"/>
+<area shape="rect" id="node4" href="$_event_factory_8cpp.html" title="src/EventFactory.cpp" alt="" coords="272,80,419,107"/>
+<area shape="rect" id="node5" href="$_event_queue_8cpp.html" title="src/EventQueue.cpp" alt="" coords="443,80,584,107"/>
+<area shape="rect" id="node6" href="$_simulator_8cpp.html" title="src/Simulator.cpp" alt="" coords="607,80,731,107"/>
 </map>

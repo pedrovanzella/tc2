@@ -8,6 +8,14 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -26,7 +34,7 @@
    <div id="projectname">intelevator
    &#160;<span id="projectnumber">0.1</span>
    </div>
-   <div id="projectbrief">Welcome to intelevator, the inteligent elevator.</div>
+   <div id="projectbrief">Welcome to intelevator, the inteligent elevator!</div>
   </td>
  </tr>
  </tbody>
@@ -69,6 +77,21 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('class_statistics.html','');});
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -83,7 +106,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
@@ -97,13 +119,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="dynheader">
 Inheritance diagram for Statistics:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_statistics__inherit__graph.svg" width="180" height="360"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="class_statistics__inherit__graph.svg" width="154" height="360"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <div class="dynheader">
 Collaboration diagram for Statistics:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_statistics__coll__graph.svg" width="180" height="360"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="class_statistics__coll__graph.svg" width="154" height="360"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <table class="memberdecls">
@@ -146,7 +168,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a487dd5b2e941134aa22e1fe0c52b5888"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_statistics.html#a487dd5b2e941134aa22e1fe0c52b5888">logArrival</a> (std::shared_ptr&lt; const <a class="el" href="class_client_arrival.html">ClientArrival</a> &gt; <a class="el" href="_event_type_8h.html#a2628ea8d12e8b2563c32f05dc7fff6faa5082bd1bb24d7f3de37e24ba1ef3a3d0">clientArrival</a>)</td></tr>
 <tr class="separator:a487dd5b2e941134aa22e1fe0c52b5888"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock">
+<p>Definition at line <a class="el" href="_statistics_8h_source.html#l00019">19</a> of file <a class="el" href="_statistics_8h_source.html">Statistics.h</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="affbe803d713a70b26d450879049fc40c"></a>
 <div class="memitem">
 <div class="memproto">
@@ -160,6 +185,8 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_statistics_8cpp_source.html#l00016">16</a> of file <a class="el" href="_statistics_8cpp_source.html">Statistics.cpp</a>.</p>
 
 </div>
 </div>
@@ -183,6 +210,8 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_statistics_8cpp_source.html#l00020">20</a> of file <a class="el" href="_statistics_8cpp_source.html">Statistics.cpp</a>.</p>
 
 </div>
 </div>
@@ -217,10 +246,12 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="_statistics_8cpp_source.html#l00049">49</a> of file <a class="el" href="_statistics_8cpp_source.html">Statistics.cpp</a>.</p>
+
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_statistics_a426b71708d3ef427c525355c5ec55eea_icgraph.svg" width="390" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="class_statistics_a426b71708d3ef427c525355c5ec55eea_icgraph.svg" width="335" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 </p>
@@ -240,6 +271,8 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="_statistics_8cpp_source.html#l00134">134</a> of file <a class="el" href="_statistics_8cpp_source.html">Statistics.cpp</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a5921e47905fd106e6030066456a31a10"></a>
@@ -255,10 +288,12 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="_statistics_8cpp_source.html#l00103">103</a> of file <a class="el" href="_statistics_8cpp_source.html">Statistics.cpp</a>.</p>
+
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_statistics_a5921e47905fd106e6030066456a31a10_cgraph.svg" width="398" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="class_statistics_a5921e47905fd106e6030066456a31a10_cgraph.svg" width="347" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 </p>
@@ -278,10 +313,12 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="_statistics_8cpp_source.html#l00099">99</a> of file <a class="el" href="_statistics_8cpp_source.html">Statistics.cpp</a>.</p>
+
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_statistics_a5ed129f73662604d79465dade30577cc_cgraph.svg" width="398" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="class_statistics_a5ed129f73662604d79465dade30577cc_cgraph.svg" width="359" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 </p>
@@ -289,7 +326,7 @@ Here is the call graph for this function:</div>
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_statistics_a5ed129f73662604d79465dade30577cc_icgraph.svg" width="384" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="class_statistics_a5ed129f73662604d79465dade30577cc_icgraph.svg" width="354" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 </p>
@@ -309,6 +346,8 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="_statistics_8cpp_source.html#l00076">76</a> of file <a class="el" href="_statistics_8cpp_source.html">Statistics.cpp</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="ac226bbe5bf342f9c0da5cf3e205492f1"></a>
@@ -323,6 +362,8 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_statistics_8cpp_source.html#l00080">80</a> of file <a class="el" href="_statistics_8cpp_source.html">Statistics.cpp</a>.</p>
 
 </div>
 </div>
@@ -339,10 +380,12 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="_statistics_8cpp_source.html#l00119">119</a> of file <a class="el" href="_statistics_8cpp_source.html">Statistics.cpp</a>.</p>
+
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_statistics_a7f560ff5b5c152e06a3e5e831455da91_cgraph.svg" width="608" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="class_statistics_a7f560ff5b5c152e06a3e5e831455da91_cgraph.svg" width="550" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 </p>
@@ -362,10 +405,12 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="_statistics_8cpp_source.html#l00108">108</a> of file <a class="el" href="_statistics_8cpp_source.html">Statistics.cpp</a>.</p>
+
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_statistics_ad855ad97545c2edcc2f344efe8f8d152_cgraph.svg" width="608" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="class_statistics_ad855ad97545c2edcc2f344efe8f8d152_cgraph.svg" width="555" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 </p>
@@ -385,6 +430,8 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="_statistics_8cpp_source.html#l00022">22</a> of file <a class="el" href="_statistics_8cpp_source.html">Statistics.cpp</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="afe9ebbfbf81e5abee5080eea6f586731"></a>
@@ -400,10 +447,12 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="_statistics_8cpp_source.html#l00091">91</a> of file <a class="el" href="_statistics_8cpp_source.html">Statistics.cpp</a>.</p>
+
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_statistics_afe9ebbfbf81e5abee5080eea6f586731_icgraph.svg" width="398" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="class_statistics_afe9ebbfbf81e5abee5080eea6f586731_icgraph.svg" width="347" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 </p>
@@ -423,10 +472,12 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="_statistics_8cpp_source.html#l00084">84</a> of file <a class="el" href="_statistics_8cpp_source.html">Statistics.cpp</a>.</p>
+
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_statistics_aa9a9a9daa51c577da9732823b8720ac4_icgraph.svg" width="608" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="class_statistics_aa9a9a9daa51c577da9732823b8720ac4_icgraph.svg" width="555" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 </p>
@@ -446,6 +497,8 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="_statistics_8cpp_source.html#l00130">130</a> of file <a class="el" href="_statistics_8cpp_source.html">Statistics.cpp</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a13b7527baab6a472c7444a0ab5f4cf20"></a>
@@ -460,6 +513,8 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_statistics_8cpp_source.html#l00024">24</a> of file <a class="el" href="_statistics_8cpp_source.html">Statistics.cpp</a>.</p>
 
 </div>
 </div>
@@ -477,10 +532,12 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="_statistics_8cpp_source.html#l00065">65</a> of file <a class="el" href="_statistics_8cpp_source.html">Statistics.cpp</a>.</p>
+
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_statistics_a487dd5b2e941134aa22e1fe0c52b5888_icgraph.svg" width="383" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="class_statistics_a487dd5b2e941134aa22e1fe0c52b5888_icgraph.svg" width="315" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 </p>
@@ -517,10 +574,12 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="_statistics_8cpp_source.html#l00037">37</a> of file <a class="el" href="_statistics_8cpp_source.html">Statistics.cpp</a>.</p>
+
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_statistics_a3f373c2e55495b70b0825ed5f80623a4_cgraph.svg" width="390" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="class_statistics_a3f373c2e55495b70b0825ed5f80623a4_cgraph.svg" width="335" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 </p>
@@ -551,10 +610,12 @@ Here is the call graph for this function:</div>
 
 <p>Implements <a class="el" href="class_event_observer.html#a81b3c545084ba3c8eaa8c83f5a0a4eb8">EventObserver</a>.</p>
 
+<p>Definition at line <a class="el" href="_statistics_8cpp_source.html#l00026">26</a> of file <a class="el" href="_statistics_8cpp_source.html">Statistics.cpp</a>.</p>
+
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_statistics_a75d0a1191341fe95e94bf50a6b69a5a3_cgraph.svg" width="383" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="class_statistics_a75d0a1191341fe95e94bf50a6b69a5a3_cgraph.svg" width="315" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 </p>
@@ -563,14 +624,18 @@ Here is the call graph for this function:</div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>include/<a class="el" href="_statistics_8h_source.html">Statistics.h</a></li>
-<li>src/<a class="el" href="_statistics_8cpp.html">Statistics.cpp</a></li>
+<li>src/<a class="el" href="_statistics_8cpp_source.html">Statistics.cpp</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.9.1
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="class_statistics.html">Statistics</a></li>
+    <li class="footer">Generated by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.9.1 </li>
+  </ul>
+</div>
 </body>
 </html>

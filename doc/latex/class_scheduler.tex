@@ -1,4 +1,4 @@
-\hypertarget{class_scheduler}{}\section{Scheduler Class Reference}
+\section{Scheduler Class Reference}
 \label{class_scheduler}\index{Scheduler@{Scheduler}}
 
 
@@ -11,7 +11,7 @@ Inheritance diagram for Scheduler\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=320pt]{class_scheduler__inherit__graph}
+\includegraphics[width=266pt]{class_scheduler__inherit__graph}
 \end{center}
 \end{figure}
 
@@ -21,25 +21,32 @@ Collaboration diagram for Scheduler\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=228pt]{class_scheduler__coll__graph}
+\includegraphics[width=169pt]{class_scheduler__coll__graph}
 \end{center}
 \end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{class_scheduler_a3b61aac11466cd45ae42ab8c2b0013f6}{Scheduler} ()
+{\bf Scheduler} ()
 \item 
-virtual int \hyperlink{class_scheduler_aabaa3785dd1aa6efcf407a1e027cfced}{schedule} (const std\+::shared\+\_\+ptr$<$ \hyperlink{class_cost_function}{Cost\+Function} $>$ cost\+Function, const std\+::shared\+\_\+ptr$<$ const \hyperlink{class_building}{Building} $>$ building, const std\+::shared\+\_\+ptr$<$ const \hyperlink{class_client}{Client} $>$ client, const int elevator\+To\+Exclude=-\/1)=0
+virtual int {\bf schedule} (const std\+::shared\+\_\+ptr$<$ {\bf Cost\+Function} $>$ cost\+Function, const std\+::shared\+\_\+ptr$<$ const {\bf Building} $>$ building, const std\+::shared\+\_\+ptr$<$ const {\bf Client} $>$ client, const int elevator\+To\+Exclude=-\/1)=0
 \end{DoxyCompactItemize}
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-std\+::shared\+\_\+ptr$<$ std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \hyperlink{class_elevator}{Elevator} $>$ $>$ $>$ \hyperlink{class_scheduler_abfdf81a0e98f71efc27516808425ac72}{get\+Available\+Elevators} (const std\+::shared\+\_\+ptr$<$ const \hyperlink{class_building}{Building} $>$ building, int elevator\+To\+Exclude)
+std\+::shared\+\_\+ptr$<$ std\+::vector$<$ std\+::shared\+\_\+ptr$<$ {\bf Elevator} $>$ $>$ $>$ {\bf get\+Available\+Elevators} (const std\+::shared\+\_\+ptr$<$ const {\bf Building} $>$ building, int elevator\+To\+Exclude)
 \end{DoxyCompactItemize}
 
 
+\subsection{Detailed Description}
+
+
+Definition at line 11 of file Scheduler.\+h.
+
+
+
 \subsection{Constructor \& Destructor Documentation}
-\hypertarget{class_scheduler_a3b61aac11466cd45ae42ab8c2b0013f6}{}\index{Scheduler@{Scheduler}!Scheduler@{Scheduler}}
+\index{Scheduler@{Scheduler}!Scheduler@{Scheduler}}
 \index{Scheduler@{Scheduler}!Scheduler@{Scheduler}}
 \subsubsection[{Scheduler}]{\setlength{\rightskip}{0pt plus 5cm}Scheduler\+::\+Scheduler (
 \begin{DoxyParamCaption}
@@ -48,8 +55,12 @@ std\+::shared\+\_\+ptr$<$ std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \hyperlink{
 )}\label{class_scheduler_a3b61aac11466cd45ae42ab8c2b0013f6}
 
 
+Definition at line 5 of file Scheduler.\+cpp.
+
+
+
 \subsection{Member Function Documentation}
-\hypertarget{class_scheduler_abfdf81a0e98f71efc27516808425ac72}{}\index{Scheduler@{Scheduler}!get\+Available\+Elevators@{get\+Available\+Elevators}}
+\index{Scheduler@{Scheduler}!get\+Available\+Elevators@{get\+Available\+Elevators}}
 \index{get\+Available\+Elevators@{get\+Available\+Elevators}!Scheduler@{Scheduler}}
 \subsubsection[{get\+Available\+Elevators}]{\setlength{\rightskip}{0pt plus 5cm}std\+::shared\+\_\+ptr$<$ std\+::vector$<$ std\+::shared\+\_\+ptr$<$ {\bf Elevator} $>$ $>$ $>$ Scheduler\+::get\+Available\+Elevators (
 \begin{DoxyParamCaption}
@@ -57,6 +68,10 @@ std\+::shared\+\_\+ptr$<$ std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \hyperlink{
 \item[{int}]{elevator\+To\+Exclude}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [protected]}}\label{class_scheduler_abfdf81a0e98f71efc27516808425ac72}
+
+
+Definition at line 8 of file Scheduler.\+cpp.
+
 
 
 Here is the caller graph for this function\+:
@@ -69,7 +84,7 @@ Here is the caller graph for this function\+:
 \end{figure}
 
 
-\hypertarget{class_scheduler_aabaa3785dd1aa6efcf407a1e027cfced}{}\index{Scheduler@{Scheduler}!schedule@{schedule}}
+\index{Scheduler@{Scheduler}!schedule@{schedule}}
 \index{schedule@{schedule}!Scheduler@{Scheduler}}
 \subsubsection[{schedule}]{\setlength{\rightskip}{0pt plus 5cm}virtual int Scheduler\+::schedule (
 \begin{DoxyParamCaption}
@@ -81,11 +96,11 @@ Here is the caller graph for this function\+:
 )\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{class_scheduler_aabaa3785dd1aa6efcf407a1e027cfced}
 
 
-Implemented in \hyperlink{class_planning_scheduler_a30e0bb81405e162e596e428cb2a6c1e3}{Planning\+Scheduler}, and \hyperlink{class_simple_scheduler_a76990bffc6cf70197e96d41535ebf260}{Simple\+Scheduler}.
+Implemented in {\bf Planning\+Scheduler} \doxyref{}{p.}{class_planning_scheduler_a30e0bb81405e162e596e428cb2a6c1e3}, and {\bf Simple\+Scheduler} \doxyref{}{p.}{class_simple_scheduler_a76990bffc6cf70197e96d41535ebf260}.
 
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-include/\hyperlink{_scheduler_8h}{Scheduler.\+h}\item 
-src/\hyperlink{_scheduler_8cpp}{Scheduler.\+cpp}\end{DoxyCompactItemize}
+include/{\bf Scheduler.\+h}\item 
+src/{\bf Scheduler.\+cpp}\end{DoxyCompactItemize}

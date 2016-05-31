@@ -1,10 +1,10 @@
 <map id="include/CostFunctionCreator.h" name="include/CostFunctionCreator.h">
-<area shape="rect" id="node2" href="$_better_nearest_neighbour_cost_function_8h.html" title="BetterNearestNeighbourCost\lFunction.h" alt="" coords="53,80,257,121"/>
-<area shape="rect" id="node3" href="$_cost_function_8h.html" title="CostFunction.h" alt="" coords="407,169,527,196"/>
-<area shape="rect" id="node5" href="$_cost_function_type_8h.html" title="CostFunctionType.h" alt="" coords="1104,87,1252,114"/>
-<area shape="rect" id="node9" href="$_dummy_cost_function_8h.html" title="DummyCostFunction.h" alt="" coords="282,87,436,114"/>
-<area shape="rect" id="node10" href="$_nearest_neighbour_cost_function_8h.html" title="NearestNeighbourCostFunction.h" alt="" coords="460,87,692,114"/>
-<area shape="rect" id="node11" href="$_random_cost_function_8h.html" title="RandomCostFunction.h" alt="" coords="916,87,1079,114"/>
-<area shape="rect" id="node13" href="$_weighted_cost_function_8h.html" title="WeightedCostFunction.h" alt="" coords="716,87,892,114"/>
-<area shape="rect" id="node6" href="$_missing_cost_function_error_8h.html" title="MissingCostFunctionError.h" alt="" coords="1109,169,1313,196"/>
+<area shape="rect" id="node2" href="$_better_nearest_neighbour_cost_function_8h.html" title="BetterNearestNeighbourCost\lFunction.h" alt="" coords="52,80,243,121"/>
+<area shape="rect" id="node3" href="$_cost_function_8h.html" title="CostFunction.h" alt="" coords="396,169,507,196"/>
+<area shape="rect" id="node5" href="$_cost_function_type_8h.html" title="CostFunctionType.h" alt="" coords="1066,87,1206,114"/>
+<area shape="rect" id="node9" href="$_dummy_cost_function_8h.html" title="DummyCostFunction.h" alt="" coords="268,87,425,114"/>
+<area shape="rect" id="node10" href="$_nearest_neighbour_cost_function_8h.html" title="NearestNeighbourCostFunction.h" alt="" coords="449,87,665,114"/>
+<area shape="rect" id="node11" href="$_random_cost_function_8h.html" title="RandomCostFunction.h" alt="" coords="881,87,1041,114"/>
+<area shape="rect" id="node13" href="$_weighted_cost_function_8h.html" title="WeightedCostFunction.h" alt="" coords="690,87,856,114"/>
+<area shape="rect" id="node6" href="$_missing_cost_function_error_8h.html" title="MissingCostFunctionError.h" alt="" coords="1070,169,1254,196"/>
 </map>

@@ -8,6 +8,14 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -26,7 +34,7 @@
    <div id="projectname">intelevator
    &#160;<span id="projectnumber">0.1</span>
    </div>
-   <div id="projectbrief">Welcome to intelevator, the inteligent elevator.</div>
+   <div id="projectbrief">Welcome to intelevator, the inteligent elevator!</div>
   </td>
  </tr>
  </tbody>
@@ -67,6 +75,21 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('_finish_simulation_8h_source.html','');});
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -81,11 +104,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">FinishSimulation.h</div>  </div>
@@ -102,17 +120,21 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;  std::string <a class="code" href="class_finish_simulation.html#a8d708e0f4827daedf79a6098dd00eda4">str</a>() <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;};</div>
-<div class="ttc" id="class_event_html"><div class="ttname"><a href="class_event.html">Event</a></div><div class="ttdef"><b>Definition:</b> Event.h:6</div></div>
-<div class="ttc" id="class_finish_simulation_html_a8d708e0f4827daedf79a6098dd00eda4"><div class="ttname"><a href="class_finish_simulation.html#a8d708e0f4827daedf79a6098dd00eda4">FinishSimulation::str</a></div><div class="ttdeci">std::string str() const </div><div class="ttdef"><b>Definition:</b> FinishSimulation.cpp:9</div></div>
+<div class="ttc" id="class_event_html"><div class="ttname"><a href="class_event.html">Event</a></div><div class="ttdef"><b>Definition:</b> <a href="_event_8h_source.html#l00006">Event.h:6</a></div></div>
+<div class="ttc" id="class_finish_simulation_html_a8d708e0f4827daedf79a6098dd00eda4"><div class="ttname"><a href="class_finish_simulation.html#a8d708e0f4827daedf79a6098dd00eda4">FinishSimulation::str</a></div><div class="ttdeci">std::string str() const </div><div class="ttdef"><b>Definition:</b> <a href="_finish_simulation_8cpp_source.html#l00009">FinishSimulation.cpp:9</a></div></div>
 <div class="ttc" id="_event_8h_html"><div class="ttname"><a href="_event_8h.html">Event.h</a></div></div>
-<div class="ttc" id="class_finish_simulation_html"><div class="ttname"><a href="class_finish_simulation.html">FinishSimulation</a></div><div class="ttdef"><b>Definition:</b> FinishSimulation.h:6</div></div>
-<div class="ttc" id="class_finish_simulation_html_aafe4d56e74132af427893d49277d26b5"><div class="ttname"><a href="class_finish_simulation.html#aafe4d56e74132af427893d49277d26b5">FinishSimulation::FinishSimulation</a></div><div class="ttdeci">FinishSimulation(const unsigned long eventTime)</div><div class="ttdef"><b>Definition:</b> FinishSimulation.cpp:6</div></div>
+<div class="ttc" id="class_finish_simulation_html"><div class="ttname"><a href="class_finish_simulation.html">FinishSimulation</a></div><div class="ttdef"><b>Definition:</b> <a href="_finish_simulation_8h_source.html#l00006">FinishSimulation.h:6</a></div></div>
+<div class="ttc" id="class_finish_simulation_html_aafe4d56e74132af427893d49277d26b5"><div class="ttname"><a href="class_finish_simulation.html#aafe4d56e74132af427893d49277d26b5">FinishSimulation::FinishSimulation</a></div><div class="ttdeci">FinishSimulation(const unsigned long eventTime)</div><div class="ttdef"><b>Definition:</b> <a href="_finish_simulation_8cpp_source.html#l00006">FinishSimulation.cpp:6</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.9.1
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="_finish_simulation_8h.html">FinishSimulation.h</a></li>
+    <li class="footer">Generated by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.9.1 </li>
+  </ul>
+</div>
 </body>
 </html>

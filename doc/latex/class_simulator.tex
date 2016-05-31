@@ -1,4 +1,4 @@
-\hypertarget{class_simulator}{}\section{Simulator Class Reference}
+\section{Simulator Class Reference}
 \label{class_simulator}\index{Simulator@{Simulator}}
 
 
@@ -11,7 +11,7 @@ Inheritance diagram for Simulator\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=217pt]{class_simulator__inherit__graph}
+\includegraphics[width=166pt]{class_simulator__inherit__graph}
 \end{center}
 \end{figure}
 
@@ -21,43 +21,54 @@ Collaboration diagram for Simulator\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=217pt]{class_simulator__coll__graph}
+\includegraphics[width=166pt]{class_simulator__coll__graph}
 \end{center}
 \end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{class_simulator_af08bb3d35eeea230fa542b0a4ad8c59c}{Simulator} (std\+::shared\+\_\+ptr$<$ const \hyperlink{class_scenario}{Scenario} $>$ scenario)
+{\bf Simulator} (std\+::shared\+\_\+ptr$<$ const {\bf Scenario} $>$ scenario)
 \item 
-virtual \hyperlink{class_simulator_a0f49aa04f42060a785adf77346b9de9f}{$\sim$\+Simulator} ()
+virtual {\bf $\sim$\+Simulator} ()
 \item 
-std\+::shared\+\_\+ptr$<$ \hyperlink{class_building}{Building} $>$ \hyperlink{class_simulator_a7a8ed7267e6892f0d16c9ffe8b16a353}{create\+Building} () const 
+std\+::shared\+\_\+ptr$<$ {\bf Building} $>$ {\bf create\+Building} () const 
 \item 
-const std\+::shared\+\_\+ptr$<$ const \hyperlink{class_scenario}{Scenario} $>$ \hyperlink{class_simulator_a2208fa4322cb3f2ffaad7da74ccd3105}{get\+Scenario} () const 
+const std\+::shared\+\_\+ptr$<$ const {\bf Scenario} $>$ {\bf get\+Scenario} () const 
 \item 
-const std\+::shared\+\_\+ptr$<$ \hyperlink{class_statistics}{Statistics} $>$ \hyperlink{class_simulator_a09274dd8a739eee218a07cea43986b97}{get\+Statistics} () const 
+const std\+::shared\+\_\+ptr$<$ {\bf Statistics} $>$ {\bf get\+Statistics} () const 
 \item 
-const std\+::shared\+\_\+ptr$<$ \hyperlink{class_clock}{Clock} $>$ \hyperlink{class_simulator_ab23554f6835357b14ec6a214dbf976c9}{get\+Clock} () const 
+const std\+::shared\+\_\+ptr$<$ {\bf Clock} $>$ {\bf get\+Clock} () const 
 \item 
-const std\+::shared\+\_\+ptr$<$ \hyperlink{class_event_queue}{Event\+Queue} $>$ \hyperlink{class_simulator_a3b94c9842b8d92c0fd06133eaadb0586}{get\+Event\+Queue} () const 
+const std\+::shared\+\_\+ptr$<$ {\bf Event\+Queue} $>$ {\bf get\+Event\+Queue} () const 
 \item 
-const std\+::shared\+\_\+ptr$<$ \hyperlink{class_event_dispatcher}{Event\+Dispatcher} $>$ \hyperlink{class_simulator_a6a422e763047b283c46063faeb24a3a9}{get\+Event\+Dispatcher} () const 
+const std\+::shared\+\_\+ptr$<$ {\bf Event\+Dispatcher} $>$ {\bf get\+Event\+Dispatcher} () const 
 \item 
-const std\+::shared\+\_\+ptr$<$ std\+::mt19937 $>$ \hyperlink{class_simulator_a380f732c8ecd0f9c5536519cce7a5ebd}{get\+Random\+Engine} () const 
+const std\+::shared\+\_\+ptr$<$ std\+::mt19937 $>$ {\bf get\+Random\+Engine} () const 
 \item 
-void \hyperlink{class_simulator_aa2de7e32b04cc3e8fc60aec23997621b}{run} ()
+void {\bf run} ()
 \end{DoxyCompactItemize}
 
 
+\subsection{Detailed Description}
+
+
+Definition at line 14 of file Simulator.\+h.
+
+
+
 \subsection{Constructor \& Destructor Documentation}
-\hypertarget{class_simulator_af08bb3d35eeea230fa542b0a4ad8c59c}{}\index{Simulator@{Simulator}!Simulator@{Simulator}}
+\index{Simulator@{Simulator}!Simulator@{Simulator}}
 \index{Simulator@{Simulator}!Simulator@{Simulator}}
 \subsubsection[{Simulator}]{\setlength{\rightskip}{0pt plus 5cm}Simulator\+::\+Simulator (
 \begin{DoxyParamCaption}
 \item[{std\+::shared\+\_\+ptr$<$ const {\bf Scenario} $>$}]{scenario}
 \end{DoxyParamCaption}
 )}\label{class_simulator_af08bb3d35eeea230fa542b0a4ad8c59c}
-\hypertarget{class_simulator_a0f49aa04f42060a785adf77346b9de9f}{}\index{Simulator@{Simulator}!````~Simulator@{$\sim$\+Simulator}}
+
+
+Definition at line 23 of file Simulator.\+cpp.
+
+\index{Simulator@{Simulator}!````~Simulator@{$\sim$\+Simulator}}
 \index{````~Simulator@{$\sim$\+Simulator}!Simulator@{Simulator}}
 \subsubsection[{$\sim$\+Simulator}]{\setlength{\rightskip}{0pt plus 5cm}Simulator\+::$\sim$\+Simulator (
 \begin{DoxyParamCaption}
@@ -66,8 +77,12 @@ void \hyperlink{class_simulator_aa2de7e32b04cc3e8fc60aec23997621b}{run} ()
 )\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_simulator_a0f49aa04f42060a785adf77346b9de9f}
 
 
+Definition at line 35 of file Simulator.\+cpp.
+
+
+
 \subsection{Member Function Documentation}
-\hypertarget{class_simulator_a7a8ed7267e6892f0d16c9ffe8b16a353}{}\index{Simulator@{Simulator}!create\+Building@{create\+Building}}
+\index{Simulator@{Simulator}!create\+Building@{create\+Building}}
 \index{create\+Building@{create\+Building}!Simulator@{Simulator}}
 \subsubsection[{create\+Building}]{\setlength{\rightskip}{0pt plus 5cm}std\+::shared\+\_\+ptr$<$ {\bf Building} $>$ Simulator\+::create\+Building (
 \begin{DoxyParamCaption}
@@ -76,12 +91,16 @@ void \hyperlink{class_simulator_aa2de7e32b04cc3e8fc60aec23997621b}{run} ()
 ) const}\label{class_simulator_a7a8ed7267e6892f0d16c9ffe8b16a353}
 
 
+Definition at line 37 of file Simulator.\+cpp.
+
+
+
 Here is the call graph for this function\+:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{class_simulator_a7a8ed7267e6892f0d16c9ffe8b16a353_cgraph}
+\includegraphics[width=330pt]{class_simulator_a7a8ed7267e6892f0d16c9ffe8b16a353_cgraph}
 \end{center}
 \end{figure}
 
@@ -93,60 +112,88 @@ Here is the caller graph for this function\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{class_simulator_a7a8ed7267e6892f0d16c9ffe8b16a353_icgraph}
+\includegraphics[width=282pt]{class_simulator_a7a8ed7267e6892f0d16c9ffe8b16a353_icgraph}
 \end{center}
 \end{figure}
 
 
-\hypertarget{class_simulator_ab23554f6835357b14ec6a214dbf976c9}{}\index{Simulator@{Simulator}!get\+Clock@{get\+Clock}}
+\index{Simulator@{Simulator}!get\+Clock@{get\+Clock}}
 \index{get\+Clock@{get\+Clock}!Simulator@{Simulator}}
 \subsubsection[{get\+Clock}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::shared\+\_\+ptr$<$ {\bf Clock} $>$ Simulator\+::get\+Clock (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
 ) const}\label{class_simulator_ab23554f6835357b14ec6a214dbf976c9}
-\hypertarget{class_simulator_a6a422e763047b283c46063faeb24a3a9}{}\index{Simulator@{Simulator}!get\+Event\+Dispatcher@{get\+Event\+Dispatcher}}
+
+
+Definition at line 59 of file Simulator.\+cpp.
+
+\index{Simulator@{Simulator}!get\+Event\+Dispatcher@{get\+Event\+Dispatcher}}
 \index{get\+Event\+Dispatcher@{get\+Event\+Dispatcher}!Simulator@{Simulator}}
 \subsubsection[{get\+Event\+Dispatcher}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::shared\+\_\+ptr$<$ {\bf Event\+Dispatcher} $>$ Simulator\+::get\+Event\+Dispatcher (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
 ) const}\label{class_simulator_a6a422e763047b283c46063faeb24a3a9}
-\hypertarget{class_simulator_a3b94c9842b8d92c0fd06133eaadb0586}{}\index{Simulator@{Simulator}!get\+Event\+Queue@{get\+Event\+Queue}}
+
+
+Definition at line 63 of file Simulator.\+cpp.
+
+\index{Simulator@{Simulator}!get\+Event\+Queue@{get\+Event\+Queue}}
 \index{get\+Event\+Queue@{get\+Event\+Queue}!Simulator@{Simulator}}
 \subsubsection[{get\+Event\+Queue}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::shared\+\_\+ptr$<$ {\bf Event\+Queue} $>$ Simulator\+::get\+Event\+Queue (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
 ) const}\label{class_simulator_a3b94c9842b8d92c0fd06133eaadb0586}
-\hypertarget{class_simulator_a380f732c8ecd0f9c5536519cce7a5ebd}{}\index{Simulator@{Simulator}!get\+Random\+Engine@{get\+Random\+Engine}}
+
+
+Definition at line 61 of file Simulator.\+cpp.
+
+\index{Simulator@{Simulator}!get\+Random\+Engine@{get\+Random\+Engine}}
 \index{get\+Random\+Engine@{get\+Random\+Engine}!Simulator@{Simulator}}
 \subsubsection[{get\+Random\+Engine}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::shared\+\_\+ptr$<$ std\+::mt19937 $>$ Simulator\+::get\+Random\+Engine (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
 ) const}\label{class_simulator_a380f732c8ecd0f9c5536519cce7a5ebd}
-\hypertarget{class_simulator_a2208fa4322cb3f2ffaad7da74ccd3105}{}\index{Simulator@{Simulator}!get\+Scenario@{get\+Scenario}}
+
+
+Definition at line 65 of file Simulator.\+cpp.
+
+\index{Simulator@{Simulator}!get\+Scenario@{get\+Scenario}}
 \index{get\+Scenario@{get\+Scenario}!Simulator@{Simulator}}
 \subsubsection[{get\+Scenario}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::shared\+\_\+ptr$<$ const {\bf Scenario} $>$ Simulator\+::get\+Scenario (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
 ) const}\label{class_simulator_a2208fa4322cb3f2ffaad7da74ccd3105}
-\hypertarget{class_simulator_a09274dd8a739eee218a07cea43986b97}{}\index{Simulator@{Simulator}!get\+Statistics@{get\+Statistics}}
+
+
+Definition at line 55 of file Simulator.\+cpp.
+
+\index{Simulator@{Simulator}!get\+Statistics@{get\+Statistics}}
 \index{get\+Statistics@{get\+Statistics}!Simulator@{Simulator}}
 \subsubsection[{get\+Statistics}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::shared\+\_\+ptr$<$ {\bf Statistics} $>$ Simulator\+::get\+Statistics (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
 ) const}\label{class_simulator_a09274dd8a739eee218a07cea43986b97}
-\hypertarget{class_simulator_aa2de7e32b04cc3e8fc60aec23997621b}{}\index{Simulator@{Simulator}!run@{run}}
+
+
+Definition at line 57 of file Simulator.\+cpp.
+
+\index{Simulator@{Simulator}!run@{run}}
 \index{run@{run}!Simulator@{Simulator}}
 \subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void Simulator\+::run (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
 )}\label{class_simulator_aa2de7e32b04cc3e8fc60aec23997621b}
+
+
+Definition at line 67 of file Simulator.\+cpp.
+
 
 
 Here is the call graph for this function\+:
@@ -163,5 +210,5 @@ Here is the call graph for this function\+:
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-include/\hyperlink{_simulator_8h}{Simulator.\+h}\item 
-src/\hyperlink{_simulator_8cpp}{Simulator.\+cpp}\end{DoxyCompactItemize}
+include/{\bf Simulator.\+h}\item 
+src/{\bf Simulator.\+cpp}\end{DoxyCompactItemize}

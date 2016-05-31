@@ -8,6 +8,14 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -26,7 +34,7 @@
    <div id="projectname">intelevator
    &#160;<span id="projectnumber">0.1</span>
    </div>
-   <div id="projectbrief">Welcome to intelevator, the inteligent elevator.</div>
+   <div id="projectbrief">Welcome to intelevator, the inteligent elevator!</div>
   </td>
  </tr>
  </tbody>
@@ -67,6 +75,21 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('_arrival_8h_source.html','');});
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -81,11 +104,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">Arrival.h</div>  </div>
@@ -106,20 +124,24 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="struct_arrival.html#aca93437b96931fb116bbdaa550e58b92">printToFile</a>(std::ofstream &amp;f);</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;};</div>
-<div class="ttc" id="struct_arrival_html_aca93437b96931fb116bbdaa550e58b92"><div class="ttname"><a href="struct_arrival.html#aca93437b96931fb116bbdaa550e58b92">Arrival::printToFile</a></div><div class="ttdeci">void printToFile(std::ofstream &amp;f)</div><div class="ttdef"><b>Definition:</b> Arrival.cpp:5</div></div>
-<div class="ttc" id="struct_arrival_html_ad125f5bf352f24c0f02fbd25833fcbe9"><div class="ttname"><a href="struct_arrival.html#ad125f5bf352f24c0f02fbd25833fcbe9">Arrival::clientID</a></div><div class="ttdeci">int clientID</div><div class="ttdef"><b>Definition:</b> Arrival.h:6</div></div>
-<div class="ttc" id="struct_arrival_html_a7037c82fd4a17d0a08d81e716fa1de5b"><div class="ttname"><a href="struct_arrival.html#a7037c82fd4a17d0a08d81e716fa1de5b">Arrival::arrivalFloor</a></div><div class="ttdeci">int arrivalFloor</div><div class="ttdef"><b>Definition:</b> Arrival.h:8</div></div>
-<div class="ttc" id="struct_arrival_html"><div class="ttname"><a href="struct_arrival.html">Arrival</a></div><div class="ttdef"><b>Definition:</b> Arrival.h:5</div></div>
-<div class="ttc" id="struct_arrival_html_a1604fbb65bfcc4c08cb2a4e31533dd15"><div class="ttname"><a href="struct_arrival.html#a1604fbb65bfcc4c08cb2a4e31533dd15">Arrival::arrivalTime</a></div><div class="ttdeci">int arrivalTime</div><div class="ttdef"><b>Definition:</b> Arrival.h:7</div></div>
-<div class="ttc" id="struct_arrival_html_a5efe81eda57821d5edb6e14aa579ae8f"><div class="ttname"><a href="struct_arrival.html#a5efe81eda57821d5edb6e14aa579ae8f">Arrival::Arrival</a></div><div class="ttdeci">Arrival()</div><div class="ttdef"><b>Definition:</b> Arrival.cpp:3</div></div>
-<div class="ttc" id="struct_arrival_html_ae3cbceb243227c0e74011dcb04176e2f"><div class="ttname"><a href="struct_arrival.html#ae3cbceb243227c0e74011dcb04176e2f">Arrival::destinationFloor</a></div><div class="ttdeci">int destinationFloor</div><div class="ttdef"><b>Definition:</b> Arrival.h:9</div></div>
-<div class="ttc" id="struct_arrival_html_a13cb78aefa91f18325ff068a2bd4ca93"><div class="ttname"><a href="struct_arrival.html#a13cb78aefa91f18325ff068a2bd4ca93">Arrival::partySize</a></div><div class="ttdeci">int partySize</div><div class="ttdef"><b>Definition:</b> Arrival.h:10</div></div>
+<div class="ttc" id="struct_arrival_html_aca93437b96931fb116bbdaa550e58b92"><div class="ttname"><a href="struct_arrival.html#aca93437b96931fb116bbdaa550e58b92">Arrival::printToFile</a></div><div class="ttdeci">void printToFile(std::ofstream &amp;f)</div><div class="ttdef"><b>Definition:</b> <a href="_arrival_8cpp_source.html#l00005">Arrival.cpp:5</a></div></div>
+<div class="ttc" id="struct_arrival_html_ad125f5bf352f24c0f02fbd25833fcbe9"><div class="ttname"><a href="struct_arrival.html#ad125f5bf352f24c0f02fbd25833fcbe9">Arrival::clientID</a></div><div class="ttdeci">int clientID</div><div class="ttdef"><b>Definition:</b> <a href="_arrival_8h_source.html#l00006">Arrival.h:6</a></div></div>
+<div class="ttc" id="struct_arrival_html_a7037c82fd4a17d0a08d81e716fa1de5b"><div class="ttname"><a href="struct_arrival.html#a7037c82fd4a17d0a08d81e716fa1de5b">Arrival::arrivalFloor</a></div><div class="ttdeci">int arrivalFloor</div><div class="ttdef"><b>Definition:</b> <a href="_arrival_8h_source.html#l00008">Arrival.h:8</a></div></div>
+<div class="ttc" id="struct_arrival_html"><div class="ttname"><a href="struct_arrival.html">Arrival</a></div><div class="ttdef"><b>Definition:</b> <a href="_arrival_8h_source.html#l00005">Arrival.h:5</a></div></div>
+<div class="ttc" id="struct_arrival_html_a1604fbb65bfcc4c08cb2a4e31533dd15"><div class="ttname"><a href="struct_arrival.html#a1604fbb65bfcc4c08cb2a4e31533dd15">Arrival::arrivalTime</a></div><div class="ttdeci">int arrivalTime</div><div class="ttdef"><b>Definition:</b> <a href="_arrival_8h_source.html#l00007">Arrival.h:7</a></div></div>
+<div class="ttc" id="struct_arrival_html_a5efe81eda57821d5edb6e14aa579ae8f"><div class="ttname"><a href="struct_arrival.html#a5efe81eda57821d5edb6e14aa579ae8f">Arrival::Arrival</a></div><div class="ttdeci">Arrival()</div><div class="ttdef"><b>Definition:</b> <a href="_arrival_8cpp_source.html#l00003">Arrival.cpp:3</a></div></div>
+<div class="ttc" id="struct_arrival_html_ae3cbceb243227c0e74011dcb04176e2f"><div class="ttname"><a href="struct_arrival.html#ae3cbceb243227c0e74011dcb04176e2f">Arrival::destinationFloor</a></div><div class="ttdeci">int destinationFloor</div><div class="ttdef"><b>Definition:</b> <a href="_arrival_8h_source.html#l00009">Arrival.h:9</a></div></div>
+<div class="ttc" id="struct_arrival_html_a13cb78aefa91f18325ff068a2bd4ca93"><div class="ttname"><a href="struct_arrival.html#a13cb78aefa91f18325ff068a2bd4ca93">Arrival::partySize</a></div><div class="ttdeci">int partySize</div><div class="ttdef"><b>Definition:</b> <a href="_arrival_8h_source.html#l00010">Arrival.h:10</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.9.1
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="_arrival_8h.html">Arrival.h</a></li>
+    <li class="footer">Generated by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.9.1 </li>
+  </ul>
+</div>
 </body>
 </html>

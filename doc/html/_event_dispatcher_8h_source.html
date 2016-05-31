@@ -8,6 +8,14 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -26,7 +34,7 @@
    <div id="projectname">intelevator
    &#160;<span id="projectnumber">0.1</span>
    </div>
-   <div id="projectbrief">Welcome to intelevator, the inteligent elevator.</div>
+   <div id="projectbrief">Welcome to intelevator, the inteligent elevator!</div>
   </td>
  </tr>
  </tbody>
@@ -67,6 +75,21 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('_event_dispatcher_8h_source.html','');});
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -81,11 +104,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">EventDispatcher.h</div>  </div>
@@ -113,22 +131,26 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">private</span>:</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  std::list&lt;std::shared_ptr&lt;EventObserver&gt;&gt; _observers;</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;};</div>
-<div class="ttc" id="class_event_dispatcher_html"><div class="ttname"><a href="class_event_dispatcher.html">EventDispatcher</a></div><div class="ttdef"><b>Definition:</b> EventDispatcher.h:10</div></div>
-<div class="ttc" id="class_event_html"><div class="ttname"><a href="class_event.html">Event</a></div><div class="ttdef"><b>Definition:</b> Event.h:6</div></div>
-<div class="ttc" id="class_event_observer_html"><div class="ttname"><a href="class_event_observer.html">EventObserver</a></div><div class="ttdef"><b>Definition:</b> EventObserver.h:7</div></div>
-<div class="ttc" id="class_event_notifier_html"><div class="ttname"><a href="class_event_notifier.html">EventNotifier</a></div><div class="ttdef"><b>Definition:</b> EventNotifier.h:8</div></div>
-<div class="ttc" id="class_event_dispatcher_html_a2664ed4e9f1eca1f239bbd40add82f45"><div class="ttname"><a href="class_event_dispatcher.html#a2664ed4e9f1eca1f239bbd40add82f45">EventDispatcher::broadcast</a></div><div class="ttdeci">void broadcast(const std::shared_ptr&lt; const Event &gt; event) const </div><div class="ttdef"><b>Definition:</b> EventDispatcher.cpp:10</div></div>
+<div class="ttc" id="class_event_dispatcher_html"><div class="ttname"><a href="class_event_dispatcher.html">EventDispatcher</a></div><div class="ttdef"><b>Definition:</b> <a href="_event_dispatcher_8h_source.html#l00010">EventDispatcher.h:10</a></div></div>
+<div class="ttc" id="class_event_html"><div class="ttname"><a href="class_event.html">Event</a></div><div class="ttdef"><b>Definition:</b> <a href="_event_8h_source.html#l00006">Event.h:6</a></div></div>
+<div class="ttc" id="class_event_observer_html"><div class="ttname"><a href="class_event_observer.html">EventObserver</a></div><div class="ttdef"><b>Definition:</b> <a href="_event_observer_8h_source.html#l00007">EventObserver.h:7</a></div></div>
+<div class="ttc" id="class_event_notifier_html"><div class="ttname"><a href="class_event_notifier.html">EventNotifier</a></div><div class="ttdef"><b>Definition:</b> <a href="_event_notifier_8h_source.html#l00008">EventNotifier.h:8</a></div></div>
+<div class="ttc" id="class_event_dispatcher_html_a2664ed4e9f1eca1f239bbd40add82f45"><div class="ttname"><a href="class_event_dispatcher.html#a2664ed4e9f1eca1f239bbd40add82f45">EventDispatcher::broadcast</a></div><div class="ttdeci">void broadcast(const std::shared_ptr&lt; const Event &gt; event) const </div><div class="ttdef"><b>Definition:</b> <a href="_event_dispatcher_8cpp_source.html#l00010">EventDispatcher.cpp:10</a></div></div>
 <div class="ttc" id="_event_notifier_8h_html"><div class="ttname"><a href="_event_notifier_8h.html">EventNotifier.h</a></div></div>
-<div class="ttc" id="class_event_dispatcher_html_a0cd1157fb6213be48fbdadc749088231"><div class="ttname"><a href="class_event_dispatcher.html#a0cd1157fb6213be48fbdadc749088231">EventDispatcher::subscribe</a></div><div class="ttdeci">void subscribe(std::shared_ptr&lt; EventObserver &gt; eventObserver)</div><div class="ttdef"><b>Definition:</b> EventDispatcher.cpp:18</div></div>
-<div class="ttc" id="class_event_dispatcher_html_aec174a9e25796e5727e59f5452817cda"><div class="ttname"><a href="class_event_dispatcher.html#aec174a9e25796e5727e59f5452817cda">EventDispatcher::EventDispatcher</a></div><div class="ttdeci">EventDispatcher()</div><div class="ttdef"><b>Definition:</b> EventDispatcher.cpp:6</div></div>
-<div class="ttc" id="class_event_dispatcher_html_abb5f401014e87f03027d6c4450964e55"><div class="ttname"><a href="class_event_dispatcher.html#abb5f401014e87f03027d6c4450964e55">EventDispatcher::~EventDispatcher</a></div><div class="ttdeci">virtual ~EventDispatcher()</div><div class="ttdef"><b>Definition:</b> EventDispatcher.cpp:8</div></div>
-<div class="ttc" id="class_event_dispatcher_html_a3242f22a220dd58964835544c799c4fa"><div class="ttname"><a href="class_event_dispatcher.html#a3242f22a220dd58964835544c799c4fa">EventDispatcher::unsubscribe</a></div><div class="ttdeci">void unsubscribe(std::shared_ptr&lt; EventObserver &gt; eventObserver)</div><div class="ttdef"><b>Definition:</b> EventDispatcher.cpp:23</div></div>
+<div class="ttc" id="class_event_dispatcher_html_a0cd1157fb6213be48fbdadc749088231"><div class="ttname"><a href="class_event_dispatcher.html#a0cd1157fb6213be48fbdadc749088231">EventDispatcher::subscribe</a></div><div class="ttdeci">void subscribe(std::shared_ptr&lt; EventObserver &gt; eventObserver)</div><div class="ttdef"><b>Definition:</b> <a href="_event_dispatcher_8cpp_source.html#l00018">EventDispatcher.cpp:18</a></div></div>
+<div class="ttc" id="class_event_dispatcher_html_aec174a9e25796e5727e59f5452817cda"><div class="ttname"><a href="class_event_dispatcher.html#aec174a9e25796e5727e59f5452817cda">EventDispatcher::EventDispatcher</a></div><div class="ttdeci">EventDispatcher()</div><div class="ttdef"><b>Definition:</b> <a href="_event_dispatcher_8cpp_source.html#l00006">EventDispatcher.cpp:6</a></div></div>
+<div class="ttc" id="class_event_dispatcher_html_abb5f401014e87f03027d6c4450964e55"><div class="ttname"><a href="class_event_dispatcher.html#abb5f401014e87f03027d6c4450964e55">EventDispatcher::~EventDispatcher</a></div><div class="ttdeci">virtual ~EventDispatcher()</div><div class="ttdef"><b>Definition:</b> <a href="_event_dispatcher_8cpp_source.html#l00008">EventDispatcher.cpp:8</a></div></div>
+<div class="ttc" id="class_event_dispatcher_html_a3242f22a220dd58964835544c799c4fa"><div class="ttname"><a href="class_event_dispatcher.html#a3242f22a220dd58964835544c799c4fa">EventDispatcher::unsubscribe</a></div><div class="ttdeci">void unsubscribe(std::shared_ptr&lt; EventObserver &gt; eventObserver)</div><div class="ttdef"><b>Definition:</b> <a href="_event_dispatcher_8cpp_source.html#l00023">EventDispatcher.cpp:23</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.9.1
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="_event_dispatcher_8h.html">EventDispatcher.h</a></li>
+    <li class="footer">Generated by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.9.1 </li>
+  </ul>
+</div>
 </body>
 </html>

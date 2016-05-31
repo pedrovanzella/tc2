@@ -8,6 +8,14 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -26,7 +34,7 @@
    <div id="projectname">intelevator
    &#160;<span id="projectnumber">0.1</span>
    </div>
-   <div id="projectbrief">Welcome to intelevator, the inteligent elevator.</div>
+   <div id="projectbrief">Welcome to intelevator, the inteligent elevator!</div>
   </td>
  </tr>
  </tbody>
@@ -67,6 +75,21 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('_cost_function_creator_8h_source.html','');});
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -81,11 +104,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">CostFunctionCreator.h</div>  </div>
@@ -130,28 +148,32 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordflow">throw</span> <a class="code" href="class_missing_cost_function_error.html">MissingCostFunctionError</a>(std::to_string((<span class="keywordtype">int</span>)costFunctionType));</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  }</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;}</div>
-<div class="ttc" id="class_missing_cost_function_error_html"><div class="ttname"><a href="class_missing_cost_function_error.html">MissingCostFunctionError</a></div><div class="ttdef"><b>Definition:</b> MissingCostFunctionError.h:4</div></div>
+<div class="ttc" id="class_missing_cost_function_error_html"><div class="ttname"><a href="class_missing_cost_function_error.html">MissingCostFunctionError</a></div><div class="ttdef"><b>Definition:</b> <a href="_missing_cost_function_error_8h_source.html#l00004">MissingCostFunctionError.h:4</a></div></div>
 <div class="ttc" id="_cost_function_type_8h_html_a7590c187782ef6d6bcba32749db5daa1aaf26e9cdd9b3d8239d26e6b44207ccc1"><div class="ttname"><a href="_cost_function_type_8h.html#a7590c187782ef6d6bcba32749db5daa1aaf26e9cdd9b3d8239d26e6b44207ccc1">CostFunctionType::NearestNeighbour</a></div></div>
 <div class="ttc" id="_random_cost_function_8h_html"><div class="ttname"><a href="_random_cost_function_8h.html">RandomCostFunction.h</a></div></div>
-<div class="ttc" id="class_cost_function_creator_html"><div class="ttname"><a href="class_cost_function_creator.html">CostFunctionCreator</a></div><div class="ttdef"><b>Definition:</b> CostFunctionCreator.h:12</div></div>
+<div class="ttc" id="class_cost_function_creator_html"><div class="ttname"><a href="class_cost_function_creator.html">CostFunctionCreator</a></div><div class="ttdef"><b>Definition:</b> <a href="_cost_function_creator_8h_source.html#l00012">CostFunctionCreator.h:12</a></div></div>
 <div class="ttc" id="_nearest_neighbour_cost_function_8h_html"><div class="ttname"><a href="_nearest_neighbour_cost_function_8h.html">NearestNeighbourCostFunction.h</a></div></div>
 <div class="ttc" id="_weighted_cost_function_8h_html"><div class="ttname"><a href="_weighted_cost_function_8h.html">WeightedCostFunction.h</a></div></div>
 <div class="ttc" id="_dummy_cost_function_8h_html"><div class="ttname"><a href="_dummy_cost_function_8h.html">DummyCostFunction.h</a></div></div>
 <div class="ttc" id="_cost_function_type_8h_html_a7590c187782ef6d6bcba32749db5daa1a582368ac8232617ead14ac74ccc40ea9"><div class="ttname"><a href="_cost_function_type_8h.html#a7590c187782ef6d6bcba32749db5daa1a582368ac8232617ead14ac74ccc40ea9">CostFunctionType::Weighted</a></div></div>
-<div class="ttc" id="class_cost_function_creator_html_a2f73ed3b5e34c2cfa891849ab62adda5"><div class="ttname"><a href="class_cost_function_creator.html#a2f73ed3b5e34c2cfa891849ab62adda5">CostFunctionCreator::create</a></div><div class="ttdeci">static const std::shared_ptr&lt; CostFunction &gt; create()</div><div class="ttdef"><b>Definition:</b> CostFunctionCreator.h:19</div></div>
+<div class="ttc" id="class_cost_function_creator_html_a2f73ed3b5e34c2cfa891849ab62adda5"><div class="ttname"><a href="class_cost_function_creator.html#a2f73ed3b5e34c2cfa891849ab62adda5">CostFunctionCreator::create</a></div><div class="ttdeci">static const std::shared_ptr&lt; CostFunction &gt; create()</div><div class="ttdef"><b>Definition:</b> <a href="_cost_function_creator_8h_source.html#l00019">CostFunctionCreator.h:19</a></div></div>
 <div class="ttc" id="_cost_function_8h_html"><div class="ttname"><a href="_cost_function_8h.html">CostFunction.h</a></div></div>
 <div class="ttc" id="_cost_function_type_8h_html_a7590c187782ef6d6bcba32749db5daa1a64663f4646781c9c0110838b905daa23"><div class="ttname"><a href="_cost_function_type_8h.html#a7590c187782ef6d6bcba32749db5daa1a64663f4646781c9c0110838b905daa23">CostFunctionType::Random</a></div></div>
 <div class="ttc" id="_cost_function_type_8h_html_a7590c187782ef6d6bcba32749db5daa1ab5eed5b65a257840ec827cd8a3843ef3"><div class="ttname"><a href="_cost_function_type_8h.html#a7590c187782ef6d6bcba32749db5daa1ab5eed5b65a257840ec827cd8a3843ef3">CostFunctionType::BetterNearestNeighbour</a></div></div>
 <div class="ttc" id="_cost_function_type_8h_html_a7590c187782ef6d6bcba32749db5daa1abcf036b6f33e182d4705f4f5b1af13ac"><div class="ttname"><a href="_cost_function_type_8h.html#a7590c187782ef6d6bcba32749db5daa1abcf036b6f33e182d4705f4f5b1af13ac">CostFunctionType::Dummy</a></div></div>
 <div class="ttc" id="_better_nearest_neighbour_cost_function_8h_html"><div class="ttname"><a href="_better_nearest_neighbour_cost_function_8h.html">BetterNearestNeighbourCostFunction.h</a></div></div>
 <div class="ttc" id="_cost_function_type_8h_html"><div class="ttname"><a href="_cost_function_type_8h.html">CostFunctionType.h</a></div></div>
-<div class="ttc" id="_cost_function_type_8h_html_a7590c187782ef6d6bcba32749db5daa1"><div class="ttname"><a href="_cost_function_type_8h.html#a7590c187782ef6d6bcba32749db5daa1">CostFunctionType</a></div><div class="ttdeci">CostFunctionType</div><div class="ttdef"><b>Definition:</b> CostFunctionType.h:6</div></div>
+<div class="ttc" id="_cost_function_type_8h_html_a7590c187782ef6d6bcba32749db5daa1"><div class="ttname"><a href="_cost_function_type_8h.html#a7590c187782ef6d6bcba32749db5daa1">CostFunctionType</a></div><div class="ttdeci">CostFunctionType</div><div class="ttdef"><b>Definition:</b> <a href="_cost_function_type_8h_source.html#l00006">CostFunctionType.h:6</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.9.1
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="_cost_function_creator_8h.html">CostFunctionCreator.h</a></li>
+    <li class="footer">Generated by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.9.1 </li>
+  </ul>
+</div>
 </body>
 </html>

@@ -1,5 +1,5 @@
 <map id="EventObserver" name="EventObserver">
-<area shape="rect" id="node2" href="$class_building.html" title="{Building\n||+ Building()\l+ ~Building()\l+ getElevators()\l+ getFloors()\l+ getFloor()\l+ getElevator()\l+ notify()\l+ initializeArrivals()\l}" alt="" coords="5,153,181,333"/>
-<area shape="rect" id="node3" href="$class_clock.html" title="{Clock\n||+ Clock()\l+ ~Clock()\l+ currentTime()\l+ advanceTo()\l+ advanceBy()\l+ notify()\l+ str()\l}" alt="" coords="206,160,333,325"/>
-<area shape="rect" id="node4" href="$class_statistics.html" title="{Statistics\n||+ Statistics()\l+ ~Statistics()\l+ keepRunning()\l+ getScenario()\l+ getClientsArrived()\l+ getClientsServed()\l+ getTotalWT()\l+ getTotalJT()\l+ getAvgWT()\l+ getAvgJT()\land 8 more...\l}" alt="" coords="357,131,526,355"/>
+<area shape="rect" id="node2" href="$class_building.html" title="{Building\n||+ Building()\l+ ~Building()\l+ getElevators()\l+ getFloors()\l+ getFloor()\l+ getElevator()\l+ notify()\l+ initializeArrivals()\l}" alt="" coords="5,153,139,333"/>
+<area shape="rect" id="node3" href="$class_clock.html" title="{Clock\n||+ Clock()\l+ ~Clock()\l+ currentTime()\l+ advanceTo()\l+ advanceBy()\l+ notify()\l+ str()\l}" alt="" coords="163,160,274,325"/>
+<area shape="rect" id="node4" href="$class_statistics.html" title="{Statistics\n||+ Statistics()\l+ ~Statistics()\l+ keepRunning()\l+ getScenario()\l+ getClientsArrived()\l+ getClientsServed()\l+ getTotalWT()\l+ getTotalJT()\l+ getAvgWT()\l+ getAvgJT()\land 8 more...\l}" alt="" coords="298,131,441,355"/>
 </map>

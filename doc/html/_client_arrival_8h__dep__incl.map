@@ -1,7 +1,7 @@
 <map id="include/ClientArrival.h" name="include/ClientArrival.h">
-<area shape="rect" id="node2" href="$_building_8cpp.html" title="src/Building.cpp" alt="" coords="5,80,140,107"/>
-<area shape="rect" id="node3" href="$_client_arrival_8cpp.html" title="src/ClientArrival.cpp" alt="" coords="164,80,333,107"/>
-<area shape="rect" id="node4" href="$_event_factory_8cpp.html" title="src/EventFactory.cpp" alt="" coords="358,80,521,107"/>
-<area shape="rect" id="node5" href="$_simulator_8cpp.html" title="src/Simulator.cpp" alt="" coords="545,80,686,107"/>
-<area shape="rect" id="node6" href="$_statistics_8cpp.html" title="src/Statistics.cpp" alt="" coords="709,80,857,107"/>
+<area shape="rect" id="node2" href="$_building_8cpp.html" title="src/Building.cpp" alt="" coords="5,80,120,107"/>
+<area shape="rect" id="node3" href="$_client_arrival_8cpp.html" title="src/ClientArrival.cpp" alt="" coords="145,80,285,107"/>
+<area shape="rect" id="node4" href="$_event_factory_8cpp.html" title="src/EventFactory.cpp" alt="" coords="309,80,456,107"/>
+<area shape="rect" id="node5" href="$_simulator_8cpp.html" title="src/Simulator.cpp" alt="" coords="481,80,605,107"/>
+<area shape="rect" id="node6" href="$_statistics_8cpp.html" title="src/Statistics.cpp" alt="" coords="629,80,753,107"/>
 </map>

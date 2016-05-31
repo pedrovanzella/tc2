@@ -1,5 +1,5 @@
 <map id="include/SimpleScheduler.h" name="include/SimpleScheduler.h">
-<area shape="rect" id="node2" href="$_simple_scheduler_8cpp.html" title="src/SimpleScheduler.cpp" alt="" coords="5,80,188,107"/>
-<area shape="rect" id="node3" href="$_scheduler_creator_8h.html" title="include/SchedulerCreator.h" alt="" coords="212,80,416,107"/>
-<area shape="rect" id="node4" href="$_simulator_8cpp.html" title="src/Simulator.cpp" alt="" coords="243,155,385,181"/>
+<area shape="rect" id="node2" href="$_simple_scheduler_8cpp.html" title="src/SimpleScheduler.cpp" alt="" coords="5,80,172,107"/>
+<area shape="rect" id="node3" href="$_scheduler_creator_8h.html" title="include/SchedulerCreator.h" alt="" coords="197,80,375,107"/>
+<area shape="rect" id="node4" href="$_simulator_8cpp.html" title="src/Simulator.cpp" alt="" coords="224,155,348,181"/>
 </map>

@@ -1,10 +1,10 @@
 <map id="include/Scheduler.h" name="include/Scheduler.h">
-<area shape="rect" id="node2" href="$_building_8cpp.html" title="src/Building.cpp" alt="" coords="5,80,140,107"/>
-<area shape="rect" id="node3" href="$_scheduler_8cpp.html" title="src/Scheduler.cpp" alt="" coords="165,80,306,107"/>
-<area shape="rect" id="node4" href="$_planning_scheduler_8h.html" title="include/PlanningScheduler.h" alt="" coords="330,80,541,107"/>
-<area shape="rect" id="node6" href="$_scheduler_creator_8h.html" title="include/SchedulerCreator.h" alt="" coords="476,155,680,181"/>
-<area shape="rect" id="node8" href="$_simple_scheduler_8h.html" title="include/SimpleScheduler.h" alt="" coords="615,80,813,107"/>
-<area shape="rect" id="node5" href="$_planning_scheduler_8cpp.html" title="src/PlanningScheduler.cpp" alt="" coords="254,155,451,181"/>
-<area shape="rect" id="node7" href="$_simulator_8cpp.html" title="src/Simulator.cpp" alt="" coords="507,229,649,256"/>
-<area shape="rect" id="node9" href="$_simple_scheduler_8cpp.html" title="src/SimpleScheduler.cpp" alt="" coords="704,155,887,181"/>
+<area shape="rect" id="node2" href="$_building_8cpp.html" title="src/Building.cpp" alt="" coords="5,80,120,107"/>
+<area shape="rect" id="node3" href="$_scheduler_8cpp.html" title="src/Scheduler.cpp" alt="" coords="145,80,271,107"/>
+<area shape="rect" id="node4" href="$_planning_scheduler_8h.html" title="include/PlanningScheduler.h" alt="" coords="296,80,483,107"/>
+<area shape="rect" id="node6" href="$_scheduler_creator_8h.html" title="include/SchedulerCreator.h" alt="" coords="431,155,609,181"/>
+<area shape="rect" id="node8" href="$_simple_scheduler_8h.html" title="include/SimpleScheduler.h" alt="" coords="557,80,733,107"/>
+<area shape="rect" id="node5" href="$_planning_scheduler_8cpp.html" title="src/PlanningScheduler.cpp" alt="" coords="229,155,406,181"/>
+<area shape="rect" id="node7" href="$_simulator_8cpp.html" title="src/Simulator.cpp" alt="" coords="458,229,582,256"/>
+<area shape="rect" id="node9" href="$_simple_scheduler_8cpp.html" title="src/SimpleScheduler.cpp" alt="" coords="634,155,801,181"/>
 </map>

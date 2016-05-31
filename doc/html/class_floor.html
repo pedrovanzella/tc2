@@ -8,6 +8,14 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -26,7 +34,7 @@
    <div id="projectname">intelevator
    &#160;<span id="projectnumber">0.1</span>
    </div>
-   <div id="projectbrief">Welcome to intelevator, the inteligent elevator.</div>
+   <div id="projectbrief">Welcome to intelevator, the inteligent elevator!</div>
   </td>
  </tr>
  </tbody>
@@ -69,6 +77,21 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('class_floor.html','');});
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -83,7 +106,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
@@ -98,7 +120,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="dynheader">
 Collaboration diagram for Floor:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_floor__coll__graph.svg" width="194" height="294"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="class_floor__coll__graph.svg" width="166" height="294"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <table class="memberdecls">
@@ -138,7 +160,10 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a294df3a0179a79c3a9a2765418368d03"><td class="memItemLeft" align="right" valign="top">static std::shared_ptr&lt; std::vector&lt; std::shared_ptr&lt; <a class="el" href="class_floor.html">Floor</a> &gt; &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_floor.html#a294df3a0179a79c3a9a2765418368d03">create</a> (const std::shared_ptr&lt; const <a class="el" href="class_simulator.html">Simulator</a> &gt; simulator)</td></tr>
 <tr class="separator:a294df3a0179a79c3a9a2765418368d03"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock">
+<p>Definition at line <a class="el" href="_floor_8h_source.html#l00014">14</a> of file <a class="el" href="_floor_8h_source.html">Floor.h</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a984e62afde8b391aa6d431806f1a3643"></a>
 <div class="memitem">
 <div class="memproto">
@@ -163,6 +188,8 @@ Static Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="_floor_8cpp_source.html#l00013">13</a> of file <a class="el" href="_floor_8cpp_source.html">Floor.cpp</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="ae1b805579f18a76fe2754a3601202e80"></a>
@@ -186,6 +213,8 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="_floor_8cpp_source.html#l00016">16</a> of file <a class="el" href="_floor_8cpp_source.html">Floor.cpp</a>.</p>
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -202,6 +231,8 @@ Static Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_floor_8cpp_source.html#l00059">59</a> of file <a class="el" href="_floor_8cpp_source.html">Floor.cpp</a>.</p>
 
 </div>
 </div>
@@ -229,6 +260,8 @@ Static Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="_floor_8cpp_source.html#l00083">83</a> of file <a class="el" href="_floor_8cpp_source.html">Floor.cpp</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a9c48353976d06335d7bb94bc2a97a414"></a>
@@ -244,6 +277,8 @@ Static Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="_floor_8cpp_source.html#l00024">24</a> of file <a class="el" href="_floor_8cpp_source.html">Floor.cpp</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="aab101d986c463b2fb7b3d3e979578ff3"></a>
@@ -258,6 +293,8 @@ Static Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_floor_8cpp_source.html#l00022">22</a> of file <a class="el" href="_floor_8cpp_source.html">Floor.cpp</a>.</p>
 
 </div>
 </div>
@@ -275,10 +312,12 @@ Static Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="_floor_8cpp_source.html#l00048">48</a> of file <a class="el" href="_floor_8cpp_source.html">Floor.cpp</a>.</p>
+
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_floor_a09cf6744871fe9b1a1db00d2afa8b723_cgraph.svg" width="328" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="class_floor_a09cf6744871fe9b1a1db00d2afa8b723_cgraph.svg" width="306" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 </p>
@@ -307,10 +346,12 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="_floor_8cpp_source.html#l00121">121</a> of file <a class="el" href="_floor_8cpp_source.html">Floor.cpp</a>.</p>
+
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_floor_a294df3a0179a79c3a9a2765418368d03_icgraph.svg" width="538" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="class_floor_a294df3a0179a79c3a9a2765418368d03_icgraph.svg" width="471" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 </p>
@@ -331,6 +372,8 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="_floor_8cpp_source.html#l00117">117</a> of file <a class="el" href="_floor_8cpp_source.html">Floor.cpp</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="aef63c37a8504cd86dbc94d7444bebd7b"></a>
@@ -345,6 +388,8 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_floor_8cpp_source.html#l00037">37</a> of file <a class="el" href="_floor_8cpp_source.html">Floor.cpp</a>.</p>
 
 </div>
 </div>
@@ -361,6 +406,8 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="_floor_8cpp_source.html#l00020">20</a> of file <a class="el" href="_floor_8cpp_source.html">Floor.cpp</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a4368d12bf63b63847f5b761c328fd133"></a>
@@ -376,10 +423,12 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="_floor_8cpp_source.html#l00018">18</a> of file <a class="el" href="_floor_8cpp_source.html">Floor.cpp</a>.</p>
+
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_floor_a4368d12bf63b63847f5b761c328fd133_icgraph.svg" width="328" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="class_floor_a4368d12bf63b63847f5b761c328fd133_icgraph.svg" width="306" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 </p>
@@ -399,6 +448,8 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="_floor_8cpp_source.html#l00026">26</a> of file <a class="el" href="_floor_8cpp_source.html">Floor.cpp</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a14cef459a7a9ddbdb53070d2f35add7f"></a>
@@ -415,6 +466,8 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="_floor_8cpp_source.html#l00055">55</a> of file <a class="el" href="_floor_8cpp_source.html">Floor.cpp</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a46daff13947cd7b753df0d258ec68bed"></a>
@@ -430,18 +483,24 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="_floor_8cpp_source.html#l00139">139</a> of file <a class="el" href="_floor_8cpp_source.html">Floor.cpp</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>include/<a class="el" href="_floor_8h_source.html">Floor.h</a></li>
-<li>src/<a class="el" href="_floor_8cpp.html">Floor.cpp</a></li>
+<li>src/<a class="el" href="_floor_8cpp_source.html">Floor.cpp</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.9.1
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="class_floor.html">Floor</a></li>
+    <li class="footer">Generated by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.9.1 </li>
+  </ul>
+</div>
 </body>
 </html>

@@ -1,8 +1,8 @@
 <map id="include/Simulator.h" name="include/Simulator.h">
-<area shape="rect" id="node2" href="$_building_8cpp.html" title="src/Building.cpp" alt="" coords="5,80,140,107"/>
-<area shape="rect" id="node3" href="$_elevator_8cpp.html" title="src/Elevator.cpp" alt="" coords="164,80,299,107"/>
-<area shape="rect" id="node4" href="$_floor_8cpp.html" title="src/Floor.cpp" alt="" coords="323,80,436,107"/>
-<area shape="rect" id="node5" href="$main_8cpp.html" title="src/main.cpp" alt="" coords="461,80,567,107"/>
-<area shape="rect" id="node6" href="$_reporter_8cpp.html" title="src/Reporter.cpp" alt="" coords="592,80,727,107"/>
-<area shape="rect" id="node7" href="$_simulator_8cpp.html" title="src/Simulator.cpp" alt="" coords="751,80,893,107"/>
+<area shape="rect" id="node2" href="$_building_8cpp.html" title="src/Building.cpp" alt="" coords="5,80,120,107"/>
+<area shape="rect" id="node3" href="$_elevator_8cpp.html" title="src/Elevator.cpp" alt="" coords="144,80,261,107"/>
+<area shape="rect" id="node4" href="$_floor_8cpp.html" title="src/Floor.cpp" alt="" coords="285,80,384,107"/>
+<area shape="rect" id="node5" href="$main_8cpp.html" title="src/main.cpp" alt="" coords="409,80,506,107"/>
+<area shape="rect" id="node6" href="$_reporter_8cpp.html" title="src/Reporter.cpp" alt="" coords="530,80,649,107"/>
+<area shape="rect" id="node7" href="$_simulator_8cpp.html" title="src/Simulator.cpp" alt="" coords="673,80,797,107"/>
 </map>

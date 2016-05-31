@@ -8,6 +8,14 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -26,7 +34,7 @@
    <div id="projectname">intelevator
    &#160;<span id="projectnumber">0.1</span>
    </div>
-   <div id="projectbrief">Welcome to intelevator, the inteligent elevator.</div>
+   <div id="projectbrief">Welcome to intelevator, the inteligent elevator!</div>
   </td>
  </tr>
  </tbody>
@@ -67,6 +75,21 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('_client_arrival_8h_source.html','');});
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -81,11 +104,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">ClientArrival.h</div>  </div>
@@ -110,19 +128,23 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">private</span>:</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  <span class="keyword">const</span> std::shared_ptr&lt;Client&gt; _client;</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;};</div>
-<div class="ttc" id="class_event_html"><div class="ttname"><a href="class_event.html">Event</a></div><div class="ttdef"><b>Definition:</b> Event.h:6</div></div>
-<div class="ttc" id="class_client_arrival_html_a0e83b6899e3867658427ab2e26e3060a"><div class="ttname"><a href="class_client_arrival.html#a0e83b6899e3867658427ab2e26e3060a">ClientArrival::getClient</a></div><div class="ttdeci">const std::shared_ptr&lt; Client &gt; getClient() const </div><div class="ttdef"><b>Definition:</b> ClientArrival.cpp:11</div></div>
-<div class="ttc" id="class_client_html"><div class="ttname"><a href="class_client.html">Client</a></div><div class="ttdef"><b>Definition:</b> Client.h:9</div></div>
-<div class="ttc" id="class_client_arrival_html_adcf0616ba427c6232c797cd1c3be3590"><div class="ttname"><a href="class_client_arrival.html#adcf0616ba427c6232c797cd1c3be3590">ClientArrival::ClientArrival</a></div><div class="ttdeci">ClientArrival(const unsigned long eventTime, const std::shared_ptr&lt; Client &gt; client)</div><div class="ttdef"><b>Definition:</b> ClientArrival.cpp:7</div></div>
-<div class="ttc" id="class_client_arrival_html"><div class="ttname"><a href="class_client_arrival.html">ClientArrival</a></div><div class="ttdef"><b>Definition:</b> ClientArrival.h:9</div></div>
+<div class="ttc" id="class_event_html"><div class="ttname"><a href="class_event.html">Event</a></div><div class="ttdef"><b>Definition:</b> <a href="_event_8h_source.html#l00006">Event.h:6</a></div></div>
+<div class="ttc" id="class_client_arrival_html_a0e83b6899e3867658427ab2e26e3060a"><div class="ttname"><a href="class_client_arrival.html#a0e83b6899e3867658427ab2e26e3060a">ClientArrival::getClient</a></div><div class="ttdeci">const std::shared_ptr&lt; Client &gt; getClient() const </div><div class="ttdef"><b>Definition:</b> <a href="_client_arrival_8cpp_source.html#l00011">ClientArrival.cpp:11</a></div></div>
+<div class="ttc" id="class_client_html"><div class="ttname"><a href="class_client.html">Client</a></div><div class="ttdef"><b>Definition:</b> <a href="_client_8h_source.html#l00009">Client.h:9</a></div></div>
+<div class="ttc" id="class_client_arrival_html_adcf0616ba427c6232c797cd1c3be3590"><div class="ttname"><a href="class_client_arrival.html#adcf0616ba427c6232c797cd1c3be3590">ClientArrival::ClientArrival</a></div><div class="ttdeci">ClientArrival(const unsigned long eventTime, const std::shared_ptr&lt; Client &gt; client)</div><div class="ttdef"><b>Definition:</b> <a href="_client_arrival_8cpp_source.html#l00007">ClientArrival.cpp:7</a></div></div>
+<div class="ttc" id="class_client_arrival_html"><div class="ttname"><a href="class_client_arrival.html">ClientArrival</a></div><div class="ttdef"><b>Definition:</b> <a href="_client_arrival_8h_source.html#l00009">ClientArrival.h:9</a></div></div>
 <div class="ttc" id="_event_8h_html"><div class="ttname"><a href="_event_8h.html">Event.h</a></div></div>
-<div class="ttc" id="class_client_arrival_html_aed100adfc8eaf083194ac0c630eaafe6"><div class="ttname"><a href="class_client_arrival.html#aed100adfc8eaf083194ac0c630eaafe6">ClientArrival::str</a></div><div class="ttdeci">std::string str() const </div><div class="ttdef"><b>Definition:</b> ClientArrival.cpp:15</div></div>
+<div class="ttc" id="class_client_arrival_html_aed100adfc8eaf083194ac0c630eaafe6"><div class="ttname"><a href="class_client_arrival.html#aed100adfc8eaf083194ac0c630eaafe6">ClientArrival::str</a></div><div class="ttdeci">std::string str() const </div><div class="ttdef"><b>Definition:</b> <a href="_client_arrival_8cpp_source.html#l00015">ClientArrival.cpp:15</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.9.1
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="_client_arrival_8h.html">ClientArrival.h</a></li>
+    <li class="footer">Generated by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.9.1 </li>
+  </ul>
+</div>
 </body>
 </html>

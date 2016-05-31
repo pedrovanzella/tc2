@@ -18,6 +18,7 @@
 *.ilg
 *.ind
 *.ist
+*.loa
 *.lof
 *.log
 *.lot
@@ -38,7 +39,6 @@
 *.tdo
 img/*eps-converted-to.pdf
 pdf/
-proposta-tc1.pdf
-tc1.pdf
+tc2.pdf
 *.sublime-*
 uml.asta.lock

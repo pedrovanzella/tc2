@@ -1,5 +1,5 @@
 <map id="include/DummyCostFunction.h" name="include/DummyCostFunction.h">
-<area shape="rect" id="node2" href="$_dummy_cost_function_8cpp.html" title="src/DummyCostFunction.cpp" alt="" coords="5,80,203,107"/>
-<area shape="rect" id="node3" href="$_cost_function_creator_8h.html" title="include/CostFunctionCreator.h" alt="" coords="227,80,453,107"/>
-<area shape="rect" id="node4" href="$_simulator_8cpp.html" title="src/Simulator.cpp" alt="" coords="269,155,411,181"/>
+<area shape="rect" id="node2" href="$_dummy_cost_function_8cpp.html" title="src/DummyCostFunction.cpp" alt="" coords="5,80,199,107"/>
+<area shape="rect" id="node3" href="$_cost_function_creator_8h.html" title="include/CostFunctionCreator.h" alt="" coords="223,80,421,107"/>
+<area shape="rect" id="node4" href="$_simulator_8cpp.html" title="src/Simulator.cpp" alt="" coords="260,155,384,181"/>
 </map>
