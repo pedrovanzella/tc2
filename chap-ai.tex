@@ -196,7 +196,7 @@ função. Os argumentos para este algoritmo são:
 \newpage
 
 \begin{description}[leftmargin=!,labelwidth=\widthof{\bfseries $costFunction$}]
-  \item[$call$] Abstração de uma chamada;
+  \item[$client$] Abstração de um cliente;
   \item[$elevatorset$] Conjunto de todos os elevadores do prédio;
   \item[$costFunction$] Ponteiro para a função de cálculo de custo.
 \end{description}
@@ -204,17 +204,14 @@ função. Os argumentos para este algoritmo são:
 \begin{algorithm}[htb]
 \begin{center}
 \begin{algorithmic}[1]
-\Function{ChooseElevator}{$call, elevatorSet, costFunction$}
-  \State $selectedElevator \leftarrow null$
-  \State $minCost \leftarrow \infty$
+\Function{ChooseElevator}{$client, elevatorSet, costFunction$}
+  \State $selectedElevator \leftarrow elevatorSet.$\Call{Front}{}
+  \State $bestCost \leftarrow \infty$
   \For{\textbf{each} $elevator$ in $elevatorSet$}
-    \State $cost \leftarrow \Call{CostFunction}{$call, elevatorSet$}$
-    \If{$cost = 0$}
-      \State \textbf{return} $elevator$
-    \EndIf
-    \If{$cost < minCost$}
+    \State $cost \leftarrow \Call{CostFunction}{$client, elevatorSet$}$
+    \If{$cost < bestCost$}
       \State $selectedElevator \leftarrow elevator$
-      \State $minCost \leftarrow cost$
+      \State $bestCost \leftarrow cost$
     \EndIf
   \EndFor
   \State \textbf{return} $selectedElevator$

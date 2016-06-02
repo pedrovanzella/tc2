@@ -12,11 +12,11 @@ percepção da qualidade por seus usuários.
 
 O problema estudado neste trabalho é modelado da seguinte forma: seja um prédio
 com \textbf{F} andares e \textbf{E} elevadores, cada um com capacidade para
-transportar \textbf{C} pessoas simultaneamente; sabe-se que a população total do
-prédio é \textbf{P} e está distribuída de maneira uniforme nos andares do
-prédio; também sabe-se que a chegada ou saídas destas pessoas obedece uma função
-de distribuição de probabilidade \textbf{D}. De que forma o sistema pode atender
-esta população de modo a minimizar o tempo médio de atendimento das pessoas?
+transportar \textbf{C} pessoas simultaneamente; sabe-se que a chegada de
+passageiros, em cada andar, obedece uma função de distribuição de probabilidade
+\textbf{D}, distinta das demais. De que forma o sistema pode atender os
+passageiros de modo a minimizar o tempo médio de atendimento das pessoas em um
+dado intervalo de tempo?
 
 \section{\label{section:egcs}Sistema de controle de grupo de elevadores}
 
@@ -105,8 +105,8 @@ Tais dados podem compreender:
 \begin{itemize}
   \item Para cada andar:
   \begin{itemize}
-    \item Uma fila dos passageiros que encontram-se esperando naquele andar e querer subir;
-    \item Uma fila dos passageiros que encontram-se esperando naquele andar e querer descer;
+    \item Uma fila dos passageiros que encontram-se esperando naquele andar e querem subir;
+    \item Uma fila dos passageiros que encontram-se esperando naquele andar e querem descer;
   \end{itemize}
   \item Para cada passageiro:
   \begin{itemize}
