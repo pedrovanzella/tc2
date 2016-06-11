@@ -1200,7 +1200,7 @@ e-mails <rfbpiccoli at gmail dot com> e <marcelo dot cohen at pucrs dot br>^^J
 }
 
 \AtEndOfClass{%
-   \renewcommand*{\familydefault}{\sfdefault}
+   %\renewcommand*{\familydefault}{\sfdefault}
    \renewcommand{\chaptername}{}
    \urlstyle{same}
    \normalfont\normalsize

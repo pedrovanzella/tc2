@@ -27,7 +27,8 @@
     "enumitem"
     "fixltx2e"
     "algpseudocode"
-    "listings")
+    "listings"
+    "pdfpages")
    (TeX-add-symbols
     '("argmax" 1)
     '("argmin" 1))
