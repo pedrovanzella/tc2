@@ -2,6 +2,8 @@
  "chap-implementation"
  (lambda ()
    (LaTeX-add-labels
-    "chap:impl"))
+    "chap:impl"
+    "fig:seaborn"
+    "fig:seaborn:exemplo"))
  :latex)
 

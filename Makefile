@@ -23,7 +23,7 @@ RM=rm -fr
 # permite o emprego direto de figuras .png, .jpg ou .pdf no documento
 # Se for utilizar figuras no formato .eps, substitua por 'latex'
 #LATEX=latex
-LATEX=pdflatex
+LATEX=pdflatex -shell-escape
 BIBTEX=bibtex
 SORT=./sort.sh
 
@@ -39,17 +39,7 @@ all: $(TARGET).pdf
 	mkdir -p $(PDFDIR)
 	mv $< $(PDFDIR)/$<
 
-ifeq ($(LATEX),pdflatex)
 $(TARGET).pdf: $(TARGET).tex
-else
-$(TARGET).pdf: $(TARGET).ps
-	$(PS2PDF) $<
-
-$(TARGET).ps: $(TARGET).dvi
-	$(DVIPS) $(DVIPSOPTS) -o $@ $<
-
-$(TARGET).dvi: $(TARGET).tex
-endif
 	$(LATEX) $<
 	$(BIBTEX) $(TARGET)
 	$(LATEX) $<

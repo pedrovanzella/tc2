@@ -27,7 +27,8 @@
     "fixltx2e"
     "algpseudocode"
     "listings"
-    "pdfpages")
+    "pdfpages"
+    "minted")
    (TeX-add-symbols
     '("argmax" 1)
     '("argmin" 1))

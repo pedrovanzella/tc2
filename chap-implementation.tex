@@ -53,9 +53,47 @@ enim. Suspendisse dui libero, ornare eu turpis vitae, vulputate cursus diam.
 
 \subsection{Geração de Gráficos}
 
-Aliquam dictum felis quis lacus volutpat pulvinar vitae ac diam. Donec in nunc
-eu justo sodales eleifend. Vestibulum sodales, turpis eget venenatis facilisis,
-mi ante tempus ligula, faucibus accumsan mi sapien vel lorem.
+Os gráficos são gerados com auxílio da biblioteca Seaborn~\cite{seaborn}, em Python.
+Esta biblioteca possui primitivas poderosas de cálucos estatísticos e geração de
+gráficos, garantido a corretude da análise dos resultados com um esforço reduzido.
+
+Pode-se ver na Figura~\ref{fig:seaborn} um exemplo da expressividade desta ferramenta.
+
+\begin{figure}[htb]
+  \centering
+    \begin{minted}[
+frame=lines,
+framesep=2mm,
+baselinestretch=1.2,
+linenos
+]{python}
+    def averageTravelTime(data):
+        data['travelTime'] = data['dropoffTime'] - data['pickupTime']
+        g = sns.FacetGrid(data, col='dropoffFloor', row='arrivalFloor')
+        g = g.map(sns.barplot, "travelTime", orient='v')
+    \end{minted}
+  \caption{Código em Python para gerar o gráfico da matriz de tempo de espera.}
+  \label{fig:seaborn}
+\end{figure}
+
+Na segunda linha da Figura~\ref{fig:seaborn}, utiliza-se a ferramenta de
+vetorização para calcular-se a diferença entre o tempo de entrega do passageiro
+(\textsf{dropoffTime}) e o tempo em que ele foi pego pelo elevador
+(\textsf{pickupTime}). Note que nem mesmo um \textit{loop} é necessário. A
+biblioteca infere isto e calcula para todos os valores.
+
+Nas linhas seguintes, apenas diz-se o que se quer nas colunas e linhas do
+gráfico, e o que deve ser representado pelas barras verticais.
+
+Um exemplo de gráfico gerado por este código está na Figura~\ref{fig:seaborn:exemplo}.
+
+\begin{figure}[htb]
+  \centering
+  
+  \caption{Um exemplo de gráfico gerado pelo código da
+    Figura~\ref{fig:seaborn}.}
+  \label{fig:seaborn:exemplo}
+\end{figure}
 
 \section{Schedulers}
 
