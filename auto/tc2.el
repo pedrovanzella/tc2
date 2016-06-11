@@ -16,7 +16,6 @@
     "chap-modeling"
     "chap-implementation"
     "chap-results"
-    "chap-cronograma"
     "chap-conclusion"
     "tcc"
     "tcc10"
