@@ -4,7 +4,7 @@
    (TeX-add-to-alist 'LaTeX-provided-class-options
                      '(("report" "12pt" "onecolumn" "titlepage" "a4paper" "openright" "final")))
    (TeX-add-to-alist 'LaTeX-provided-package-options
-                     '(("fontenc" "T1") ("inputenc" "utf8") ("babel" "english" "brazil") ("geometry" "a4paper") ("sfmath" "helvet") ("xcolor" "table")))
+                     '(("fontenc" "T1") ("inputenc" "utf8") ("babel" "english" "brazil") ("geometry" "a4paper") ("xcolor" "table")))
    (add-to-list 'LaTeX-verbatim-macros-with-braces-local "url")
    (add-to-list 'LaTeX-verbatim-macros-with-braces-local "path")
    (add-to-list 'LaTeX-verbatim-macros-with-delims-local "url")
@@ -17,7 +17,6 @@
     "babel"
     "geometry"
     "textcomp"
-    "helvet"
     "sfmath"
     "indentfirst"
     "setspace"

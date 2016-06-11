@@ -114,8 +114,9 @@ e-mails <rfbpiccoli at gmail dot com> e <marcelo dot cohen at pucrs dot br>^^J
 \RequirePackage[english,brazil]{babel}[2008/07/06]
 \RequirePackage[a4paper]{geometry}[2010/09/12]
 \RequirePackage{textcomp}[2005/09/27]
-\RequirePackage{helvet}[2005/04/12]
-\RequirePackage[helvet]{sfmath}[2007/08/27]
+%\RequirePackage{helvet}[2005/04/12]
+%\RequirePackage[helvet]{sfmath}[2007/08/27]
+\RequirePackage{sfmath}
 %\RequirePackage{lmodern}[2009/10/30]
 %\RequirePackage[lm]{sfmath}[2007/08/27]
 \RequirePackage{indentfirst}[1995/11/23]
@@ -125,7 +126,8 @@ e-mails <rfbpiccoli at gmail dot com> e <marcelo dot cohen at pucrs dot br>^^J
 \RequirePackage{float}[2001/11/08]
 \RequirePackage{amsmath}[2000/07/18]
 \RequirePackage{amssymb}[2009/06/22]
-\RequirePackage{amsfonts}[2009/06/22]
+%\RequirePackage{amsfonts}[2009/06/22]
+\RequirePackage{amsfonts}
 \RequirePackage{url}
 \RequirePackage[table]{xcolor}[2007/01/21]
 \RequirePackage{array}[2008/09/09]
