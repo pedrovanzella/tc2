@@ -5,10 +5,10 @@ elevadores \cite{KOEHLEROTTIGER02}. Em muitos prédios, esses são o meio de
 transporte primário entre andares, visto que escadas são menos práticas e,
 muitas vezes, menos acessíveis ou exclusivas para situações de emergência. Dado
 o seu uso em larga escala, a ineficiência dos sistemas de controle de elevadores
-é percebida sentida diariamente por seus usuários sob a forma de tempo
-despendido. Neste cenário, deseja-se encontrar formas de otimizar estes sistemas
-de controle e refletir positivamente no desempenho geral do sistema e na
-percepção da qualidade por seus usuários.
+é percebida diariamente por seus usuários sob a forma de tempo despendido. Neste
+cenário, deseja-se encontrar formas de otimizar estes sistemas de controle e
+refletir positivamente no desempenho geral do sistema e na percepção da
+qualidade por seus usuários.
 
 O problema estudado neste trabalho é modelado da seguinte forma: seja um prédio
 com \textbf{F} andares e \textbf{E} elevadores, cada um com capacidade para
@@ -59,18 +59,7 @@ como saída:
   \end{itemize}
 \end{itemize}
 
-Além disso, existem eventos após os quais o EGCS pode recalcular as sequências
-de paradas dos elevadores de modo a atender as novas solicitações. Tais eventos
-podem ser:
-
-\begin{itemize}
-  \item Uma nova \textbf{chamada de corredor};
-  \item Uma nova \textbf{chamada de cabine};
-  \item Uma \textbf{parada realizada};
-  \item Um \textbf{elevador torna-se ocioso}, i.e.,~não possui mais paradas a realizar.
-\end{itemize}
-
-Para cada um destes tipos eventos devem existir estampas de tempo e informações
+Para cada ocorrência deste evento devem existir estampas de tempo e informações
 adicionais associadas\footnote{Sobre o andar, o elevador e os passageiros.} para
 fins estatísticos e cálculos de métricas, conforme apresentado a seguir.
 
@@ -131,7 +120,8 @@ de elevadores para avaliar o desempenho de seus sistemas podem ser calculadas:
   transportar em um intervalo de 5 minutos. Um HC\textsubscript{5\%} aceitável é
    de no mínimo 14\%~\cite{KOEHLEROTTIGER02}. Por exemplo, em um prédio cuja
    população é de 600 pessoas, este índice representa o transporte de no mínimo
-   84 pessoas em 5 minutos.
+   84 pessoas em 5 minutos.\unsure{Precisamos falar disso uma vez que não
+   simulamos este tipo de situação?}
 
   \item[WT]
   \textit{Waiting Time}, ou tempo de espera; está compreendido entre a
@@ -159,7 +149,8 @@ de elevadores para avaliar o desempenho de seus sistemas podem ser calculadas:
   \item[RTT]
   \textit{Round-trip Time}, ou tempo de ida e volta em uma tradução livre; é o
   tempo médio de uma viagem de um elevador partindo do lobby, indo até todos os
-  andares do prédio e de volta ao lobby em horário de pico.
+  andares do prédio e de volta ao lobby em horário de pico.\unsure{Precisamos
+  falar disso uma vez que não simulamos este tipo de situação?}
 \end{description}
 
 O tempo médio de sistema (AST) define a qualidade do serviço, já que está ligado
