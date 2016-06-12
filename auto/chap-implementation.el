@@ -3,7 +3,7 @@
  (lambda ()
    (LaTeX-add-labels
     "chap:impl"
-    "fig:seaborn"
+    "alg:seaborn"
     "fig:seaborn:exemplo"))
  :latex)
 
