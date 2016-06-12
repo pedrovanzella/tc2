@@ -42,3 +42,4 @@ pdf/
 tc2.pdf
 *.sublime-*
 uml.asta.lock
+*.pygtex
