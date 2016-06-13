@@ -44,3 +44,5 @@ tc2.pdf
 uml.asta.lock
 *.pygtex
 *.pygstyle
+auto/
+*.el

@@ -12,7 +12,7 @@ do \textit{Average Journey Time}, ou tempo médio de jornada, se dá pois, uma v
 dentro do elevador, o passageiro não se sente mais esperando: ele sente que já
 está sendo servido, conforme constatado na seção \ref{section:data}.
 
-O simulador carrega uma lista de cenários à partir de um arquivo de configuração
+O simulador carrega uma lista de cenários a partir de um arquivo de configuração
 e realiza a simulação de cada cenário. É possível comparar várias estratégias em
 um mesmo cenário. Para isto, foram implementados dois algoritmos de agendamento
 - \textit{simple} e \textit{planning}, detalhados na seção XXX - e 4 funções de
@@ -26,12 +26,27 @@ referência para a seção dos algoritmos e das funções de custo. (Taschetto)}
 Após as simulações, o simulador fornece como saída um relatório apresentando
 métricas\footnote{Seção~\ref{section:data}.} de desempenho para sistemas de
 controle de grupo de elevadores. Além do relatório, o simulador é capaz de
-gerar, à partir das métricas obtidas, os seguintes gráficos: \textit{tipo de
-gráfico 1}, \textit{tipo de gráfico 2} e \textit{tipo de gráfico 3}.
+gerar, a partir das métricas obtidas, os seguintes gráficos: \textit{Clientes
+  por Elevador}, \textit{Chegadas por Andar}, \textit{Desembarques por Andar} e
+\textit{Tempo de Jornada por Andar}.
 
-\unsure{Pedro, coloca aqui os nomes dos gráficos. Será que também botamos um
-exemplo ou somente uma breve descrição, pra deixar esta seção mais simples?
-(Taschetto)}
+\unsure{Será que também botamos um exemplo ou somente uma breve descrição,
+  pra deixar esta seção mais simples? (Vanzella)}
+
+\begin{description}[leftmargin=!,labelwidth=\widthof{\bfseries Tempo de Jornada por Andar}]
+  \item[Clientes por Elevador]
+    Este gráfico mostra a ocupação total de cada elevador, durante o período de
+    simulação, em um formato de barras.
+  \item[Chegadas por Andar]
+    Este gráfico em barras ilustra a quantidade de clientes que foram gerados pelo
+    simulador em cada andar.
+  \item[Desembarques por Andar]
+    O gráfico de Desembarques por Andar plota, através de barras verticais, a
+    quantidade de clientes que foram desembarcados em cada andar.
+  \item[Tempo de Jornada por Andar]
+    Esta matriz de gráficos mostra, utilizando barras verticais, o tempo médio de
+    jornada entre cada par de andares.
+\end{description}
 
 Os relatórios e gráficos dão base para análise e proposta de uma estratégia (ou
 um conjunto de estratégias) para serem implementados em prédios já existentes.
