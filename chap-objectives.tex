@@ -63,3 +63,78 @@ horizontes\footnote{Horizonte é a quantidade de passos no futuro que o algoritm
 prevê. Mais detalhes podem ser vistos na seção~\ref{sec:ai:planning}.} será
 feita, avaliando quão vantajosa é a implementação de um destes algoritmos,
 comparado com a implementação dos algoritmos triviais.
+
+\section{\label{section:scenarios}Cenários de testes}
+
+Pode-se dizer que cada prédio é um cenário em potencial no contexto deste
+trabalho. Os atributos que podem ser utilizados para definir um cenário são:
+
+\begin{description}[leftmargin=!,labelwidth=\widthof{\bfseries Pu}]
+  \item[F]
+  Número total de andares do prédio.
+  \item[E]
+  Número total de elevadores que compõem o sistema.
+  \item[C]
+  Capacidade\footnote{Como efeito de redução de escopo, consideram-se todos os
+  elevadores de um mesmo sistema como tendo a mesma capacidade.} (em número de
+  pessoas\footnote{Considerando uma pessoa com peso médio de 70 kg.}) máxima de
+  passageiros que cada elevador é capaz de transportar.
+  \item[D]
+  Conjunto\footnote{Cada andar do prédio possui uma distribuição distinta.} de distribuições de probabilidade de chegada de passageiros.
+\end{description}
+
+Logo, há tantos cenários possíveis quanto há prédios ao redor do mundo. Os
+cenários de testes serão limitados em algumas categorias. A escolha destas
+divisões segue a classificação \cite{Emporis15} sugerida pela empresa
+\textbf{Emporis GmbH}, uma empresa de mineração de dados sobre imóveis com sede
+em Frankfurt. O limite inferior de 4 andares é devido à exigência legal do
+município de Porto Alegre\footnote{http://www2.portoalegre.rs.gov.br/netahtml
+/sirel/atos/Lei\%201344} onde prédios deste tamanho ou maiores (mas não menores
+que isto) de serem construídos com elevadores. O limite superior é de 163
+andares\footnote{O maior arranha-céu do mundo em 2015 é o Burj Khalif,
+localizado em Dubai, com mais de 800m de altura distribuídos em 163 andares
+habitáveis.}.
+
+Os cenários são definidos na tabela \ref{tab:cenarios}. Serão simulados os
+tamanhos de prédios limítrofes superiores de cada categoria combinados com as
+quantidades de elevadores limítrofes superiores estabelecidas de forma
+arbitrária.
+
+\begin{table}[htb!]
+\centering
+\caption{Categorias de cenários de testes.}
+\label{tab:cenarios}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+{\bf Cenário} & {\bf Altura} & {\bf F}  & {\bf E} & {\bf C}
+\\ \hline
+{\it Low-rise}   & menor que 35 m    & 4 a 11         & 1 a 2   & 6  \\ \hline
+{\it High-rise}  & entre 35 e 100 m  & 12 a 39        & 5 a 8   & 10 \\ \hline
+{\it Skyscraper} & maior que 100 m   & 40 a 163       & 10 a 16 & 12 \\ \hline
+\end{tabular}
+\end{table}
+
+\subsection{Parâmetros removidos do escopo}
+
+Em virtude da limitação de tempo para a elaboração deste trabalho, dois
+parâmetros foram removidos do escopo da simulação:
+
+\begin{description}[leftmargin=!,labelwidth=\widthof{\bfseries Pu}]
+  \item[P]
+  População total do prédio. Com a remoção deste parâmetro considera-se que a
+  população do prédio é infinita - ou seja, enquanto a simulação estiver sendo
+  executada, novos passageiros continuarão a surgir~-~respeitando a distribuição
+  de probabilidade.
+
+  \item[Pu]
+  Propósito do prédio: \textit{residencial} (com baixo fluxo entre os andares
+  superiores), \textit{comercial com múltiplas empresas} (com médio fluxo entre
+  andares superiores) ou \textit{comercial com única empresa} (com alto fluxo
+  entre andares superiores)\footnote{O propósito do prédio é diretamente
+  relacionado com \textbf{D}.}. Com a remoção deste parâmetro considera-se que
+  a probabilidade de um passageiro chegar e ir para qualquer andar do prédio é
+  sempre a mesma.
+\end{description}
+
+Acredita-se que a simplificação resultante destas remoções não vá impactar os
+resultados obtidos de forma negativa.
