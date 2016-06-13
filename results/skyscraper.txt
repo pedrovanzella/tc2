@@ -1,0 +1,41 @@
+Name............: Skyscraper
+Duration........: 43200
+Seed............: NimatYvEnU9QeE3GkF4J
+Elevators.......: 16
+Capacity........: 12
+Floors..........: 163
+Horizon.........: 5
+
+WAITING TIME
+                                         Average         Deviant           Total
+Simple/Random                           503.0739       2407.0948   11983723.0000
+Simple/NearestNeighbour                 304.6165       1205.1571    7256270.0000
+Simple/BetterNearestNeighbour           228.7408        703.7688    5448835.0000
+Simple/Weighted                         386.2361       1999.9789    9200530.0000
+Planning/Random                         499.7848       2444.3171   11905373.0000
+Planning/NearestNeighbour               356.3981       1588.1524    8489760.0000
+Planning/BetterNearestNeighbour         260.6917        846.7607    6209938.0000
+Planning/Weighted                       343.4542       1396.6859    8181422.0000
+
+JOURNEY TIME
+                                         Average         Deviant           Total
+Simple/Random                            54.6756        450.0475    1302428.0000
+Simple/NearestNeighbour                  54.8587        252.7537    1306788.0000
+Simple/BetterNearestNeighbour            55.1553        177.9569    1313854.0000
+Simple/Weighted                          54.5503        333.9083    1299442.0000
+Planning/Random                          54.7627        446.7028    1304502.0000
+Planning/NearestNeighbour                54.8175        304.0642    1305808.0000
+Planning/BetterNearestNeighbour          55.0438        209.3204    1311198.0000
+Planning/Weighted                        54.5582        291.4459    1299630.0000
+
+CLIENTS
+                                         Arrived          Served        Duration
+Simple/Random                              23821           23821           45990
+Simple/NearestNeighbour                    23821           23821           45213
+Simple/BetterNearestNeighbour              23821           23821           44203
+Simple/Weighted                            23821           23821           45724
+Planning/Random                            23821           23821           45881
+Planning/NearestNeighbour                  23821           23821           45712
+Planning/BetterNearestNeighbour            23821           23821           44038
+Planning/Weighted                          23821           23821           44891
+
