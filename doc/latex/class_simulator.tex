@@ -1,0 +1,253 @@
+\section{Simulator Class Reference}
+\label{class_simulator}\index{Simulator@{Simulator}}
+
+
+{\ttfamily \#include $<$Simulator.\+h$>$}
+
+
+
+Inheritance diagram for Simulator\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=166pt]{class_simulator__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Simulator\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=166pt]{class_simulator__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Simulator} (std\+::shared\+\_\+ptr$<$ const {\bf Scenario} $>$ scenario)
+\item 
+{\bf Simulator} (const {\bf Simulator} \&simulator)
+\item 
+virtual {\bf $\sim$\+Simulator} ()
+\item 
+std\+::shared\+\_\+ptr$<$ {\bf Building} $>$ {\bf create\+Building} () const 
+\item 
+void {\bf copy\+Building} (const {\bf Building} \&building)
+\item 
+const std\+::shared\+\_\+ptr$<$ {\bf Building} $>$ {\bf get\+Building} () const 
+\item 
+const std\+::shared\+\_\+ptr$<$ const {\bf Scenario} $>$ {\bf get\+Scenario} () const 
+\item 
+const std\+::shared\+\_\+ptr$<$ {\bf Statistics} $>$ {\bf get\+Statistics} () const 
+\item 
+const std\+::shared\+\_\+ptr$<$ {\bf Clock} $>$ {\bf get\+Clock} () const 
+\item 
+const std\+::shared\+\_\+ptr$<$ {\bf Event\+Queue} $>$ {\bf get\+Event\+Queue} () const 
+\item 
+const std\+::shared\+\_\+ptr$<$ {\bf Event\+Dispatcher} $>$ {\bf get\+Event\+Dispatcher} () const 
+\item 
+const std\+::shared\+\_\+ptr$<$ std\+::mt19937 $>$ {\bf get\+Random\+Engine} () const 
+\item 
+void {\bf run} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 14 of file Simulator.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Simulator@{Simulator}!Simulator@{Simulator}}
+\index{Simulator@{Simulator}!Simulator@{Simulator}}
+\subsubsection[{Simulator}]{\setlength{\rightskip}{0pt plus 5cm}Simulator\+::\+Simulator (
+\begin{DoxyParamCaption}
+\item[{std\+::shared\+\_\+ptr$<$ const {\bf Scenario} $>$}]{scenario}
+\end{DoxyParamCaption}
+)}\label{class_simulator_af08bb3d35eeea230fa542b0a4ad8c59c}
+
+
+Definition at line 23 of file Simulator.\+cpp.
+
+\index{Simulator@{Simulator}!Simulator@{Simulator}}
+\index{Simulator@{Simulator}!Simulator@{Simulator}}
+\subsubsection[{Simulator}]{\setlength{\rightskip}{0pt plus 5cm}Simulator\+::\+Simulator (
+\begin{DoxyParamCaption}
+\item[{const {\bf Simulator} \&}]{simulator}
+\end{DoxyParamCaption}
+)}\label{class_simulator_a3015a7bf41fe77ce1f74347b95a70375}
+
+
+Definition at line 35 of file Simulator.\+cpp.
+
+\index{Simulator@{Simulator}!````~Simulator@{$\sim$\+Simulator}}
+\index{````~Simulator@{$\sim$\+Simulator}!Simulator@{Simulator}}
+\subsubsection[{$\sim$\+Simulator}]{\setlength{\rightskip}{0pt plus 5cm}Simulator\+::$\sim$\+Simulator (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_simulator_a0f49aa04f42060a785adf77346b9de9f}
+
+
+Definition at line 42 of file Simulator.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\index{Simulator@{Simulator}!copy\+Building@{copy\+Building}}
+\index{copy\+Building@{copy\+Building}!Simulator@{Simulator}}
+\subsubsection[{copy\+Building}]{\setlength{\rightskip}{0pt plus 5cm}void Simulator\+::copy\+Building (
+\begin{DoxyParamCaption}
+\item[{const {\bf Building} \&}]{building}
+\end{DoxyParamCaption}
+)}\label{class_simulator_a341db4e1d8cae7de5bbaa83608532c2c}
+
+
+Definition at line 62 of file Simulator.\+cpp.
+
+\index{Simulator@{Simulator}!create\+Building@{create\+Building}}
+\index{create\+Building@{create\+Building}!Simulator@{Simulator}}
+\subsubsection[{create\+Building}]{\setlength{\rightskip}{0pt plus 5cm}std\+::shared\+\_\+ptr$<$ {\bf Building} $>$ Simulator\+::create\+Building (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{class_simulator_a7a8ed7267e6892f0d16c9ffe8b16a353}
+
+
+Definition at line 44 of file Simulator.\+cpp.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=344pt]{class_simulator_a7a8ed7267e6892f0d16c9ffe8b16a353_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=282pt]{class_simulator_a7a8ed7267e6892f0d16c9ffe8b16a353_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Simulator@{Simulator}!get\+Building@{get\+Building}}
+\index{get\+Building@{get\+Building}!Simulator@{Simulator}}
+\subsubsection[{get\+Building}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::shared\+\_\+ptr$<$ {\bf Building} $>$ Simulator\+::get\+Building (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{class_simulator_ad69d6f3a4ff8a4b33ed18c06aaa367fd}
+
+
+Definition at line 66 of file Simulator.\+cpp.
+
+\index{Simulator@{Simulator}!get\+Clock@{get\+Clock}}
+\index{get\+Clock@{get\+Clock}!Simulator@{Simulator}}
+\subsubsection[{get\+Clock}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::shared\+\_\+ptr$<$ {\bf Clock} $>$ Simulator\+::get\+Clock (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{class_simulator_ab23554f6835357b14ec6a214dbf976c9}
+
+
+Definition at line 72 of file Simulator.\+cpp.
+
+\index{Simulator@{Simulator}!get\+Event\+Dispatcher@{get\+Event\+Dispatcher}}
+\index{get\+Event\+Dispatcher@{get\+Event\+Dispatcher}!Simulator@{Simulator}}
+\subsubsection[{get\+Event\+Dispatcher}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::shared\+\_\+ptr$<$ {\bf Event\+Dispatcher} $>$ Simulator\+::get\+Event\+Dispatcher (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{class_simulator_a6a422e763047b283c46063faeb24a3a9}
+
+
+Definition at line 76 of file Simulator.\+cpp.
+
+\index{Simulator@{Simulator}!get\+Event\+Queue@{get\+Event\+Queue}}
+\index{get\+Event\+Queue@{get\+Event\+Queue}!Simulator@{Simulator}}
+\subsubsection[{get\+Event\+Queue}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::shared\+\_\+ptr$<$ {\bf Event\+Queue} $>$ Simulator\+::get\+Event\+Queue (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{class_simulator_a3b94c9842b8d92c0fd06133eaadb0586}
+
+
+Definition at line 74 of file Simulator.\+cpp.
+
+\index{Simulator@{Simulator}!get\+Random\+Engine@{get\+Random\+Engine}}
+\index{get\+Random\+Engine@{get\+Random\+Engine}!Simulator@{Simulator}}
+\subsubsection[{get\+Random\+Engine}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::shared\+\_\+ptr$<$ std\+::mt19937 $>$ Simulator\+::get\+Random\+Engine (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{class_simulator_a380f732c8ecd0f9c5536519cce7a5ebd}
+
+
+Definition at line 78 of file Simulator.\+cpp.
+
+\index{Simulator@{Simulator}!get\+Scenario@{get\+Scenario}}
+\index{get\+Scenario@{get\+Scenario}!Simulator@{Simulator}}
+\subsubsection[{get\+Scenario}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::shared\+\_\+ptr$<$ const {\bf Scenario} $>$ Simulator\+::get\+Scenario (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{class_simulator_a2208fa4322cb3f2ffaad7da74ccd3105}
+
+
+Definition at line 68 of file Simulator.\+cpp.
+
+\index{Simulator@{Simulator}!get\+Statistics@{get\+Statistics}}
+\index{get\+Statistics@{get\+Statistics}!Simulator@{Simulator}}
+\subsubsection[{get\+Statistics}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::shared\+\_\+ptr$<$ {\bf Statistics} $>$ Simulator\+::get\+Statistics (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{class_simulator_a09274dd8a739eee218a07cea43986b97}
+
+
+Definition at line 70 of file Simulator.\+cpp.
+
+\index{Simulator@{Simulator}!run@{run}}
+\index{run@{run}!Simulator@{Simulator}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void Simulator\+::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_simulator_aa2de7e32b04cc3e8fc60aec23997621b}
+
+
+Definition at line 80 of file Simulator.\+cpp.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_simulator_aa2de7e32b04cc3e8fc60aec23997621b_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/{\bf Simulator.\+h}\item 
+src/{\bf Simulator.\+cpp}\end{DoxyCompactItemize}

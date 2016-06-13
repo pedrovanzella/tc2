@@ -22,7 +22,7 @@ var dir_d44c64559bbebec7f509842c48db8b23 =
       [ "CostFunction", "class_cost_function.html", "class_cost_function" ]
     ] ],
     [ "CostFunctionCreator.h", "_cost_function_creator_8h.html", [
-      [ "CostFunctionCreator", "class_cost_function_creator.html", null ]
+      [ "CostFunctionCreator", "class_cost_function_creator.html", "class_cost_function_creator" ]
     ] ],
     [ "CostFunctionType.h", "_cost_function_type_8h.html", "_cost_function_type_8h" ],
     [ "Direction.h", "_direction_8h.html", "_direction_8h" ],
@@ -69,9 +69,7 @@ var dir_d44c64559bbebec7f509842c48db8b23 =
     [ "NearestNeighbourCostFunction.h", "_nearest_neighbour_cost_function_8h.html", [
       [ "NearestNeighbourCostFunction", "class_nearest_neighbour_cost_function.html", "class_nearest_neighbour_cost_function" ]
     ] ],
-    [ "PlanningScheduler.h", "_planning_scheduler_8h.html", [
-      [ "PlanningScheduler", "class_planning_scheduler.html", "class_planning_scheduler" ]
-    ] ],
+    [ "PlanningScheduler.h", "_planning_scheduler_8h.html", "_planning_scheduler_8h" ],
     [ "RandomCostFunction.h", "_random_cost_function_8h.html", [
       [ "RandomCostFunction", "class_random_cost_function.html", "class_random_cost_function" ]
     ] ],
@@ -85,7 +83,7 @@ var dir_d44c64559bbebec7f509842c48db8b23 =
       [ "Scheduler", "class_scheduler.html", "class_scheduler" ]
     ] ],
     [ "SchedulerCreator.h", "_scheduler_creator_8h.html", [
-      [ "SchedulerCreator", "class_scheduler_creator.html", null ]
+      [ "SchedulerCreator", "class_scheduler_creator.html", "class_scheduler_creator" ]
     ] ],
     [ "SchedulerType.h", "_scheduler_type_8h.html", "_scheduler_type_8h" ],
     [ "SimpleScheduler.h", "_simple_scheduler_8h.html", [
@@ -99,6 +97,7 @@ var dir_d44c64559bbebec7f509842c48db8b23 =
     ] ],
     [ "Status.h", "_status_8h.html", "_status_8h" ],
     [ "StopManager.h", "_stop_manager_8h.html", [
+      [ "FloorComparator", "struct_floor_comparator.html", "struct_floor_comparator" ],
       [ "StopManager", "class_stop_manager.html", "class_stop_manager" ]
     ] ],
     [ "Trip.h", "_trip_8h.html", [

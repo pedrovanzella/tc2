@@ -1,4 +1,5 @@
 <map id="Event::str" name="Event::str">
-<area shape="rect" id="node2" href="$class_event.html#a973b98b35d66d83449ee370f17b8f987" title="Event::getId" alt="" coords="141,5,234,32"/>
-<area shape="rect" id="node3" href="$class_event.html#ab0c2e30730d5859851f3126258c0126e" title="Event::getType" alt="" coords="132,56,243,83"/>
+<area shape="rect" id="node2" href="$class_event.html#a973b98b35d66d83449ee370f17b8f987" title="Event::getId" alt="" coords="171,5,264,32"/>
+<area shape="rect" id="node3" href="$namespace_helpers.html#a1c283431309b064cf935b645e1cb2dee" title="Helpers::eventTypeName" alt="" coords="132,56,303,83"/>
+<area shape="rect" id="node4" href="$class_event.html#ab0c2e30730d5859851f3126258c0126e" title="Event::getType" alt="" coords="162,107,273,133"/>
 </map>

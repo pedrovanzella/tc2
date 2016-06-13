@@ -3,6 +3,7 @@
 <area shape="rect" id="node3" href="$_elevator_8cpp.html" title="src/Elevator.cpp" alt="" coords="144,80,261,107"/>
 <area shape="rect" id="node4" href="$_floor_8cpp.html" title="src/Floor.cpp" alt="" coords="285,80,384,107"/>
 <area shape="rect" id="node5" href="$main_8cpp.html" title="src/main.cpp" alt="" coords="409,80,506,107"/>
-<area shape="rect" id="node6" href="$_reporter_8cpp.html" title="src/Reporter.cpp" alt="" coords="530,80,649,107"/>
-<area shape="rect" id="node7" href="$_simulator_8cpp.html" title="src/Simulator.cpp" alt="" coords="673,80,797,107"/>
+<area shape="rect" id="node6" href="$_planning_scheduler_8cpp.html" title="src/PlanningScheduler.cpp" alt="" coords="530,80,707,107"/>
+<area shape="rect" id="node7" href="$_reporter_8cpp.html" title="src/Reporter.cpp" alt="" coords="731,80,850,107"/>
+<area shape="rect" id="node8" href="$_simulator_8cpp.html" title="src/Simulator.cpp" alt="" coords="874,80,998,107"/>
 </map>

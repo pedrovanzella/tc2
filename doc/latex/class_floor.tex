@@ -1,0 +1,313 @@
+\section{Floor Class Reference}
+\label{class_floor}\index{Floor@{Floor}}
+
+
+{\ttfamily \#include $<$Floor.\+h$>$}
+
+
+
+Collaboration diagram for Floor\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=156pt]{class_floor__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Floor} (const int number, const float lambda)
+\item 
+{\bf Floor} (const {\bf Floor} \&floor)
+\item 
+virtual {\bf $\sim$\+Floor} ()
+\item 
+int {\bf get\+Number} () const 
+\item 
+int {\bf get\+Lambda} () const 
+\item 
+std\+::queue$<$ std\+::shared\+\_\+ptr$<$ {\bf Client} $>$ $>$ {\bf get\+Up\+Line\+Copy} () const 
+\item 
+std\+::queue$<$ std\+::shared\+\_\+ptr$<$ {\bf Client} $>$ $>$ {\bf get\+Down\+Line\+Copy} () const 
+\item 
+const std\+::vector$<$ std\+::shared\+\_\+ptr$<$ {\bf Client} $>$ $>$ {\bf get\+Up\+Line} (int n) const 
+\item 
+const std\+::vector$<$ std\+::shared\+\_\+ptr$<$ {\bf Client} $>$ $>$ {\bf get\+Down\+Line} (int n) const 
+\item 
+int {\bf clients\+On\+Up\+Line} () const 
+\item 
+int {\bf clients\+On\+Down\+Line} () const 
+\item 
+{\bf Direction} {\bf compare\+To} (const {\bf Floor} \&other) const 
+\item 
+void {\bf set\+Event\+Factory} (const std\+::shared\+\_\+ptr$<$ {\bf Event\+Factory} $>$ event\+Factory)
+\item 
+{\bf Direction} {\bf add\+Client} (const std\+::shared\+\_\+ptr$<$ {\bf Client} $>$ client)
+\item 
+std\+::pair$<$ std\+::set$<$ int $>$, std\+::shared\+\_\+ptr$<$ {\bf Client} $>$ $>$ {\bf board\+Elevator} (const unsigned long time, std\+::shared\+\_\+ptr$<$ {\bf Elevator} $>$ elevator)
+\item 
+void {\bf create\+Future\+Arrival} (const std\+::shared\+\_\+ptr$<$ {\bf Event\+Queue} $>$ event\+Queue)
+\item 
+std\+::string {\bf str} () const 
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::shared\+\_\+ptr$<$ std\+::vector$<$ std\+::shared\+\_\+ptr$<$ {\bf Floor} $>$ $>$ $>$ {\bf create} (const std\+::shared\+\_\+ptr$<$ const {\bf Simulator} $>$ simulator)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 14 of file Floor.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Floor@{Floor}!Floor@{Floor}}
+\index{Floor@{Floor}!Floor@{Floor}}
+\subsubsection[{Floor}]{\setlength{\rightskip}{0pt plus 5cm}Floor\+::\+Floor (
+\begin{DoxyParamCaption}
+\item[{const int}]{number, }
+\item[{const float}]{lambda}
+\end{DoxyParamCaption}
+)}\label{class_floor_a984e62afde8b391aa6d431806f1a3643}
+
+
+Definition at line 13 of file Floor.\+cpp.
+
+\index{Floor@{Floor}!Floor@{Floor}}
+\index{Floor@{Floor}!Floor@{Floor}}
+\subsubsection[{Floor}]{\setlength{\rightskip}{0pt plus 5cm}Floor\+::\+Floor (
+\begin{DoxyParamCaption}
+\item[{const {\bf Floor} \&}]{floor}
+\end{DoxyParamCaption}
+)}\label{class_floor_a6ae8b5f9664e8f2a15325643dea14889}
+
+
+Definition at line 16 of file Floor.\+cpp.
+
+\index{Floor@{Floor}!````~Floor@{$\sim$\+Floor}}
+\index{````~Floor@{$\sim$\+Floor}!Floor@{Floor}}
+\subsubsection[{$\sim$\+Floor}]{\setlength{\rightskip}{0pt plus 5cm}Floor\+::$\sim$\+Floor (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_floor_ae1b805579f18a76fe2754a3601202e80}
+
+
+Definition at line 20 of file Floor.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\index{Floor@{Floor}!add\+Client@{add\+Client}}
+\index{add\+Client@{add\+Client}!Floor@{Floor}}
+\subsubsection[{add\+Client}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Direction} Floor\+::add\+Client (
+\begin{DoxyParamCaption}
+\item[{const std\+::shared\+\_\+ptr$<$ {\bf Client} $>$}]{client}
+\end{DoxyParamCaption}
+)}\label{class_floor_aa4401fd2cbfd0f194f502aa9d975339e}
+
+
+Definition at line 87 of file Floor.\+cpp.
+
+\index{Floor@{Floor}!board\+Elevator@{board\+Elevator}}
+\index{board\+Elevator@{board\+Elevator}!Floor@{Floor}}
+\subsubsection[{board\+Elevator}]{\setlength{\rightskip}{0pt plus 5cm}std\+::pair$<$ std\+::set$<$ int $>$, std\+::shared\+\_\+ptr$<$ {\bf Client} $>$ $>$ Floor\+::board\+Elevator (
+\begin{DoxyParamCaption}
+\item[{const unsigned long}]{time, }
+\item[{std\+::shared\+\_\+ptr$<$ {\bf Elevator} $>$}]{elevator}
+\end{DoxyParamCaption}
+)}\label{class_floor_a4b49eea652eb6c16aaee8862c7d5fb7b}
+
+
+Definition at line 111 of file Floor.\+cpp.
+
+\index{Floor@{Floor}!clients\+On\+Down\+Line@{clients\+On\+Down\+Line}}
+\index{clients\+On\+Down\+Line@{clients\+On\+Down\+Line}!Floor@{Floor}}
+\subsubsection[{clients\+On\+Down\+Line}]{\setlength{\rightskip}{0pt plus 5cm}int Floor\+::clients\+On\+Down\+Line (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{class_floor_a9c48353976d06335d7bb94bc2a97a414}
+
+
+Definition at line 28 of file Floor.\+cpp.
+
+\index{Floor@{Floor}!clients\+On\+Up\+Line@{clients\+On\+Up\+Line}}
+\index{clients\+On\+Up\+Line@{clients\+On\+Up\+Line}!Floor@{Floor}}
+\subsubsection[{clients\+On\+Up\+Line}]{\setlength{\rightskip}{0pt plus 5cm}int Floor\+::clients\+On\+Up\+Line (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{class_floor_aab101d986c463b2fb7b3d3e979578ff3}
+
+
+Definition at line 26 of file Floor.\+cpp.
+
+\index{Floor@{Floor}!compare\+To@{compare\+To}}
+\index{compare\+To@{compare\+To}!Floor@{Floor}}
+\subsubsection[{compare\+To}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Direction} Floor\+::compare\+To (
+\begin{DoxyParamCaption}
+\item[{const {\bf Floor} \&}]{other}
+\end{DoxyParamCaption}
+) const}\label{class_floor_a09cf6744871fe9b1a1db00d2afa8b723}
+
+
+Definition at line 76 of file Floor.\+cpp.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=265pt]{class_floor_a09cf6744871fe9b1a1db00d2afa8b723_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Floor@{Floor}!create@{create}}
+\index{create@{create}!Floor@{Floor}}
+\subsubsection[{create}]{\setlength{\rightskip}{0pt plus 5cm}std\+::shared\+\_\+ptr$<$ std\+::vector$<$ std\+::shared\+\_\+ptr$<$ {\bf Floor} $>$ $>$ $>$ Floor\+::create (
+\begin{DoxyParamCaption}
+\item[{const std\+::shared\+\_\+ptr$<$ const {\bf Simulator} $>$}]{simulator}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{class_floor_a294df3a0179a79c3a9a2765418368d03}
+
+
+Definition at line 149 of file Floor.\+cpp.
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_floor_a294df3a0179a79c3a9a2765418368d03_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Floor@{Floor}!create\+Future\+Arrival@{create\+Future\+Arrival}}
+\index{create\+Future\+Arrival@{create\+Future\+Arrival}!Floor@{Floor}}
+\subsubsection[{create\+Future\+Arrival}]{\setlength{\rightskip}{0pt plus 5cm}void Floor\+::create\+Future\+Arrival (
+\begin{DoxyParamCaption}
+\item[{const std\+::shared\+\_\+ptr$<$ {\bf Event\+Queue} $>$}]{event\+Queue}
+\end{DoxyParamCaption}
+)}\label{class_floor_a92fcea5eb3324a506bfd33be2c292b35}
+
+
+Definition at line 145 of file Floor.\+cpp.
+
+\index{Floor@{Floor}!get\+Down\+Line@{get\+Down\+Line}}
+\index{get\+Down\+Line@{get\+Down\+Line}!Floor@{Floor}}
+\subsubsection[{get\+Down\+Line}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::vector$<$ std\+::shared\+\_\+ptr$<$ {\bf Client} $>$ $>$ Floor\+::get\+Down\+Line (
+\begin{DoxyParamCaption}
+\item[{int}]{n}
+\end{DoxyParamCaption}
+) const}\label{class_floor_adfe3cef0e8a451e6290bcfdccf2f5350}
+
+
+Definition at line 65 of file Floor.\+cpp.
+
+\index{Floor@{Floor}!get\+Down\+Line\+Copy@{get\+Down\+Line\+Copy}}
+\index{get\+Down\+Line\+Copy@{get\+Down\+Line\+Copy}!Floor@{Floor}}
+\subsubsection[{get\+Down\+Line\+Copy}]{\setlength{\rightskip}{0pt plus 5cm}std\+::queue$<$ std\+::shared\+\_\+ptr$<$ {\bf Client} $>$ $>$ Floor\+::get\+Down\+Line\+Copy (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{class_floor_a34ce9bfe12a7def89a405ed73a3f5655}
+
+
+Definition at line 42 of file Floor.\+cpp.
+
+\index{Floor@{Floor}!get\+Lambda@{get\+Lambda}}
+\index{get\+Lambda@{get\+Lambda}!Floor@{Floor}}
+\subsubsection[{get\+Lambda}]{\setlength{\rightskip}{0pt plus 5cm}int Floor\+::get\+Lambda (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{class_floor_a566668c8b6558cec6a9878043530aa6e}
+
+
+Definition at line 24 of file Floor.\+cpp.
+
+\index{Floor@{Floor}!get\+Number@{get\+Number}}
+\index{get\+Number@{get\+Number}!Floor@{Floor}}
+\subsubsection[{get\+Number}]{\setlength{\rightskip}{0pt plus 5cm}int Floor\+::get\+Number (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{class_floor_a4368d12bf63b63847f5b761c328fd133}
+
+
+Definition at line 22 of file Floor.\+cpp.
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=265pt]{class_floor_a4368d12bf63b63847f5b761c328fd133_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Floor@{Floor}!get\+Up\+Line@{get\+Up\+Line}}
+\index{get\+Up\+Line@{get\+Up\+Line}!Floor@{Floor}}
+\subsubsection[{get\+Up\+Line}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::vector$<$ std\+::shared\+\_\+ptr$<$ {\bf Client} $>$ $>$ Floor\+::get\+Up\+Line (
+\begin{DoxyParamCaption}
+\item[{int}]{n}
+\end{DoxyParamCaption}
+) const}\label{class_floor_aa39831329839d4278e812c02f40b75b8}
+
+
+Definition at line 54 of file Floor.\+cpp.
+
+\index{Floor@{Floor}!get\+Up\+Line\+Copy@{get\+Up\+Line\+Copy}}
+\index{get\+Up\+Line\+Copy@{get\+Up\+Line\+Copy}!Floor@{Floor}}
+\subsubsection[{get\+Up\+Line\+Copy}]{\setlength{\rightskip}{0pt plus 5cm}std\+::queue$<$ std\+::shared\+\_\+ptr$<$ {\bf Client} $>$ $>$ Floor\+::get\+Up\+Line\+Copy (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{class_floor_a0897897d4bb4aafc7b6aeb0664bc6e40}
+
+
+Definition at line 30 of file Floor.\+cpp.
+
+\index{Floor@{Floor}!set\+Event\+Factory@{set\+Event\+Factory}}
+\index{set\+Event\+Factory@{set\+Event\+Factory}!Floor@{Floor}}
+\subsubsection[{set\+Event\+Factory}]{\setlength{\rightskip}{0pt plus 5cm}void Floor\+::set\+Event\+Factory (
+\begin{DoxyParamCaption}
+\item[{const std\+::shared\+\_\+ptr$<$ {\bf Event\+Factory} $>$}]{event\+Factory}
+\end{DoxyParamCaption}
+)}\label{class_floor_a14cef459a7a9ddbdb53070d2f35add7f}
+
+
+Definition at line 83 of file Floor.\+cpp.
+
+\index{Floor@{Floor}!str@{str}}
+\index{str@{str}!Floor@{Floor}}
+\subsubsection[{str}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Floor\+::str (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{class_floor_a46daff13947cd7b753df0d258ec68bed}
+
+
+Definition at line 167 of file Floor.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/{\bf Floor.\+h}\item 
+src/{\bf Floor.\+cpp}\end{DoxyCompactItemize}

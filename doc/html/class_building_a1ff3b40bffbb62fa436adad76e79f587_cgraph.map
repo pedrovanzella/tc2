@@ -1,0 +1,4 @@
+<map id="Building::Building" name="Building::Building">
+<area shape="rect" id="node2" href="$class_building.html#a1271cef8df030a441d37eec8f8245928" title="Building::getFloors" alt="" coords="185,5,316,32"/>
+<area shape="rect" id="node3" href="$class_building.html#a6cf389ad55a55b0d3681808025625c4a" title="Building::getElevators" alt="" coords="176,56,325,83"/>
+</map>

@@ -1,0 +1,106 @@
+\section{Scheduler Class Reference}
+\label{class_scheduler}\index{Scheduler@{Scheduler}}
+
+
+{\ttfamily \#include $<$Scheduler.\+h$>$}
+
+
+
+Inheritance diagram for Scheduler\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=266pt]{class_scheduler__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Scheduler\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=169pt]{class_scheduler__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Scheduler} ()
+\item 
+virtual int {\bf schedule} (const std\+::shared\+\_\+ptr$<$ {\bf Cost\+Function} $>$ cost\+Function, const std\+::shared\+\_\+ptr$<$ const {\bf Building} $>$ building, const std\+::shared\+\_\+ptr$<$ const {\bf Client} $>$ client, const int elevator\+To\+Exclude=-\/1)=0
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::shared\+\_\+ptr$<$ std\+::vector$<$ std\+::shared\+\_\+ptr$<$ {\bf Elevator} $>$ $>$ $>$ {\bf get\+Available\+Elevators} (const std\+::shared\+\_\+ptr$<$ const {\bf Building} $>$ building, int elevator\+To\+Exclude)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 11 of file Scheduler.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Scheduler@{Scheduler}!Scheduler@{Scheduler}}
+\index{Scheduler@{Scheduler}!Scheduler@{Scheduler}}
+\subsubsection[{Scheduler}]{\setlength{\rightskip}{0pt plus 5cm}Scheduler\+::\+Scheduler (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_scheduler_a3b61aac11466cd45ae42ab8c2b0013f6}
+
+
+Definition at line 5 of file Scheduler.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\index{Scheduler@{Scheduler}!get\+Available\+Elevators@{get\+Available\+Elevators}}
+\index{get\+Available\+Elevators@{get\+Available\+Elevators}!Scheduler@{Scheduler}}
+\subsubsection[{get\+Available\+Elevators}]{\setlength{\rightskip}{0pt plus 5cm}std\+::shared\+\_\+ptr$<$ std\+::vector$<$ std\+::shared\+\_\+ptr$<$ {\bf Elevator} $>$ $>$ $>$ Scheduler\+::get\+Available\+Elevators (
+\begin{DoxyParamCaption}
+\item[{const std\+::shared\+\_\+ptr$<$ const {\bf Building} $>$}]{building, }
+\item[{int}]{elevator\+To\+Exclude}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{class_scheduler_abfdf81a0e98f71efc27516808425ac72}
+
+
+Definition at line 8 of file Scheduler.\+cpp.
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_scheduler_abfdf81a0e98f71efc27516808425ac72_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Scheduler@{Scheduler}!schedule@{schedule}}
+\index{schedule@{schedule}!Scheduler@{Scheduler}}
+\subsubsection[{schedule}]{\setlength{\rightskip}{0pt plus 5cm}virtual int Scheduler\+::schedule (
+\begin{DoxyParamCaption}
+\item[{const std\+::shared\+\_\+ptr$<$ {\bf Cost\+Function} $>$}]{cost\+Function, }
+\item[{const std\+::shared\+\_\+ptr$<$ const {\bf Building} $>$}]{building, }
+\item[{const std\+::shared\+\_\+ptr$<$ const {\bf Client} $>$}]{client, }
+\item[{const int}]{elevator\+To\+Exclude = {\ttfamily -\/1}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{class_scheduler_aabaa3785dd1aa6efcf407a1e027cfced}
+
+
+Implemented in {\bf Planning\+Scheduler} \doxyref{}{p.}{class_planning_scheduler_a30e0bb81405e162e596e428cb2a6c1e3}, and {\bf Simple\+Scheduler} \doxyref{}{p.}{class_simple_scheduler_a76990bffc6cf70197e96d41535ebf260}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/{\bf Scheduler.\+h}\item 
+src/{\bf Scheduler.\+cpp}\end{DoxyCompactItemize}

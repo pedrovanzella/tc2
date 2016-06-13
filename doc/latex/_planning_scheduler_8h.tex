@@ -1,0 +1,63 @@
+\section{include/\+Planning\+Scheduler.h File Reference}
+\label{_planning_scheduler_8h}\index{include/\+Planning\+Scheduler.\+h@{include/\+Planning\+Scheduler.\+h}}
+{\ttfamily \#include \char`\"{}Client.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Scheduler.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$map$>$}\\*
+{\ttfamily \#include $<$queue$>$}\\*
+{\ttfamily \#include $<$vector$>$}\\*
+Include dependency graph for Planning\+Scheduler.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_planning_scheduler_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{_planning_scheduler_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf Client\+Comparator}
+\item 
+class {\bf Planning\+Scheduler}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+using {\bf Clients} = std\+::queue$<$ std\+::shared\+\_\+ptr$<$ const {\bf Client} $>$$>$
+\item 
+using {\bf Elevators} = std\+::shared\+\_\+ptr$<$ std\+::vector$<$ std\+::shared\+\_\+ptr$<$ {\bf Elevator} $>$$>$$>$
+\item 
+using {\bf Clients\+Priority\+Queue} = std\+::priority\+\_\+queue$<$ std\+::shared\+\_\+ptr$<$ {\bf Client} $>$, std\+::vector$<$ std\+::shared\+\_\+ptr$<$ {\bf Client} $>$$>$, {\bf Client\+Comparator} $>$
+\end{DoxyCompactItemize}
+
+
+\subsection{Typedef Documentation}
+\index{Planning\+Scheduler.\+h@{Planning\+Scheduler.\+h}!Clients@{Clients}}
+\index{Clients@{Clients}!Planning\+Scheduler.\+h@{Planning\+Scheduler.\+h}}
+\subsubsection[{Clients}]{\setlength{\rightskip}{0pt plus 5cm}using {\bf Clients} =  std\+::queue$<$std\+::shared\+\_\+ptr$<$const {\bf Client}$>$$>$}\label{_planning_scheduler_8h_add488a8a1592b6f1d19e83a896e0840d}
+
+
+Definition at line 21 of file Planning\+Scheduler.\+h.
+
+\index{Planning\+Scheduler.\+h@{Planning\+Scheduler.\+h}!Clients\+Priority\+Queue@{Clients\+Priority\+Queue}}
+\index{Clients\+Priority\+Queue@{Clients\+Priority\+Queue}!Planning\+Scheduler.\+h@{Planning\+Scheduler.\+h}}
+\subsubsection[{Clients\+Priority\+Queue}]{\setlength{\rightskip}{0pt plus 5cm}using {\bf Clients\+Priority\+Queue} =  std\+::priority\+\_\+queue$<$std\+::shared\+\_\+ptr$<${\bf Client}$>$, std\+::vector$<$std\+::shared\+\_\+ptr$<${\bf Client}$>$$>$, {\bf Client\+Comparator}$>$}\label{_planning_scheduler_8h_a53fcb94a081789f7e78bb1c8840d9edd}
+
+
+Definition at line 26 of file Planning\+Scheduler.\+h.
+
+\index{Planning\+Scheduler.\+h@{Planning\+Scheduler.\+h}!Elevators@{Elevators}}
+\index{Elevators@{Elevators}!Planning\+Scheduler.\+h@{Planning\+Scheduler.\+h}}
+\subsubsection[{Elevators}]{\setlength{\rightskip}{0pt plus 5cm}using {\bf Elevators} =  std\+::shared\+\_\+ptr$<$std\+::vector$<$std\+::shared\+\_\+ptr$<${\bf Elevator}$>$$>$$>$}\label{_planning_scheduler_8h_ada596e1236f7c5acbdefe18bd70f1243}
+
+
+Definition at line 22 of file Planning\+Scheduler.\+h.
+

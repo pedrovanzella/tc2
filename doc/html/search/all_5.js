@@ -1,9 +1,10 @@
 var searchData=
 [
-  ['elevator',['Elevator',['../class_elevator.html',1,'Elevator'],['../class_elevator.html#a43c3de38489fb58f17fc60e91bd522e7',1,'Elevator::Elevator()']]],
+  ['elevator',['Elevator',['../class_elevator.html',1,'Elevator'],['../class_elevator.html#a43c3de38489fb58f17fc60e91bd522e7',1,'Elevator::Elevator(int number, int capacity, int floor)'],['../class_elevator.html#aaeba8eecd98e761f80281e6f0d789806',1,'Elevator::Elevator(const Elevator &amp;elevator)']]],
   ['elevator_2ecpp',['Elevator.cpp',['../_elevator_8cpp.html',1,'']]],
   ['elevator_2eh',['Elevator.h',['../_elevator_8h.html',1,'']]],
   ['elevatorid',['elevatorID',['../struct_trip.html#a734134f36b0e7d28e79ed51209033505',1,'Trip']]],
+  ['elevators',['Elevators',['../_planning_scheduler_8h.html#ada596e1236f7c5acbdefe18bd70f1243',1,'PlanningScheduler.h']]],
   ['event',['Event',['../class_event.html',1,'Event'],['../class_event.html#a81ced98f0e668acac3d43d2198981b33',1,'Event::Event()']]],
   ['event_2ecpp',['Event.cpp',['../_event_8cpp.html',1,'']]],
   ['event_2eh',['Event.h',['../_event_8h.html',1,'']]],
@@ -24,5 +25,6 @@ var searchData=
   ['eventqueue_2ecpp',['EventQueue.cpp',['../_event_queue_8cpp.html',1,'']]],
   ['eventqueue_2eh',['EventQueue.h',['../_event_queue_8h.html',1,'']]],
   ['eventtype',['EventType',['../_event_type_8h.html#a2628ea8d12e8b2563c32f05dc7fff6fa',1,'EventType.h']]],
-  ['eventtype_2eh',['EventType.h',['../_event_type_8h.html',1,'']]]
+  ['eventtype_2eh',['EventType.h',['../_event_type_8h.html',1,'']]],
+  ['eventtypename',['eventTypeName',['../namespace_helpers.html#a1c283431309b064cf935b645e1cb2dee',1,'Helpers']]]
 ];

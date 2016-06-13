@@ -119,20 +119,22 @@ $(document).ready(function(){initNavTree('class_building.html','');});
 <div class="dynheader">
 Inheritance diagram for Building:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_building__inherit__graph.svg" width="299" height="331"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="class_building__inherit__graph.svg" width="299" height="419"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <div class="dynheader">
 Collaboration diagram for Building:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_building__coll__graph.svg" width="299" height="331"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="class_building__coll__graph.svg" width="299" height="419"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a7b82d219d50105ca73fd18fb72f7d97d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_building.html#a7b82d219d50105ca73fd18fb72f7d97d">Building</a> (std::shared_ptr&lt; const <a class="el" href="class_simulator.html">Simulator</a> &gt; simulator, std::shared_ptr&lt; std::vector&lt; std::shared_ptr&lt; <a class="el" href="class_floor.html">Floor</a> &gt;&gt;&gt; floors, std::shared_ptr&lt; std::vector&lt; std::shared_ptr&lt; <a class="el" href="class_elevator.html">Elevator</a> &gt;&gt;&gt; elevators, std::shared_ptr&lt; <a class="el" href="class_scheduler.html">Scheduler</a> &gt; scheduler, std::shared_ptr&lt; <a class="el" href="class_cost_function.html">CostFunction</a> &gt; costFunction)</td></tr>
-<tr class="separator:a7b82d219d50105ca73fd18fb72f7d97d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ec0e0b05134fb6c2d5114568169ba0e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_building.html#a1ec0e0b05134fb6c2d5114568169ba0e">Building</a> (std::shared_ptr&lt; const <a class="el" href="class_simulator.html">Simulator</a> &gt; simulator, const std::shared_ptr&lt; <a class="el" href="class_clock.html">Clock</a> &gt; clock, std::shared_ptr&lt; std::vector&lt; std::shared_ptr&lt; <a class="el" href="class_floor.html">Floor</a> &gt;&gt;&gt; floors, std::shared_ptr&lt; std::vector&lt; std::shared_ptr&lt; <a class="el" href="class_elevator.html">Elevator</a> &gt;&gt;&gt; elevators, std::shared_ptr&lt; <a class="el" href="class_scheduler.html">Scheduler</a> &gt; scheduler, std::shared_ptr&lt; <a class="el" href="class_cost_function.html">CostFunction</a> &gt; costFunction)</td></tr>
+<tr class="separator:a1ec0e0b05134fb6c2d5114568169ba0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ff3b40bffbb62fa436adad76e79f587"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_building.html#a1ff3b40bffbb62fa436adad76e79f587">Building</a> (const <a class="el" href="class_building.html">Building</a> &amp;building, std::shared_ptr&lt; const <a class="el" href="class_simulator.html">Simulator</a> &gt; simulator, std::shared_ptr&lt; <a class="el" href="class_clock.html">Clock</a> &gt; clock)</td></tr>
+<tr class="separator:a1ff3b40bffbb62fa436adad76e79f587"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab675c6a382e110b84031956cda708439"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_building.html#ab675c6a382e110b84031956cda708439">~Building</a> ()</td></tr>
 <tr class="separator:ab675c6a382e110b84031956cda708439"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6cf389ad55a55b0d3681808025625c4a"><td class="memItemLeft" align="right" valign="top">const std::shared_ptr&lt; std::vector&lt; std::shared_ptr&lt; <a class="el" href="class_elevator.html">Elevator</a> &gt; &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_building.html#a6cf389ad55a55b0d3681808025625c4a">getElevators</a> () const </td></tr>
@@ -143,16 +145,26 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a55712da518a32920146db267072362f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aea6f1c1241ae910793a4a80bf0cadc02"><td class="memItemLeft" align="right" valign="top">const std::shared_ptr&lt; <a class="el" href="class_elevator.html">Elevator</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_building.html#aea6f1c1241ae910793a4a80bf0cadc02">getElevator</a> (int number) const </td></tr>
 <tr class="separator:aea6f1c1241ae910793a4a80bf0cadc02"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f71a497127327dcf5ad0cd246a704e7"><td class="memItemLeft" align="right" valign="top">const std::shared_ptr&lt; const <a class="el" href="class_simulator.html">Simulator</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_building.html#a9f71a497127327dcf5ad0cd246a704e7">getSimulator</a> () const </td></tr>
+<tr class="separator:a9f71a497127327dcf5ad0cd246a704e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77b1d24bf198e1b83d6868cdc69fa537"><td class="memItemLeft" align="right" valign="top">const std::shared_ptr&lt; <a class="el" href="class_stop_manager.html">StopManager</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_building.html#a77b1d24bf198e1b83d6868cdc69fa537">getStopManager</a> () const </td></tr>
+<tr class="separator:a77b1d24bf198e1b83d6868cdc69fa537"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a512ac43fd75d60b8dcaee5d2388945f7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_building.html#a512ac43fd75d60b8dcaee5d2388945f7">step</a> ()</td></tr>
+<tr class="separator:a512ac43fd75d60b8dcaee5d2388945f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a380e65fcb24d40d82077edc0572df3c1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_building.html#a380e65fcb24d40d82077edc0572df3c1">notify</a> (const std::shared_ptr&lt; const <a class="el" href="class_event.html">Event</a> &gt; event)</td></tr>
 <tr class="separator:a380e65fcb24d40d82077edc0572df3c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad92eb27909cc8e59a2a775d7b214d13c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_building.html#ad92eb27909cc8e59a2a775d7b214d13c">initializeArrivals</a> ()</td></tr>
 <tr class="separator:ad92eb27909cc8e59a2a775d7b214d13c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad56fd3c023033dc3deb4314f3c86d35b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_building.html#ad56fd3c023033dc3deb4314f3c86d35b">setStop</a> (const int destination, <a class="el" href="_direction_8h.html#a224b9163917ac32fc95a60d8c1eec3aa">Direction</a> direction, std::shared_ptr&lt; <a class="el" href="class_elevator.html">Elevator</a> &gt; elevator)</td></tr>
+<tr class="separator:ad56fd3c023033dc3deb4314f3c86d35b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af65b73ddf9f352ff48da6a36573f28b3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_building.html#af65b73ddf9f352ff48da6a36573f28b3">mustStop</a> (const int destination, <a class="el" href="_direction_8h.html#a224b9163917ac32fc95a60d8c1eec3aa">Direction</a> direction, std::shared_ptr&lt; <a class="el" href="class_elevator.html">Elevator</a> &gt; elevator)</td></tr>
+<tr class="separator:af65b73ddf9f352ff48da6a36573f28b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
 <p>Definition at line <a class="el" href="_building_8h_source.html#l00021">21</a> of file <a class="el" href="_building_8h_source.html">Building.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a7b82d219d50105ca73fd18fb72f7d97d"></a>
+<a class="anchor" id="a1ec0e0b05134fb6c2d5114568169ba0e"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -161,6 +173,12 @@ Public Member Functions</h2></td></tr>
           <td>(</td>
           <td class="paramtype">std::shared_ptr&lt; const <a class="el" href="class_simulator.html">Simulator</a> &gt;&#160;</td>
           <td class="paramname"><em>simulator</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::shared_ptr&lt; <a class="el" href="class_clock.html">Clock</a> &gt;&#160;</td>
+          <td class="paramname"><em>clock</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -198,6 +216,48 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a1ff3b40bffbb62fa436adad76e79f587"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Building::Building </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_building.html">Building</a> &amp;&#160;</td>
+          <td class="paramname"><em>building</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::shared_ptr&lt; const <a class="el" href="class_simulator.html">Simulator</a> &gt;&#160;</td>
+          <td class="paramname"><em>simulator</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="class_clock.html">Clock</a> &gt;&#160;</td>
+          <td class="paramname"><em>clock</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_building_8cpp_source.html#l00030">30</a> of file <a class="el" href="_building_8cpp_source.html">Building.cpp</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="class_building_a1ff3b40bffbb62fa436adad76e79f587_cgraph.svg" width="331" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</p>
+
+</div>
+</div>
 <a class="anchor" id="ab675c6a382e110b84031956cda708439"></a>
 <div class="memitem">
 <div class="memproto">
@@ -219,7 +279,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_building_8cpp_source.html#l00030">30</a> of file <a class="el" href="_building_8cpp_source.html">Building.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_building_8cpp_source.html#l00051">51</a> of file <a class="el" href="_building_8cpp_source.html">Building.cpp</a>.</p>
 
 </div>
 </div>
@@ -238,7 +298,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_building_8cpp_source.html#l00042">42</a> of file <a class="el" href="_building_8cpp_source.html">Building.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_building_8cpp_source.html#l00067">67</a> of file <a class="el" href="_building_8cpp_source.html">Building.cpp</a>.</p>
 
 </div>
 </div>
@@ -255,7 +315,15 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_building_8cpp_source.html#l00032">32</a> of file <a class="el" href="_building_8cpp_source.html">Building.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_building_8cpp_source.html#l00055">55</a> of file <a class="el" href="_building_8cpp_source.html">Building.cpp</a>.</p>
+
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="class_building_a6cf389ad55a55b0d3681808025625c4a_icgraph.svg" width="331" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</p>
 
 </div>
 </div>
@@ -273,7 +341,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_building_8cpp_source.html#l00036">36</a> of file <a class="el" href="_building_8cpp_source.html">Building.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_building_8cpp_source.html#l00061">61</a> of file <a class="el" href="_building_8cpp_source.html">Building.cpp</a>.</p>
 
 </div>
 </div>
@@ -290,7 +358,49 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_building_8cpp_source.html#l00034">34</a> of file <a class="el" href="_building_8cpp_source.html">Building.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_building_8cpp_source.html#l00057">57</a> of file <a class="el" href="_building_8cpp_source.html">Building.cpp</a>.</p>
+
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="class_building_a1271cef8df030a441d37eec8f8245928_icgraph.svg" width="312" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a9f71a497127327dcf5ad0cd246a704e7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::shared_ptr&lt; const <a class="el" href="class_simulator.html">Simulator</a> &gt; Building::getSimulator </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_building_8cpp_source.html#l00053">53</a> of file <a class="el" href="_building_8cpp_source.html">Building.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a77b1d24bf198e1b83d6868cdc69fa537"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::shared_ptr&lt; <a class="el" href="class_stop_manager.html">StopManager</a> &gt; Building::getStopManager </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_building_8cpp_source.html#l00059">59</a> of file <a class="el" href="_building_8cpp_source.html">Building.cpp</a>.</p>
 
 </div>
 </div>
@@ -307,7 +417,41 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_building_8cpp_source.html#l00087">87</a> of file <a class="el" href="_building_8cpp_source.html">Building.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_building_8cpp_source.html#l00123">123</a> of file <a class="el" href="_building_8cpp_source.html">Building.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af65b73ddf9f352ff48da6a36573f28b3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Building::mustStop </td>
+          <td>(</td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>destination</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_direction_8h.html#a224b9163917ac32fc95a60d8c1eec3aa">Direction</a>&#160;</td>
+          <td class="paramname"><em>direction</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="class_elevator.html">Elevator</a> &gt;&#160;</td>
+          <td class="paramname"><em>elevator</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_building_8cpp_source.html#l00085">85</a> of file <a class="el" href="_building_8cpp_source.html">Building.cpp</a>.</p>
 
 </div>
 </div>
@@ -335,7 +479,74 @@ Public Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="class_event_observer.html#a81b3c545084ba3c8eaa8c83f5a0a4eb8">EventObserver</a>.</p>
 
-<p>Definition at line <a class="el" href="_building_8cpp_source.html#l00048">48</a> of file <a class="el" href="_building_8cpp_source.html">Building.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_building_8cpp_source.html#l00091">91</a> of file <a class="el" href="_building_8cpp_source.html">Building.cpp</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="class_building_a380e65fcb24d40d82077edc0572df3c1_cgraph.svg" width="268" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ad56fd3c023033dc3deb4314f3c86d35b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Building::setStop </td>
+          <td>(</td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>destination</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_direction_8h.html#a224b9163917ac32fc95a60d8c1eec3aa">Direction</a>&#160;</td>
+          <td class="paramname"><em>direction</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="class_elevator.html">Elevator</a> &gt;&#160;</td>
+          <td class="paramname"><em>elevator</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_building_8cpp_source.html#l00080">80</a> of file <a class="el" href="_building_8cpp_source.html">Building.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a512ac43fd75d60b8dcaee5d2388945f7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Building::step </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_building_8cpp_source.html#l00073">73</a> of file <a class="el" href="_building_8cpp_source.html">Building.cpp</a>.</p>
+
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="class_building_a512ac43fd75d60b8dcaee5d2388945f7_icgraph.svg" width="268" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</p>
 
 </div>
 </div>

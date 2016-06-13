@@ -1,7 +1,10 @@
 <map id="Simulator::run" name="Simulator::run">
-<area shape="rect" id="node2" href="$class_simulator.html#a7a8ed7267e6892f0d16c9ffe8b16a353" title="Simulator::createBuilding" alt="" coords="156,81,323,108"/>
-<area shape="rect" id="node3" href="$class_floor.html#a294df3a0179a79c3a9a2765418368d03" title="Floor::create" alt="" coords="407,5,501,32"/>
-<area shape="rect" id="node4" href="$class_elevator.html#a6a5d8cb3159ee98e343042df0ff7f2ba" title="Elevator::create" alt="" coords="397,56,511,83"/>
-<area shape="rect" id="node5" href="$class_scheduler_creator.html#a091006529e65ae50ce7bb8e97b6494dc" title="SchedulerCreator::create" alt="" coords="371,107,537,133"/>
-<area shape="rect" id="node6" href="$class_cost_function_creator.html#a2f73ed3b5e34c2cfa891849ab62adda5" title="CostFunctionCreator\l::create" alt="" coords="383,158,525,199"/>
+<area shape="rect" id="node2" href="$namespace_helpers.html#a6623afaa6548aa85a5a1bfd019e1e55f" title="Helpers::schedulerName" alt="" coords="380,5,547,32"/>
+<area shape="rect" id="node3" href="$namespace_helpers.html#a51b4991513657bea83b1ad43c778aec7" title="Helpers::costFunctionName" alt="" coords="371,56,556,83"/>
+<area shape="rect" id="node4" href="$class_client.html#ab2013c01e67c3edb773c359c5df22acb" title="Client::resetIds" alt="" coords="184,157,295,184"/>
+<area shape="rect" id="node5" href="$class_simulator.html#a7a8ed7267e6892f0d16c9ffe8b16a353" title="Simulator::createBuilding" alt="" coords="156,107,323,133"/>
+<area shape="rect" id="node6" href="$class_floor.html#a294df3a0179a79c3a9a2765418368d03" title="Floor::create" alt="" coords="416,224,511,251"/>
+<area shape="rect" id="node7" href="$class_elevator.html#a6a5d8cb3159ee98e343042df0ff7f2ba" title="Elevator::create" alt="" coords="406,275,521,301"/>
+<area shape="rect" id="node8" href="$class_scheduler_creator.html#a091006529e65ae50ce7bb8e97b6494dc" title="SchedulerCreator::create" alt="" coords="380,107,547,133"/>
+<area shape="rect" id="node9" href="$class_cost_function_creator.html#a2f73ed3b5e34c2cfa891849ab62adda5" title="CostFunctionCreator\l::create" alt="" coords="392,158,535,199"/>
 </map>

@@ -1,3 +1,8 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$class_cost_function_creator.html" title="CostFunctionCreator" alt="" coords="5,5,148,32"/>
+<area shape="rect" id="node1" href="$class_cost_function.html" title="CostFunction" alt="" coords="5,122,105,149"/>
+<area shape="rect" id="node2" href="$class_better_nearest_neighbour_cost_function.html" title="BetterNearestNeighbourCost\lFunction" alt="" coords="161,5,351,47"/>
+<area shape="rect" id="node3" href="$class_dummy_cost_function.html" title="DummyCostFunction" alt="" coords="183,71,329,98"/>
+<area shape="rect" id="node4" href="$class_nearest_neighbour_cost_function.html" title="NearestNeighbourCostFunction" alt="" coords="153,122,359,149"/>
+<area shape="rect" id="node5" href="$class_random_cost_function.html" title="RandomCostFunction" alt="" coords="181,173,331,199"/>
+<area shape="rect" id="node6" href="$class_weighted_cost_function.html" title="WeightedCostFunction" alt="" coords="179,223,333,250"/>
 </map>

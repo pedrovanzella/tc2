@@ -124,160 +124,190 @@ $(document).ready(function(){initNavTree('_floor_8cpp_source.html','');});
 <div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="class_floor.html#a984e62afde8b391aa6d431806f1a3643">   13</a></span>&#160;<a class="code" href="class_floor.html#a984e62afde8b391aa6d431806f1a3643">Floor::Floor</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> number, <span class="keyword">const</span> <span class="keywordtype">float</span> lambda)</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    : _number(number), _lambda(lambda) {}</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
-<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="class_floor.html#ae1b805579f18a76fe2754a3601202e80">   16</a></span>&#160;<a class="code" href="class_floor.html#ae1b805579f18a76fe2754a3601202e80">Floor::~Floor</a>() {}</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
-<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="class_floor.html#a4368d12bf63b63847f5b761c328fd133">   18</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="class_floor.html#a4368d12bf63b63847f5b761c328fd133">Floor::getNumber</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _number; }</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="class_floor.html#a6ae8b5f9664e8f2a15325643dea14889">   16</a></span>&#160;<a class="code" href="class_floor.html#a984e62afde8b391aa6d431806f1a3643">Floor::Floor</a>(<span class="keyword">const</span> <a class="code" href="class_floor.html">Floor</a> &amp;floor)</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    : _number(floor.getNumber()), _lambda(floor.getLambda()),</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;      _upLine(floor.getUpLineCopy()), _downLine(floor.getDownLineCopy()) {}</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
-<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="class_floor.html#a566668c8b6558cec6a9878043530aa6e">   20</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="class_floor.html#a566668c8b6558cec6a9878043530aa6e">Floor::getLambda</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _lambda; }</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="class_floor.html#ae1b805579f18a76fe2754a3601202e80">   20</a></span>&#160;<a class="code" href="class_floor.html#ae1b805579f18a76fe2754a3601202e80">Floor::~Floor</a>() {}</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
-<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="class_floor.html#aab101d986c463b2fb7b3d3e979578ff3">   22</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="class_floor.html#aab101d986c463b2fb7b3d3e979578ff3">Floor::clientsOnUpLine</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _upLine.size(); }</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="class_floor.html#a4368d12bf63b63847f5b761c328fd133">   22</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="class_floor.html#a4368d12bf63b63847f5b761c328fd133">Floor::getNumber</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _number; }</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="class_floor.html#a9c48353976d06335d7bb94bc2a97a414">   24</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="class_floor.html#a9c48353976d06335d7bb94bc2a97a414">Floor::clientsOnDownLine</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _downLine.size(); }</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="class_floor.html#a566668c8b6558cec6a9878043530aa6e">   24</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="class_floor.html#a566668c8b6558cec6a9878043530aa6e">Floor::getLambda</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _lambda; }</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
-<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="class_floor.html#a2ae308cc91df84345d67f5b39b896a26">   26</a></span>&#160;<span class="keyword">const</span> std::vector&lt;std::shared_ptr&lt;Client&gt;&gt; <a class="code" href="class_floor.html#a2ae308cc91df84345d67f5b39b896a26">Floor::getUpLine</a>()<span class="keyword"> const</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  decltype(_upLine) upLine(_upLine);</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  std::vector&lt;std::shared_ptr&lt;Client&gt;&gt; line;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <span class="keywordflow">while</span> (!upLine.empty()) {</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    line.push_back(upLine.front());</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    upLine.pop();</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  }</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <span class="keywordflow">return</span> line;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;}</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
-<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="class_floor.html#aef63c37a8504cd86dbc94d7444bebd7b">   37</a></span>&#160;<span class="keyword">const</span> std::vector&lt;std::shared_ptr&lt;Client&gt;&gt; <a class="code" href="class_floor.html#aef63c37a8504cd86dbc94d7444bebd7b">Floor::getDownLine</a>()<span class="keyword"> const</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  decltype(_downLine) downLine(_downLine);</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  std::vector&lt;std::shared_ptr&lt;Client&gt;&gt; line;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <span class="keywordflow">while</span> (!downLine.empty()) {</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    line.push_back(downLine.front());</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    downLine.pop();</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  }</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <span class="keywordflow">return</span> line;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;}</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
-<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="class_floor.html#a09cf6744871fe9b1a1db00d2afa8b723">   48</a></span>&#160;<a class="code" href="_direction_8h.html#a224b9163917ac32fc95a60d8c1eec3aa">Direction</a> <a class="code" href="class_floor.html#a09cf6744871fe9b1a1db00d2afa8b723">Floor::compareTo</a>(<span class="keyword">const</span> <a class="code" href="class_floor.html">Floor</a> &amp;other)<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="keywordflow">if</span> (other.<a class="code" href="class_floor.html#a4368d12bf63b63847f5b761c328fd133">getNumber</a>() &lt; _number)</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="_direction_8h.html#a224b9163917ac32fc95a60d8c1eec3aaa08a38277b0309070706f6652eeae9a53">Direction::Down</a>;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="_direction_8h.html#a224b9163917ac32fc95a60d8c1eec3aaa258f49887ef8d14ac268c92b02503aaa">Direction::Up</a>;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;}</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
-<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="class_floor.html#a14cef459a7a9ddbdb53070d2f35add7f">   55</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_floor.html#a14cef459a7a9ddbdb53070d2f35add7f">Floor::setEventFactory</a>(<span class="keyword">const</span> std::shared_ptr&lt;EventFactory&gt; eventFactory) {</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  _eventFactory = eventFactory;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;}</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
-<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="class_floor.html#aa4401fd2cbfd0f194f502aa9d975339e">   59</a></span>&#160;<a class="code" href="_direction_8h.html#a224b9163917ac32fc95a60d8c1eec3aa">Direction</a> <a class="code" href="class_floor.html#aa4401fd2cbfd0f194f502aa9d975339e">Floor::addClient</a>(<span class="keyword">const</span> std::shared_ptr&lt;Client&gt; client) {</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="keywordtype">int</span> destination = client-&gt;getDestination();</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="keywordflow">if</span> (destination &gt; _number) {</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    _upLine.push(client);</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="comment">// LOG(INFO) &lt;&lt; &quot;Floor #&quot; &lt;&lt; _number &lt;&lt; &quot; received a client (size &quot;</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="comment">//           &lt;&lt; client-&gt;getPartySize() &lt;&lt; &quot;)&quot;</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="comment">//           &lt;&lt; &quot; to go UP to floor #&quot; &lt;&lt; client-&gt;getDestination() &lt;&lt; &quot;.&quot;;</span></div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="_direction_8h.html#a224b9163917ac32fc95a60d8c1eec3aaa258f49887ef8d14ac268c92b02503aaa">Direction::Up</a>;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (destination &lt; _number) {</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    _downLine.push(client);</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="comment">// LOG(INFO) &lt;&lt; &quot;Floor #&quot; &lt;&lt; _number &lt;&lt; &quot; received a client (size &quot;</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="comment">//           &lt;&lt; client-&gt;getPartySize() &lt;&lt; &quot;)&quot;</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="comment">//           &lt;&lt; &quot; to go DOWN to floor #&quot; &lt;&lt; client-&gt;getDestination() &lt;&lt; &quot;.&quot;;</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="_direction_8h.html#a224b9163917ac32fc95a60d8c1eec3aaa08a38277b0309070706f6652eeae9a53">Direction::Down</a>;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    std::ostringstream stream;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    stream &lt;&lt; <span class="stringliteral">&quot;Floor &quot;</span> &lt;&lt; _number &lt;&lt; <span class="stringliteral">&quot; received a Client which destination is &quot;</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;           &lt;&lt; <span class="stringliteral">&quot;this own floor! This should never &quot;</span></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;           &lt;&lt; <span class="stringliteral">&quot;happen!&quot;</span>;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordflow">throw</span>(stream.str());</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  }</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="class_floor.html#aab101d986c463b2fb7b3d3e979578ff3">   26</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="class_floor.html#aab101d986c463b2fb7b3d3e979578ff3">Floor::clientsOnUpLine</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _upLine.size(); }</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="class_floor.html#a9c48353976d06335d7bb94bc2a97a414">   28</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="class_floor.html#a9c48353976d06335d7bb94bc2a97a414">Floor::clientsOnDownLine</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _downLine.size(); }</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="class_floor.html#a0897897d4bb4aafc7b6aeb0664bc6e40">   30</a></span>&#160;std::queue&lt;std::shared_ptr&lt;Client&gt;&gt; <a class="code" href="class_floor.html#a0897897d4bb4aafc7b6aeb0664bc6e40">Floor::getUpLineCopy</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  decltype(_upLine) upLine(_upLine);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  decltype(_upLine) line;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <span class="keywordflow">while</span> (!upLine.empty()) {</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keyword">auto</span> trueClient = *upLine.front();</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keyword">auto</span> copyClient = std::make_shared&lt;Client&gt;(trueClient);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    line.push(copyClient);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    upLine.pop();</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  }</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <span class="keywordflow">return</span> line;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;}</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="class_floor.html#a34ce9bfe12a7def89a405ed73a3f5655">   42</a></span>&#160;std::queue&lt;std::shared_ptr&lt;Client&gt;&gt; <a class="code" href="class_floor.html#a34ce9bfe12a7def89a405ed73a3f5655">Floor::getDownLineCopy</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  decltype(_downLine) downLine(_downLine);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  decltype(_downLine) line;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <span class="keywordflow">while</span> (!downLine.empty()) {</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keyword">auto</span> trueClient = *downLine.front();</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keyword">auto</span> copyClient = std::make_shared&lt;Client&gt;(trueClient);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    line.push(copyClient);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    downLine.pop();</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  }</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="keywordflow">return</span> line;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;}</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="class_floor.html#aa39831329839d4278e812c02f40b75b8">   54</a></span>&#160;<span class="keyword">const</span> std::vector&lt;std::shared_ptr&lt;Client&gt;&gt; <a class="code" href="class_floor.html#aa39831329839d4278e812c02f40b75b8">Floor::getUpLine</a>(<span class="keywordtype">int</span> n)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  decltype(_upLine) upLine(_upLine);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  std::vector&lt;std::shared_ptr&lt;Client&gt;&gt; line;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="keywordflow">while</span> (!upLine.empty() &amp;&amp; line.size() &lt; n) {</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    line.push_back(upLine.front());</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    upLine.pop();</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  }</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="keywordflow">return</span> line;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;}</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="class_floor.html#adfe3cef0e8a451e6290bcfdccf2f5350">   65</a></span>&#160;<span class="keyword">const</span> std::vector&lt;std::shared_ptr&lt;Client&gt;&gt; <a class="code" href="class_floor.html#adfe3cef0e8a451e6290bcfdccf2f5350">Floor::getDownLine</a>(<span class="keywordtype">int</span> n)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  decltype(_downLine) downLine(_downLine);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  std::vector&lt;std::shared_ptr&lt;Client&gt;&gt; line;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <span class="keywordflow">while</span> (!downLine.empty() &amp;&amp; line.size() &lt; n) {</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    line.push_back(downLine.front());</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    downLine.pop();</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  }</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <span class="keywordflow">return</span> line;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;}</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
+<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="class_floor.html#a09cf6744871fe9b1a1db00d2afa8b723">   76</a></span>&#160;<a class="code" href="_direction_8h.html#a224b9163917ac32fc95a60d8c1eec3aa">Direction</a> <a class="code" href="class_floor.html#a09cf6744871fe9b1a1db00d2afa8b723">Floor::compareTo</a>(<span class="keyword">const</span> <a class="code" href="class_floor.html">Floor</a> &amp;other)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  <span class="keywordflow">if</span> (other.<a class="code" href="class_floor.html#a4368d12bf63b63847f5b761c328fd133">getNumber</a>() &lt; _number)</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="_direction_8h.html#a224b9163917ac32fc95a60d8c1eec3aaa08a38277b0309070706f6652eeae9a53">Direction::Down</a>;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="_direction_8h.html#a224b9163917ac32fc95a60d8c1eec3aaa258f49887ef8d14ac268c92b02503aaa">Direction::Up</a>;</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;}</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
-<div class="line"><a name="l00083"></a><span class="lineno"><a class="line" href="class_floor.html#a4b49eea652eb6c16aaee8862c7d5fb7b">   83</a></span>&#160;std::pair&lt;std::set&lt;int&gt;, std::shared_ptr&lt;Client&gt;&gt; <a class="code" href="class_floor.html#a4b49eea652eb6c16aaee8862c7d5fb7b">Floor::boardElevator</a>(<span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> time, std::shared_ptr&lt;Elevator&gt; elevator) {</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  std::set&lt;int&gt; newStops;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  std::queue&lt;std::shared_ptr&lt;Client&gt;&gt;* lineToBoard = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  <span class="keywordflow">if</span> (elevator-&gt;getDestination().second == <a class="code" href="_direction_8h.html#a224b9163917ac32fc95a60d8c1eec3aaa258f49887ef8d14ac268c92b02503aaa">Direction::Up</a>) {</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    lineToBoard = &amp;_upLine;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (elevator-&gt;getDestination().second == <a class="code" href="_direction_8h.html#a224b9163917ac32fc95a60d8c1eec3aaa08a38277b0309070706f6652eeae9a53">Direction::Down</a>) {</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    lineToBoard = &amp;_downLine;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordflow">if</span> (_upLine.size() &gt; _downLine.size())</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;      lineToBoard = &amp;_upLine;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;      lineToBoard = &amp;_downLine;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;  }</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  <span class="keywordflow">while</span> (lineToBoard-&gt;size() &gt; 0 &amp;&amp; elevator-&gt;canEnter(lineToBoard-&gt;front())) {</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keyword">auto</span> client = lineToBoard-&gt;front();</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    client-&gt;setPickupTime(time);</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    elevator-&gt;addPassenger(client);</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    newStops.insert(client-&gt;getDestination());</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    lineToBoard-&gt;pop();</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    LOG(INFO) &lt;&lt; <span class="stringliteral">&quot;Client #&quot;</span> &lt;&lt; client-&gt;getId()</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;              &lt;&lt; <span class="stringliteral">&quot; boarded elevator #&quot;</span> &lt;&lt; elevator-&gt;getNumber()</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;              &lt;&lt; <span class="stringliteral">&quot; (t=&quot;</span> &lt;&lt; time &lt;&lt; <span class="stringliteral">&quot;).&quot;</span>;</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;  }</div>
+<div class="line"><a name="l00083"></a><span class="lineno"><a class="line" href="class_floor.html#a14cef459a7a9ddbdb53070d2f35add7f">   83</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_floor.html#a14cef459a7a9ddbdb53070d2f35add7f">Floor::setEventFactory</a>(<span class="keyword">const</span> std::shared_ptr&lt;EventFactory&gt; eventFactory) {</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  _eventFactory = eventFactory;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;}</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
+<div class="line"><a name="l00087"></a><span class="lineno"><a class="line" href="class_floor.html#aa4401fd2cbfd0f194f502aa9d975339e">   87</a></span>&#160;<a class="code" href="_direction_8h.html#a224b9163917ac32fc95a60d8c1eec3aa">Direction</a> <a class="code" href="class_floor.html#aa4401fd2cbfd0f194f502aa9d975339e">Floor::addClient</a>(<span class="keyword">const</span> std::shared_ptr&lt;Client&gt; client) {</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  <span class="keywordtype">int</span> destination = client-&gt;getDestination();</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  <span class="keywordflow">if</span> (destination &gt; _number) {</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    _upLine.push(client);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="comment">// LOG(INFO) &lt;&lt; &quot;Floor #&quot; &lt;&lt; _number &lt;&lt; &quot; received a client (size &quot;</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="comment">//           &lt;&lt; client-&gt;getPartySize() &lt;&lt; &quot;)&quot;</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="comment">//           &lt;&lt; &quot; to go UP to floor #&quot; &lt;&lt; client-&gt;getDestination() &lt;&lt; &quot;.&quot;;</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="_direction_8h.html#a224b9163917ac32fc95a60d8c1eec3aaa258f49887ef8d14ac268c92b02503aaa">Direction::Up</a>;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;  } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (destination &lt; _number) {</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    _downLine.push(client);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="comment">// LOG(INFO) &lt;&lt; &quot;Floor #&quot; &lt;&lt; _number &lt;&lt; &quot; received a client (size &quot;</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="comment">//           &lt;&lt; client-&gt;getPartySize() &lt;&lt; &quot;)&quot;</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="comment">//           &lt;&lt; &quot; to go DOWN to floor #&quot; &lt;&lt; client-&gt;getDestination() &lt;&lt; &quot;.&quot;;</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="_direction_8h.html#a224b9163917ac32fc95a60d8c1eec3aaa08a38277b0309070706f6652eeae9a53">Direction::Down</a>;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;  } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    std::ostringstream stream;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    stream &lt;&lt; <span class="stringliteral">&quot;Floor &quot;</span> &lt;&lt; _number &lt;&lt; <span class="stringliteral">&quot; received a Client which destination is &quot;</span></div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;           &lt;&lt; <span class="stringliteral">&quot;this own floor! This should never &quot;</span></div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;           &lt;&lt; <span class="stringliteral">&quot;happen!&quot;</span>;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keywordflow">throw</span>(stream.str());</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;  }</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;}</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;  <span class="keywordflow">if</span> (lineToBoard-&gt;empty())</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="keywordflow">return</span> { newStops, <span class="keyword">nullptr</span> };</div>
+<div class="line"><a name="l00111"></a><span class="lineno"><a class="line" href="class_floor.html#a4b49eea652eb6c16aaee8862c7d5fb7b">  111</a></span>&#160;std::pair&lt;std::set&lt;int&gt;, std::shared_ptr&lt;Client&gt;&gt; <a class="code" href="class_floor.html#a4b49eea652eb6c16aaee8862c7d5fb7b">Floor::boardElevator</a>(<span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> time, std::shared_ptr&lt;Elevator&gt; elevator) {</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;  std::set&lt;int&gt; newStops;</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;  <span class="keywordflow">return</span> { newStops, lineToBoard-&gt;front() };</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;}</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;</div>
-<div class="line"><a name="l00117"></a><span class="lineno"><a class="line" href="class_floor.html#a92fcea5eb3324a506bfd33be2c292b35">  117</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_floor.html#a92fcea5eb3324a506bfd33be2c292b35">Floor::createFutureArrival</a>(<span class="keyword">const</span> std::shared_ptr&lt;EventQueue&gt; eventQueue) {</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;  _eventFactory-&gt;createFutureArrival(eventQueue);</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;}</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;</div>
-<div class="line"><a name="l00121"></a><span class="lineno"><a class="line" href="class_floor.html#a294df3a0179a79c3a9a2765418368d03">  121</a></span>&#160;std::shared_ptr&lt;std::vector&lt;std::shared_ptr&lt;Floor&gt;&gt;&gt; <a class="code" href="class_floor.html#a294df3a0179a79c3a9a2765418368d03">Floor::create</a>(<span class="keyword">const</span> std::shared_ptr&lt;const Simulator&gt; simulator) {</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;  std::shared_ptr&lt;std::vector&lt;std::shared_ptr&lt;Floor&gt;&gt;&gt; floors(<span class="keyword">new</span> std::vector&lt;std::shared_ptr&lt;Floor&gt;&gt;);</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;  <span class="keyword">auto</span> scenario = simulator-&gt;getScenario();</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;  <span class="keyword">auto</span> clock = simulator-&gt;getClock();</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;  <span class="keyword">auto</span> random_engine = simulator-&gt;getRandomEngine();</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;  <span class="keywordtype">int</span> i = 0;</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;  <span class="keywordflow">for</span> (<span class="keyword">auto</span> it : scenario-&gt;getFloors()) {</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <span class="keyword">auto</span> f = std::make_shared&lt;Floor&gt;(i++, it);</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    <span class="keyword">auto</span> ef = std::make_shared&lt;EventFactory&gt;(clock, f, scenario, random_engine);</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    f-&gt;setEventFactory(ef);</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    floors-&gt;push_back(f);</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;  }</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;  <span class="keywordflow">return</span> floors;</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;}</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;  std::queue&lt;std::shared_ptr&lt;Client&gt;&gt;* lineToBoard = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;  <span class="keywordflow">if</span> (elevator-&gt;getDestination().second == <a class="code" href="_direction_8h.html#a224b9163917ac32fc95a60d8c1eec3aaa258f49887ef8d14ac268c92b02503aaa">Direction::Up</a>) {</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    lineToBoard = &amp;_upLine;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;  } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (elevator-&gt;getDestination().second == <a class="code" href="_direction_8h.html#a224b9163917ac32fc95a60d8c1eec3aaa08a38277b0309070706f6652eeae9a53">Direction::Down</a>) {</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    lineToBoard = &amp;_downLine;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;  } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="keywordflow">if</span> (_upLine.size() &gt; _downLine.size())</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;      lineToBoard = &amp;_upLine;</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;      lineToBoard = &amp;_downLine;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;  }</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;  <span class="keywordflow">while</span> (lineToBoard-&gt;size() &gt; 0 &amp;&amp; elevator-&gt;canEnter(lineToBoard-&gt;front())) {</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <span class="keyword">auto</span> client = lineToBoard-&gt;front();</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    client-&gt;setPickupTime(time);</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    elevator-&gt;addPassenger(client);</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    newStops.insert(client-&gt;getDestination());</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    lineToBoard-&gt;pop();</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    LOG(INFO) &lt;&lt; <span class="stringliteral">&quot;Client #&quot;</span> &lt;&lt; client-&gt;getId()</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;              &lt;&lt; <span class="stringliteral">&quot; boarded elevator #&quot;</span> &lt;&lt; elevator-&gt;getNumber()</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;              &lt;&lt; <span class="stringliteral">&quot; (t=&quot;</span> &lt;&lt; time &lt;&lt; <span class="stringliteral">&quot;).&quot;</span>;</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;  }</div>
 <div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;</div>
-<div class="line"><a name="l00139"></a><span class="lineno"><a class="line" href="class_floor.html#a46daff13947cd7b753df0d258ec68bed">  139</a></span>&#160;std::string <a class="code" href="class_floor.html#a46daff13947cd7b753df0d258ec68bed">Floor::str</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;  std::ostringstream stream;</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;  stream &lt;&lt; <span class="stringliteral">&quot;Floor #&quot;</span> &lt;&lt; _number &lt;&lt; <span class="stringliteral">&quot; :: UP[&quot;</span> &lt;&lt; _upLine.size() &lt;&lt; <span class="stringliteral">&quot;], DOWN[&quot;</span> &lt;&lt; _downLine.size() &lt;&lt; <span class="stringliteral">&quot;]&quot;</span>;</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;  <span class="keywordflow">return</span> stream.str();</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;  <span class="keywordflow">if</span> (lineToBoard-&gt;empty())</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    <span class="keywordflow">return</span> { newStops, <span class="keyword">nullptr</span> };</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;  <span class="keywordflow">return</span> { newStops, lineToBoard-&gt;front() };</div>
 <div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;}</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;</div>
+<div class="line"><a name="l00145"></a><span class="lineno"><a class="line" href="class_floor.html#a92fcea5eb3324a506bfd33be2c292b35">  145</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_floor.html#a92fcea5eb3324a506bfd33be2c292b35">Floor::createFutureArrival</a>(<span class="keyword">const</span> std::shared_ptr&lt;EventQueue&gt; eventQueue) {</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;  _eventFactory-&gt;createFutureArrival(eventQueue);</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;}</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;</div>
+<div class="line"><a name="l00149"></a><span class="lineno"><a class="line" href="class_floor.html#a294df3a0179a79c3a9a2765418368d03">  149</a></span>&#160;std::shared_ptr&lt;std::vector&lt;std::shared_ptr&lt;Floor&gt;&gt;&gt; <a class="code" href="class_floor.html#a294df3a0179a79c3a9a2765418368d03">Floor::create</a>(<span class="keyword">const</span> std::shared_ptr&lt;const Simulator&gt; simulator) {</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;  std::shared_ptr&lt;std::vector&lt;std::shared_ptr&lt;Floor&gt;&gt;&gt; floors(<span class="keyword">new</span> std::vector&lt;std::shared_ptr&lt;Floor&gt;&gt;);</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;  <span class="keyword">auto</span> scenario = simulator-&gt;getScenario();</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;  <span class="keyword">auto</span> clock = simulator-&gt;getClock();</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;  <span class="keyword">auto</span> random_engine = simulator-&gt;getRandomEngine();</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;  <span class="keywordtype">int</span> i = 0;</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;  <span class="keywordflow">for</span> (<span class="keyword">auto</span> it : scenario-&gt;getFloors()) {</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    <span class="keyword">auto</span> f = std::make_shared&lt;Floor&gt;(i++, it);</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    <span class="keyword">auto</span> ef = std::make_shared&lt;EventFactory&gt;(clock, f, scenario, random_engine);</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    f-&gt;setEventFactory(ef);</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    floors-&gt;push_back(f);</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;  }</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;  <span class="keywordflow">return</span> floors;</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;}</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;</div>
+<div class="line"><a name="l00167"></a><span class="lineno"><a class="line" href="class_floor.html#a46daff13947cd7b753df0d258ec68bed">  167</a></span>&#160;std::string <a class="code" href="class_floor.html#a46daff13947cd7b753df0d258ec68bed">Floor::str</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;  std::ostringstream stream;</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;  stream &lt;&lt; <span class="stringliteral">&quot;Floor #&quot;</span> &lt;&lt; _number &lt;&lt; <span class="stringliteral">&quot; :: UP[&quot;</span> &lt;&lt; _upLine.size() &lt;&lt; <span class="stringliteral">&quot;], DOWN[&quot;</span> &lt;&lt; _downLine.size() &lt;&lt; <span class="stringliteral">&quot;]&quot;</span>;</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;  <span class="keywordflow">return</span> stream.str();</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;}</div>
 <div class="ttc" id="_client_8h_html"><div class="ttname"><a href="_client_8h.html">Client.h</a></div></div>
 <div class="ttc" id="class_floor_html_a984e62afde8b391aa6d431806f1a3643"><div class="ttname"><a href="class_floor.html#a984e62afde8b391aa6d431806f1a3643">Floor::Floor</a></div><div class="ttdeci">Floor(const int number, const float lambda)</div><div class="ttdef"><b>Definition:</b> <a href="_floor_8cpp_source.html#l00013">Floor.cpp:13</a></div></div>
-<div class="ttc" id="class_floor_html_a09cf6744871fe9b1a1db00d2afa8b723"><div class="ttname"><a href="class_floor.html#a09cf6744871fe9b1a1db00d2afa8b723">Floor::compareTo</a></div><div class="ttdeci">Direction compareTo(const Floor &amp;other) const </div><div class="ttdef"><b>Definition:</b> <a href="_floor_8cpp_source.html#l00048">Floor.cpp:48</a></div></div>
+<div class="ttc" id="class_floor_html_a09cf6744871fe9b1a1db00d2afa8b723"><div class="ttname"><a href="class_floor.html#a09cf6744871fe9b1a1db00d2afa8b723">Floor::compareTo</a></div><div class="ttdeci">Direction compareTo(const Floor &amp;other) const </div><div class="ttdef"><b>Definition:</b> <a href="_floor_8cpp_source.html#l00076">Floor.cpp:76</a></div></div>
 <div class="ttc" id="_scenario_8h_html"><div class="ttname"><a href="_scenario_8h.html">Scenario.h</a></div></div>
 <div class="ttc" id="_direction_8h_html_a224b9163917ac32fc95a60d8c1eec3aaa258f49887ef8d14ac268c92b02503aaa"><div class="ttname"><a href="_direction_8h.html#a224b9163917ac32fc95a60d8c1eec3aaa258f49887ef8d14ac268c92b02503aaa">Direction::Up</a></div></div>
-<div class="ttc" id="class_floor_html_aef63c37a8504cd86dbc94d7444bebd7b"><div class="ttname"><a href="class_floor.html#aef63c37a8504cd86dbc94d7444bebd7b">Floor::getDownLine</a></div><div class="ttdeci">const std::vector&lt; std::shared_ptr&lt; Client &gt; &gt; getDownLine() const </div><div class="ttdef"><b>Definition:</b> <a href="_floor_8cpp_source.html#l00037">Floor.cpp:37</a></div></div>
-<div class="ttc" id="class_floor_html_a46daff13947cd7b753df0d258ec68bed"><div class="ttname"><a href="class_floor.html#a46daff13947cd7b753df0d258ec68bed">Floor::str</a></div><div class="ttdeci">std::string str() const </div><div class="ttdef"><b>Definition:</b> <a href="_floor_8cpp_source.html#l00139">Floor.cpp:139</a></div></div>
+<div class="ttc" id="class_floor_html_aa39831329839d4278e812c02f40b75b8"><div class="ttname"><a href="class_floor.html#aa39831329839d4278e812c02f40b75b8">Floor::getUpLine</a></div><div class="ttdeci">const std::vector&lt; std::shared_ptr&lt; Client &gt; &gt; getUpLine(int n) const </div><div class="ttdef"><b>Definition:</b> <a href="_floor_8cpp_source.html#l00054">Floor.cpp:54</a></div></div>
+<div class="ttc" id="class_floor_html_a46daff13947cd7b753df0d258ec68bed"><div class="ttname"><a href="class_floor.html#a46daff13947cd7b753df0d258ec68bed">Floor::str</a></div><div class="ttdeci">std::string str() const </div><div class="ttdef"><b>Definition:</b> <a href="_floor_8cpp_source.html#l00167">Floor.cpp:167</a></div></div>
 <div class="ttc" id="class_floor_html"><div class="ttname"><a href="class_floor.html">Floor</a></div><div class="ttdef"><b>Definition:</b> <a href="_floor_8h_source.html#l00014">Floor.h:14</a></div></div>
-<div class="ttc" id="class_floor_html_a14cef459a7a9ddbdb53070d2f35add7f"><div class="ttname"><a href="class_floor.html#a14cef459a7a9ddbdb53070d2f35add7f">Floor::setEventFactory</a></div><div class="ttdeci">void setEventFactory(const std::shared_ptr&lt; EventFactory &gt; eventFactory)</div><div class="ttdef"><b>Definition:</b> <a href="_floor_8cpp_source.html#l00055">Floor.cpp:55</a></div></div>
+<div class="ttc" id="class_floor_html_a14cef459a7a9ddbdb53070d2f35add7f"><div class="ttname"><a href="class_floor.html#a14cef459a7a9ddbdb53070d2f35add7f">Floor::setEventFactory</a></div><div class="ttdeci">void setEventFactory(const std::shared_ptr&lt; EventFactory &gt; eventFactory)</div><div class="ttdef"><b>Definition:</b> <a href="_floor_8cpp_source.html#l00083">Floor.cpp:83</a></div></div>
 <div class="ttc" id="_direction_8h_html"><div class="ttname"><a href="_direction_8h.html">Direction.h</a></div></div>
-<div class="ttc" id="class_floor_html_a9c48353976d06335d7bb94bc2a97a414"><div class="ttname"><a href="class_floor.html#a9c48353976d06335d7bb94bc2a97a414">Floor::clientsOnDownLine</a></div><div class="ttdeci">int clientsOnDownLine() const </div><div class="ttdef"><b>Definition:</b> <a href="_floor_8cpp_source.html#l00024">Floor.cpp:24</a></div></div>
-<div class="ttc" id="class_floor_html_a92fcea5eb3324a506bfd33be2c292b35"><div class="ttname"><a href="class_floor.html#a92fcea5eb3324a506bfd33be2c292b35">Floor::createFutureArrival</a></div><div class="ttdeci">void createFutureArrival(const std::shared_ptr&lt; EventQueue &gt; eventQueue)</div><div class="ttdef"><b>Definition:</b> <a href="_floor_8cpp_source.html#l00117">Floor.cpp:117</a></div></div>
+<div class="ttc" id="class_floor_html_a9c48353976d06335d7bb94bc2a97a414"><div class="ttname"><a href="class_floor.html#a9c48353976d06335d7bb94bc2a97a414">Floor::clientsOnDownLine</a></div><div class="ttdeci">int clientsOnDownLine() const </div><div class="ttdef"><b>Definition:</b> <a href="_floor_8cpp_source.html#l00028">Floor.cpp:28</a></div></div>
+<div class="ttc" id="class_floor_html_a0897897d4bb4aafc7b6aeb0664bc6e40"><div class="ttname"><a href="class_floor.html#a0897897d4bb4aafc7b6aeb0664bc6e40">Floor::getUpLineCopy</a></div><div class="ttdeci">std::queue&lt; std::shared_ptr&lt; Client &gt; &gt; getUpLineCopy() const </div><div class="ttdef"><b>Definition:</b> <a href="_floor_8cpp_source.html#l00030">Floor.cpp:30</a></div></div>
+<div class="ttc" id="class_floor_html_a92fcea5eb3324a506bfd33be2c292b35"><div class="ttname"><a href="class_floor.html#a92fcea5eb3324a506bfd33be2c292b35">Floor::createFutureArrival</a></div><div class="ttdeci">void createFutureArrival(const std::shared_ptr&lt; EventQueue &gt; eventQueue)</div><div class="ttdef"><b>Definition:</b> <a href="_floor_8cpp_source.html#l00145">Floor.cpp:145</a></div></div>
 <div class="ttc" id="_event_factory_8h_html"><div class="ttname"><a href="_event_factory_8h.html">EventFactory.h</a></div></div>
-<div class="ttc" id="class_floor_html_a294df3a0179a79c3a9a2765418368d03"><div class="ttname"><a href="class_floor.html#a294df3a0179a79c3a9a2765418368d03">Floor::create</a></div><div class="ttdeci">static std::shared_ptr&lt; std::vector&lt; std::shared_ptr&lt; Floor &gt; &gt; &gt; create(const std::shared_ptr&lt; const Simulator &gt; simulator)</div><div class="ttdef"><b>Definition:</b> <a href="_floor_8cpp_source.html#l00121">Floor.cpp:121</a></div></div>
-<div class="ttc" id="class_floor_html_a566668c8b6558cec6a9878043530aa6e"><div class="ttname"><a href="class_floor.html#a566668c8b6558cec6a9878043530aa6e">Floor::getLambda</a></div><div class="ttdeci">int getLambda() const </div><div class="ttdef"><b>Definition:</b> <a href="_floor_8cpp_source.html#l00020">Floor.cpp:20</a></div></div>
+<div class="ttc" id="class_floor_html_a294df3a0179a79c3a9a2765418368d03"><div class="ttname"><a href="class_floor.html#a294df3a0179a79c3a9a2765418368d03">Floor::create</a></div><div class="ttdeci">static std::shared_ptr&lt; std::vector&lt; std::shared_ptr&lt; Floor &gt; &gt; &gt; create(const std::shared_ptr&lt; const Simulator &gt; simulator)</div><div class="ttdef"><b>Definition:</b> <a href="_floor_8cpp_source.html#l00149">Floor.cpp:149</a></div></div>
+<div class="ttc" id="class_floor_html_a566668c8b6558cec6a9878043530aa6e"><div class="ttname"><a href="class_floor.html#a566668c8b6558cec6a9878043530aa6e">Floor::getLambda</a></div><div class="ttdeci">int getLambda() const </div><div class="ttdef"><b>Definition:</b> <a href="_floor_8cpp_source.html#l00024">Floor.cpp:24</a></div></div>
 <div class="ttc" id="_direction_8h_html_a224b9163917ac32fc95a60d8c1eec3aa"><div class="ttname"><a href="_direction_8h.html#a224b9163917ac32fc95a60d8c1eec3aa">Direction</a></div><div class="ttdeci">Direction</div><div class="ttdef"><b>Definition:</b> <a href="_direction_8h_source.html#l00006">Direction.h:6</a></div></div>
 <div class="ttc" id="_direction_8h_html_a224b9163917ac32fc95a60d8c1eec3aaa08a38277b0309070706f6652eeae9a53"><div class="ttname"><a href="_direction_8h.html#a224b9163917ac32fc95a60d8c1eec3aaa08a38277b0309070706f6652eeae9a53">Direction::Down</a></div></div>
 <div class="ttc" id="_elevator_8h_html"><div class="ttname"><a href="_elevator_8h.html">Elevator.h</a></div></div>
-<div class="ttc" id="class_floor_html_aa4401fd2cbfd0f194f502aa9d975339e"><div class="ttname"><a href="class_floor.html#aa4401fd2cbfd0f194f502aa9d975339e">Floor::addClient</a></div><div class="ttdeci">Direction addClient(const std::shared_ptr&lt; Client &gt; client)</div><div class="ttdef"><b>Definition:</b> <a href="_floor_8cpp_source.html#l00059">Floor.cpp:59</a></div></div>
-<div class="ttc" id="class_floor_html_a2ae308cc91df84345d67f5b39b896a26"><div class="ttname"><a href="class_floor.html#a2ae308cc91df84345d67f5b39b896a26">Floor::getUpLine</a></div><div class="ttdeci">const std::vector&lt; std::shared_ptr&lt; Client &gt; &gt; getUpLine() const </div><div class="ttdef"><b>Definition:</b> <a href="_floor_8cpp_source.html#l00026">Floor.cpp:26</a></div></div>
+<div class="ttc" id="class_floor_html_adfe3cef0e8a451e6290bcfdccf2f5350"><div class="ttname"><a href="class_floor.html#adfe3cef0e8a451e6290bcfdccf2f5350">Floor::getDownLine</a></div><div class="ttdeci">const std::vector&lt; std::shared_ptr&lt; Client &gt; &gt; getDownLine(int n) const </div><div class="ttdef"><b>Definition:</b> <a href="_floor_8cpp_source.html#l00065">Floor.cpp:65</a></div></div>
+<div class="ttc" id="class_floor_html_a34ce9bfe12a7def89a405ed73a3f5655"><div class="ttname"><a href="class_floor.html#a34ce9bfe12a7def89a405ed73a3f5655">Floor::getDownLineCopy</a></div><div class="ttdeci">std::queue&lt; std::shared_ptr&lt; Client &gt; &gt; getDownLineCopy() const </div><div class="ttdef"><b>Definition:</b> <a href="_floor_8cpp_source.html#l00042">Floor.cpp:42</a></div></div>
+<div class="ttc" id="class_floor_html_aa4401fd2cbfd0f194f502aa9d975339e"><div class="ttname"><a href="class_floor.html#aa4401fd2cbfd0f194f502aa9d975339e">Floor::addClient</a></div><div class="ttdeci">Direction addClient(const std::shared_ptr&lt; Client &gt; client)</div><div class="ttdef"><b>Definition:</b> <a href="_floor_8cpp_source.html#l00087">Floor.cpp:87</a></div></div>
 <div class="ttc" id="_event_queue_8h_html"><div class="ttname"><a href="_event_queue_8h.html">EventQueue.h</a></div></div>
-<div class="ttc" id="class_floor_html_ae1b805579f18a76fe2754a3601202e80"><div class="ttname"><a href="class_floor.html#ae1b805579f18a76fe2754a3601202e80">Floor::~Floor</a></div><div class="ttdeci">virtual ~Floor()</div><div class="ttdef"><b>Definition:</b> <a href="_floor_8cpp_source.html#l00016">Floor.cpp:16</a></div></div>
-<div class="ttc" id="class_floor_html_aab101d986c463b2fb7b3d3e979578ff3"><div class="ttname"><a href="class_floor.html#aab101d986c463b2fb7b3d3e979578ff3">Floor::clientsOnUpLine</a></div><div class="ttdeci">int clientsOnUpLine() const </div><div class="ttdef"><b>Definition:</b> <a href="_floor_8cpp_source.html#l00022">Floor.cpp:22</a></div></div>
-<div class="ttc" id="class_floor_html_a4b49eea652eb6c16aaee8862c7d5fb7b"><div class="ttname"><a href="class_floor.html#a4b49eea652eb6c16aaee8862c7d5fb7b">Floor::boardElevator</a></div><div class="ttdeci">std::pair&lt; std::set&lt; int &gt;, std::shared_ptr&lt; Client &gt; &gt; boardElevator(const unsigned long time, std::shared_ptr&lt; Elevator &gt; elevator)</div><div class="ttdef"><b>Definition:</b> <a href="_floor_8cpp_source.html#l00083">Floor.cpp:83</a></div></div>
+<div class="ttc" id="class_floor_html_ae1b805579f18a76fe2754a3601202e80"><div class="ttname"><a href="class_floor.html#ae1b805579f18a76fe2754a3601202e80">Floor::~Floor</a></div><div class="ttdeci">virtual ~Floor()</div><div class="ttdef"><b>Definition:</b> <a href="_floor_8cpp_source.html#l00020">Floor.cpp:20</a></div></div>
+<div class="ttc" id="class_floor_html_aab101d986c463b2fb7b3d3e979578ff3"><div class="ttname"><a href="class_floor.html#aab101d986c463b2fb7b3d3e979578ff3">Floor::clientsOnUpLine</a></div><div class="ttdeci">int clientsOnUpLine() const </div><div class="ttdef"><b>Definition:</b> <a href="_floor_8cpp_source.html#l00026">Floor.cpp:26</a></div></div>
+<div class="ttc" id="class_floor_html_a4b49eea652eb6c16aaee8862c7d5fb7b"><div class="ttname"><a href="class_floor.html#a4b49eea652eb6c16aaee8862c7d5fb7b">Floor::boardElevator</a></div><div class="ttdeci">std::pair&lt; std::set&lt; int &gt;, std::shared_ptr&lt; Client &gt; &gt; boardElevator(const unsigned long time, std::shared_ptr&lt; Elevator &gt; elevator)</div><div class="ttdef"><b>Definition:</b> <a href="_floor_8cpp_source.html#l00111">Floor.cpp:111</a></div></div>
 <div class="ttc" id="_simulator_8h_html"><div class="ttname"><a href="_simulator_8h.html">Simulator.h</a></div></div>
-<div class="ttc" id="class_floor_html_a4368d12bf63b63847f5b761c328fd133"><div class="ttname"><a href="class_floor.html#a4368d12bf63b63847f5b761c328fd133">Floor::getNumber</a></div><div class="ttdeci">int getNumber() const </div><div class="ttdef"><b>Definition:</b> <a href="_floor_8cpp_source.html#l00018">Floor.cpp:18</a></div></div>
+<div class="ttc" id="class_floor_html_a4368d12bf63b63847f5b761c328fd133"><div class="ttname"><a href="class_floor.html#a4368d12bf63b63847f5b761c328fd133">Floor::getNumber</a></div><div class="ttdeci">int getNumber() const </div><div class="ttdef"><b>Definition:</b> <a href="_floor_8cpp_source.html#l00022">Floor.cpp:22</a></div></div>
 <div class="ttc" id="_floor_8h_html"><div class="ttname"><a href="_floor_8h.html">Floor.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

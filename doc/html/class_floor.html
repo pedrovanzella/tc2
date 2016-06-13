@@ -120,7 +120,7 @@ $(document).ready(function(){initNavTree('class_floor.html','');});
 <div class="dynheader">
 Collaboration diagram for Floor:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_floor__coll__graph.svg" width="166" height="294"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="class_floor__coll__graph.svg" width="160" height="250"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <table class="memberdecls">
@@ -128,16 +128,22 @@ Collaboration diagram for Floor:</div>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a984e62afde8b391aa6d431806f1a3643"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_floor.html#a984e62afde8b391aa6d431806f1a3643">Floor</a> (const int number, const float lambda)</td></tr>
 <tr class="separator:a984e62afde8b391aa6d431806f1a3643"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ae8b5f9664e8f2a15325643dea14889"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_floor.html#a6ae8b5f9664e8f2a15325643dea14889">Floor</a> (const <a class="el" href="class_floor.html">Floor</a> &amp;floor)</td></tr>
+<tr class="separator:a6ae8b5f9664e8f2a15325643dea14889"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae1b805579f18a76fe2754a3601202e80"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_floor.html#ae1b805579f18a76fe2754a3601202e80">~Floor</a> ()</td></tr>
 <tr class="separator:ae1b805579f18a76fe2754a3601202e80"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4368d12bf63b63847f5b761c328fd133"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_floor.html#a4368d12bf63b63847f5b761c328fd133">getNumber</a> () const </td></tr>
 <tr class="separator:a4368d12bf63b63847f5b761c328fd133"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a566668c8b6558cec6a9878043530aa6e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_floor.html#a566668c8b6558cec6a9878043530aa6e">getLambda</a> () const </td></tr>
 <tr class="separator:a566668c8b6558cec6a9878043530aa6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2ae308cc91df84345d67f5b39b896a26"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; std::shared_ptr&lt; <a class="el" href="class_client.html">Client</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_floor.html#a2ae308cc91df84345d67f5b39b896a26">getUpLine</a> () const </td></tr>
-<tr class="separator:a2ae308cc91df84345d67f5b39b896a26"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aef63c37a8504cd86dbc94d7444bebd7b"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; std::shared_ptr&lt; <a class="el" href="class_client.html">Client</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_floor.html#aef63c37a8504cd86dbc94d7444bebd7b">getDownLine</a> () const </td></tr>
-<tr class="separator:aef63c37a8504cd86dbc94d7444bebd7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0897897d4bb4aafc7b6aeb0664bc6e40"><td class="memItemLeft" align="right" valign="top">std::queue&lt; std::shared_ptr&lt; <a class="el" href="class_client.html">Client</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_floor.html#a0897897d4bb4aafc7b6aeb0664bc6e40">getUpLineCopy</a> () const </td></tr>
+<tr class="separator:a0897897d4bb4aafc7b6aeb0664bc6e40"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a34ce9bfe12a7def89a405ed73a3f5655"><td class="memItemLeft" align="right" valign="top">std::queue&lt; std::shared_ptr&lt; <a class="el" href="class_client.html">Client</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_floor.html#a34ce9bfe12a7def89a405ed73a3f5655">getDownLineCopy</a> () const </td></tr>
+<tr class="separator:a34ce9bfe12a7def89a405ed73a3f5655"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa39831329839d4278e812c02f40b75b8"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; std::shared_ptr&lt; <a class="el" href="class_client.html">Client</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_floor.html#aa39831329839d4278e812c02f40b75b8">getUpLine</a> (int n) const </td></tr>
+<tr class="separator:aa39831329839d4278e812c02f40b75b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adfe3cef0e8a451e6290bcfdccf2f5350"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; std::shared_ptr&lt; <a class="el" href="class_client.html">Client</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_floor.html#adfe3cef0e8a451e6290bcfdccf2f5350">getDownLine</a> (int n) const </td></tr>
+<tr class="separator:adfe3cef0e8a451e6290bcfdccf2f5350"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aab101d986c463b2fb7b3d3e979578ff3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_floor.html#aab101d986c463b2fb7b3d3e979578ff3">clientsOnUpLine</a> () const </td></tr>
 <tr class="separator:aab101d986c463b2fb7b3d3e979578ff3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9c48353976d06335d7bb94bc2a97a414"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_floor.html#a9c48353976d06335d7bb94bc2a97a414">clientsOnDownLine</a> () const </td></tr>
@@ -192,6 +198,24 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a6ae8b5f9664e8f2a15325643dea14889"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Floor::Floor </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_floor.html">Floor</a> &amp;&#160;</td>
+          <td class="paramname"><em>floor</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_floor_8cpp_source.html#l00016">16</a> of file <a class="el" href="_floor_8cpp_source.html">Floor.cpp</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="ae1b805579f18a76fe2754a3601202e80"></a>
 <div class="memitem">
 <div class="memproto">
@@ -213,7 +237,7 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_floor_8cpp_source.html#l00016">16</a> of file <a class="el" href="_floor_8cpp_source.html">Floor.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_floor_8cpp_source.html#l00020">20</a> of file <a class="el" href="_floor_8cpp_source.html">Floor.cpp</a>.</p>
 
 </div>
 </div>
@@ -232,7 +256,7 @@ Static Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_floor_8cpp_source.html#l00059">59</a> of file <a class="el" href="_floor_8cpp_source.html">Floor.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_floor_8cpp_source.html#l00087">87</a> of file <a class="el" href="_floor_8cpp_source.html">Floor.cpp</a>.</p>
 
 </div>
 </div>
@@ -260,7 +284,7 @@ Static Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_floor_8cpp_source.html#l00083">83</a> of file <a class="el" href="_floor_8cpp_source.html">Floor.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_floor_8cpp_source.html#l00111">111</a> of file <a class="el" href="_floor_8cpp_source.html">Floor.cpp</a>.</p>
 
 </div>
 </div>
@@ -277,7 +301,7 @@ Static Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_floor_8cpp_source.html#l00024">24</a> of file <a class="el" href="_floor_8cpp_source.html">Floor.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_floor_8cpp_source.html#l00028">28</a> of file <a class="el" href="_floor_8cpp_source.html">Floor.cpp</a>.</p>
 
 </div>
 </div>
@@ -294,7 +318,7 @@ Static Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_floor_8cpp_source.html#l00022">22</a> of file <a class="el" href="_floor_8cpp_source.html">Floor.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_floor_8cpp_source.html#l00026">26</a> of file <a class="el" href="_floor_8cpp_source.html">Floor.cpp</a>.</p>
 
 </div>
 </div>
@@ -312,7 +336,7 @@ Static Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_floor_8cpp_source.html#l00048">48</a> of file <a class="el" href="_floor_8cpp_source.html">Floor.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_floor_8cpp_source.html#l00076">76</a> of file <a class="el" href="_floor_8cpp_source.html">Floor.cpp</a>.</p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -346,7 +370,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_floor_8cpp_source.html#l00121">121</a> of file <a class="el" href="_floor_8cpp_source.html">Floor.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_floor_8cpp_source.html#l00149">149</a> of file <a class="el" href="_floor_8cpp_source.html">Floor.cpp</a>.</p>
 
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -372,16 +396,34 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_floor_8cpp_source.html#l00117">117</a> of file <a class="el" href="_floor_8cpp_source.html">Floor.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_floor_8cpp_source.html#l00145">145</a> of file <a class="el" href="_floor_8cpp_source.html">Floor.cpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="aef63c37a8504cd86dbc94d7444bebd7b"></a>
+<a class="anchor" id="adfe3cef0e8a451e6290bcfdccf2f5350"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">const std::vector&lt; std::shared_ptr&lt; <a class="el" href="class_client.html">Client</a> &gt; &gt; Floor::getDownLine </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_floor_8cpp_source.html#l00065">65</a> of file <a class="el" href="_floor_8cpp_source.html">Floor.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a34ce9bfe12a7def89a405ed73a3f5655"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::queue&lt; std::shared_ptr&lt; <a class="el" href="class_client.html">Client</a> &gt; &gt; Floor::getDownLineCopy </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -389,7 +431,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_floor_8cpp_source.html#l00037">37</a> of file <a class="el" href="_floor_8cpp_source.html">Floor.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_floor_8cpp_source.html#l00042">42</a> of file <a class="el" href="_floor_8cpp_source.html">Floor.cpp</a>.</p>
 
 </div>
 </div>
@@ -406,7 +448,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_floor_8cpp_source.html#l00020">20</a> of file <a class="el" href="_floor_8cpp_source.html">Floor.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_floor_8cpp_source.html#l00024">24</a> of file <a class="el" href="_floor_8cpp_source.html">Floor.cpp</a>.</p>
 
 </div>
 </div>
@@ -423,7 +465,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_floor_8cpp_source.html#l00018">18</a> of file <a class="el" href="_floor_8cpp_source.html">Floor.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_floor_8cpp_source.html#l00022">22</a> of file <a class="el" href="_floor_8cpp_source.html">Floor.cpp</a>.</p>
 
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -435,12 +477,30 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a class="anchor" id="a2ae308cc91df84345d67f5b39b896a26"></a>
+<a class="anchor" id="aa39831329839d4278e812c02f40b75b8"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">const std::vector&lt; std::shared_ptr&lt; <a class="el" href="class_client.html">Client</a> &gt; &gt; Floor::getUpLine </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_floor_8cpp_source.html#l00054">54</a> of file <a class="el" href="_floor_8cpp_source.html">Floor.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a0897897d4bb4aafc7b6aeb0664bc6e40"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::queue&lt; std::shared_ptr&lt; <a class="el" href="class_client.html">Client</a> &gt; &gt; Floor::getUpLineCopy </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -448,7 +508,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_floor_8cpp_source.html#l00026">26</a> of file <a class="el" href="_floor_8cpp_source.html">Floor.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_floor_8cpp_source.html#l00030">30</a> of file <a class="el" href="_floor_8cpp_source.html">Floor.cpp</a>.</p>
 
 </div>
 </div>
@@ -466,7 +526,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_floor_8cpp_source.html#l00055">55</a> of file <a class="el" href="_floor_8cpp_source.html">Floor.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_floor_8cpp_source.html#l00083">83</a> of file <a class="el" href="_floor_8cpp_source.html">Floor.cpp</a>.</p>
 
 </div>
 </div>
@@ -483,7 +543,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_floor_8cpp_source.html#l00139">139</a> of file <a class="el" href="_floor_8cpp_source.html">Floor.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_floor_8cpp_source.html#l00167">167</a> of file <a class="el" href="_floor_8cpp_source.html">Floor.cpp</a>.</p>
 
 </div>
 </div>

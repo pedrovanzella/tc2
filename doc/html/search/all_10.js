@@ -8,5 +8,6 @@ var searchData=
   ['reporter',['Reporter',['../class_reporter.html',1,'Reporter'],['../class_reporter.html#ac47d1ea43a15518a43ee6c1ea7d89587',1,'Reporter::Reporter()']]],
   ['reporter_2ecpp',['Reporter.cpp',['../_reporter_8cpp.html',1,'']]],
   ['reporter_2eh',['Reporter.h',['../_reporter_8h.html',1,'']]],
+  ['resetids',['resetIds',['../class_client.html#ab2013c01e67c3edb773c359c5df22acb',1,'Client']]],
   ['run',['run',['../class_simulator.html#aa2de7e32b04cc3e8fc60aec23997621b',1,'Simulator']]]
 ];

@@ -1,3 +1,5 @@
 <map id="Scenario::getPath" name="Scenario::getPath">
-<area shape="rect" id="node2" href="$class_scenario.html#a34696f294405ce97dcb2e7174f2360e0" title="Scenario::getBasePath" alt="" coords="180,5,336,32"/>
+<area shape="rect" id="node2" href="$class_scenario.html#a34696f294405ce97dcb2e7174f2360e0" title="Scenario::getBasePath" alt="" coords="195,5,351,32"/>
+<area shape="rect" id="node3" href="$namespace_helpers.html#a6623afaa6548aa85a5a1bfd019e1e55f" title="Helpers::schedulerName" alt="" coords="189,56,356,83"/>
+<area shape="rect" id="node4" href="$namespace_helpers.html#a51b4991513657bea83b1ad43c778aec7" title="Helpers::costFunctionName" alt="" coords="180,107,365,133"/>
 </map>

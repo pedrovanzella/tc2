@@ -124,7 +124,7 @@ $(document).ready(function(){initNavTree('main_8cpp_source.html','');});
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  <span class="keywordflow">for</span> (<span class="keyword">auto</span> scenario : *scenarios) {</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keyword">auto</span> simulator = std::make_shared&lt;Simulator&gt;(scenario);</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    simulator-&gt;run();</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    reporter-&gt;generate(simulator-&gt;getStatistics());</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    reporter-&gt;generate(simulator);</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  }</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  reporter-&gt;generate();</div>
@@ -135,7 +135,7 @@ $(document).ready(function(){initNavTree('main_8cpp_source.html','');});
 <div class="ttc" id="_reporter_8h_html"><div class="ttname"><a href="_reporter_8h.html">Reporter.h</a></div></div>
 <div class="ttc" id="main_8cpp_html_a0ddf1224851353fc92bfbff6f499fa97"><div class="ttname"><a href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97">main</a></div><div class="ttdeci">int main(int argc, char *argv[])</div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00007">main.cpp:7</a></div></div>
 <div class="ttc" id="_simulator_8h_html"><div class="ttname"><a href="_simulator_8h.html">Simulator.h</a></div></div>
-<div class="ttc" id="class_scenario_html_a41d702c1205ca0780fe2901beb7b28ab"><div class="ttname"><a href="class_scenario.html#a41d702c1205ca0780fe2901beb7b28ab">Scenario::Load</a></div><div class="ttdeci">static std::shared_ptr&lt; std::vector&lt; std::shared_ptr&lt; const Scenario &gt; &gt; &gt; Load(std::string file)</div><div class="ttdef"><b>Definition:</b> <a href="_scenario_8cpp_source.html#l00022">Scenario.cpp:22</a></div></div>
+<div class="ttc" id="class_scenario_html_a41d702c1205ca0780fe2901beb7b28ab"><div class="ttname"><a href="class_scenario.html#a41d702c1205ca0780fe2901beb7b28ab">Scenario::Load</a></div><div class="ttdeci">static std::shared_ptr&lt; std::vector&lt; std::shared_ptr&lt; const Scenario &gt; &gt; &gt; Load(std::string file)</div><div class="ttdef"><b>Definition:</b> <a href="_scenario_8cpp_source.html#l00034">Scenario.cpp:34</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

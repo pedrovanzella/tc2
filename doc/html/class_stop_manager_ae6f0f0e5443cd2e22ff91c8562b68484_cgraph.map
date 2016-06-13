@@ -1,0 +1,5 @@
+<map id="StopManager::StopManager" name="StopManager::StopManager">
+<area shape="rect" id="node2" href="$class_stop_manager.html#aa3e13139314a4cb7f64c1e4298d9eed4" title="StopManager::getStops" alt="" coords="237,5,396,32"/>
+<area shape="rect" id="node3" href="$class_stop_manager.html#a2c22b4194c71d20793efbb69be1ba548" title="StopManager::set" alt="" coords="254,56,379,83"/>
+<area shape="rect" id="node4" href="$namespace_helpers.html#a2c85394d10f1877f982ae21bc65ee601" title="Helpers::directionName" alt="" coords="444,56,603,83"/>
+</map>

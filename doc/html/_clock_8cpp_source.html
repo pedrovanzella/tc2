@@ -116,40 +116,43 @@ $(document).ready(function(){initNavTree('_clock_8cpp_source.html','');});
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
 <div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="class_clock.html#adbc370eb6b5f8d01645cf440188160a8">    6</a></span>&#160;<a class="code" href="class_clock.html#adbc370eb6b5f8d01645cf440188160a8">Clock::Clock</a>() : _time(0) {}</div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
-<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="class_clock.html#afc976ce68fa85e15cc06f9ed47bddb7c">    8</a></span>&#160;<a class="code" href="class_clock.html#afc976ce68fa85e15cc06f9ed47bddb7c">Clock::~Clock</a>() {}</div>
+<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="class_clock.html#a3e27e52ca9dc4633dcef168bb90bf480">    8</a></span>&#160;<a class="code" href="class_clock.html#adbc370eb6b5f8d01645cf440188160a8">Clock::Clock</a>(<span class="keyword">const</span> <a class="code" href="class_clock.html">Clock</a>&amp; clock) : _time(clock.currentTime()) {}</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
-<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="class_clock.html#acfef0b6f07a1d424d2d6679a5ae8e612">   10</a></span>&#160;<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <a class="code" href="class_clock.html#acfef0b6f07a1d424d2d6679a5ae8e612">Clock::currentTime</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _time; }</div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="class_clock.html#afc976ce68fa85e15cc06f9ed47bddb7c">   10</a></span>&#160;<a class="code" href="class_clock.html#afc976ce68fa85e15cc06f9ed47bddb7c">Clock::~Clock</a>() {}</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
-<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="class_clock.html#a5970e64721aa434ab917f63c6466f3e8">   12</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_clock.html#a5970e64721aa434ab917f63c6466f3e8">Clock::advanceTo</a>(<span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> time) {</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  <span class="keywordflow">if</span> (time &lt;= _time)</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  _time = time;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;}</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
-<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="class_clock.html#a3e0c484fc257b6c7818614dc46dfd262">   18</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_clock.html#a3e0c484fc257b6c7818614dc46dfd262">Clock::advanceBy</a>(<span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> amount) {</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  <span class="keywordflow">if</span> (amount &lt;= 0)</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  _time += amount;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;}</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="class_clock.html#a534758881637b06f765a24af22f9e8a1">   24</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_clock.html#a534758881637b06f765a24af22f9e8a1">Clock::notify</a>(<span class="keyword">const</span> std::shared_ptr&lt;const Event&gt; event) {</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  <a class="code" href="class_clock.html#a5970e64721aa434ab917f63c6466f3e8">advanceTo</a>(event-&gt;getTime());</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;}</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
-<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="class_clock.html#a21bdc10618f141f620227e81b23b2acf">   28</a></span>&#160;std::string <a class="code" href="class_clock.html#a21bdc10618f141f620227e81b23b2acf">Clock::str</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  std::ostringstream stream;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  stream &lt;&lt; <span class="stringliteral">&quot;t=&quot;</span> &lt;&lt; _time;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <span class="keywordflow">return</span> stream.str();</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;}</div>
-<div class="ttc" id="class_clock_html_a5970e64721aa434ab917f63c6466f3e8"><div class="ttname"><a href="class_clock.html#a5970e64721aa434ab917f63c6466f3e8">Clock::advanceTo</a></div><div class="ttdeci">void advanceTo(const unsigned long time)</div><div class="ttdef"><b>Definition:</b> <a href="_clock_8cpp_source.html#l00012">Clock.cpp:12</a></div></div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="class_clock.html#acfef0b6f07a1d424d2d6679a5ae8e612">   12</a></span>&#160;<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <a class="code" href="class_clock.html#acfef0b6f07a1d424d2d6679a5ae8e612">Clock::currentTime</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _time; }</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="class_clock.html#a5970e64721aa434ab917f63c6466f3e8">   14</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_clock.html#a5970e64721aa434ab917f63c6466f3e8">Clock::advanceTo</a>(<span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> time) {</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  <span class="keywordflow">if</span> (time &lt;= _time)</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  _time = time;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;}</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="class_clock.html#a3e0c484fc257b6c7818614dc46dfd262">   20</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_clock.html#a3e0c484fc257b6c7818614dc46dfd262">Clock::advanceBy</a>(<span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> amount) {</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  <span class="keywordflow">if</span> (amount &lt;= 0)</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  _time += amount;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;}</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="class_clock.html#a534758881637b06f765a24af22f9e8a1">   26</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_clock.html#a534758881637b06f765a24af22f9e8a1">Clock::notify</a>(<span class="keyword">const</span> std::shared_ptr&lt;const Event&gt; event) {</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <a class="code" href="class_clock.html#a5970e64721aa434ab917f63c6466f3e8">advanceTo</a>(event-&gt;getTime());</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;}</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="class_clock.html#a21bdc10618f141f620227e81b23b2acf">   30</a></span>&#160;std::string <a class="code" href="class_clock.html#a21bdc10618f141f620227e81b23b2acf">Clock::str</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  std::ostringstream stream;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  stream &lt;&lt; <span class="stringliteral">&quot;t=&quot;</span> &lt;&lt; _time;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <span class="keywordflow">return</span> stream.str();</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;}</div>
+<div class="ttc" id="class_clock_html"><div class="ttname"><a href="class_clock.html">Clock</a></div><div class="ttdef"><b>Definition:</b> <a href="_clock_8h_source.html#l00007">Clock.h:7</a></div></div>
+<div class="ttc" id="class_clock_html_a5970e64721aa434ab917f63c6466f3e8"><div class="ttname"><a href="class_clock.html#a5970e64721aa434ab917f63c6466f3e8">Clock::advanceTo</a></div><div class="ttdeci">void advanceTo(const unsigned long time)</div><div class="ttdef"><b>Definition:</b> <a href="_clock_8cpp_source.html#l00014">Clock.cpp:14</a></div></div>
 <div class="ttc" id="_clock_8h_html"><div class="ttname"><a href="_clock_8h.html">Clock.h</a></div></div>
-<div class="ttc" id="class_clock_html_acfef0b6f07a1d424d2d6679a5ae8e612"><div class="ttname"><a href="class_clock.html#acfef0b6f07a1d424d2d6679a5ae8e612">Clock::currentTime</a></div><div class="ttdeci">unsigned long currentTime() const </div><div class="ttdef"><b>Definition:</b> <a href="_clock_8cpp_source.html#l00010">Clock.cpp:10</a></div></div>
+<div class="ttc" id="class_clock_html_acfef0b6f07a1d424d2d6679a5ae8e612"><div class="ttname"><a href="class_clock.html#acfef0b6f07a1d424d2d6679a5ae8e612">Clock::currentTime</a></div><div class="ttdeci">unsigned long currentTime() const </div><div class="ttdef"><b>Definition:</b> <a href="_clock_8cpp_source.html#l00012">Clock.cpp:12</a></div></div>
 <div class="ttc" id="class_clock_html_adbc370eb6b5f8d01645cf440188160a8"><div class="ttname"><a href="class_clock.html#adbc370eb6b5f8d01645cf440188160a8">Clock::Clock</a></div><div class="ttdeci">Clock()</div><div class="ttdef"><b>Definition:</b> <a href="_clock_8cpp_source.html#l00006">Clock.cpp:6</a></div></div>
-<div class="ttc" id="class_clock_html_a21bdc10618f141f620227e81b23b2acf"><div class="ttname"><a href="class_clock.html#a21bdc10618f141f620227e81b23b2acf">Clock::str</a></div><div class="ttdeci">std::string str() const </div><div class="ttdef"><b>Definition:</b> <a href="_clock_8cpp_source.html#l00028">Clock.cpp:28</a></div></div>
-<div class="ttc" id="class_clock_html_a3e0c484fc257b6c7818614dc46dfd262"><div class="ttname"><a href="class_clock.html#a3e0c484fc257b6c7818614dc46dfd262">Clock::advanceBy</a></div><div class="ttdeci">void advanceBy(const unsigned long amount)</div><div class="ttdef"><b>Definition:</b> <a href="_clock_8cpp_source.html#l00018">Clock.cpp:18</a></div></div>
+<div class="ttc" id="class_clock_html_a21bdc10618f141f620227e81b23b2acf"><div class="ttname"><a href="class_clock.html#a21bdc10618f141f620227e81b23b2acf">Clock::str</a></div><div class="ttdeci">std::string str() const </div><div class="ttdef"><b>Definition:</b> <a href="_clock_8cpp_source.html#l00030">Clock.cpp:30</a></div></div>
+<div class="ttc" id="class_clock_html_a3e0c484fc257b6c7818614dc46dfd262"><div class="ttname"><a href="class_clock.html#a3e0c484fc257b6c7818614dc46dfd262">Clock::advanceBy</a></div><div class="ttdeci">void advanceBy(const unsigned long amount)</div><div class="ttdef"><b>Definition:</b> <a href="_clock_8cpp_source.html#l00020">Clock.cpp:20</a></div></div>
 <div class="ttc" id="_event_8h_html"><div class="ttname"><a href="_event_8h.html">Event.h</a></div></div>
-<div class="ttc" id="class_clock_html_afc976ce68fa85e15cc06f9ed47bddb7c"><div class="ttname"><a href="class_clock.html#afc976ce68fa85e15cc06f9ed47bddb7c">Clock::~Clock</a></div><div class="ttdeci">virtual ~Clock()</div><div class="ttdef"><b>Definition:</b> <a href="_clock_8cpp_source.html#l00008">Clock.cpp:8</a></div></div>
-<div class="ttc" id="class_clock_html_a534758881637b06f765a24af22f9e8a1"><div class="ttname"><a href="class_clock.html#a534758881637b06f765a24af22f9e8a1">Clock::notify</a></div><div class="ttdeci">void notify(const std::shared_ptr&lt; const Event &gt; event)</div><div class="ttdef"><b>Definition:</b> <a href="_clock_8cpp_source.html#l00024">Clock.cpp:24</a></div></div>
+<div class="ttc" id="class_clock_html_afc976ce68fa85e15cc06f9ed47bddb7c"><div class="ttname"><a href="class_clock.html#afc976ce68fa85e15cc06f9ed47bddb7c">Clock::~Clock</a></div><div class="ttdeci">virtual ~Clock()</div><div class="ttdef"><b>Definition:</b> <a href="_clock_8cpp_source.html#l00010">Clock.cpp:10</a></div></div>
+<div class="ttc" id="class_clock_html_a534758881637b06f765a24af22f9e8a1"><div class="ttname"><a href="class_clock.html#a534758881637b06f765a24af22f9e8a1">Clock::notify</a></div><div class="ttdeci">void notify(const std::shared_ptr&lt; const Event &gt; event)</div><div class="ttdef"><b>Definition:</b> <a href="_clock_8cpp_source.html#l00026">Clock.cpp:26</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

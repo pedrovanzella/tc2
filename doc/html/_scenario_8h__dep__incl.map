@@ -3,8 +3,9 @@
 <area shape="rect" id="node3" href="$_event_factory_8cpp.html" title="src/EventFactory.cpp" alt="" coords="147,80,293,107"/>
 <area shape="rect" id="node4" href="$_floor_8cpp.html" title="src/Floor.cpp" alt="" coords="317,80,416,107"/>
 <area shape="rect" id="node5" href="$main_8cpp.html" title="src/main.cpp" alt="" coords="441,80,538,107"/>
-<area shape="rect" id="node6" href="$_reporter_8cpp.html" title="src/Reporter.cpp" alt="" coords="562,80,681,107"/>
-<area shape="rect" id="node7" href="$_scenario_8cpp.html" title="src/Scenario.cpp" alt="" coords="705,80,825,107"/>
-<area shape="rect" id="node8" href="$_simulator_8cpp.html" title="src/Simulator.cpp" alt="" coords="850,80,974,107"/>
-<area shape="rect" id="node9" href="$_statistics_8cpp.html" title="src/Statistics.cpp" alt="" coords="998,80,1122,107"/>
+<area shape="rect" id="node6" href="$_planning_scheduler_8cpp.html" title="src/PlanningScheduler.cpp" alt="" coords="562,80,739,107"/>
+<area shape="rect" id="node7" href="$_reporter_8cpp.html" title="src/Reporter.cpp" alt="" coords="763,80,882,107"/>
+<area shape="rect" id="node8" href="$_scenario_8cpp.html" title="src/Scenario.cpp" alt="" coords="907,80,1027,107"/>
+<area shape="rect" id="node9" href="$_simulator_8cpp.html" title="src/Simulator.cpp" alt="" coords="1051,80,1175,107"/>
+<area shape="rect" id="node10" href="$_statistics_8cpp.html" title="src/Statistics.cpp" alt="" coords="1199,80,1323,107"/>
 </map>

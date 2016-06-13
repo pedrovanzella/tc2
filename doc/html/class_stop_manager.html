@@ -119,26 +119,84 @@ $(document).ready(function(){initNavTree('class_stop_manager.html','');});
 <div class="dynheader">
 Collaboration diagram for StopManager:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_stop_manager__coll__graph.svg" width="110" height="132"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="class_stop_manager__coll__graph.svg" width="130" height="162"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:adab473b58ab3505cbf849b9f05939637"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="class_elevator.html">Elevator</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_stop_manager.html#adab473b58ab3505cbf849b9f05939637">get</a> (std::shared_ptr&lt; <a class="el" href="class_floor.html">Floor</a> &gt; floor, <a class="el" href="_direction_8h.html#a224b9163917ac32fc95a60d8c1eec3aa">Direction</a> direction) const </td></tr>
-<tr class="separator:adab473b58ab3505cbf849b9f05939637"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a94a9b2f80e6a716fe779e5e44843db"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_stop_manager.html#a7a94a9b2f80e6a716fe779e5e44843db">StopManager</a> ()</td></tr>
+<tr class="separator:a7a94a9b2f80e6a716fe779e5e44843db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6f0f0e5443cd2e22ff91c8562b68484"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_stop_manager.html#ae6f0f0e5443cd2e22ff91c8562b68484">StopManager</a> (const <a class="el" href="class_stop_manager.html">StopManager</a> &amp;stopManager, const std::vector&lt; std::shared_ptr&lt; <a class="el" href="class_elevator.html">Elevator</a> &gt;&gt; elevators)</td></tr>
+<tr class="separator:ae6f0f0e5443cd2e22ff91c8562b68484"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afaecd62fb12aeec933c0ac0c1b2beebc"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_stop_manager.html#afaecd62fb12aeec933c0ac0c1b2beebc">hasStop</a> (std::shared_ptr&lt; <a class="el" href="class_floor.html">Floor</a> &gt; floor, <a class="el" href="_direction_8h.html#a224b9163917ac32fc95a60d8c1eec3aa">Direction</a> direction)</td></tr>
+<tr class="separator:afaecd62fb12aeec933c0ac0c1b2beebc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2c22b4194c71d20793efbb69be1ba548"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_stop_manager.html#a2c22b4194c71d20793efbb69be1ba548">set</a> (std::shared_ptr&lt; <a class="el" href="class_floor.html">Floor</a> &gt; floor, <a class="el" href="_direction_8h.html#a224b9163917ac32fc95a60d8c1eec3aa">Direction</a> direction, std::shared_ptr&lt; <a class="el" href="class_elevator.html">Elevator</a> &gt; elevator)</td></tr>
 <tr class="separator:a2c22b4194c71d20793efbb69be1ba548"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa96aaa6138287dc5aec23ece32fccf8e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_stop_manager.html#aa96aaa6138287dc5aec23ece32fccf8e">clear</a> (std::shared_ptr&lt; <a class="el" href="class_floor.html">Floor</a> &gt; floor, <a class="el" href="_direction_8h.html#a224b9163917ac32fc95a60d8c1eec3aa">Direction</a> direction)</td></tr>
-<tr class="separator:aa96aaa6138287dc5aec23ece32fccf8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a17f374de474e4de6ba1488220dcc7c72"><td class="memItemLeft" align="right" valign="top">std::set&lt; std::shared_ptr&lt; <a class="el" href="class_floor.html">Floor</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_stop_manager.html#a17f374de474e4de6ba1488220dcc7c72">getStops</a> (std::shared_ptr&lt; <a class="el" href="class_elevator.html">Elevator</a> &gt; elevator, <a class="el" href="_direction_8h.html#a224b9163917ac32fc95a60d8c1eec3aa">Direction</a> direction)</td></tr>
-<tr class="separator:a17f374de474e4de6ba1488220dcc7c72"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1e2c0bc01d991dd1c3618be4c1c1884"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_stop_manager.html#ab1e2c0bc01d991dd1c3618be4c1c1884">clear</a> (std::shared_ptr&lt; <a class="el" href="class_floor.html">Floor</a> &gt; floor, std::shared_ptr&lt; <a class="el" href="class_elevator.html">Elevator</a> &gt; elevator, <a class="el" href="_direction_8h.html#a224b9163917ac32fc95a60d8c1eec3aa">Direction</a> direction)</td></tr>
+<tr class="separator:ab1e2c0bc01d991dd1c3618be4c1c1884"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa3e13139314a4cb7f64c1e4298d9eed4"><td class="memItemLeft" align="right" valign="top">std::set&lt; std::shared_ptr&lt; <a class="el" href="class_floor.html">Floor</a> &gt;, <a class="el" href="struct_floor_comparator.html">FloorComparator</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_stop_manager.html#aa3e13139314a4cb7f64c1e4298d9eed4">getStops</a> (std::shared_ptr&lt; <a class="el" href="class_elevator.html">Elevator</a> &gt; elevator, <a class="el" href="_direction_8h.html#a224b9163917ac32fc95a60d8c1eec3aa">Direction</a> direction) const </td></tr>
+<tr class="separator:aa3e13139314a4cb7f64c1e4298d9eed4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p>Definition at line <a class="el" href="_stop_manager_8h_source.html#l00011">11</a> of file <a class="el" href="_stop_manager_8h_source.html">StopManager.h</a>.</p>
-</div><h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="aa96aaa6138287dc5aec23ece32fccf8e"></a>
+<p>Definition at line <a class="el" href="_stop_manager_8h_source.html#l00018">18</a> of file <a class="el" href="_stop_manager_8h_source.html">StopManager.h</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a7a94a9b2f80e6a716fe779e5e44843db"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">StopManager::StopManager </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_stop_manager_8cpp_source.html#l00007">7</a> of file <a class="el" href="_stop_manager_8cpp_source.html">StopManager.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae6f0f0e5443cd2e22ff91c8562b68484"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">StopManager::StopManager </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_stop_manager.html">StopManager</a> &amp;&#160;</td>
+          <td class="paramname"><em>stopManager</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; std::shared_ptr&lt; <a class="el" href="class_elevator.html">Elevator</a> &gt;&gt;&#160;</td>
+          <td class="paramname"><em>elevators</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_stop_manager_8cpp_source.html#l00009">9</a> of file <a class="el" href="_stop_manager_8cpp_source.html">StopManager.cpp</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="class_stop_manager_ae6f0f0e5443cd2e22ff91c8562b68484_cgraph.svg" width="608" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="ab1e2c0bc01d991dd1c3618be4c1c1884"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -151,56 +209,6 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="_direction_8h.html#a224b9163917ac32fc95a60d8c1eec3aa">Direction</a>&#160;</td>
-          <td class="paramname"><em>direction</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="_stop_manager_8cpp_source.html#l00028">28</a> of file <a class="el" href="_stop_manager_8cpp_source.html">StopManager.cpp</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="adab473b58ab3505cbf849b9f05939637"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::shared_ptr&lt; <a class="el" href="class_elevator.html">Elevator</a> &gt; StopManager::get </td>
-          <td>(</td>
-          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="class_floor.html">Floor</a> &gt;&#160;</td>
-          <td class="paramname"><em>floor</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="_direction_8h.html#a224b9163917ac32fc95a60d8c1eec3aa">Direction</a>&#160;</td>
-          <td class="paramname"><em>direction</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="_stop_manager_8cpp_source.html#l00007">7</a> of file <a class="el" href="_stop_manager_8cpp_source.html">StopManager.cpp</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a17f374de474e4de6ba1488220dcc7c72"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::set&lt; std::shared_ptr&lt; <a class="el" href="class_floor.html">Floor</a> &gt; &gt; StopManager::getStops </td>
-          <td>(</td>
           <td class="paramtype">std::shared_ptr&lt; <a class="el" href="class_elevator.html">Elevator</a> &gt;&#160;</td>
           <td class="paramname"><em>elevator</em>, </td>
         </tr>
@@ -218,7 +226,79 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_stop_manager_8cpp_source.html#l00039">39</a> of file <a class="el" href="_stop_manager_8cpp_source.html">StopManager.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_stop_manager_8cpp_source.html#l00034">34</a> of file <a class="el" href="_stop_manager_8cpp_source.html">StopManager.cpp</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="class_stop_manager_ab1e2c0bc01d991dd1c3618be4c1c1884_cgraph.svg" width="352" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="aa3e13139314a4cb7f64c1e4298d9eed4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::set&lt; std::shared_ptr&lt; <a class="el" href="class_floor.html">Floor</a> &gt;, <a class="el" href="struct_floor_comparator.html">FloorComparator</a> &gt; StopManager::getStops </td>
+          <td>(</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="class_elevator.html">Elevator</a> &gt;&#160;</td>
+          <td class="paramname"><em>elevator</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_direction_8h.html#a224b9163917ac32fc95a60d8c1eec3aa">Direction</a>&#160;</td>
+          <td class="paramname"><em>direction</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_stop_manager_8cpp_source.html#l00045">45</a> of file <a class="el" href="_stop_manager_8cpp_source.html">StopManager.cpp</a>.</p>
+
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="class_stop_manager_aa3e13139314a4cb7f64c1e4298d9eed4_icgraph.svg" width="402" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="afaecd62fb12aeec933c0ac0c1b2beebc"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool StopManager::hasStop </td>
+          <td>(</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="class_floor.html">Floor</a> &gt;&#160;</td>
+          <td class="paramname"><em>floor</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_direction_8h.html#a224b9163917ac32fc95a60d8c1eec3aa">Direction</a>&#160;</td>
+          <td class="paramname"><em>direction</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_stop_manager_8cpp_source.html#l00020">20</a> of file <a class="el" href="_stop_manager_8cpp_source.html">StopManager.cpp</a>.</p>
 
 </div>
 </div>
@@ -252,7 +332,23 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_stop_manager_8cpp_source.html#l00015">15</a> of file <a class="el" href="_stop_manager_8cpp_source.html">StopManager.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_stop_manager_8cpp_source.html#l00025">25</a> of file <a class="el" href="_stop_manager_8cpp_source.html">StopManager.cpp</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="class_stop_manager_a2c22b4194c71d20793efbb69be1ba548_cgraph.svg" width="343" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</p>
+
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="class_stop_manager_a2c22b4194c71d20793efbb69be1ba548_icgraph.svg" width="368" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</p>
 
 </div>
 </div>

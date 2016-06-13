@@ -1,0 +1,323 @@
+\section{Elevator Class Reference}
+\label{class_elevator}\index{Elevator@{Elevator}}
+
+
+{\ttfamily \#include $<$Elevator.\+h$>$}
+
+
+
+Inheritance diagram for Elevator\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=160pt]{class_elevator__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Elevator\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=160pt]{class_elevator__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Elevator} (int number, int capacity, int floor)
+\item 
+{\bf Elevator} (const {\bf Elevator} \&elevator)
+\item 
+virtual {\bf $\sim$\+Elevator} ()
+\item 
+int {\bf get\+Number} () const 
+\item 
+int {\bf get\+Capacity} () const 
+\item 
+int {\bf get\+Location} () const 
+\item 
+float {\bf get\+Occupation} () const 
+\item 
+std\+::pair$<$ int, {\bf Direction} $>$ {\bf get\+Destination} () const 
+\item 
+{\bf Status} {\bf get\+Status} () const 
+\item 
+{\bf Direction} {\bf get\+Direction} () const 
+\item 
+const std\+::shared\+\_\+ptr$<$ const std\+::vector$<$ std\+::shared\+\_\+ptr$<$ {\bf Client} $>$ $>$ $>$ {\bf get\+Passengers} () const 
+\item 
+void {\bf set\+Destination} (std\+::pair$<$ int, {\bf Direction} $>$ destination)
+\item 
+void {\bf set\+Location} (int floor)
+\item 
+bool {\bf can\+Enter} (std\+::shared\+\_\+ptr$<$ const {\bf Client} $>$ client) const 
+\item 
+void {\bf add\+Passenger} (std\+::shared\+\_\+ptr$<$ {\bf Client} $>$ client)
+\item 
+void {\bf move} ()
+\item 
+std\+::shared\+\_\+ptr$<$ std\+::vector$<$ std\+::shared\+\_\+ptr$<$ {\bf Client} $>$ $>$ $>$ {\bf drop\+Passengers\+To\+Current\+Location} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::shared\+\_\+ptr$<$ std\+::vector$<$ std\+::shared\+\_\+ptr$<$ {\bf Elevator} $>$ $>$ $>$ {\bf create} (const std\+::shared\+\_\+ptr$<$ const {\bf Simulator} $>$ simulator)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 15 of file Elevator.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Elevator@{Elevator}!Elevator@{Elevator}}
+\index{Elevator@{Elevator}!Elevator@{Elevator}}
+\subsubsection[{Elevator}]{\setlength{\rightskip}{0pt plus 5cm}Elevator\+::\+Elevator (
+\begin{DoxyParamCaption}
+\item[{int}]{number, }
+\item[{int}]{capacity, }
+\item[{int}]{floor}
+\end{DoxyParamCaption}
+)}\label{class_elevator_a43c3de38489fb58f17fc60e91bd522e7}
+
+
+Definition at line 12 of file Elevator.\+cpp.
+
+\index{Elevator@{Elevator}!Elevator@{Elevator}}
+\index{Elevator@{Elevator}!Elevator@{Elevator}}
+\subsubsection[{Elevator}]{\setlength{\rightskip}{0pt plus 5cm}Elevator\+::\+Elevator (
+\begin{DoxyParamCaption}
+\item[{const {\bf Elevator} \&}]{elevator}
+\end{DoxyParamCaption}
+)}\label{class_elevator_aaeba8eecd98e761f80281e6f0d789806}
+
+
+Definition at line 21 of file Elevator.\+cpp.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=299pt]{class_elevator_aaeba8eecd98e761f80281e6f0d789806_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Elevator@{Elevator}!````~Elevator@{$\sim$\+Elevator}}
+\index{````~Elevator@{$\sim$\+Elevator}!Elevator@{Elevator}}
+\subsubsection[{$\sim$\+Elevator}]{\setlength{\rightskip}{0pt plus 5cm}Elevator\+::$\sim$\+Elevator (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_elevator_a6e2fb71cfcde094c087b8a19a8bcab4b}
+
+
+Definition at line 35 of file Elevator.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\index{Elevator@{Elevator}!add\+Passenger@{add\+Passenger}}
+\index{add\+Passenger@{add\+Passenger}!Elevator@{Elevator}}
+\subsubsection[{add\+Passenger}]{\setlength{\rightskip}{0pt plus 5cm}void Elevator\+::add\+Passenger (
+\begin{DoxyParamCaption}
+\item[{std\+::shared\+\_\+ptr$<$ {\bf Client} $>$}]{client}
+\end{DoxyParamCaption}
+)}\label{class_elevator_a79725eb058974b68669b717d956ddadd}
+
+
+Definition at line 89 of file Elevator.\+cpp.
+
+\index{Elevator@{Elevator}!can\+Enter@{can\+Enter}}
+\index{can\+Enter@{can\+Enter}!Elevator@{Elevator}}
+\subsubsection[{can\+Enter}]{\setlength{\rightskip}{0pt plus 5cm}bool Elevator\+::can\+Enter (
+\begin{DoxyParamCaption}
+\item[{std\+::shared\+\_\+ptr$<$ const {\bf Client} $>$}]{client}
+\end{DoxyParamCaption}
+) const}\label{class_elevator_aca22adae98cf171ac842c721dbb25248}
+
+
+Definition at line 83 of file Elevator.\+cpp.
+
+\index{Elevator@{Elevator}!create@{create}}
+\index{create@{create}!Elevator@{Elevator}}
+\subsubsection[{create}]{\setlength{\rightskip}{0pt plus 5cm}std\+::shared\+\_\+ptr$<$ std\+::vector$<$ std\+::shared\+\_\+ptr$<$ {\bf Elevator} $>$ $>$ $>$ Elevator\+::create (
+\begin{DoxyParamCaption}
+\item[{const std\+::shared\+\_\+ptr$<$ const {\bf Simulator} $>$}]{simulator}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{class_elevator_a6a5d8cb3159ee98e343042df0ff7f2ba}
+
+
+Definition at line 124 of file Elevator.\+cpp.
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_elevator_a6a5d8cb3159ee98e343042df0ff7f2ba_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Elevator@{Elevator}!drop\+Passengers\+To\+Current\+Location@{drop\+Passengers\+To\+Current\+Location}}
+\index{drop\+Passengers\+To\+Current\+Location@{drop\+Passengers\+To\+Current\+Location}!Elevator@{Elevator}}
+\subsubsection[{drop\+Passengers\+To\+Current\+Location}]{\setlength{\rightskip}{0pt plus 5cm}std\+::shared\+\_\+ptr$<$ std\+::vector$<$ std\+::shared\+\_\+ptr$<$ {\bf Client} $>$ $>$ $>$ Elevator\+::drop\+Passengers\+To\+Current\+Location (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_elevator_aa729c45a7dc7828f9bf4e30bbeb7ed83}
+
+
+Definition at line 109 of file Elevator.\+cpp.
+
+\index{Elevator@{Elevator}!get\+Capacity@{get\+Capacity}}
+\index{get\+Capacity@{get\+Capacity}!Elevator@{Elevator}}
+\subsubsection[{get\+Capacity}]{\setlength{\rightskip}{0pt plus 5cm}int Elevator\+::get\+Capacity (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{class_elevator_ab1a532d6b4df19b77e7a8ce4727e6d74}
+
+
+Definition at line 39 of file Elevator.\+cpp.
+
+\index{Elevator@{Elevator}!get\+Destination@{get\+Destination}}
+\index{get\+Destination@{get\+Destination}!Elevator@{Elevator}}
+\subsubsection[{get\+Destination}]{\setlength{\rightskip}{0pt plus 5cm}std\+::pair$<$ int, {\bf Direction} $>$ Elevator\+::get\+Destination (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{class_elevator_ad8cb66c8d7bdd3e82faf25e702bbc024}
+
+
+Definition at line 43 of file Elevator.\+cpp.
+
+\index{Elevator@{Elevator}!get\+Direction@{get\+Direction}}
+\index{get\+Direction@{get\+Direction}!Elevator@{Elevator}}
+\subsubsection[{get\+Direction}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Direction} Elevator\+::get\+Direction (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{class_elevator_a658315b18e536447f56a68220e35f45b}
+
+
+Definition at line 47 of file Elevator.\+cpp.
+
+\index{Elevator@{Elevator}!get\+Location@{get\+Location}}
+\index{get\+Location@{get\+Location}!Elevator@{Elevator}}
+\subsubsection[{get\+Location}]{\setlength{\rightskip}{0pt plus 5cm}int Elevator\+::get\+Location (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{class_elevator_a6b50953b97442601165a3fe656d76776}
+
+
+Definition at line 41 of file Elevator.\+cpp.
+
+\index{Elevator@{Elevator}!get\+Number@{get\+Number}}
+\index{get\+Number@{get\+Number}!Elevator@{Elevator}}
+\subsubsection[{get\+Number}]{\setlength{\rightskip}{0pt plus 5cm}int Elevator\+::get\+Number (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{class_elevator_a8e21ac6a7a3923ab2fd41b6d4b8295ba}
+
+
+Definition at line 37 of file Elevator.\+cpp.
+
+\index{Elevator@{Elevator}!get\+Occupation@{get\+Occupation}}
+\index{get\+Occupation@{get\+Occupation}!Elevator@{Elevator}}
+\subsubsection[{get\+Occupation}]{\setlength{\rightskip}{0pt plus 5cm}float Elevator\+::get\+Occupation (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{class_elevator_a2189014eaa1af1a32eb6d12c13b820ff}
+
+
+Definition at line 51 of file Elevator.\+cpp.
+
+\index{Elevator@{Elevator}!get\+Passengers@{get\+Passengers}}
+\index{get\+Passengers@{get\+Passengers}!Elevator@{Elevator}}
+\subsubsection[{get\+Passengers}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::shared\+\_\+ptr$<$ const std\+::vector$<$ std\+::shared\+\_\+ptr$<$ {\bf Client} $>$ $>$ $>$ Elevator\+::get\+Passengers (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{class_elevator_ad12bd410a7c6068b3653d4756cdad7c3}
+
+
+Definition at line 49 of file Elevator.\+cpp.
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=299pt]{class_elevator_ad12bd410a7c6068b3653d4756cdad7c3_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Elevator@{Elevator}!get\+Status@{get\+Status}}
+\index{get\+Status@{get\+Status}!Elevator@{Elevator}}
+\subsubsection[{get\+Status}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status} Elevator\+::get\+Status (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{class_elevator_a53345cce9f31247b8b85cba2cac91922}
+
+
+Definition at line 45 of file Elevator.\+cpp.
+
+\index{Elevator@{Elevator}!move@{move}}
+\index{move@{move}!Elevator@{Elevator}}
+\subsubsection[{move}]{\setlength{\rightskip}{0pt plus 5cm}void Elevator\+::move (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_elevator_aebc0dff2d1966a4ea336a159b95bdf05}
+
+
+Definition at line 93 of file Elevator.\+cpp.
+
+\index{Elevator@{Elevator}!set\+Destination@{set\+Destination}}
+\index{set\+Destination@{set\+Destination}!Elevator@{Elevator}}
+\subsubsection[{set\+Destination}]{\setlength{\rightskip}{0pt plus 5cm}void Elevator\+::set\+Destination (
+\begin{DoxyParamCaption}
+\item[{std\+::pair$<$ int, {\bf Direction} $>$}]{destination}
+\end{DoxyParamCaption}
+)}\label{class_elevator_ae5dbc53a35f77c0a8715b3e0f4b7d304}
+
+
+Definition at line 65 of file Elevator.\+cpp.
+
+\index{Elevator@{Elevator}!set\+Location@{set\+Location}}
+\index{set\+Location@{set\+Location}!Elevator@{Elevator}}
+\subsubsection[{set\+Location}]{\setlength{\rightskip}{0pt plus 5cm}void Elevator\+::set\+Location (
+\begin{DoxyParamCaption}
+\item[{int}]{floor}
+\end{DoxyParamCaption}
+)}\label{class_elevator_a638951b2d7a71a8135d3d4b65a908d01}
+
+
+Definition at line 79 of file Elevator.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/{\bf Elevator.\+h}\item 
+src/{\bf Elevator.\+cpp}\end{DoxyCompactItemize}

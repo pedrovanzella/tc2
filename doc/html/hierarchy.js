@@ -2,6 +2,7 @@ var hierarchy =
 [
     [ "Arrival", "struct_arrival.html", null ],
     [ "Client", "class_client.html", null ],
+    [ "ClientComparator", "class_client_comparator.html", null ],
     [ "CostFunction", "class_cost_function.html", [
       [ "BetterNearestNeighbourCostFunction", "class_better_nearest_neighbour_cost_function.html", null ],
       [ "DummyCostFunction", "class_dummy_cost_function.html", null ],
@@ -35,6 +36,7 @@ var hierarchy =
     ] ],
     [ "EventQueue", "class_event_queue.html", null ],
     [ "Floor", "class_floor.html", null ],
+    [ "FloorComparator", "struct_floor_comparator.html", null ],
     [ "Reporter", "class_reporter.html", null ],
     [ "runtime_error", null, [
       [ "MissingCostFunctionError", "class_missing_cost_function_error.html", null ],

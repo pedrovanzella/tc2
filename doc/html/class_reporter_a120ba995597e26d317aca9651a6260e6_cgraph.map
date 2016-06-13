@@ -1,7 +1,9 @@
 <map id="Reporter::generate" name="Reporter::generate">
-<area shape="rect" id="node2" href="$class_reporter.html#a8e68557b65c53ba700eaa9c3a9933df6" title="Reporter::generateUnified\lReport" alt="" coords="190,5,361,47"/>
-<area shape="rect" id="node3" href="$class_reporter.html#a69fa8649211b4e4c7441fd1f6c9042e2" title="Reporter::generateReport" alt="" coords="191,71,360,98"/>
-<area shape="rect" id="node4" href="$class_reporter.html#a0e3c710580b4cae4f70a8cc3b8e7473a" title="Reporter::generateArrivals" alt="" coords="188,122,363,149"/>
-<area shape="rect" id="node5" href="$class_reporter.html#a75934d0909b242ef77d4ee8e850af0fe" title="Reporter::generateDropOffs" alt="" coords="184,173,367,199"/>
-<area shape="rect" id="node6" href="$class_reporter.html#a314e30d2dacb907197f8446422981d37" title="Reporter::generateCharts" alt="" coords="191,223,360,250"/>
+<area shape="rect" id="node2" href="$class_reporter.html#aee1c3bbf665f10a2fb27da4f9154b7ee" title="Reporter::generateUnified\lReport" alt="" coords="190,57,361,98"/>
+<area shape="rect" id="node5" href="$class_reporter.html#a088522cbaeeeb5352f117c336d6a1bdb" title="Reporter::generateReport" alt="" coords="191,5,360,32"/>
+<area shape="rect" id="node6" href="$class_reporter.html#aeca148325b58ed19ea74e6626696d610" title="Reporter::generateArrivals" alt="" coords="188,123,363,149"/>
+<area shape="rect" id="node7" href="$class_reporter.html#a6de9a2fcddd263bafe7588d0221b58cd" title="Reporter::generateDropOffs" alt="" coords="184,173,367,200"/>
+<area shape="rect" id="node8" href="$class_reporter.html#a2e47f9dccf4c0dda8ea5e51ff6296a29" title="Reporter::generateCharts" alt="" coords="191,224,360,251"/>
+<area shape="rect" id="node3" href="$namespace_helpers.html#a6623afaa6548aa85a5a1bfd019e1e55f" title="Helpers::schedulerName" alt="" coords="424,8,591,35"/>
+<area shape="rect" id="node4" href="$namespace_helpers.html#a51b4991513657bea83b1ad43c778aec7" title="Helpers::costFunctionName" alt="" coords="415,63,600,89"/>
 </map>

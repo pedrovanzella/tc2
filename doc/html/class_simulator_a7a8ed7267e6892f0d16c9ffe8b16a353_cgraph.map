@@ -1,6 +1,8 @@
 <map id="Simulator::createBuilding" name="Simulator::createBuilding">
-<area shape="rect" id="node2" href="$class_floor.html#a294df3a0179a79c3a9a2765418368d03" title="Floor::create" alt="" coords="256,5,351,32"/>
-<area shape="rect" id="node3" href="$class_elevator.html#a6a5d8cb3159ee98e343042df0ff7f2ba" title="Elevator::create" alt="" coords="246,56,361,83"/>
-<area shape="rect" id="node4" href="$class_scheduler_creator.html#a091006529e65ae50ce7bb8e97b6494dc" title="SchedulerCreator::create" alt="" coords="220,107,387,133"/>
-<area shape="rect" id="node5" href="$class_cost_function_creator.html#a2f73ed3b5e34c2cfa891849ab62adda5" title="CostFunctionCreator\l::create" alt="" coords="232,158,375,199"/>
+<area shape="rect" id="node2" href="$class_floor.html#a294df3a0179a79c3a9a2765418368d03" title="Floor::create" alt="" coords="265,5,360,32"/>
+<area shape="rect" id="node3" href="$class_elevator.html#a6a5d8cb3159ee98e343042df0ff7f2ba" title="Elevator::create" alt="" coords="255,56,370,83"/>
+<area shape="rect" id="node4" href="$class_scheduler_creator.html#a091006529e65ae50ce7bb8e97b6494dc" title="SchedulerCreator::create" alt="" coords="229,107,396,133"/>
+<area shape="rect" id="node5" href="$class_cost_function_creator.html#a2f73ed3b5e34c2cfa891849ab62adda5" title="CostFunctionCreator\l::create" alt="" coords="241,158,384,199"/>
+<area shape="rect" id="node6" href="$namespace_helpers.html#a6623afaa6548aa85a5a1bfd019e1e55f" title="Helpers::schedulerName" alt="" coords="229,224,396,251"/>
+<area shape="rect" id="node7" href="$namespace_helpers.html#a51b4991513657bea83b1ad43c778aec7" title="Helpers::costFunctionName" alt="" coords="220,275,405,301"/>
 </map>

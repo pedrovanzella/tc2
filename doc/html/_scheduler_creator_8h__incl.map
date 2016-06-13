@@ -1,7 +1,8 @@
 <map id="include/SchedulerCreator.h" name="include/SchedulerCreator.h">
-<area shape="rect" id="node2" href="$_planning_scheduler_8h.html" title="PlanningScheduler.h" alt="" coords="177,80,319,107"/>
-<area shape="rect" id="node3" href="$_scheduler_8h.html" title="Scheduler.h" alt="" coords="44,155,135,181"/>
-<area shape="rect" id="node7" href="$_scheduler_type_8h.html" title="SchedulerType.h" alt="" coords="343,80,463,107"/>
-<area shape="rect" id="node10" href="$_simple_scheduler_8h.html" title="SimpleScheduler.h" alt="" coords="23,80,153,107"/>
-<area shape="rect" id="node8" href="$_missing_scheduler_error_8h.html" title="MissingSchedulerError.h" alt="" coords="321,155,485,181"/>
+<area shape="rect" id="node2" href="$_planning_scheduler_8h.html" title="PlanningScheduler.h" alt="" coords="183,80,324,107"/>
+<area shape="rect" id="node6" href="$_scheduler_8h.html" title="Scheduler.h" alt="" coords="5,155,96,181"/>
+<area shape="rect" id="node10" href="$_scheduler_type_8h.html" title="SchedulerType.h" alt="" coords="392,80,512,107"/>
+<area shape="rect" id="node13" href="$_simple_scheduler_8h.html" title="SimpleScheduler.h" alt="" coords="28,80,159,107"/>
+<area shape="rect" id="node3" href="$_client_8h.html" title="Client.h" alt="" coords="324,155,391,181"/>
+<area shape="rect" id="node11" href="$_missing_scheduler_error_8h.html" title="MissingSchedulerError.h" alt="" coords="415,155,579,181"/>
 </map>

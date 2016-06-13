@@ -120,16 +120,20 @@ $(document).ready(function(){initNavTree('class_scenario.html','');});
 <div class="dynheader">
 Collaboration diagram for Scenario:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_scenario__coll__graph.svg" width="178" height="279"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="class_scenario__coll__graph.svg" width="166" height="250"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a2ede6a692c79f88786dd28315ebcad5d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scenario.html#a2ede6a692c79f88786dd28315ebcad5d">Scenario</a> (std::string name, int duration, int elevatorCount, int capacity, int floorCount, <a class="el" href="_scheduler_type_8h.html#a38e49b4d2a59c90c891c884c009e9135">SchedulerType</a> schedulerType, <a class="el" href="_cost_function_type_8h.html#a7590c187782ef6d6bcba32749db5daa1">CostFunctionType</a> costFunctionType, std::string seed, std::vector&lt; float &gt; floors, std::time_t timestamp)</td></tr>
-<tr class="separator:a2ede6a692c79f88786dd28315ebcad5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a908c720250554003e0cf8ac69573c670"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scenario.html#a908c720250554003e0cf8ac69573c670">Scenario</a> (const int seq, std::string name, int duration, int elevatorCount, int capacity, int floorCount, <a class="el" href="_scheduler_type_8h.html#a38e49b4d2a59c90c891c884c009e9135">SchedulerType</a> schedulerType, <a class="el" href="_cost_function_type_8h.html#a7590c187782ef6d6bcba32749db5daa1">CostFunctionType</a> costFunctionType, std::string seed, std::vector&lt; float &gt; floors, std::time_t timestamp, int planningHorizon)</td></tr>
+<tr class="separator:a908c720250554003e0cf8ac69573c670"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1065e713cc86e3f7c4dc38a063b2910"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scenario.html#aa1065e713cc86e3f7c4dc38a063b2910">Scenario</a> (const <a class="el" href="class_scenario.html">Scenario</a> &amp;scenario)</td></tr>
+<tr class="separator:aa1065e713cc86e3f7c4dc38a063b2910"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa7e7548858cbc52614d46723c0333038"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scenario.html#aa7e7548858cbc52614d46723c0333038">~Scenario</a> ()</td></tr>
 <tr class="separator:aa7e7548858cbc52614d46723c0333038"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a876ada668a873e3d45f866a35592273c"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scenario.html#a876ada668a873e3d45f866a35592273c">getSeq</a> () const </td></tr>
+<tr class="separator:a876ada668a873e3d45f866a35592273c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a57ce787b9fe879c37f479b6658db0876"><td class="memItemLeft" align="right" valign="top">const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scenario.html#a57ce787b9fe879c37f479b6658db0876">getName</a> () const </td></tr>
 <tr class="separator:a57ce787b9fe879c37f479b6658db0876"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a117c99f5ad9cfc83406d54e14ecb8359"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scenario.html#a117c99f5ad9cfc83406d54e14ecb8359">getDuration</a> () const </td></tr>
@@ -140,6 +144,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:af73b2c30106f7c4c6515b10ed048fa30"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa34a32b4a1c23891f7aa6f7a17b3594b"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scenario.html#aa34a32b4a1c23891f7aa6f7a17b3594b">getFloorCount</a> () const </td></tr>
 <tr class="separator:aa34a32b4a1c23891f7aa6f7a17b3594b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24e9102a273960f9de5d2d73b0e66d1e"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scenario.html#a24e9102a273960f9de5d2d73b0e66d1e">getPlanningHorizon</a> () const </td></tr>
+<tr class="separator:a24e9102a273960f9de5d2d73b0e66d1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a397fce5332d2a78ee3311abcddd1617a"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="_scheduler_type_8h.html#a38e49b4d2a59c90c891c884c009e9135">SchedulerType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scenario.html#a397fce5332d2a78ee3311abcddd1617a">getSchedulerType</a> () const </td></tr>
 <tr class="separator:a397fce5332d2a78ee3311abcddd1617a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae73d9b2ba0a5a02202a4cff22c6910d2"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="_cost_function_type_8h.html#a7590c187782ef6d6bcba32749db5daa1">CostFunctionType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scenario.html#ae73d9b2ba0a5a02202a4cff22c6910d2">getCostFunctionType</a> () const </td></tr>
@@ -148,6 +154,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:af89b8c0a3fcb7f9d4290a09c99a68a8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aafd7c8f587cd5bd66cae341f4e1c4a39"><td class="memItemLeft" align="right" valign="top">const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scenario.html#aafd7c8f587cd5bd66cae341f4e1c4a39">getSeed</a> () const </td></tr>
 <tr class="separator:aafd7c8f587cd5bd66cae341f4e1c4a39"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac0d347d388b195c160ef84a8712884ec"><td class="memItemLeft" align="right" valign="top">const std::time_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scenario.html#ac0d347d388b195c160ef84a8712884ec">getTimestamp</a> () const </td></tr>
+<tr class="separator:ac0d347d388b195c160ef84a8712884ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a34696f294405ce97dcb2e7174f2360e0"><td class="memItemLeft" align="right" valign="top">const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scenario.html#a34696f294405ce97dcb2e7174f2360e0">getBasePath</a> () const </td></tr>
 <tr class="separator:a34696f294405ce97dcb2e7174f2360e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4d82ef21d5fab6baa8848a79041c0074"><td class="memItemLeft" align="right" valign="top">const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scenario.html#a4d82ef21d5fab6baa8848a79041c0074">getPath</a> () const </td></tr>
@@ -162,13 +170,19 @@ Static Public Member Functions</h2></td></tr>
 <div class="textblock">
 <p>Definition at line <a class="el" href="_scenario_8h_source.html#l00012">12</a> of file <a class="el" href="_scenario_8h_source.html">Scenario.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a2ede6a692c79f88786dd28315ebcad5d"></a>
+<a class="anchor" id="a908c720250554003e0cf8ac69573c670"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">Scenario::Scenario </td>
           <td>(</td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>seq</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
           <td class="paramtype">std::string&#160;</td>
           <td class="paramname"><em>name</em>, </td>
         </tr>
@@ -224,7 +238,13 @@ Static Public Member Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">std::time_t&#160;</td>
-          <td class="paramname"><em>timestamp</em>&#160;</td>
+          <td class="paramname"><em>timestamp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>planningHorizon</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -235,6 +255,24 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Definition at line <a class="el" href="_scenario_8cpp_source.html#l00011">11</a> of file <a class="el" href="_scenario_8cpp_source.html">Scenario.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa1065e713cc86e3f7c4dc38a063b2910"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Scenario::Scenario </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_scenario.html">Scenario</a> &amp;&#160;</td>
+          <td class="paramname"><em>scenario</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_scenario_8cpp_source.html#l00021">21</a> of file <a class="el" href="_scenario_8cpp_source.html">Scenario.cpp</a>.</p>
 
 </div>
 </div>
@@ -259,7 +297,7 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_scenario_8cpp_source.html#l00020">20</a> of file <a class="el" href="_scenario_8cpp_source.html">Scenario.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_scenario_8cpp_source.html#l00032">32</a> of file <a class="el" href="_scenario_8cpp_source.html">Scenario.cpp</a>.</p>
 
 </div>
 </div>
@@ -277,7 +315,7 @@ Static Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_scenario_8cpp_source.html#l00075">75</a> of file <a class="el" href="_scenario_8cpp_source.html">Scenario.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_scenario_8cpp_source.html#l00095">95</a> of file <a class="el" href="_scenario_8cpp_source.html">Scenario.cpp</a>.</p>
 
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -302,7 +340,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_scenario_8cpp_source.html#l00061">61</a> of file <a class="el" href="_scenario_8cpp_source.html">Scenario.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_scenario_8cpp_source.html#l00077">77</a> of file <a class="el" href="_scenario_8cpp_source.html">Scenario.cpp</a>.</p>
 
 </div>
 </div>
@@ -319,7 +357,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_scenario_8cpp_source.html#l00067">67</a> of file <a class="el" href="_scenario_8cpp_source.html">Scenario.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_scenario_8cpp_source.html#l00083">83</a> of file <a class="el" href="_scenario_8cpp_source.html">Scenario.cpp</a>.</p>
 
 </div>
 </div>
@@ -336,7 +374,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_scenario_8cpp_source.html#l00057">57</a> of file <a class="el" href="_scenario_8cpp_source.html">Scenario.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_scenario_8cpp_source.html#l00073">73</a> of file <a class="el" href="_scenario_8cpp_source.html">Scenario.cpp</a>.</p>
 
 </div>
 </div>
@@ -353,7 +391,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_scenario_8cpp_source.html#l00059">59</a> of file <a class="el" href="_scenario_8cpp_source.html">Scenario.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_scenario_8cpp_source.html#l00075">75</a> of file <a class="el" href="_scenario_8cpp_source.html">Scenario.cpp</a>.</p>
 
 </div>
 </div>
@@ -370,7 +408,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_scenario_8cpp_source.html#l00063">63</a> of file <a class="el" href="_scenario_8cpp_source.html">Scenario.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_scenario_8cpp_source.html#l00079">79</a> of file <a class="el" href="_scenario_8cpp_source.html">Scenario.cpp</a>.</p>
 
 </div>
 </div>
@@ -387,7 +425,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_scenario_8cpp_source.html#l00069">69</a> of file <a class="el" href="_scenario_8cpp_source.html">Scenario.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_scenario_8cpp_source.html#l00087">87</a> of file <a class="el" href="_scenario_8cpp_source.html">Scenario.cpp</a>.</p>
 
 </div>
 </div>
@@ -404,7 +442,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_scenario_8cpp_source.html#l00055">55</a> of file <a class="el" href="_scenario_8cpp_source.html">Scenario.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_scenario_8cpp_source.html#l00071">71</a> of file <a class="el" href="_scenario_8cpp_source.html">Scenario.cpp</a>.</p>
 
 </div>
 </div>
@@ -421,15 +459,32 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_scenario_8cpp_source.html#l00087">87</a> of file <a class="el" href="_scenario_8cpp_source.html">Scenario.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_scenario_8cpp_source.html#l00107">107</a> of file <a class="el" href="_scenario_8cpp_source.html">Scenario.cpp</a>.</p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_scenario_a4d82ef21d5fab6baa8848a79041c0074_cgraph.svg" width="342" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="class_scenario_a4d82ef21d5fab6baa8848a79041c0074_cgraph.svg" width="371" height="139"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 </p>
+
+</div>
+</div>
+<a class="anchor" id="a24e9102a273960f9de5d2d73b0e66d1e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int Scenario::getPlanningHorizon </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_scenario_8cpp_source.html#l00085">85</a> of file <a class="el" href="_scenario_8cpp_source.html">Scenario.cpp</a>.</p>
 
 </div>
 </div>
@@ -446,7 +501,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_scenario_8cpp_source.html#l00065">65</a> of file <a class="el" href="_scenario_8cpp_source.html">Scenario.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_scenario_8cpp_source.html#l00081">81</a> of file <a class="el" href="_scenario_8cpp_source.html">Scenario.cpp</a>.</p>
 
 </div>
 </div>
@@ -463,7 +518,41 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_scenario_8cpp_source.html#l00073">73</a> of file <a class="el" href="_scenario_8cpp_source.html">Scenario.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_scenario_8cpp_source.html#l00091">91</a> of file <a class="el" href="_scenario_8cpp_source.html">Scenario.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a876ada668a873e3d45f866a35592273c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int Scenario::getSeq </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_scenario_8cpp_source.html#l00069">69</a> of file <a class="el" href="_scenario_8cpp_source.html">Scenario.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac0d347d388b195c160ef84a8712884ec"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::time_t Scenario::getTimestamp </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_scenario_8cpp_source.html#l00093">93</a> of file <a class="el" href="_scenario_8cpp_source.html">Scenario.cpp</a>.</p>
 
 </div>
 </div>
@@ -489,7 +578,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_scenario_8cpp_source.html#l00022">22</a> of file <a class="el" href="_scenario_8cpp_source.html">Scenario.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_scenario_8cpp_source.html#l00034">34</a> of file <a class="el" href="_scenario_8cpp_source.html">Scenario.cpp</a>.</p>
 
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>

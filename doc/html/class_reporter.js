@@ -2,11 +2,11 @@ var class_reporter =
 [
     [ "Reporter", "class_reporter.html#ac47d1ea43a15518a43ee6c1ea7d89587", null ],
     [ "~Reporter", "class_reporter.html#acbacf4155d5fe9e4a8e833d785e76880", null ],
-    [ "generate", "class_reporter.html#a0c19ff3b713350eaab6518298a4a90fb", null ],
+    [ "generate", "class_reporter.html#a67f8edb79c36c293231ebead970ae3bd", null ],
     [ "generate", "class_reporter.html#a120ba995597e26d317aca9651a6260e6", null ],
-    [ "generateArrivals", "class_reporter.html#a0e3c710580b4cae4f70a8cc3b8e7473a", null ],
-    [ "generateCharts", "class_reporter.html#a314e30d2dacb907197f8446422981d37", null ],
-    [ "generateDropOffs", "class_reporter.html#a75934d0909b242ef77d4ee8e850af0fe", null ],
-    [ "generateReport", "class_reporter.html#a69fa8649211b4e4c7441fd1f6c9042e2", null ],
-    [ "generateUnifiedReport", "class_reporter.html#a8e68557b65c53ba700eaa9c3a9933df6", null ]
+    [ "generateArrivals", "class_reporter.html#aeca148325b58ed19ea74e6626696d610", null ],
+    [ "generateCharts", "class_reporter.html#a2e47f9dccf4c0dda8ea5e51ff6296a29", null ],
+    [ "generateDropOffs", "class_reporter.html#a6de9a2fcddd263bafe7588d0221b58cd", null ],
+    [ "generateReport", "class_reporter.html#a088522cbaeeeb5352f117c336d6a1bdb", null ],
+    [ "generateUnifiedReport", "class_reporter.html#aee1c3bbf665f10a2fb27da4f9154b7ee", null ]
 ];
