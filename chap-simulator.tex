@@ -90,14 +90,14 @@ passageiros chegam e elevadores os transportam através dos andares do prédio.
 \item \textit{Determinístico ou Estocástico}
 
 Um modelo de simulação que não possua nenhum componente probabilístico (i.~e,~
-aleatoriedade) é chamado de \textit{determinístico}. Em um modelo de simulação
-\textit{determinístico} sua saída é ``determinada'' no momento em que a sua
-entrada é definida~-~mesmo que ainda tome tempo computacional para realizar o
-cálculo de qual seja o resultado \cite{Law}. Em outras palavras, significa dizer
-que a saída fornecida pelo modelo de simulação será sempre a mesma para uma
-mesma entrada. Porém a grande maioria dos sistemas do mundo real possuem, no
-mínimo, algum grau de aleatoridade na sua entrada. Estes sistemas dão origem a
-modelos de simulação \textit{estocásticos}. Estes, diferentemente de modelos
+aleatoriedade) é chamado de \textit{determinístico}. Neste tipo de modelo, a
+saída é ``determinada'' no momento em que a sua entrada é definida~-~mesmo que
+ainda tome tempo computacional para realizar o cálculo de qual seja o resultado
+\cite{Law}. Em outras palavras, significa dizer que a saída fornecida pelo
+modelo de simulação será sempre a mesma para uma mesma entrada. Porém a grande
+maioria dos sistemas do mundo real possuem, no mínimo, algum grau de
+aleatoridade na sua entrada. Estes sistemas dão origem a modelos de simulação
+\textit{estocásticos}. Estes, diferentemente de modelos
 \textit{determinísticos}, fornecem uma saída igualmente aleatória~-~e, por esta
 razão, esta saída deve ser considerada como um conjunto de \textit{estimativas}
 das características reais do sistema, e não as características propriamente
@@ -130,7 +130,7 @@ neste estudo é \textit{discreto}.
 
 \end{enumerate}
 
-\subsection{Simulação baseada em eventos discretos}
+\subsection{\label{sub:sim:discrete}Simulação baseada em eventos discretos}
 
 Segundo Law~(2000, p.~6):
 
@@ -147,31 +147,24 @@ um modelo de simulação \textit{dinâmico}, \textit{estocástico} e
 natureza dinâmica desta abordagem, é necessário acompanhar o valor atual do
 tempo da simulação à medida que a simulação é executada, armazenando este valor
 em uma variável. Esta variável é chamada de \textit{relógio da simulação}
-\cite{Law}. Também se faz necessário um mecanismo de avanço de tempo que
-gerencie o valor desta variável. Geralmente, não há relação entre o tempo de
-simulação e o tempo necessário para a simulação ser executada. Por exemplo, um
-experimento pode simular o funcionamento de um banco entre 9h e 17h (tempo de
-simulação), mas o tempo necessário para executar a simulação poderia ser de 4
-minutos.
+\cite{Law}. Geralmente, não há relação entre o tempo de simulação e o tempo
+necessário para a simulação ser executada. Por exemplo, um experimento pode
+simular o funcionamento de um banco entre 9h e 17h (tempo de simulação), mas o
+tempo necessário para executar a simulação poderia ser de 4 minutos.
 
-\subsubsection{\label{chap:sim:timeadvance}Mecanismo de avanço de tempo}
-
-Existem duas principais abordagens para o mecanismo de avanço de tempo em um sistema de simulação de eventos discretos. São eles:
-
-\begin{description}
-\item[Avanço de tempo para o próximo evento] \hfill
-
-Na abordagem de \textit{avanço de tempo para o próximo evento}, o
-\textit{relógio da simulação} é inicializado em 0 e é determinado em que ponto
-tempo ocorrerão eventos futuros~-~em outras palavras, é feito o agendamento de
-eventos. Então, o \textit{relógio da simulação} é avançado para o tempo da
-ocorrência do \textit{primeiro} destes eventos futuros. Neste ponto do tempo, o
-estado do modelo é atualizado de acordo com o evento que ocorreu e novas
-ocorrências de eventos futuros são agendadas. Então, o \textit{relógio da
-simulação} avança para o instante da ocorrência do \textit{novo} primeiro dos
-eventos futuros e o estado do sistema é atualizado em função da ocorrência deste
-evento. Este processo repete-se até que uma condição de parada previamente
-definida seja satisfeita.
+Também se faz necessário um mecanismo de avanço de tempo que gerencie o valor
+desta variável. Neste simulador é utilizada a abordagem de \textit{avanço de
+tempo para o próximo evento}, onde o \textit{relógio da simulação} é
+inicializado em 0 e é determinado em que ponto tempo ocorrerão eventos
+futuros~-~em outras palavras, é feito o agendamento de eventos. Então, o
+\textit{relógio da simulação} é avançado para o tempo da ocorrência do
+\textit{primeiro} destes eventos futuros. Neste ponto do tempo, o estado do
+modelo é atualizado de acordo com o evento que ocorreu e novas ocorrências de
+eventos futuros são agendadas. Então, o \textit{relógio da simulação} avança
+para o instante da ocorrência do \textit{novo} primeiro dos eventos futuros e o
+estado do sistema é atualizado em função da ocorrência deste evento. Este
+processo repete-se até que uma condição de parada previamente definida seja
+satisfeita.
 
 Uma vez que toda alteração no estado do sistema ocorre na ocasião de um evento,
 os períodos de espera, que são o tempo entre a ocorrência de um evento e o
@@ -192,44 +185,6 @@ para o momento da ocorrência do próximo evento.
 \centering\includegraphics{img/nextevent.eps}
 \caption[Avanço de tempo para o próximo evento]{\label{fig:nextevent}Ilustração da evolução do \textit{relógio da simulação} utilizando a abordagem de \textit{avanço de tempo para o próximo evento}. Fonte:~\cite{Law}}
 \end{figure}
-
-\item[Avanço de tempo de incremento fixo] \hfill
-
-Na abordagem de \textit{avanço de tempo de incremento fixo}, o \textit{relógio
-da simulação} é alterado sempre no mesmo incremento, independente da ocorrência
-de eventos. A cada avanço é feita uma varredura para verificar se haviam eventos
-agendados dentro daquele intervalo. Se um ou mais eventos estavam agendados para
-ocorrer no decorrer do intervalo, considera-se que sua ocorrência se deu no
-\textit{fim} do intervalo e o estado do sistema é alterado de forma
-correspondente.
-
-A representação ilustrada pela figura \ref{fig:fixedtime} mostra a diferença
-deste mecanismo para o anterior. O eixo do tempo, iniciado em 0, marca os tempos
-agendados para os eventos $\{e_{1}, e_{2}, e_{3}, e_{4}\}$. As setas indicam os
-valores assumidos pelo \textit{relógio da simulação}. Observa-se que,
-diferentemente da abordagem anterior, o valor do \textit{relógio da simulação}
-não coincide com a ocorrência de qualquer evento, e sim valores múltiplos do
-incremento fixo $\Delta t$.
-
-\begin{figure}[htb!]
-\centering\includegraphics{img/fixed.eps}
-\caption[Avanço de tempo de incremento fixo]{\label{fig:fixedtime}Ilustração da evolução do \textit{relógio da simulação} utilizando a abordagem de \textit{avanço de tempo de incremento fixo}. Fonte:~\cite{Law}}
-\end{figure}
-
-Algumas desvantagens desta abordagem são os erros introduzidos ao processar
-eventos no fim do intervalo em que eles ocorreram e a necessidade de decidir
-qual evento processar primeiro quando eventos que não ocorrem simultaneamente na
-realidade são tratados como tal pelo modelo. Tais problemas poderiam ser
-mitigados ao utilizar incrementos menores. Entretanto, esta medida também
-aumenta o número de varreduras em intervalos para localizar eventos, o que pode
-tornar sua execução muito mais custosa em termos computacionais.
-
-Em função disto, esta abordagem é frequentemente descartada em detrimento do
-\textit{avanço de tempo para o próximo evento} em modelos onde o tempo de
-ocorrência de eventos pode variar bastante~-~que é o caso de modelos
-estocásticos.
-
-\end{description}
 
 Sendo assim, o modelo deste estudo será uma simulação de eventos discretos com avanço de tempo para o próximo evento.
 
