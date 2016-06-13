@@ -53,11 +53,13 @@ enim. Suspendisse dui libero, ornare eu turpis vitae, vulputate cursus diam.
 
 \subsection{Geração de Gráficos}
 
-Os gráficos são gerados com auxílio da biblioteca Seaborn~\cite{seaborn}, em Python.
-Esta biblioteca possui primitivas poderosas de cálucos estatísticos e geração de
-gráficos, garantido a corretude da análise dos resultados com um esforço reduzido.
+Os gráficos são gerados com auxílio da biblioteca Seaborn~\cite{seaborn},
+implementada na linguagem Python. Esta biblioteca possui primitivas poderosas de
+cálculos estatísticos e geração de gráficos, garantido a corretude da análise
+dos resultados com um esforço reduzido.
 
-Pode-se ver no algoritmo~\ref{alg:seaborn} um exemplo da expressividade desta ferramenta.
+Pode-se ver no algoritmo~\ref{alg:seaborn} um exemplo da expressividade desta
+ferramenta.
 
 \begin{algorithm}[htb]
   \centering
@@ -72,7 +74,7 @@ linenos
         g = sns.FacetGrid(data, col='dropoffFloor', row='arrivalFloor')
         g = g.map(sns.barplot, "travelTime", orient='v')
     \end{minted}
-  \caption{Código em Python para gerar o gráfico da matriz de tempo de espera.}
+  \caption{Geração de gráfico de matriz de tempo de espera.}
   \label{alg:seaborn}
 \end{algorithm}
 

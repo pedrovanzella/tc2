@@ -1,4 +1,6 @@
-\chapter{\label{chap:simulation}Sistemas e Simulações}
+\chapter{\label{chap:simulator}Simulador}
+
+\unsure{Capítulo sendo revisado por Taschetto.}
 
 De acordo com Banks~(2005, p.~3):
 
@@ -18,16 +20,7 @@ forma mais apropriada para o seu estudo. Assim, se faz importante a existência
 de métodos objetivos para que se possa verificar se a simulação é realmente a
 ferramenta apropriada para cada caso estudado.
 
-\section{\label{chap:waystostudy}Formas de estudar um sistema}
-
-Ao realizar o estudo sobre um sistema e seu comportamento, uma gama de
-estratégias podem ser colocadas em prática, dentre as quais podemos citar:
-
-\begin{itemize}
-\item Experimentar com o próprio sistema;
-\item Experimentar com um modelo físico do sistema;
-\item Experimentar com um modelo matemático do sistema.
-\end{itemize}
+\section{\label{chap:whyasimulator}Por que um simulador?}
 
 A fim de decidir de forma objetiva qual a melhor abordagem para um dado sistema,
 Law~\cite{Law} propõe uma reflexão (figura~\ref{fig:systemstudy}) através das
@@ -131,76 +124,6 @@ problema ao longo das décadas, não poupando esforços e investimentos em busca
 desta solução.
 
 \end{enumerate}
-
-Em outra abordagem, Banks~\cite{BanksGibson} define 10 situações onde a
-simulação possivalmente \textbf{não} é uma boa ideia. Tais situações são:
-
-\begin{enumerate}
-\item \textit{Quando o problema puder ser resolvido utilizando-se de bom senso}
-
-Conforme discutido anteriormente neste capítulo, dada a complexidade do problema
-(NP-completo), não parece ser possível encontrar a solução apenas utilizando o
-bom senso e operações básicas.
-
-\item \textit{Quando o problema puder ser resolvido de forma analítica}
-
-Sobre o problema em questão, uma solução anaĺítica ainda é desconhecida.
-
-\item \textit{Quando o problema puder ser resolvido através de experimentos
-diretamente no sistema}
-
-Como já constatado, não há um sistema de elevadores instalado para realizar as
-experimentações entre os recursos disponíveis para este estudo. E, mesmo que
-houvesse, haveria uma imposição de limites nos cenários de testes em função das
-restrições físicas do sistema. Logo, não é possível realizar os experimentos
-diretamente no sistema.
-
-\item \textit{Quando seus custos da simulação excederem os seus ganhos}
-
-Não foi realizado um estudo e avaliação a respeito dos custos deste estudo,
-compreendendo o embasamento, modelagem, projeto e implementação do simulador.
-Entretanto, acredita-se que os resultados trarão benefícios aos usuários de
-elevadores, conforme defendido nos capítulos \ref{chap:intro},
-\ref{chap:problem} e \ref{chap:proposal}.
-
-\item \textit{Quando não há recursos financeiros suficientes}
-
-Idem ao item anterior.
-
-\item \textit{Quando não há tempo suficiente}
-
-Acredita-se que
-será possível implementar um sistema simulador capaz de fornecer dados em tempo
-hábil.
-
-\item \textit{Quando não há dados suficientes, nem mesmo estimativas}
-
-Neste estudo serão sugeridas distribuições de probabilidade arbitrárias.
-
-\item \textit{Quando não há possibilidade de verificar a validade do modelo}
-
-O modelo será considerado válido de acordo com os resultados obtidos pela
-simulação, após a implementação do projeto.
-
-\item \textit{Quando as expectativas e o poder da simulação são superestimados}
-
-Neste estudo, o foco das expectativas está nos ganhos que o uso de algoritmos de
-Inteligência Artificial poderão trazer para estes sistemas de elevadores. A
-simulação é vista apenas como uma forma para avaliar os resultados obtidos.
-Portanto, ela não é superestimada e o objeto de estudo não se enquadra nesta
-situação.
-
-\item \textit{Quando o comportamento do sistema é muito complexo ou não pode ser
-definido (e.~g. seres humanos)}
-
-Um \textbf{EGCS} não é um sistema de alta complexidade, possuindo um conjunto de
-comportamentos limitado e um espaço de estados moderado. Portanto, não se
-enquadra nesta situação.
-
-\end{enumerate}
-
-Em função destas reflexões acredita-se que a simulação é uma forma apropriada
-para estudar um \textbf{EGCS}.
 
 \section{Classificação do modelo de simulação}
 
@@ -435,3 +358,80 @@ caso contrário, o \textit{Programa Principal} é invocado novamente e o ciclo s
 repete. É importante salientar que a \textit{Rotina de Inicialização} somente é
 invocada na primeira execução do \textit{Programa Principal}, sendo ignorada nas
 iterações posteriores.
+
+\section{\label{sec:simulator:traits}Características do Simulador}
+
+O projeto do simulador foi concebido guiado por 5 características. São elas:
+
+\begin{description}[leftmargin=!,labelwidth=\widthof{\bfseries Determinístico}]
+  \item[Configurável]
+
+  Deve ser possível definir cenários de forma simples e sem a necessidade de
+  recompilar ou reconstruir os binários do simulador.
+
+
+  Para isto, os cenários   são armazenados em um arquivo de configuração no
+  formato   \textit{YAML}\footnote{\textit{YAML Ain't Markup Language},
+  http://yaml.org/}   e o carregados pelo simulador em tempo de execução - ou
+  seja, não é necessário   recompilar e reconstruir os binários do simulador.
+
+  \item[Determinístico]
+
+  Deve ser possível reproduzir simulações de maneira idêntica, independente do
+  horário e da ordem em que for iniciada. Isto é especialmente importante ao
+  comparar o mesmo cenário sob diferentes estratégias, quando é imperativo
+  garantir que os passageiros cheguem nos mesmos instantes e locais em todas as
+  simulações de um mesmo cenário.
+
+  Para isto, os cenários armazenados no   arquivo \textit{YAML} são compostos,
+  entre outras informações, por uma semente   que é utilizada em todos os
+  geradores de números aleatórios e distribuições   dentro simulador.
+
+  \item[Escalável]
+
+  Deve ser possível simular diversos cenários em uma mesma execução do simulador
+  e em um tempo aceitável: alguns segundos para cenários simples e até 30
+  minutos para cenários complexos.
+
+  Em função disto, optou-se por desenvolver o simulador na linguagem
+  \texttt{C++11}. É conceito na indústria de software que esta linguagem fornece
+  desempenho superior às demais linguagens de propósito geral - devido, em
+  grande parte, ao fato de ser compilada em linguagem de máquina e permitir ao
+  programador gerenciar diretamente o uso de memória do processo. Além disso,
+  juntamente de sua biblioteca padrão, o \texttt{C++11} oferece um conjunto
+  atraente de ferramentas de desenvolvimento e depuração.
+
+  \item[Rastreável]
+
+  Para cada simulação, o simulador deve gerar arquivos de \textit{log},
+  detalhando os eventos e situações ocorridos durante a simulação no escopo
+  daquele cenário.
+
+  Para isto, utilizamos a biblioteca de geração de \textit{logs} \texttt{GLOG},
+  desenvolvido pelo \textit{Google} e com implementações para várias linguagens,
+  dentre elas o \texttt{C++}.
+
+  \item[Testável]
+
+  Deve ser possível desenvolver e executar testes unitários nos componentes do
+  simulador.
+
+  Para isto, utilizamos a biblioteca de testes unitários \texttt{GTEST},
+  desenvolvido pelo \textit{Google} e com implementações para várias linguagens,
+  dentre elas o \texttt{C++}.
+
+\end{description}
+
+Cada cenário é composto pelas seguintes informações:
+
+\begin{description}[leftmargin=!,labelwidth=\widthof{\bfseries Função de Custo}]
+  \item[Nome] Identificação textual do cenário.
+  \item[Duração] Duração da simulação, em segundos.
+  \item[Agendador] Lista de algoritmos de agendamento que deverão ser simulados para o cenário.
+  \item[Horizonte]
+  \item[Função de Custo] Função de custo pela qual
+  \item[Semente] Semente textual utilizada para inicializar os geradores de variáveis aleatórias do simulador.
+  \item[Elevadores] Número de elevatores.
+  \item[Capacidade] Capacidade dos elevadores.
+  \item[Andares] Lista de valores esperados ($\lambda$) para uma Distribuição de Poisson - um por andar.\unsure{Melhorar esta descrição. (Taschetto)}
+\end{description}

@@ -1,0 +1,65 @@
+\chapter{\label{chap:objectives}Objetivo do Trabalho}
+
+O objetivo deste trabalho é comparar, através de simulações, diferentes
+estratégias de controle de elevadores utilizando Inteligência Artificial em
+cenários distintos. Os resultados das simulações são avaliados e, dentre as
+opções possíveis, são verificadas quais estratégias resultam em um melhor
+desempenho no transporte de passageiros para cada cenário. Tal melhora se
+reflete em duas métricas principais: \textit{Waiting Time} e \textit{Journey
+Time}. Entretanto, a meta principal é a redução do \textit{Average Waiting
+Time}, ou tempo médio de espera. A preferência por esta métrica, em detrimento
+do \textit{Average Journey Time}, ou tempo médio de jornada, se dá pois, uma vez
+dentro do elevador, o passageiro não se sente mais esperando: ele sente que já
+está sendo servido, conforme constatado na seção \ref{section:data}.
+
+O simulador carrega uma lista de cenários à partir de um arquivo de configuração
+e realiza a simulação de cada cenário. É possível comparar várias estratégias em
+um mesmo cenário. Para isto, foram implementados dois algoritmos de agendamento
+- \textit{simple} e \textit{planning}, detalhados na seção XXX - e 4 funções de
+custo - \textit{random}, \textit{nearest neighbour}, \textit{better nearest
+neighbour} e \textit{weighted}, detalhados na seção XXX -, que podem ser
+utilizadas em uma combinação entre si.
+
+Os algoritmos de agendamento são detalhados na seção XXX. \unsure{Colocar
+referência para a seção dos algoritmos e das funções de custo. (Taschetto)}
+
+Após as simulações, o simulador fornece como saída um relatório apresentando
+métricas\footnote{Seção~\ref{section:data}.} de desempenho para sistemas de
+controle de grupo de elevadores. Além do relatório, o simulador é capaz de
+gerar, à partir das métricas obtidas, os seguintes gráficos: \textit{tipo de
+gráfico 1}, \textit{tipo de gráfico 2} e \textit{tipo de gráfico 3}.
+
+\unsure{Pedro, coloca aqui os nomes dos gráficos. Será que também botamos um
+exemplo ou somente uma breve descrição, pra deixar esta seção mais simples?
+(Taschetto)}
+
+Os relatórios e gráficos dão base para análise e proposta de uma estratégia (ou
+um conjunto de estratégias) para serem implementados em prédios já existentes.
+
+\section{\label{sec:objectives:planning}Planning}
+
+\unsure{Estou na dúvida se esta seção fica e/ou se ela fica nessa posição.
+(Taschetto)}
+
+Os algoritmos de \textit{planning} se mostraram os mais promissores para a
+realização desta tarefa, dadas as limitações de tempo de desenvolvimento e a
+quantidade de dados disponíveis em sistemas reais de elevadores.
+
+Um algoritmo de \textit{planning}, conforme descrito na
+seção~\ref{sec:ai:planning}, utiliza uma função de custo (descrito na
+seção~\ref{sec:ai:minimize-cost-function}) e tenta encontrar uma seqüência de
+eventos que gere a menor soma de custos. Estes eventos podem ser quaisquer
+eventos que o sistema tenha controle. No caso de sistemas de elevadores, é
+possível controlar, por exemplo, qual elevador atenderá qual chamado em uma
+fila. Levando-se em conta os dados disponíveis no momento e, talvez, fazendo
+inferências a respeito de outros, calcula-se o custo por alguns passos no futuro
+(por exemplo, atendendo vários eventos da fila). Um exemplo claro deste
+comportamento pode ser visto na seção~\ref{sec:ai:planning}.
+
+O algoritmo de \textit{planning} será comparado com os comportamentos mais
+triviais, como os descritos nas seções~\ref{sec:ai:nn}~e~\ref{sec:ai:nnm}. Além
+disto, a comparação de diferentes funções de custo e diferentes
+horizontes\footnote{Horizonte é a quantidade de passos no futuro que o algoritmo
+prevê. Mais detalhes podem ser vistos na seção~\ref{sec:ai:planning}.} será
+feita, avaliando quão vantajosa é a implementação de um destes algoritmos,
+comparado com a implementação dos algoritmos triviais.
