@@ -109,8 +109,7 @@ modelo de simulação válido neste escopo deve ser \textit{estocástico} de mod
 lidar com a aleatoridade da entrada de passageiros no sistema.
 
 \unsure{Fiquei na dúvida. Um sistema que utilize geradores pseudo-aleatórios com
-sementes (ou seja, o comportamento É determinístico) pode ser considerado
-REALMENTE estocástico? (Taschetto)}
+sementes pode ser considerado REALMENTE estocástico? (Taschetto)}
 
 \item \textit{Contínuo ou Discreto}
 
@@ -118,17 +117,11 @@ A figura \ref{fig:disccont} ilustra o comportamento de uma variável de estado e
 modelos de simulação \textit{contínuos} e \textit{discretos}. O modelo
 \textit{contínuo} é aquele onde os valores das variáveis mudam continuamente ao
 longo do tempo. Já em um modelo \textit{discreto} as variáveis de estado tem seu
-valor alterado em instantes separados do tempo \cite{Banks}. É importante
-salientar que modelos discretos não necessariamente representam sistemas
-discretos e vice-versa \cite{Law}. A decisão por um modelo ou outro se dá
-especificamente pelos objetivos do estudo.
-
-Para este projeto, não há a necessidade~-~tampouco a disposição de tempo
-computacional~-~de informações instantâneas a respeito da movimentação de
+valor alterado em instantes separados do tempo \cite{Banks}. Para este projeto,
+não há a necessidade informações instantâneas a respeito da movimentação de
 passageiros e elevadores, e sim de observar o comportamento do sistema dada a
-ocorrência de determinados eventos, e.~g., um passageiro embarca em um elevador.
-Portanto, no escopo deste estudo utilizaremos um modelo de simulação
-\textit{discreto}.
+ocorrência de determinados eventos. Portanto, o modelo de simulação utilizado
+neste estudo é \textit{discreto}.
 
 \begin{figure}[htb!]
 \centering\includegraphics{img/discrete_continuous.eps}
@@ -240,21 +233,17 @@ estocásticos.
 
 Sendo assim, o modelo deste estudo será uma simulação de eventos discretos com avanço de tempo para o próximo evento.
 
-\section{\label{sec:simulator:traits}Características do Simulador}
+\section{\label{sec:simulator:modeling}Modelagem do Simulador}
 
-O projeto do simulador foi concebido guiado por 5 características. São elas:
+O projeto foi concebido de forma a garantir algumas características consideradas
+de suma importância em relação ao simulador e as simulações. São elas:
 
 \begin{description}[leftmargin=!,labelwidth=\widthof{\bfseries Determinístico}]
+
   \item[Configurável]
 
   Deve ser possível definir cenários de forma simples e sem a necessidade de
   recompilar ou reconstruir os binários do simulador.
-
-
-  Para isto, os cenários   são armazenados em um arquivo de configuração no
-  formato   \textit{YAML}\footnote{\textit{YAML Ain't Markup Language},
-  http://yaml.org/}   e o carregados pelo simulador em tempo de execução~-~ou
-  seja, não é necessário   recompilar e reconstruir os binários do simulador.
 
   \item[Determinístico]
 
@@ -264,23 +253,11 @@ O projeto do simulador foi concebido guiado por 5 características. São elas:
   garantir que os passageiros cheguem nos mesmos instantes e locais em todas as
   simulações de um mesmo cenário.
 
-  Para isto, os cenários armazenados no   arquivo \textit{YAML} são compostos,
-  entre outras informações, por uma semente   que é utilizada em todos os
-  geradores de números aleatórios e distribuições   dentro simulador.
-
   \item[Escalável]
 
   Deve ser possível simular diversos cenários em uma mesma execução do simulador
   e em um tempo aceitável: alguns segundos para cenários simples e até 30
   minutos para cenários complexos.
-
-  Em função disto, optou-se por desenvolver o simulador na linguagem
-  \texttt{C++11}. É conceito na indústria de software que esta linguagem fornece
-  desempenho superior às demais linguagens de propósito geral~-~devido, em
-  grande parte, ao fato de ser compilada em linguagem de máquina e permitir ao
-  programador gerenciar diretamente o uso de memória do processo. Além disso,
-  juntamente de sua biblioteca padrão, o \texttt{C++11} oferece um conjunto
-  atraente de ferramentas de desenvolvimento e depuração.
 
   \item[Rastreável]
 
@@ -288,20 +265,44 @@ O projeto do simulador foi concebido guiado por 5 características. São elas:
   detalhando os eventos e situações ocorridos durante a simulação no escopo
   daquele cenário.
 
-  Para isto, utilizamos a biblioteca de geração de \textit{logs} \texttt{GLOG},
-  desenvolvido pelo \textit{Google} e com implementações para várias linguagens,
-  dentre elas o \texttt{C++}.
-
   \item[Testável]
 
   Deve ser possível desenvolver e executar testes unitários nos componentes do
   simulador.
 
-  Para isto, utilizamos a biblioteca de testes unitários \texttt{GTEST},
-  desenvolvido pelo \textit{Google} e com implementações para várias linguagens,
-  dentre elas o \texttt{C++}.
-
 \end{description}
+
+  % Para isto, os cenários   são armazenados em um arquivo de configuração no
+  % formato   \textit{YAML}\footnote{\textit{YAML Ain't Markup Language},
+  % http://yaml.org/}   e o carregados pelo simulador em tempo de execução~-~ou
+  % seja, não é necessário   recompilar e reconstruir os binários do simulador.
+
+  % Para isto, os cenários armazenados no   arquivo \textit{YAML} são compostos,
+  % entre outras informações, por uma semente   que é utilizada em todos os
+  % geradores de números aleatórios e distribuições   dentro simulador.
+
+  % Em função disto, optou-se por desenvolver o simulador na linguagem
+  % \texttt{C++11}. É conceito na indústria de software que esta linguagem fornece
+  % desempenho superior às demais linguagens de propósito geral~-~devido, em
+  % grande parte, ao fato de ser compilada em linguagem de máquina e permitir ao
+  % programador gerenciar diretamente o uso de memória do processo. Além disso,
+  % juntamente de sua biblioteca padrão, o \texttt{C++11} oferece um conjunto
+  % atraente de ferramentas de desenvolvimento e depuração.
+
+  % Para isto, utilizamos a biblioteca de geração de \textit{logs} \texttt{GLOG},
+  % desenvolvido pelo \textit{Google} e com implementações para várias linguagens,
+  % dentre elas o \texttt{C++}.
+
+  % Para isto, utilizamos a biblioteca de testes unitários \texttt{GTEST},
+  % desenvolvido pelo \textit{Google} e com implementações para várias linguagens,
+  % dentre elas o \texttt{C++}.
+
+Os componentes e algoritmos apresentados a seguir levam em contas estes fatores
+de projeto.
+
+\subsection{Componentes do Simulador}
+
+\subsubsection{Cenários}
 
 Cada cenário é composto pelas seguintes informações:
 
