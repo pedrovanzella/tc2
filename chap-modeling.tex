@@ -95,6 +95,22 @@ combinações:
   \item Agendamento \textit{planning} com função de custo \textit{weighted}.
 \end{enumerate}
 
+\subsection{\label{model:scenario:class}Classe \texttt{Scenario}}
+
+A figura \ref{fig:diagram:scenario} ilustra uma simplificação da interface
+pública da classe \texttt{Scenario}. Esta classe serve como uma estrutura para
+armazenar as informações listadas na seção \ref{model:scenario}. Além de funções
+para \textit{getters}, a classe disponibiliza a função \texttt{Load}, cujo
+objetivo é carregar os cenários a partir do arquivo de configuração (seção
+\ref{model:scenario:config}) utilizando a biblioteca \texttt{yaml-cpp}.
+
+\begin{figure}[htb!]
+  \centering
+  \includegraphics{doc/latex/class_scenario__coll__graph}
+  \caption{Interface pública simplificada da classe \texttt{Scenario}.}
+\label{fig:diagram:scenario}
+\end{figure}
+
 \subsection{\label{model:scenario:config}Arquivo de Configuração}
 
 A entrada de dados para o simulator se dá através de um arquivo de configuração
@@ -153,17 +169,8 @@ com capacidade  de transportar 10 pessoas cada.
 \section{\label{model:simulator}Simulador}
 \lipsum[6]
 
-\section{\label{model:statistics}Estatísticas}
-\lipsum[4]
-
 \section{\label{model:state}Atualização do Estado do Sistema}
 \lipsum[1]
-
-\section{\label{model:report}Geração de Relatórios}
-\lipsum[5]
-
-\subsection{\label{model:report:charts}Geração de Gráficos}
-\lipsum[5]
 
 \section{\label{model:schedulers}Algoritmos de Agendamento}
 Neste trabalho, dois algoritmos de agendamento foram implementados, o
@@ -226,8 +233,14 @@ Isto pode ser visto em mais detalhes na Figura~\ref{fig:model:costfunction:uml:b
 \subsection{\label{model:costfunctions:weighted}Weighted}
 \lipsum[5]
 
+\section{\label{model:statistics}Estatísticas}
+\lipsum[4]
 
+\section{\label{model:report}Geração de Relatórios}
+\lipsum[5]
 
+\subsection{\label{model:report:charts}Geração de Gráficos}
+\lipsum[5]
 
 % \chapter{\label{chap:modeling}Modelagem do Sistema}
 
