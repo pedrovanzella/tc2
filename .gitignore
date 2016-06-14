@@ -46,3 +46,4 @@ uml.asta.lock
 *.pygstyle
 auto/
 *.el
+_minted-tc2/
