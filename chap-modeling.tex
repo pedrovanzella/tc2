@@ -1,9 +1,37 @@
 \chapter{\label{chap:model}Modelo do Sistema}
 
-\section{\label{model:scenario}Cenários}
+Conforme visto na seção \ref{simulator:flow}, um sistema de simulação possui uma
+série de componentes conceituais, cada um com suas responsabilidades bem
+definidas. Para projetar um simulador, diversas abordagens e paradigmas poderiam
+ser aplicadas. Neste estudo optou-se pelo paradigma de \textit{Programação
+Orientada a Objetos}. Esta escolha se deu pelos seguintes motivos:
+
+\begin{description}
+  \item[Capacidade de Abstração]\hfill \\
+    Conceitos da Programação Orientada a Objetos, como classes, interfaces,
+    polimorfismo, herança e sobrecarga permitem a realização de uma modelagem
+    conceitual em alto nível de abstração, permitindo uma explanação de fácil
+    entendimento sem ser necessário abordar questões da implementação em si
+    (linguagem de programação, arquitetura, etc).
+  \item[Padrão de Mercado]\hfill \\
+    Desde meados dos anos 90, a Programação Orientada a Objetos tornou-se
+    frequentemente utilizada no mercado de desenvolvimento de software e nos
+    ambientes acadêmicos relacionados à computação. Assim, é possível atingir
+    uma maior audiência.
+  \item[Domínio dos Autores]\hfill \\
+    O paradigma é de domínio dos autores deste estudo.
+  \item[Suporte nativo no \textit{C++}]\hfill \\
+    O paradigma é suportado de forma no \textit{C++11}, linguagem escolhida para
+    a implementação.
+\end{description}
+
+Nas próximas seções serão apresentadas as modelagens e detalhes de implementação
+do simulador de elevadores.
+
+\section{\label{model:scenario}Cenário}
 
 Como entrada, o simulador recebe um conjunto de cenários, definidos no arquivo
-de configuração (seção \ref{model:config}) e realiza a simulação dos
+de configuração (seção \ref{model:scenario:config}) e realiza a simulação dos
 mesmos. Cada cenário é composto pelas seguintes informações:
 
 \begin{description}[leftmargin=!,labelwidth=\widthof{\bfseries Função de Custo}]
@@ -67,7 +95,7 @@ combinações:
   \item Agendamento \textit{planning} com função de custo \textit{weighted}.
 \end{enumerate}
 
-\section{\label{model:config}Arquivo de Configuração}
+\subsection{\label{model:scenario:config}Arquivo de Configuração}
 
 A entrada de dados para o simulator se dá através de um arquivo de configuração
 chamado \texttt{config.yaml}. Este arquivo obedece o padrão \textit{YAML}, um
