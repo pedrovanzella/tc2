@@ -5,7 +5,6 @@ var hierarchy =
     [ "ClientComparator", "class_client_comparator.html", null ],
     [ "CostFunction", "class_cost_function.html", [
       [ "BetterNearestNeighbourCostFunction", "class_better_nearest_neighbour_cost_function.html", null ],
-      [ "DummyCostFunction", "class_dummy_cost_function.html", null ],
       [ "NearestNeighbourCostFunction", "class_nearest_neighbour_cost_function.html", null ],
       [ "RandomCostFunction", "class_random_cost_function.html", null ],
       [ "WeightedCostFunction", "class_weighted_cost_function.html", null ]

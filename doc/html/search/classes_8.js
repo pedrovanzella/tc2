@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['planningscheduler',['PlanningScheduler',['../class_planning_scheduler.html',1,'']]]
+  ['randomcostfunction',['RandomCostFunction',['../class_random_cost_function.html',1,'']]],
+  ['reporter',['Reporter',['../class_reporter.html',1,'']]]
 ];

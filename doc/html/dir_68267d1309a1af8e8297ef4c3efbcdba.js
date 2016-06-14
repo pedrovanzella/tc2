@@ -6,7 +6,6 @@ var dir_68267d1309a1af8e8297ef4c3efbcdba =
     [ "Client.cpp", "_client_8cpp.html", null ],
     [ "ClientArrival.cpp", "_client_arrival_8cpp.html", null ],
     [ "Clock.cpp", "_clock_8cpp.html", null ],
-    [ "DummyCostFunction.cpp", "_dummy_cost_function_8cpp.html", null ],
     [ "Elevator.cpp", "_elevator_8cpp.html", null ],
     [ "Event.cpp", "_event_8cpp.html", null ],
     [ "EventComparator.cpp", "_event_comparator_8cpp.html", null ],

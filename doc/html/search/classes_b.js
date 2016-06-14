@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['trip',['Trip',['../struct_trip.html',1,'']]]
+  ['weightedcostfunction',['WeightedCostFunction',['../class_weighted_cost_function.html',1,'']]]
 ];

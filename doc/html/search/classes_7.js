@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['nearestneighbourcostfunction',['NearestNeighbourCostFunction',['../class_nearest_neighbour_cost_function.html',1,'']]]
+  ['planningscheduler',['PlanningScheduler',['../class_planning_scheduler.html',1,'']]]
 ];

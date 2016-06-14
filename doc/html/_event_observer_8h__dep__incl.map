@@ -1,19 +1,18 @@
 <map id="include/EventObserver.h" name="include/EventObserver.h">
-<area shape="rect" id="node2" href="$_event_dispatcher_8cpp.html" title="src/EventDispatcher.cpp" alt="" coords="96,80,263,107"/>
-<area shape="rect" id="node3" href="$_building_8h.html" title="include/Building.h" alt="" coords="1251,80,1375,107"/>
-<area shape="rect" id="node12" href="$_clock_8h.html" title="include/Clock.h" alt="" coords="445,80,557,107"/>
-<area shape="rect" id="node17" href="$_statistics_8h.html" title="include/Statistics.h" alt="" coords="287,80,421,107"/>
-<area shape="rect" id="node4" href="$_better_nearest_neighbour_cost_function_8cpp.html" title="src/BetterNearestNeighbour\lCostFunction.cpp" alt="" coords="1591,155,1775,196"/>
-<area shape="rect" id="node5" href="$_building_8cpp.html" title="src/Building.cpp" alt="" coords="297,162,411,189"/>
-<area shape="rect" id="node6" href="$_dummy_cost_function_8cpp.html" title="src/DummyCostFunction.cpp" alt="" coords="1800,162,1993,189"/>
-<area shape="rect" id="node7" href="$_nearest_neighbour_cost_function_8cpp.html" title="src/NearestNeighbourCost\lFunction.cpp" alt="" coords="2017,155,2195,196"/>
-<area shape="rect" id="node8" href="$_planning_scheduler_8cpp.html" title="src/PlanningScheduler.cpp" alt="" coords="1048,162,1225,189"/>
-<area shape="rect" id="node9" href="$_scheduler_8cpp.html" title="src/Scheduler.cpp" alt="" coords="1249,162,1376,189"/>
-<area shape="rect" id="node10" href="$_simple_scheduler_8cpp.html" title="src/SimpleScheduler.cpp" alt="" coords="1400,162,1567,189"/>
-<area shape="rect" id="node11" href="$_simulator_8cpp.html" title="src/Simulator.cpp" alt="" coords="436,162,560,189"/>
-<area shape="rect" id="node13" href="$_clock_8cpp.html" title="src/Clock.cpp" alt="" coords="584,162,687,189"/>
-<area shape="rect" id="node14" href="$_event_factory_8cpp.html" title="src/EventFactory.cpp" alt="" coords="711,162,858,189"/>
-<area shape="rect" id="node15" href="$_event_queue_8cpp.html" title="src/EventQueue.cpp" alt="" coords="882,162,1023,189"/>
-<area shape="rect" id="node16" href="$_reporter_8cpp.html" title="src/Reporter.cpp" alt="" coords="153,162,272,189"/>
-<area shape="rect" id="node18" href="$_statistics_8cpp.html" title="src/Statistics.cpp" alt="" coords="5,162,129,189"/>
+<area shape="rect" id="node2" href="$_event_dispatcher_8cpp.html" title="src/EventDispatcher.cpp" alt="" coords="260,80,427,107"/>
+<area shape="rect" id="node3" href="$_building_8h.html" title="include/Building.h" alt="" coords="1173,80,1297,107"/>
+<area shape="rect" id="node11" href="$_clock_8h.html" title="include/Clock.h" alt="" coords="609,80,721,107"/>
+<area shape="rect" id="node16" href="$_statistics_8h.html" title="include/Statistics.h" alt="" coords="451,80,585,107"/>
+<area shape="rect" id="node4" href="$_better_nearest_neighbour_cost_function_8cpp.html" title="src/BetterNearestNeighbour\lCostFunction.cpp" alt="" coords="1791,155,1975,196"/>
+<area shape="rect" id="node5" href="$_building_8cpp.html" title="src/Building.cpp" alt="" coords="759,162,874,189"/>
+<area shape="rect" id="node6" href="$_nearest_neighbour_cost_function_8cpp.html" title="src/NearestNeighbourCost\lFunction.cpp" alt="" coords="1047,155,1224,196"/>
+<area shape="rect" id="node7" href="$_planning_scheduler_8cpp.html" title="src/PlanningScheduler.cpp" alt="" coords="1248,162,1425,189"/>
+<area shape="rect" id="node8" href="$_scheduler_8cpp.html" title="src/Scheduler.cpp" alt="" coords="1449,162,1576,189"/>
+<area shape="rect" id="node9" href="$_simple_scheduler_8cpp.html" title="src/SimpleScheduler.cpp" alt="" coords="1600,162,1767,189"/>
+<area shape="rect" id="node10" href="$_simulator_8cpp.html" title="src/Simulator.cpp" alt="" coords="899,162,1023,189"/>
+<area shape="rect" id="node12" href="$_clock_8cpp.html" title="src/Clock.cpp" alt="" coords="296,162,399,189"/>
+<area shape="rect" id="node13" href="$_event_factory_8cpp.html" title="src/EventFactory.cpp" alt="" coords="423,162,570,189"/>
+<area shape="rect" id="node14" href="$_event_queue_8cpp.html" title="src/EventQueue.cpp" alt="" coords="594,162,735,189"/>
+<area shape="rect" id="node15" href="$_reporter_8cpp.html" title="src/Reporter.cpp" alt="" coords="153,162,272,189"/>
+<area shape="rect" id="node17" href="$_statistics_8cpp.html" title="src/Statistics.cpp" alt="" coords="5,162,129,189"/>
 </map>

@@ -1,7 +1,6 @@
 <map id="CostFunction" name="CostFunction">
 <area shape="rect" id="node2" href="$class_better_nearest_neighbour_cost_function.html" title="{BetterNearestNeighbourCost\lFunction\n||+ calculate()\l}" alt="" coords="5,131,196,223"/>
-<area shape="rect" id="node3" href="$class_dummy_cost_function.html" title="{DummyCostFunction\n||+ calculate()\l}" alt="" coords="221,138,367,215"/>
-<area shape="rect" id="node4" href="$class_nearest_neighbour_cost_function.html" title="{NearestNeighbourCostFunction\n||+ calculate()\l}" alt="" coords="391,138,597,215"/>
-<area shape="rect" id="node5" href="$class_random_cost_function.html" title="{RandomCostFunction\n||+ RandomCostFunction()\l+ calculate()\l}" alt="" coords="621,131,791,223"/>
-<area shape="rect" id="node6" href="$class_weighted_cost_function.html" title="{WeightedCostFunction\n||+ calculate()\l}" alt="" coords="815,138,970,215"/>
+<area shape="rect" id="node3" href="$class_nearest_neighbour_cost_function.html" title="{NearestNeighbourCostFunction\n||+ calculate()\l}" alt="" coords="221,138,426,215"/>
+<area shape="rect" id="node4" href="$class_random_cost_function.html" title="{RandomCostFunction\n||+ RandomCostFunction()\l+ calculate()\l}" alt="" coords="451,131,620,223"/>
+<area shape="rect" id="node5" href="$class_weighted_cost_function.html" title="{WeightedCostFunction\n||+ calculate()\l}" alt="" coords="645,138,799,215"/>
 </map>

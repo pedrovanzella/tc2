@@ -9,7 +9,6 @@ var annotated =
     [ "Clock", "class_clock.html", "class_clock" ],
     [ "CostFunction", "class_cost_function.html", "class_cost_function" ],
     [ "CostFunctionCreator", "class_cost_function_creator.html", "class_cost_function_creator" ],
-    [ "DummyCostFunction", "class_dummy_cost_function.html", "class_dummy_cost_function" ],
     [ "Elevator", "class_elevator.html", "class_elevator" ],
     [ "Event", "class_event.html", "class_event" ],
     [ "EventComparator", "class_event_comparator.html", "class_event_comparator" ],

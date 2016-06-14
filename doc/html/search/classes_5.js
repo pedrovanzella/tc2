@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['finishsimulation',['FinishSimulation',['../class_finish_simulation.html',1,'']]],
-  ['floor',['Floor',['../class_floor.html',1,'']]],
-  ['floorcomparator',['FloorComparator',['../struct_floor_comparator.html',1,'']]]
+  ['missingcostfunctionerror',['MissingCostFunctionError',['../class_missing_cost_function_error.html',1,'']]],
+  ['missingschedulererror',['MissingSchedulerError',['../class_missing_scheduler_error.html',1,'']]]
 ];

@@ -26,9 +26,6 @@ var dir_d44c64559bbebec7f509842c48db8b23 =
     ] ],
     [ "CostFunctionType.h", "_cost_function_type_8h.html", "_cost_function_type_8h" ],
     [ "Direction.h", "_direction_8h.html", "_direction_8h" ],
-    [ "DummyCostFunction.h", "_dummy_cost_function_8h.html", [
-      [ "DummyCostFunction", "class_dummy_cost_function.html", "class_dummy_cost_function" ]
-    ] ],
     [ "Elevator.h", "_elevator_8h.html", [
       [ "Elevator", "class_elevator.html", "class_elevator" ]
     ] ],
