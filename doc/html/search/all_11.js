@@ -19,7 +19,7 @@ var searchData=
   ['setpickuptime',['setPickupTime',['../class_client.html#a7988e646af304d1b62a2d8495d53a34d',1,'Client']]],
   ['setstop',['setStop',['../class_building.html#ad56fd3c023033dc3deb4314f3c86d35b',1,'Building']]],
   ['simple',['Simple',['../_scheduler_type_8h.html#a38e49b4d2a59c90c891c884c009e9135a1fbb1e3943c2c6c560247ac8f9289780',1,'SchedulerType.h']]],
-  ['simplescheduler',['SimpleScheduler',['../class_simple_scheduler.html',1,'SimpleScheduler'],['../class_simple_scheduler.html#acf9975484a92fc5d37985b92b2b9f05b',1,'SimpleScheduler::SimpleScheduler()']]],
+  ['simplescheduler',['SimpleScheduler',['../class_simple_scheduler.html',1,'']]],
   ['simplescheduler_2ecpp',['SimpleScheduler.cpp',['../_simple_scheduler_8cpp.html',1,'']]],
   ['simplescheduler_2eh',['SimpleScheduler.h',['../_simple_scheduler_8h.html',1,'']]],
   ['simulator',['Simulator',['../class_simulator.html',1,'Simulator'],['../class_simulator.html#af08bb3d35eeea230fa542b0a4ad8c59c',1,'Simulator::Simulator(std::shared_ptr&lt; const Scenario &gt; scenario)'],['../class_simulator.html#a3015a7bf41fe77ce1f74347b95a70375',1,'Simulator::Simulator(const Simulator &amp;simulator)']]],
