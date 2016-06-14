@@ -138,10 +138,35 @@ com capacidade  de transportar 10 pessoas cada.
 \lipsum[5]
 
 \section{\label{model:schedulers}Algoritmos de Agendamento}
-\lipsum[5]
+Neste trabalho, dois algoritmos de agendamento foram implementados, o
+\textit{Simple Scheduler} (Seção~\ref{model:schedulers:simple}) e o
+\textit{Planning Scheduler} (Seção~\ref{model:schedulers:planning}).
+
+Ambos algoritmos são implementados em classes próprias, que herdam de uma classe
+\textsf{Scheduler}. Este relacionamento pode ser visto mais claramente na Figura~\ref{fig:model:schedulers:uml:base}.
+
+\begin{figure}[htb]
+  \centering
+  \includegraphics{doc/latex/class_scheduler__inherit__graph}
+  \caption{Diagrama UML das classes Scheduler}
+  \label{fig:model:schedulers:uml:base}
+\end{figure}
+
+Os \textit{schedulers} têm apenas um método público, chamado \textsf{int
+  schedule()}, que recebe como parâmetro a função de custo e um ponteiro para o
+prédio, além de, opcionalmente, um elevador para ser excluído.
+
+\unsure{Onde falamos de por que é importante excluir elevadores do schedule às
+  vezes? (Vanzella)}
+Excluir um elevador é importante, como foi falado na Sessão XXX. Há um método
+protegido na classe \texttt{Scheduler}, chamado
+\texttt{getAvailableElevators()}, que retorna uma lista de elevadores, excluindo
+aqueles que não podem ser utilizados.
 
 \subsection{\label{model:schedulers:simple}Simple}
-\lipsum[5]
+O \textit{Simple Scheduler}, como o nome sugere, tem um comportamento bem
+simples: itera pela lista de elevadores disponíveis, calculando a função de
+custo para cada um, e retorna o de menor custo.
 
 \subsection{\label{model:schedulers:planning}Planning}
 \lipsum[5]

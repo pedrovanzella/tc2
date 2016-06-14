@@ -47,3 +47,4 @@ uml.asta.lock
 auto/
 *.el
 _minted-tc2/
+*converted-to.pdf
