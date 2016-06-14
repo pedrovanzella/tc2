@@ -208,7 +208,18 @@ custo para cada um, e retorna o de menor custo.
 \lipsum[5]
 
 \section{\label{model:costfunctions}Algoritmos de Função de Custo}
-\lipsum[5]
+As funções de custo herdam de uma classe base, chamada \texttt{CostFunction},
+que possui apenas um método público, \texttt{float calculate()}, que retorna o
+valor da função para aquela combinação entre o elevador e o cliente.
+
+Isto pode ser visto em mais detalhes na Figura~\ref{fig:model:costfunction:uml:base}.
+
+\begin{figure}[htb]
+  \centering
+  \includegraphics{doc/latex/class_cost_function__inherit__graph}
+  \caption{Diagrama UML das classes CostFunction}
+  \label{fig:model:costfunction:uml:base}
+\end{figure}
 
 \subsection{\label{model:costfunctions:random}Random}
 \lipsum[5]
