@@ -143,11 +143,12 @@ um modelo de simulação \textit{dinâmico}, \textit{estocástico} e
 \textit{discreto} para representar o sistema do mundo real. Em função da
 natureza dinâmica desta abordagem, é necessário acompanhar o valor atual do
 tempo da simulação à medida que a simulação é executada, armazenando este valor
-em uma variável. Esta variável é chamada de \textit{relógio da simulação}
-\cite{Law}. Geralmente, não há relação entre o tempo de simulação e o tempo
-necessário para a simulação ser executada. Por exemplo, um experimento pode
-simular o funcionamento de um banco entre 9h e 17h (tempo de simulação), mas o
-tempo necessário para executar a simulação poderia ser de 4 minutos.
+em uma variável. Esta variável é chamada de \textit{relógio da
+simulação}\footnote{Geralmente, não há relação entre o tempo de simulação e o
+tempo necessário para a simulação ser executada. Por exemplo, um experimento
+pode simular o funcionamento de um banco entre 9h e 17h (tempo de simulação),
+mas o tempo necessário para executar a simulação poderia ser de 4 minutos.}
+\cite{Law}.
 
 Também se faz necessário um mecanismo de avanço de tempo que gerencie o valor
 desta variável. Neste simulador é utilizada a abordagem de \textit{avanço de
@@ -185,10 +186,76 @@ para o momento da ocorrência do próximo evento.
 
 Sendo assim, o modelo deste estudo será uma simulação de eventos discretos com avanço de tempo para o próximo evento.
 
+\section{\label{simulator:flow}Fluxo de Execução}
+
+Independente do paradigma utilizado em sua implementação, um simulador de
+eventos discretos com avanço de tempo para o próximo evento possui um conjunto
+de componentes com responsabilidaddes bem definidas. São eles:
+
+\begin{description}[leftmargin=!,labelwidth=\widthof{\bfseries Rotina de Inicialização}]
+\item[Estado do Sistema] Coleção de variáveis necessárias para descrever o estado do sistema em um instante em particular;
+\item[Relógio de Simulação] Variável contendo o valor atual do tempo de simulação;
+\item[Lista de Eventos] Lista de eventos futuros, contendo, para cada evento, o
+seu tipo e o instante do tempo no qual este ocorrerá;
+\item[Contadores Estatísticos] Conjunto de variáveis utilizados para armazenar informações estatísticas a respeito do funcionamento do sistema;
+\item[Rotina de Inicialização] Subprograma para inicializar a simulação no
+instante zero do \textit{relógio da simulação};
+\item[Rotina de Temporização] Subprograma responsável por determinar qual o
+próximo evento a ocorrer e avançar o relógio de simulação até o instante da sua
+ocorrência;
+\item[Rotina de Evento] Subprograma que modifica o estado do sistema quando um determinado tipo de evento ocorre - para cada tipo de evento há uma rotina
+correspondente;
+\item[Rotinas Auxiliares] Conjunto de subprogramas utilizados para gerar observações aleatórias sobre distribuições de probabilidade determinadas como parte do modelo de simulação;
+\item[Gerador de Relatórios] Subprograma que computa estimativas das métricas desejadas e dão origem ao relatório quando a simulação termina;
+\item[Programa Principal] Subprograma que invoca as rotinas de inicialização e temporização e delega o tratamento de cada evento à sua rotina correspondente, repetindo o processo até que a condição de parada da simulação seja verificada.
+\end{description}
+
+\begin{figure}[htb!]
+\centering\includegraphics{img/simulation_flow.eps}
+\caption[Fluxo de execução de um simulador]{\label{fig:simflow}Fluxo básico de um simulador com avanço de tempo para o próximo evento. Fonte:~\cite{Law}}
+\end{figure}
+
+A figura \ref{fig:simflow} ilustra a organização existente entre estes
+componentes, bem como o fluxo de execução da simulação. O início da simulação se
+dá pela execução do \textit{Programa Principal}. Este, por sua vez, invoca a
+\textit{Rotina de Inicialização}. Nesta rotina, o \textit{Relógio da Simulação}
+é zerado, marcando o instante inicial. Além disso, são inicializados o
+\textit{Estado Inicial} do sistema, os \textit{Contadores Estatísticos} e são
+gerados os eventos iniciais, sendo adicionados à \textit{Lista de Eventos}.
+
+Após o controle retornar para o \textit{Programa Principal}, o mesmo invoca a
+\textit{Rotina de Temporização}. Esta rotina tem a responsabilidade de avaliar a
+\textit{Lista de Eventos} e determinar qual é o primeiro evento a ser executado.
+Ao determinar qual é o evento, a rotina avança o \textit{Relógio da Simulação}
+para o instante de sua ocorrência e devolve informações a respeito deste evento
+para o \textit{Programa Principal}. De volta ao \textit{Programa Principal}, o
+mesmo avalia o evento retornado pela \textit{Rotina de Temporização} e invoca
+sua \textit{Rotina de Evento} correspondente.
+
+Para cada tipo de evento existe uma \textit{Rotina de Evento} correspondente.
+Todas elas, obrigatoriamente, devem executar as seguintes tarefas: (1) atualizar
+o \textit{Estado do Sistema} em função do evento ocorrido; (2) atualizar os
+\textit{Contadores Estatísticos} em função do evento ocorrido; e (3) gerar
+novos eventos futuros e adicioná-los à \textit{Lista de Eventos}. Para esta
+última tarefa, as \textit{Rotinas Auxiliares} são utilizadas para diversas
+tarefas - dentre elas, a geração de variáveis aleatórias para dar suporte à
+geração de eventos estocásticos.
+
+Após a execução da \textit{Rotina de Evento}, é feita a verificação de uma
+condição de parada da simulação. Caso seja determinado que o fim da simulação
+deve ocorrer, o controle passa para o \textit{Gerador de Relatórios}, cuja
+responsabilidade é computar as estimativas de interesse, baseando-se nos
+\textit{Contadores Estatísticos} e produzir um relatório com estes dados. Em
+caso contrário, o \textit{Programa Principal} é invocado novamente e o ciclo se
+repete. É importante salientar que a \textit{Rotina de Inicialização} somente é
+invocada na primeira execução do \textit{Programa Principal}, sendo ignorada nas
+iterações posteriores.
+
 \section{\label{simulator:requirements}Requisitos de Projeto}
 
-O projeto foi concebido de forma a garantir alguns requisitos considerados de
-suma importância em relação ao simulador e as simulações. São elas:
+O projeto do simulador foi concebido de forma a garantir alguns requisitos
+considerados de suma importância em relação ao simulador e as simulações. São
+elas:
 
 \begin{description}[leftmargin=!,labelwidth=\widthof{\bfseries Determinístico}]
 
@@ -203,7 +270,7 @@ suma importância em relação ao simulador e as simulações. São elas:
   de execução com o auxílio da biblioteca \texttt{yaml-cpp}\footnote{\textit
   {yaml-cpp is a YAML parser and emitter in C++}, https://github.com/jbeder
   /yaml-cpp}. O arquivo de configuração é detalhado na seção
-  \ref{simulator:model:config}.
+  \ref{model:config}.
 
   \item[Determinístico]
 
@@ -255,133 +322,3 @@ suma importância em relação ao simulador e as simulações. São elas:
   com implementações para várias linguagens, dentre elas o \texttt{C++}.
 
 \end{description}
-
-\section{\label{simulator:model}Modelo do Simulador}
-
-\subsection{\label{simulator:model:scenario}Cenário}
-
-Como entrada, o simulador recebe um conjunto de cenários, definidos no arquivo
-de configuração (seção \ref{simulator:model:config}) e realiza a simulação dos
-mesmos. Cada cenário é composto pelas seguintes informações:
-
-\begin{description}[leftmargin=!,labelwidth=\widthof{\bfseries Função de Custo}]
-  \item[Nome]
-
-  Identificação textual do cenário.
-
-  \item[Duração]
-
-  Tempo durante o qual serão geradas chegadas de clientes aos andares do prédio.
-  Após este tempo, não chegarão mais clientes. Porém, clientes que já entraram
-  no prédios e estão localizados nos andares ou nos elevadores precisam terminar
-  suas viagens antes que a simulação chegue ao fim. Devido a isto, é normal que
-  o tempo real de simulação seja maior que a duração estipulada no cenário.
-
-  \item[Agendamento]
-
-  Lista de algoritmos de agendamento.
-
-  \item[Horizonte]
-
-  Horizonte de expansão do agendamento com algoritmo de \textit{planning} (não utilizado no agendamento \textit{simple}).
-
-  \item[Função de Custo]
-
-  Lista de funções de custo.
-
-  \item[Semente]
-
-  Semente textual para inicialização os geradores de números aleatórias.
-
-  \item[Elevadores]
-
-  Número de elevatores do prédio.
-
-  \item[Capacidade]
-
-  Capacidade dos elevadores (a mesma para cada elevador).
-
-  \item[Andares]
-
-  Lista com o intervalo médio\footnote{O valor médio informado é utilizado como
-  parâmetro $\lambda$ de entrada para uma Distribuição de Poisson. Cada andar do
-  prédio possui uma distribuição distinta.} de chegada de passageiros, em
-  segundos, para cada andar. A lista começa com a média do andar térreo e segue
-  sucessivamente. O número de andares é igual ao tamanho da lista.
-
-\end{description}
-
-Convém salientar que, definido um cenário, será realizada uma simulação para cada
-combinação possível de algoritmo de agendamento com função de custo. Por
-exemplo, se forem especificados os algoritmos de agendamento \textit{simple} e
-\textit{planning} juntamente das funções de custo \textit{nearest neighbour} e
-\textit{weighted}, serão realizadas 4 simulações deste cenário com as seguintes
-combinações:
-
-\begin{enumerate}
-  \item Agendamento \textit{simple} com função de custo \textit{nearest neighbour};
-  \item Agendamento \textit{simple} com função de custo \textit{weighted};
-  \item Agendamento \textit{planning} com função de custo \textit{nearest neighbour};
-  \item Agendamento \textit{planning} com função de custo \textit{weighted}.
-\end{enumerate}
-
-\subsection{\label{simulator:model:config}Arquivo de Configuração}
-
-A entrada de dados para o simulator se dá através de um arquivo de configuração
-chamado \texttt{config.yaml}. Este arquivo obedece o padrão \textit{YAML}, um
-formato de serialização de dados legíveis por humanos.
-
-\begin{algorithm}[htb]
-  \centering
-    \begin{minted}[frame=lines,framesep=2mm,linenos,fontsize=\small]{yaml}
-scenarios:
-  - name: Scenario 1
-    duration: 43200 # 12 hours
-    scheduler: [ 0, 1 ] # simple, planning
-    planningHorizon: 5
-    cost_function: [ 1, 3, 4 ] # randon, bnn, weighted
-    seed: 54TH7hboAG1iOsDIDhJp
-    elevators: 2
-    capacity: 6
-    floors: [ 60, 520, 360, 240, 240, 90, 90, 90 ]
-
-  - name: Scenario 2
-    duration: 86400 # 24 hours
-    scheduler: [ 1 ] # planning
-    planningHorizon: 3
-    cost_function: [ 1, 2, 3, 4 ] # random, nn, bnn, weighted
-    seed: w9JwgykwejtoL2icSgHo
-    elevators: 6
-    capacity: 10
-    floors: [ 60, 520, 520, 520, 360, 360, 360, 360,
-             360, 360, 240, 240, 240, 240, 240, 240 ]
-    \end{minted}
-  \caption{Arquivo de configuração definindo dois cenários distintos.}
-  \label{alg:config}
-\end{algorithm}
-
-No exemplo de arquivo de configuração ilustrado no algoritmo \ref{alg:config},
-são definidos dois cenários. O primeiro, chamado de \texttt{Scenario 1}, onde
-clientes chegarão durante 12 horas distribuídos ao longo dos 8 andares do prédio
-e serão atendidos por um dos 2 elevadores, cuja capacidade é de 8 passageiros
-cada. Já no cenário \texttt{Scenario 2} passageiros chegarão num período de 24
-horas, distribuídos ao longo dos 16 andares e serão atendidos por 6 elevadores,
-com capacidade  de transportar 10 pessoas cada.
-
-\subsection{\label{simulator:model:clock}Relógio}
-\lipsum[1]
-
-\subsection{\label{simulator:model:events}Eventos}
-\lipsum[1]
-
-\subsection{\label{simulator:model:notification}Notificação de Eventos}
-\lipsum[1]
-
-\subsection{\label{simulator:model:queue}Fila de Eventos}
-\lipsum[1]
-
-\subsection{\label{simulator:model:statistics}Estatísticas}
-\lipsum[1]
-
-\subsection{\label{simulator:model:simulator}Simulador}
-\lipsum[1]
