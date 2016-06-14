@@ -203,7 +203,7 @@ notificar os componentes da ocorrência de um evento.
 
 \subsection{Organização e priorização}
 
-Na seção \ref{sub:sim:discrete} foi apresentado o \textit{mecanismo de
+Na seção \ref{simulator:movation:discrete} foi apresentado o \textit{mecanismo de
 avanço de tempo para o próximo evento}, onde deve-se verificar, em uma lista de
 eventos, qual é o próximo evento a ocorrer. Dado um conjunto de eventos
 agendados (ou seja, ainda não ocorridos), o primeiro evento a ocorrer é
@@ -440,10 +440,9 @@ Simulação executada em 99:99:99.
 \section{Simulador completo}
 
 O uso de instâncias de todas estas classes juntas dá forma ao simulador,
-conforme proposto por \cite{Law,Banks}. Entretanto, todas as interações entre as
-instâncias devem ser organizadas conforme o fluxo proposto na figura
-\ref{fig:simflow}. O componente responsável por orquestrar estas interações e
-garantir o fluxo de execução é representado pela classe \textit{Simulator}.
+conforme proposto por \cite{Law,Banks}. O componente responsável por orquestrar
+as interações entre estas instâncias e garantir o fluxo de execução é
+representado pela classe \textit{Simulator}.
 
 Esta classe não possui atributos ou métodos específicos; somente as instâncias
 das outras classes e um método que realiza um laço indefinido, onde um evento é

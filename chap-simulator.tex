@@ -20,7 +20,7 @@ forma mais apropriada para o seu estudo. Assim, se faz importante a existência
 de métodos objetivos para que se possa verificar se a simulação é realmente a
 ferramenta apropriada para cada caso estudado.
 
-\section{\label{chap:motivation}Motivação}
+\section{\label{simulator:motivation}Motivação}
 
 A fim de decidir de forma objetiva qual a melhor abordagem para um dado sistema,
 Law~\cite{Law} propõe uma reflexão (figura~\ref{fig:systemstudy}) através das
@@ -74,7 +74,7 @@ Portanto, se justifica a escolha da simulação de um modelo matemático do sist
 como uma forma apropriada para o estudo e experimentação de um sistema de
 elevadores.
 
-\subsection{Classificação do modelo de simulação}
+\subsection{\label{simulator:motivation:classification}Classificação do modelo de simulação}
 
 A partir de um modelo matemático a ser estudado por meio de simulação (doravante
 chamado de \textit{modelo de simulação}), o mesmo pode ser classificado em três
@@ -91,12 +91,9 @@ passageiros chegam e elevadores os transportam através dos andares do prédio.
 
 Um modelo de simulação que não possua nenhum componente probabilístico (i.~e,~
 aleatoriedade) é chamado de \textit{determinístico}. Neste tipo de modelo, a
-saída é ``determinada'' no momento em que a sua entrada é definida~-~mesmo que
-ainda tome tempo computacional para realizar o cálculo de qual seja o resultado
-\cite{Law}. Em outras palavras, significa dizer que a saída fornecida pelo
-modelo de simulação será sempre a mesma para uma mesma entrada. Porém a grande
-maioria dos sistemas do mundo real possuem, no mínimo, algum grau de
-aleatoridade na sua entrada. Estes sistemas dão origem a modelos de simulação
+saída fornecida pelo modelo de simulação será sempre a mesma para uma mesma
+entrada. Porém a grande maioria dos sistemas do mundo real possuem, no mínimo,
+algum grau de aleatoridade na sua entrada - por isso são chamados
 \textit{estocásticos}. Estes, diferentemente de modelos
 \textit{determinísticos}, fornecem uma saída igualmente aleatória~-~e, por esta
 razão, esta saída deve ser considerada como um conjunto de \textit{estimativas}
@@ -130,7 +127,7 @@ neste estudo é \textit{discreto}.
 
 \end{enumerate}
 
-\subsection{\label{sub:sim:discrete}Simulação baseada em eventos discretos}
+\subsection{\label{simulator:movation:discrete}Simulação baseada em eventos discretos}
 
 Segundo Law~(2000, p.~6):
 
@@ -188,10 +185,10 @@ para o momento da ocorrência do próximo evento.
 
 Sendo assim, o modelo deste estudo será uma simulação de eventos discretos com avanço de tempo para o próximo evento.
 
-\section{\label{sec:simulator:modeling}Modelagem do Simulador}
+\section{\label{simulator:requirements}Requisitos de Projeto}
 
-O projeto foi concebido de forma a garantir algumas características consideradas
-de suma importância em relação ao simulador e as simulações. São elas:
+O projeto foi concebido de forma a garantir alguns requisitos considerados de
+suma importância em relação ao simulador e as simulações. São elas:
 
 \begin{description}[leftmargin=!,labelwidth=\widthof{\bfseries Determinístico}]
 
@@ -199,6 +196,11 @@ de suma importância em relação ao simulador e as simulações. São elas:
 
   Deve ser possível definir cenários de forma simples e sem a necessidade de
   recompilar ou reconstruir os binários do simulador.
+
+  % Para isto, os cenários   são armazenados em um arquivo de configuração no
+  % formato   \textit{YAML}\footnote{\textit{YAML Ain't Markup Language},
+  % http://yaml.org/}   e o carregados pelo simulador em tempo de execução~-~ou
+  % seja, não é necessário   recompilar e reconstruir os binários do simulador.
 
   \item[Determinístico]
 
@@ -208,33 +210,15 @@ de suma importância em relação ao simulador e as simulações. São elas:
   garantir que os passageiros cheguem nos mesmos instantes e locais em todas as
   simulações de um mesmo cenário.
 
+  % Para isto, os cenários armazenados no   arquivo \textit{YAML} são compostos,
+  % entre outras informações, por uma semente   que é utilizada em todos os
+  % geradores de números aleatórios e distribuições   dentro simulador.
+
   \item[Escalável]
 
   Deve ser possível simular diversos cenários em uma mesma execução do simulador
   e em um tempo aceitável: alguns segundos para cenários simples e até 30
   minutos para cenários complexos.
-
-  \item[Rastreável]
-
-  Para cada simulação, o simulador deve gerar arquivos de \textit{log},
-  detalhando os eventos e situações ocorridos durante a simulação no escopo
-  daquele cenário.
-
-  \item[Testável]
-
-  Deve ser possível desenvolver e executar testes unitários nos componentes do
-  simulador.
-
-\end{description}
-
-  % Para isto, os cenários   são armazenados em um arquivo de configuração no
-  % formato   \textit{YAML}\footnote{\textit{YAML Ain't Markup Language},
-  % http://yaml.org/}   e o carregados pelo simulador em tempo de execução~-~ou
-  % seja, não é necessário   recompilar e reconstruir os binários do simulador.
-
-  % Para isto, os cenários armazenados no   arquivo \textit{YAML} são compostos,
-  % entre outras informações, por uma semente   que é utilizada em todos os
-  % geradores de números aleatórios e distribuições   dentro simulador.
 
   % Em função disto, optou-se por desenvolver o simulador na linguagem
   % \texttt{C++11}. É conceito na indústria de software que esta linguagem fornece
@@ -244,20 +228,33 @@ de suma importância em relação ao simulador e as simulações. São elas:
   % juntamente de sua biblioteca padrão, o \texttt{C++11} oferece um conjunto
   % atraente de ferramentas de desenvolvimento e depuração.
 
+  \item[Rastreável]
+
+  Para cada simulação, o simulador deve gerar arquivos de \textit{log},
+  detalhando os eventos e situações ocorridos durante a simulação no escopo
+  daquele cenário.
+
   % Para isto, utilizamos a biblioteca de geração de \textit{logs} \texttt{GLOG},
   % desenvolvido pelo \textit{Google} e com implementações para várias linguagens,
   % dentre elas o \texttt{C++}.
+
+  \item[Testável]
+
+  Deve ser possível desenvolver e executar testes unitários nos componentes do
+  simulador.
 
   % Para isto, utilizamos a biblioteca de testes unitários \texttt{GTEST},
   % desenvolvido pelo \textit{Google} e com implementações para várias linguagens,
   % dentre elas o \texttt{C++}.
 
-Os componentes e algoritmos apresentados a seguir levam em contas estes fatores
-de projeto.
+\end{description}
 
-\subsection{Componentes do Simulador}
+Os componentes e algoritmos apresentados a seguir levam em contas estes
+requisitos de projeto.
 
-\subsubsection{Cenários}
+\section{\label{simulator:model}Modelo do Simulador}
+
+\subsection{\label{simulator:model:scenario}Cenário}
 
 Cada cenário é composto pelas seguintes informações:
 
@@ -265,75 +262,60 @@ Cada cenário é composto pelas seguintes informações:
   \item[Nome] Identificação textual do cenário.
   \item[Duração] Duração da simulação, em segundos.
   \item[Agendador] Lista de algoritmos de agendamento que deverão ser simulados para o cenário.
-  \item[Horizonte]
-  \item[Função de Custo] Função de custo pela qual
+  \item[Horizonte] Horizonte de expansão do agendador com algoritmo de \textit{planning} (não utilizado no agendador \textit{simple}).
+  \item[Função de Custo] Lista de funções de custo que deverão ser avaliadas para cada um dos algoritmos de agendamento especificados.
   \item[Semente] Semente textual utilizada para inicializar os geradores de variáveis aleatórias do simulador.
   \item[Elevadores] Número de elevatores.
   \item[Capacidade] Capacidade dos elevadores.
   \item[Andares] Lista de valores esperados ($\lambda$) para uma Distribuição de Poisson~-~um por andar.\unsure{Melhorar esta descrição. (Taschetto)}
 \end{description}
 
-\section{\label{subsec:simulator:modeling}Modelagem}
+\subsubsection{Bla}
 
-Independente do paradigma utilizado em sua implementação, um simulador de
-eventos discretos possui um conjunto de componentes com responsabilidaddes bem
-definidas. São eles:
+\begin{algorithm}[htb]
+  \centering
+    \begin{minted}[frame=lines,framesep=2mm,baselinestretch=1.2,linenos]{yaml}
+scenarios:
+  - name: Low-rise
+    duration: 43200 # 12 hours
+    scheduler: [ 0, 1 ] # simple, planning
+    planningHorizon: 5
+    cost_function: [ 1, 2, 3, 4 ] # randon, nn, bnn, weighted
+    seed: 54TH7hboAG1iOsDIDhJp
+    elevators: 2
+    capacity: 6
+    floors: [ 60, 520, 360, 360, 360, 240, 240, 240, 90, 90, 90 ]
 
-\begin{description}
-\item[Estado do Sistema] Coleção de variáveis necessárias para descrever o estado do sistema em um instante em particular;
-\item[Relógio de Simulação] Variável contendo o valor atual do tempo de simulação;
-\item[Lista de Eventos] Lista de eventos futuros, contendo, para cada evento, o
-seu tipo e o instante do tempo no qual este ocorrerá;
-\item[Contadores Estatísticos] Conjunto de variáveis utilizados para armazenar informações estatísticas a respeito do funcionamento do sistema;
-\item[Rotina de Inicialização] Subprograma para inicializar a simulação no
-instante zero do \textit{relógio da simulação};
-\item[Rotina de Temporização] Subprograma responsável por determinar qual o
-próximo evento a ocorrer e avançar o relógio de simulação até o instante da sua
-ocorrência;
-\item[Rotina de Evento] Subprograma que modifica o estado do sistema quando um determinado tipo de evento ocorre~-~para cada tipo de evento há uma rotina
-correspondente;
-\item[Rotinas Auxiliares] Conjunto de subprogramas utilizados para gerar observações aleatórias sobre distribuições de probabilidade determinadas como parte do modelo de simulação;
-\item[Gerador de Relatórios] Subprograma que computa estimativas das métricas desejadas e dão origem ao relatório quando a simulação termina;
-\item[Programa Principal] Subprograma que invoca as rotinas de inicialização e temporização e delega o tratamento de cada evento à sua rotina correspondente, repetindo o processo até que a condição de parada da simulação seja verificada.
-\end{description}
+  - name: High-rise
+    duration: 43200 # 12 hours
+    scheduler: [ 0, 1 ] # simple, planning
+    planningHorizon: 5
+    cost_function: [ 1, 2, 3, 4 ] # random, nn, bnn, weighted
+    seed: w9JwgykwejtoL2icSgHo
+    elevators: 8
+    capacity: 10
+    floors: [ 60, 520, 520, 520, 360, 360, 360, 360, 360, 360, 360, 360, 360,
+             360, 360, 360, 360, 360, 360, 360, 360, 360, 360, 360, 360, 360,
+             360, 360, 240, 240, 240, 240, 240, 240,  90,  90,  90,  90,  90 ]
+    \end{minted}
+  \caption{Arquivo de configuração definindo dois cenários distintos.}
+  \label{alg:config}
+\end{algorithm}
 
-\begin{figure}[htb!]
-\centering\includegraphics{img/simulation_flow.eps}
-\caption[Fluxo de execução de um simulador]{\label{fig:simflow}Fluxo básico de um simulador com avanço de tempo para o próximo evento. Fonte:~\cite{Law}}
-\end{figure}
+\subsection{\label{simulator:model:clock}Relógio}
+\lipsum[1]
 
-A figura \ref{fig:simflow} ilustra a organização existente entre estes
-componentes, bem como o fluxo de execução da simulação. O início da simulação se
-dá pela execução do \textit{Programa Principal}. Este, por sua vez, invoca a
-\textit{Rotina de Inicialização}. Nesta rotina, o \textit{Relógio da Simulação}
-é zerado, marcando o instante inicial. Além disso, são inicializados o
-\textit{Estado Inicial} do sistema, os \textit{Contadores Estatísticos} e são
-gerados os eventos iniciais, sendo adicionados à \textit{Lista de Eventos}.
+\subsection{\label{simulator:model:events}Eventos}
+\lipsum[1]
 
-Após o controle retornar para o \textit{Programa Principal}, o mesmo invoca a
-\textit{Rotina de Temporização}. Esta rotina tem a responsabilidade de avaliar a
-\textit{Lista de Eventos} e determinar qual é o primeiro evento a ser executado.
-Ao determinar qual é o evento, a rotina avança o \textit{Relógio da Simulação}
-para o instante de sua ocorrência e devolve informações a respeito deste evento
-para o \textit{Programa Principal}. De volta ao \textit{Programa Principal}, o
-mesmo avalia o evento retornado pela \textit{Rotina de Temporização} e invoca
-sua \textit{Rotina de Evento} correspondente.
+\subsection{\label{simulator:model:notification}Notificação de Eventos}
+\lipsum[1]
 
-Para cada tipo de evento existe uma \textit{Rotina de Evento} correspondente.
-Todas elas, obrigatoriamente, devem executar as seguintes tarefas: (1) atualizar
-o \textit{Estado do Sistema} em função do evento ocorrido; (2) atualizar os
-\textit{Contadores Estatísticos} em função do evento ocorrido; e (3) gerar
-novos eventos futuros e adicioná-los à \textit{Lista de Eventos}. Para esta
-última tarefa, as \textit{Rotinas Auxiliares} são utilizadas para diversas
-tarefas~-~dentre elas, a geração de variáveis aleatórias para dar suporte à
-geração de eventos estocásticos.
+\subsection{\label{simulator:model:queue}Fila de Eventos}
+\lipsum[1]
 
-Após a execução da \textit{Rotina de Evento}, é feita a verificação de uma
-condição de parada da simulação. Caso seja determinado que o fim da simulação
-deve ocorrer, o controle passa para o \textit{Gerador de Relatórios}, cuja
-responsabilidade é computar as estimativas de interesse, baseando-se nos
-\textit{Contadores Estatísticos} e produzir um relatório com estes dados. Em
-caso contrário, o \textit{Programa Principal} é invocado novamente e o ciclo se
-repete. É importante salientar que a \textit{Rotina de Inicialização} somente é
-invocada na primeira execução do \textit{Programa Principal}, sendo ignorada nas
-iterações posteriores.
+\subsection{\label{simulator:model:statistics}Estatísticas}
+\lipsum[1]
+
+\subsection{\label{simulator:model:simulator}Simulador}
+\lipsum[1]
