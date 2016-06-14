@@ -10,7 +10,6 @@ var searchData=
   ['setlocation',['setLocation',['../class_elevator.html#a638951b2d7a71a8135d3d4b65a908d01',1,'Elevator']]],
   ['setpickuptime',['setPickupTime',['../class_client.html#a7988e646af304d1b62a2d8495d53a34d',1,'Client']]],
   ['setstop',['setStop',['../class_building.html#ad56fd3c023033dc3deb4314f3c86d35b',1,'Building']]],
-  ['simplescheduler',['SimpleScheduler',['../class_simple_scheduler.html#acf9975484a92fc5d37985b92b2b9f05b',1,'SimpleScheduler']]],
   ['simulator',['Simulator',['../class_simulator.html#af08bb3d35eeea230fa542b0a4ad8c59c',1,'Simulator::Simulator(std::shared_ptr&lt; const Scenario &gt; scenario)'],['../class_simulator.html#a3015a7bf41fe77ce1f74347b95a70375',1,'Simulator::Simulator(const Simulator &amp;simulator)']]],
   ['statistics',['Statistics',['../class_statistics.html#affbe803d713a70b26d450879049fc40c',1,'Statistics']]],
   ['statusname',['statusName',['../namespace_helpers.html#a155c57c243ef309927648fbe98555f02',1,'Helpers']]],
