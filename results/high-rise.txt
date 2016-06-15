@@ -4,38 +4,38 @@ Seed............: w9JwgykwejtoL2icSgHo
 Elevators.......: 8
 Capacity........: 10
 Floors..........: 39
-Horizon.........: 5
+Horizon.........: 2
 
 WAITING TIME
                                          Average         Deviant           Total
-Simple/Random                            25.1475         24.0652     183828.0000
-Simple/NearestNeighbour                  19.0644         33.9588     139361.0000
-Simple/BetterNearestNeighbour            13.8187         24.9850     101015.0000
-Simple/Weighted                          36.4364         75.0522     266350.0000
-Planning/Random                          26.8491         27.3626     196267.0000
-Planning/NearestNeighbour                19.6293         33.8751     143490.0000
-Planning/BetterNearestNeighbour          13.6732         23.2481      99951.0000
-Planning/Weighted                        33.9922         65.4280     248483.0000
+Simple/Random                            25.9981         28.0464     190124.0000
+Simple/NearestNeighbour                  20.3395         37.1902     148743.0000
+Simple/BetterNearestNeighbour            13.5243         23.5950      98903.0000
+Simple/Weighted                          31.0373         54.5909     226976.0000
+Planning/Random                           8.8829         16.5500      64961.0000
+Planning/NearestNeighbour                 9.9824         19.4451      73001.0000
+Planning/BetterNearestNeighbour           8.8202         16.1712      64502.0000
+Planning/Weighted                        11.3271         22.3406      82835.0000
 
 JOURNEY TIME
                                          Average         Deviant           Total
-Simple/Random                            15.3817         14.1926     112440.0000
-Simple/NearestNeighbour                  15.2799         10.8392     111696.0000
-Simple/BetterNearestNeighbour            15.2878         10.3375     111754.0000
-Simple/Weighted                          15.1510         23.5599     110754.0000
-Planning/Random                          15.3647         15.4059     112316.0000
-Planning/NearestNeighbour                15.2938         11.1147     111798.0000
-Planning/BetterNearestNeighbour          15.2881         10.3285     111756.0000
-Planning/Weighted                        15.1395         21.3886     110670.0000
+Simple/Random                            15.2595         14.9190     111593.0000
+Simple/NearestNeighbour                  15.0993         11.4479     110421.0000
+Simple/BetterNearestNeighbour            15.0550         10.2476     110097.0000
+Simple/Weighted                          14.9915         18.9700     109633.0000
+Planning/Random                          15.1742         12.0139     110969.0000
+Planning/NearestNeighbour                15.1991         11.4878     111151.0000
+Planning/BetterNearestNeighbour          15.0982         11.9491     110413.0000
+Planning/Weighted                        15.1173         10.8752     110553.0000
 
 CLIENTS
                                          Arrived          Served        Duration
-Simple/Random                               7310            7310           43340
-Simple/NearestNeighbour                     7310            7310           43281
-Simple/BetterNearestNeighbour               7310            7310           43331
-Simple/Weighted                             7310            7310           43288
-Planning/Random                             7310            7310           43282
-Planning/NearestNeighbour                   7310            7310           43387
-Planning/BetterNearestNeighbour             7310            7310           43331
-Planning/Weighted                           7310            7310           43386
+Simple/Random                               7313            7313           43275
+Simple/NearestNeighbour                     7313            7313           43334
+Simple/BetterNearestNeighbour               7313            7313           43349
+Simple/Weighted                             7313            7313           43372
+Planning/Random                             7313            7313           43341
+Planning/NearestNeighbour                   7313            7313           43341
+Planning/BetterNearestNeighbour             7313            7313           43341
+Planning/Weighted                           7313            7313           43341
 

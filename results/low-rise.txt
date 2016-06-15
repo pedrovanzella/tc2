@@ -8,34 +8,33 @@ Horizon.........: 5
 
 WAITING TIME
                                          Average         Deviant           Total
-Simple/Random                             5.2882          4.1607      16552.0000
-Simple/NearestNeighbour                   3.4642          3.4604      10843.0000
-Simple/BetterNearestNeighbour             3.3684          3.3217      10543.0000
-Simple/Weighted                           3.7565          3.7894      11758.0000
-Planning/Random                           5.2562          4.0634      16452.0000
-Planning/NearestNeighbour                 3.5486          3.5492      11107.0000
-Planning/BetterNearestNeighbour           3.4565          3.3826      10819.0000
-Planning/Weighted                         3.7773          3.7984      11823.0000
+Simple/Random                             5.4064          4.1792      16933.0000
+Simple/NearestNeighbour                   3.5144          3.5768      11007.0000
+Simple/BetterNearestNeighbour             3.3547          3.2931      10507.0000
+Simple/Weighted                           3.7149          3.8036      11635.0000
+Planning/Random                           3.1580          2.8688       9891.0000
+Planning/NearestNeighbour                 3.2273          3.0515      10108.0000
+Planning/BetterNearestNeighbour           3.1830          2.9150       9969.0000
+Planning/Weighted                         3.2529          3.0760      10188.0000
 
 JOURNEY TIME
                                          Average         Deviant           Total
-Simple/Random                             4.5422          2.8477      14217.0000
-Simple/NearestNeighbour                   4.5505          2.9754      14243.0000
-Simple/BetterNearestNeighbour             4.5479          2.9986      14235.0000
-Simple/Weighted                           4.5543          2.8834      14255.0000
-Planning/Random                           4.5550          2.8552      14257.0000
-Planning/NearestNeighbour                 4.5479          2.9379      14235.0000
-Planning/BetterNearestNeighbour           4.5319          2.9517      14185.0000
-Planning/Weighted                         4.5492          2.8725      14239.0000
+Simple/Random                             4.4949          2.8676      14078.0000
+Simple/NearestNeighbour                   4.4700          2.8565      14000.0000
+Simple/BetterNearestNeighbour             4.4674          2.9163      13992.0000
+Simple/Weighted                           4.4719          2.7997      14006.0000
+Planning/Random                           4.4713          3.0005      14004.0000
+Planning/NearestNeighbour                 4.4770          2.9796      14022.0000
+Planning/BetterNearestNeighbour           4.4623          2.9787      13976.0000
+Planning/Weighted                         4.4789          2.9714      14028.0000
 
 CLIENTS
                                          Arrived          Served        Duration
-Simple/Random                               3130            3130           43205
-Simple/NearestNeighbour                     3130            3130           43200
-Simple/BetterNearestNeighbour               3130            3130           43200
-Simple/Weighted                             3130            3130           43200
-Planning/Random                             3130            3130           43209
-Planning/NearestNeighbour                   3130            3130           43200
-Planning/BetterNearestNeighbour             3130            3130           43200
-Planning/Weighted                           3130            3130           43200
-
+Simple/Random                               3132            3132           43200
+Simple/NearestNeighbour                     3132            3132           43200
+Simple/BetterNearestNeighbour               3132            3132           43200
+Simple/Weighted                             3132            3132           43200
+Planning/Random                             3132            3132           43200
+Planning/NearestNeighbour                   3132            3132           43200
+Planning/BetterNearestNeighbour             3132            3132           43200
+Planning/Weighted                           3132            3132           43200
