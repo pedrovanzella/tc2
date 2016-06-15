@@ -222,17 +222,37 @@ Isto pode ser visto em mais detalhes na Figura~\ref{fig:model:costfunction:uml:b
 \end{figure}
 
 \subsection{\label{model:costfunctions:random}Random}
-\unsure{Random precisa do construtor. Explicar isso. (Vanzella)}
-\lipsum[5]
+A Função de Custo \textit{Random} serve como base de comparação para as demais.
+Ela retorna um valor aleatório entre zero e um cada vez que for chamada, e,
+portanto, deve resultar em um agendamento pior do que qualquer alternativa.
+
+Olhando-se a Figura~\ref{fig:model:costfunction:uml:base}, nota-se que ela é a
+única função de custo com um construtor. Isto se dá por que é necessário
+inicializar-se a geração de números aleatórios, de modo a gerar estes números de
+forma consistente.
+\unsure{Vale a pena colocar o código deste construtor aqui? (Vanzella)}
 
 \subsection{\label{model:costfunctions:nn}Nearest Neighbour}
-\lipsum[5]
+Esta função de custo retorna, como custo, a distância em valor absoluto do
+elevador para o cliente. Ela ignora a direção na qual o elevador está viajando.
+
+\unsure{Colocar o código aqui? Tem 2 linhas. (Vanzella)}
 
 \subsection{\label{model:costfunctions:bnn}Better Nearest Neighbour}
-\lipsum[5]
+A Função de Custo \textit{Better Nearest Neighbour} bonifica elevadores que
+estão indo na direção do chamado, dividindo seu custo por $\sqrt 2$ e bonifica
+mais ainda os elevadores parados, dividindo seu custo por $2$. O custo antes
+deste bônus é calculado de maneira igual à \textit{Nearest Neighbour}.
 
 \subsection{\label{model:costfunctions:weighted}Weighted}
-\lipsum[5]
+A Função \textit{Weighted} toma uma decisão diferente da \textit{Better Nearest
+  Neighbour} para melhorar a \textit{Nearest Neighbour}. Em vez de bonificar
+elevadores parados ou elevadores que estão indo na direção do cliente, esta
+função bonifica elevadores mais vazios, dividindo o custo (que é a distância
+entre o cliente e o elevador) pela ocupação do elevador.\footnote{Como foi visto
+na Sessão~XXX, podemos inferir a ocupação pela balança interna do elevador, em
+alguns cenários reais.}
+\unsure{Sessão XXX (Vanzella)}
 
 \section{\label{model:statistics}Estatísticas}
 \lipsum[4]
