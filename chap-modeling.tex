@@ -1,4 +1,4 @@
-\chapter{\label{chap:model}Modelo do Sistema}
+\chapter{\label{chap:model}Modelo e Implementação}
 
 Conforme visto na seção~\ref{simulator:flow}, um sistema de simulação possui uma
 série de componentes conceituais, cada um com suas responsabilidades bem
@@ -205,6 +205,195 @@ as classes concretas que a especializam, representando os eventos de
     nenhuma informação adicional.
 \end{description}
 
+\section{\label{sec:model:event}Gerenciamento de eventos}
+
+Na seção~\ref{simulator:flow} foram apresentados os componentes de um simulador.
+Alguns destes componentes devem reagir na ocorrência de um evento, alterando o
+seu estado interno de acordo com o tipo de evento ocorrido e as informações que
+ele carrega consigo. Porém restam as questões de como saber qual evento será o
+próximo a ocorrer e como notificar os elementos reativos disso. Portanto,
+precisamos de mecanismos para criar e ordenar eventos e notificar os componentes
+da ocorrência de um evento.
+
+\subsection{Criação}
+
+Não é possível prever em qual andar e qual momento um cliente irá chegar ao
+prédio, tampouco qual o destino desejado por ele. Portanto, é correto afirmar
+que a chegada de clientes em um prédio é um processo estocástico.
+
+\subsubsection{Horário de chegada}
+
+Segundo~\cite{Ross:2006:IPM:1197141}, a taxa de chegada de clientes é um
+processo de Poisson, com razão $\lambda$. Ou seja, o tempo entre novos clientes
+são variáveis independentes, com valor esperado $\frac{1}{\lambda}$. Pode-se ver
+na figura~\ref{fig:distribution:poisson} um exemplo de diferentes valores de
+$\lambda$ gerando diferentes distribuições.
+
+\begin{figure}[htb!]
+  \centering
+  \includegraphics[scale=1.0]{img/poisson.eps}
+  \caption{Exemplo de distribuições de Poisson.}
+\label{fig:distribution:poisson}
+\end{figure}
+
+Em um prédio no mundo real, esta distribuição varia de acordo com a hora do dia.
+Por exemplo, nos horários do início do turno da manhã e no início do turno da
+tarde, muito mais passageiros chegam ao térreo, com destino ao andar onde
+trabalham. Para fim de simplificação, esta variação ao longo do dia não foi
+considerada neste estudo. Conforme visto na seção \ref{model:scenario}, cada
+andar do prédio possui um valor para $\lambda$, que permanece constante no
+decorrer de toda a simulação.
+
+\subsubsection{Andar de destino}
+
+Já a probabilidade de um cliente ir de um andar para outro, em um tráfego
+chamado de \textit{interfloor}, é um processo de Markov, com distribuições
+normais que variam de acordo com a hora do dia.
+
+Uma cadeia de Markov, utilizada para representar este processo, é por sua vez
+representada por uma matriz de probabilidades. No caso deste sistema, tem-se uma
+função com distribuição normal (\textit{i.e.} uma média e um desvio padrão) que
+varia de acordo com o horário do dia, para cada posição desta matriz.
+
+Um exemplo de matriz para um prédio de 3 andares é:
+
+\[
+  \begin{bmatrix}
+    f_{11} & f_{12} & f_{13} \\
+    f_{21} & f_{22} & f_{23} \\
+    f_{31} & f_{32} & f_{33}
+  \end{bmatrix}
+\]
+
+Onde cada valor é uma função $f(t)$, com $t$ sendo o momento do dia e resultando
+em um valor de média e um valor de desvio padrão para a distribuição naquele
+momento. Cada função descreve a probabilidade de um cliente estar em um andar e
+desejar ir para outro. Por exemplo, $f_{31}$ descreve a probabilidade de um
+cliente estar no terceiro andar e desejar descer para o primeiro.
+
+Além disto, a diagonal principal (\textit{i.e} $f_{11}$, $f_{22}$ e
+$f_{33}$) é sempre zero, já que não faz sentido um cliente desejar ir para o
+mesmo andar em que se encontra.
+
+Esta cadeia de Markov pode ser vista na figura~\ref{fig:distribution:markov}.
+
+\begin{figure}[htb!]
+  \centering
+  \includegraphics[scale=0.6]{img/markov.eps}
+  \caption{Exemplo de cadeia de Markov para um prédio de 3 andares.}
+\label{fig:distribution:markov}
+\end{figure}
+
+A figura~\ref{fig:diagram:generator} mostra o diagrama UML da classe que gera eventos.
+
+\begin{figure}[htb!]
+  \centering
+  \includegraphics[scale=0.6]{img/EventGenerator.eps}
+  \caption{Diagrama de classes do \textit{Sistema de Geração de Eventos}.}
+\label{fig:diagram:generator}
+\end{figure}
+
+\subsection{Priorização}
+
+Na seção~\ref{simulator:movation:discrete} foi apresentado o \textit{mecanismo
+de avanço de tempo para o próximo evento}, onde deve-se verificar, em uma lista
+de eventos, qual é o próximo evento a ocorrer. Dado um conjunto de eventos
+agendados (ou seja, ainda não ocorridos), o primeiro evento a ocorrer é
+justamente o que possui o menor tempo de agendamento. Um tipo abstrato de dados
+que serve para este propósito é uma \textit{fila prioritária}, ou
+\textit{priority queue}, que funciona de forma similar a filas \textit{FIFO},
+com a diferença de que cada elemento armazenado possui uma prioridade associada.
+A \textit{fila prioritária}, implementada na classe \texttt{EventQueue}, irá
+atender os elementos por ordem de prioridade, da maior para a menor. Ao
+considerar que a prioridade de um evento é inversamente proporcional ao instante
+em que irá ocorrer - ou seja, quanto menor o tempo do evento maior é a sua
+prioridade -, temos uma fila na qual o próximo elemento a ser atendido sempre
+será o próximo evento a ocorrer.
+
+\begin{description}
+  \item[EventQueue] \hfill \\
+    Encapsula uma fila prioritária de eventos. Adicionalmente, utiliza a classe
+    \texttt{EventComparator}, que implementa a relação de ordem entre os
+    eventos.
+
+    \begin{description}[leftmargin=!,labelwidth=\widthof{\bfseries hasNextEvent}]
+      \item[\texttt{push}] Insere um evento na fila.
+      \item[\texttt{top}] Recupera o primeiro evento da fila.
+      \item[\texttt{pop}] Remove o primeiro evento da fila.
+      \item[\texttt{hasNextEvent}] Verifica se a fila possui eventos.
+    \end{description}
+\end{description}
+
+\begin{figure}[htb!]
+  \centering
+  \includegraphics[scale=0.6]{img/EventQueue}
+  \caption{Diagrama de classes da \textit{criação e priorização de eventos}.}
+\label{fig:diagram:event:manage}
+\end{figure}
+
+\subsection{Notificação}
+
+Quando o próximo evento a ocorrer é conhecido, o problema passa a ser notificar
+os elementos reativos que este evento ocorreu para que os mesmos possam
+atualizar seus estados internos. De acordo com Gamma
+\cite{Gamma:1995:DPE:186897}, o padrão \textit{Observer} é um \textit{design
+pattern} indicado para resolver este problema. Este \textit{pattern} define uma
+dependência de um-para-muitos ($1:N$) entre objetos de modo que, quando este um
+objeto (\textit{subject}) tem seu estado alterado, todos os seus dependentes
+(\textit{observers}) são notificados deste mudança. Por consequência, estes
+dependentes podem modificar seu estado interno baseando-se nas informações desta
+notificação.
+
+Este padrão foi utilizado para implementar a funcionalidade de notificação de
+eventos, ilustrado no diagrama da figura~\ref{fig:diagram:notification}. Para
+isto, foram criados os seguintes componentes:
+
+\begin{figure}[htb!]
+  \centering
+  \includegraphics[scale=0.6]{img/EventNotifier}
+  \caption{Diagrama de classes da \textit{notificação de eventos}.}
+\label{fig:diagram:notification}
+\end{figure}
+
+\begin{description}
+  \item[EventObserver] \hfill \\
+    Classe abstrata a ser realizada por qualquer outra classe que deseje receber
+    notificações de eventos. Possui um único método abstrato.
+
+    \begin{description}[leftmargin=!,labelwidth=\widthof{\bfseries unsubscribe}]
+      \item[\texttt{notify}] Recebe a notificação da ocorrência de um evento.
+    \end{description}
+
+  \item[EventNotifier] \hfill \\
+    Classe abstrata a ser realizada por qualquer outra classe que deseje
+    notificar a ocorrência de eventos. Define métodos para que objetos que
+    implementem a classe abstrata \textit{EventObserver} possam registrar-se
+    para receber notificações de ocorrências de eventos. Seus métodos abstratos
+    são:
+
+    \begin{description}[leftmargin=!,labelwidth=\widthof{\bfseries unsubscribe}]
+      \item[\texttt{subscribe}] Adiciona um \textit{observer}.
+      \item[\texttt{unsubscribe}] Remove um \textit{observer}.
+      \item[\texttt{broadcast}] Notifica todos os \textit{observers} registrados da ocorrência de um evento.
+    \end{description}
+
+  \item[EventDispatcher] \hfill \\
+    Classe concreta que realiza a interface \texttt{EventNotifier}. Possui uma
+    estrutura de dados para armazenar quais \textit{observers} se registraram
+    através dos métodos \texttt{subscribe} e \texttt{unsubscribe}.
+\end{description}
+
+Três importantes componentes do simulador podem se beneficiar desta construção:
+(1) o \textit{relógio do sistema} (classe \texttt{Clock}); (2) os
+\textit{contadores estatísticos} (classe \texttt{Statistics}); e (3) o
+\textit{estado do sistema} (classe \texttt{Building}). Na ocorrência de um
+evento, estas três entidades devem ser notificadas e cada uma irá alterar seu
+estado interno da forma adequada. Para isto, devem implementar a interface
+\texttt{EventObserver} e registrarem-se no \texttt{EventDispatcher}. Assim, o
+\texttt{EventDispatcher} e a \texttt{EventQueue} podem, juntos, notificar aos
+componentes reativos exatamente qual evento ocorreu em cada iteração da
+simulação, na ordem correta dos eventos.
+
 \section{\label{model:reactive}Componentes reativos}
 
 Durante a execução da simulação, à medida que eventos ocorrem, componentes do
@@ -217,11 +406,11 @@ classes que representam estes componentes no simulador.
 Entre os componentes fundamentais de um simulador destaca-se a representação do
 \textit{estado do sistema}, uma coleção de variáveis necessárias para descrever
 o sistema em um instante em particular da simulação~\cite{Law}. Neste projeto, a
-classe \textit{Building} é responsável por encapsular o conjunto de informações
+classe \texttt{Building} é responsável por encapsular o conjunto de informações
 que definem este estado (figura~\ref{fig:diagram:model}). Esta classe é
 responsável por gerenciar múltiplas instâncias de elevadores (classe
-\textit{Elevator}), andares (classe \textit{Floor}) e clientes (classe
-\textit{Client}) e relacionar estas instâncias entre si - reproduzindo, deste
+\texttt{Elevator}), andares (classe \texttt{Floor}) e clientes (classe
+\texttt{Client}) e relacionar estas instâncias entre si - reproduzindo, deste
 modo, as dinâmicas do sistema do mundo real que está sendo simulado.
 
 \begin{figure}[htb!]
@@ -232,6 +421,61 @@ modo, as dinâmicas do sistema do mundo real que está sendo simulado.
 \end{figure}
 
 \begin{description}
+  \item[Floor] \hfill \\
+    Parte componente de um prédio. Possui os seguintes atributos:
+
+  \begin{description}[leftmargin=!,labelwidth=\widthof{\bfseries arrivalFloor}]
+    \item[\texttt{number}] Número do andar em que a parada deve ser realizada.
+    \item[\texttt{lambda}] Direção na qual a parada deve ser realizada.
+    \item[\texttt{upLine}] Direção na qual a parada deve ser realizada.
+    \item[\texttt{downLine}] Direção na qual a parada deve ser realizada.
+    \item[\texttt{eventFactory}] Direção na qual a parada deve ser realizada.
+  \end{description}
+
+     possuindo uma numeração e duas
+    filas\footnote{No mundo real, apesar de aparentemente as pessoas formarem
+    uma fila única, os membros da fila respeitam o sentido de viagem do elevador
+    e implicitamente separam-se em duas filas: uma para subir e outra para
+    descer.}: uma para clientes que desejam descer e outra para clientes que
+    desejam subir.
+
+\item[Call] \hfill \\
+  Representa uma parada a ser realizada por algum elevador. É composta pelos seguintes
+  atributos:
+
+  \begin{description}[leftmargin=!,labelwidth=\widthof{\bfseries arrivalFloor}]
+    \item[\texttt{number}] Número do andar em que a parada deve ser realizada.
+    \item[\texttt{direction}] Direção na qual a parada deve ser realizada.
+  \end{description}
+
+  Por exemplo, pode existir uma parada no andar 8 para subir; uma parada no andar
+  4 para descer; etc.
+
+\item[Elevator] \hfill \\
+  Representa um elevador. Possui os seguintes atributos:
+
+  \begin{description}[leftmargin=!,labelwidth=\widthof{\bfseries arrivalFloor}]
+    \item[\texttt{number}] Número identificador do elevador.
+    \item[\texttt{capacity}] Capacidade máxima do elevador (em número de clientes).
+    \item[\texttt{location}] Número do andar no qual o elevador se encontra.
+    \item[\texttt{destination}] Chamada destino do elevador (classe \texttt{Call}).
+    \item[\texttt{status}] Situação atual do elevador: \textit{moving} (movendo-se) ou \textit{idle} (ocioso).
+    \item[\texttt{direction}] Direção na qual o elevador está se movendo (no caso de não estar ocioso).
+    \item[\texttt{passengers}] Conjunto com os passageiros que embarcaram no elevador e ainda não desembarcaram.
+  \end{description}
+
+\item[Client] \hfill \\
+  Representa uma pessoa que chegou a um andar e deseja se dirigir a outro andar.
+  Possui os seguintes atributos:
+
+  \begin{description}[leftmargin=!,labelwidth=\widthof{\bfseries arrivalFloor}]
+    \item[\texttt{id}] Número identificador do cliente.
+    \item[\texttt{destination}] Número do andar ao qual o cliente deseja dirigir-se.
+    \item[\texttt{arrivalFloor}] Número do andar no qual o cliente chegou.
+    \item[\texttt{createTime}] Horário em que o cliente chegou ao prédio.
+    \item[\texttt{pickupTime}] Horário em que o cliente embarcou em um elevador.
+  \end{description}
+
   \item[Building] \hfill \\
     Representa a composição do prédio sendo simulado. Possui um conjunto de
     elevadores, uma lista ordenada de andares e um método \texttt{reset},
@@ -242,38 +486,13 @@ modo, as dinâmicas do sistema do mundo real que está sendo simulado.
     seção~\ref{section:scenarios}, serão simulados prédios com, no mínimo, 4
     andares.}.
 
-  \item[Floor] \hfill \\
-    Parte componente de um prédio, possuindo uma numeração e duas
-    filas\footnote{No mundo real, apesar de aparentemente as pessoas formarem
-    uma fila única, os membros da fila respeitam o sentido de viagem do elevador
-    e implicitamente separam-se em duas filas: uma para subir e outra para
-    descer.}: uma para clientes que desejam descer e outra para clientes que
-    desejam subir.
-
-\item[Elevator] \hfill \\
-    Representa um elevador. Possui como atributos o andar em que se
-    encontra, uma sequência ordenada de andares de destino e um mapa associando
-    andares com conjuntos de clientes - ou seja, para cada andar o mapa reune
-    quais os grupos de clientes que o possuem como destino. Além disso, possui
-    métodos auxiliares para informar o sentido da viagem do elevador
-    (\texttt{direction}), bem como a sua ocupação atual (\texttt{occupation}).
-
-\item[Client] \hfill \\
-    Representa um grupo de pessoas que desejam utilizar um elevador. Possui como
-    atributos o número de pessoas no grupo (\texttt{partySize}), o horário em
-    que chegou na fila do andar (\texttt{arrivalTime}) e o andar destino para o
-    qual deseja ir (\texttt{destination}).
-
 \end{description}
 
 \subsection{Relógio da simulação}
 
-O \textit{relógio da simulação} é representado pela classe \textit{Clock}
+O \textit{relógio da simulação} é representado pela classe \texttt{Clock}
 (figura~\ref{fig:diagram:clock}). Esta classe encapsula o atributo privado
-\texttt{time} e provê métodos para consulta (\texttt{currentTime}), atualização
-para um valor arbitrário (\texttt{advanceTo}), atualização por incremento
-(\texttt{advanceBy}) e uma representação textual para utilização em logs
-(\texttt{str}).
+\texttt{time} e provê métodos para sua consulta e atualização.
 
 \begin{figure}[htb!]
   \centering
@@ -281,6 +500,30 @@ para um valor arbitrário (\texttt{advanceTo}), atualização por incremento
   \caption{Diagrama de classes do \textit{relógio do sistema}.}
 \label{fig:diagram:clock}
 \end{figure}
+
+\begin{description}[leftmargin=!,labelwidth=\widthof{\bfseries currentTime}]
+  \item[\texttt{currentTime}] Retorna o horário atual do \textit{relógio da simulação}.
+  \item[\texttt{advanceTo}] Avança o \textit{relógio da simulação} para um horário arbitrário.
+  \item[\texttt{advanceBy}] Avança o \textit{relógio da simulação} em uma quantidade arbitrária de segundos.
+  \item[\texttt{str}] Representação textual do \textit{relógio da simulação} (utilizado em \textit{logs}).
+  \item[\texttt{notify}]
+  Realização da classe abstrata \texttt{EventObserver}. Ao ser notificado de um
+  evento, o \textit{relógio da simulação} deve avançar o relógio interno para o
+  instante da ocorrência do evento, independentemente do tipo de evento que
+  ocorreu. O algoritmo \ref{alg:advanceto} ilustra este conceito.
+\end{description}
+
+\begin{algorithm}[htb]
+\begin{center}
+\begin{algorithmic}[1]
+\Function{Clock::Notify}{$event$}
+  \State $eventTime \leftarrow event.\Call{getTime}{}$
+  \State \Call{advanceTo}{$eventTime$}
+\EndFunction
+\end{algorithmic}
+\end{center}
+\caption{\label{alg:advanceto}\textit{Relógio do sistema} reagindo a um evento.}
+\end{algorithm}
 
 \subsection{Contadores estatísticos}
 
@@ -338,116 +581,39 @@ representados pelas estruturas \texttt{Arrival} e \texttt{Trip} e pela classe
       \item[\texttt{getDevWt}] Calcula o desvio padrão do tempo de jornada.
       \item[\texttt{getTotalWT}] Calcula o tempo de jornada total.
       \item[\texttt{keepRunning}] Avalia se a simulação deve terminar\footnote{por exemplo, se o tempo de duração da simulação já se passou.}.
+      \item[\texttt{notify}]
+        Realização da classe abstrata \texttt{EventObserver}. Ao ser notificado
+        de um evento: se for do tipo \textbf{chegada de cliente}, deve coletar e
+        armazenar as informações desta nova chegada; se for do tipo \textbf{fim
+        da simulação}, deve altera o estado do atributo privado
+        \texttt{keepRunning} para \texttt{false}. Esta ação irá interromper a
+        chegada de novos clientes. O algoritmo \ref{alg:statistics} ilustra este
+        conceito.
     \end{description}
 \end{description}
 
-\section{\label{sec:model:event}Gerenciamento de eventos}
+\begin{algorithm}[htb]
+\begin{center}
+\begin{algorithmic}[1]
+\Function{Statistics::Notify}{$event$}
+  \If{$event.$\Call{getType}{} $= ClientArrival$}
+    \State \Call{logArrival}{$event$}
+  \ElsIf{$event.$\Call{getType}{} $= FinishSimulation$}
+    \State $keepRunning \leftarrow false$
+  \EndIf
+\EndFunction
+\end{algorithmic}
+\end{center}
+\caption{\label{alg:statistics}\textit{Contadores estatísticos} reagindo a um evento.}
+\end{algorithm}
 
-Na seção~\ref{model:reactive} foram apresentados componentes reativos~-~ou seja,
-que devem reagir na ocorrência de um evento. Porém restam as questões de como
-saber qual evento será o próximo a ocorrer e como notificar os elementos
-reativos disso. Portanto, precisamos de mecanismos para ordenar eventos e
-notificar os componentes da ocorrência de um evento.
+  % if (event->getType() == EventType::clientArrival) {
+  %   logArrival(std::static_pointer_cast<const ClientArrival>(event));
+  % }
 
-\subsection{Priorização}
-
-Na seção~\ref{simulator:movation:discrete} foi apresentado o \textit{mecanismo
-de avanço de tempo para o próximo evento}, onde deve-se verificar, em uma lista
-de eventos, qual é o próximo evento a ocorrer. Dado um conjunto de eventos
-agendados (ou seja, ainda não ocorridos), o primeiro evento a ocorrer é
-justamente o que possui o menor tempo de agendamento. Um tipo abstrato de dados
-que serve para este propósito é uma \textit{fila prioritária}, ou
-\textit{priority queue}, que funciona de forma similar a filas \textit{FIFO},
-com a diferença de que cada elemento armazenado possui uma prioridade associada.
-A \textit{fila prioritária}, implementada na classe \texttt{EventQueue}, irá
-atender os elementos por ordem de prioridade, da maior para a menor. Ao
-considerar que a prioridade de um evento é inversamente proporcional ao instante
-em que irá ocorrer - ou seja, quanto menor o tempo do evento maior é a sua
-prioridade -, temos uma fila na qual o próximo elemento a ser atendido sempre
-será o próximo evento a ocorrer.
-
-\begin{description}
-  \item[EventQueue] \hfill \\
-    Encapsula uma fila prioritária de eventos. Adicionalmente, utiliza a classe
-    \texttt{EventComparator}, que implementa a relação de ordem entre os
-    eventos.
-
-    \begin{description}[leftmargin=!,labelwidth=\widthof{\bfseries hasNextEvent}]
-      \item[\texttt{push}] Insere um evento na fila.
-      \item[\texttt{top}] Recupera o primeiro evento da fila.
-      \item[\texttt{pop}] Remove o primeiro evento da fila.
-      \item[\texttt{hasNextEvent}] Verifica se a fila possui eventos.
-    \end{description}
-\end{description}
-
-\begin{figure}[htb!]
-  \centering
-  \includegraphics[scale=0.6]{img/EventQueue}
-  \caption{Diagrama de classes da \textit{priorização de eventos}.}
-\label{fig:diagram:event:manage}
-\end{figure}
-
-\subsection{Notificação}
-
-Quando o próximo evento a ocorrer é conhecido, o problema passa a ser notificar
-os elementos reativos que este evento ocorreu para que os mesmos possam
-atualizar seus estados internos. De acordo com Gamma
-\cite{Gamma:1995:DPE:186897}, o padrão \textit{Observer} é um \textit{design
-pattern} indicado para resolver este problema. Este \textit{pattern} define uma
-dependência de um-para-muitos ($1:N$) entre objetos de modo que, quando este um
-objeto (\textit{subject}) tem seu estado alterado, todos os seus dependentes
-(\textit{observers}) são notificados deste mudança. Por consequência, estes
-dependentes podem modificar seu estado interno baseando-se nas informações desta
-notificação.
-
-Este padrão foi utilizado para implementar a funcionalidade de notificação de
-eventos, ilustrado no diagrama da figura~\ref{fig:diagram:notification}. Para
-isto, foram criados os seguintes componentes:
-
-\begin{figure}[htb!]
-  \centering
-  \includegraphics[scale=0.6]{img/EventNotifier}
-  \caption{Diagrama de classes da \textit{notificação de eventos}.}
-\label{fig:diagram:notification}
-\end{figure}
-
-\begin{description}
-  \item[EventObserver] \hfill \\
-    Classe abstrata a ser realizada por qualquer classe que deseje receber
-    notificações de eventos. Possui um único método abstrato.
-
-    \begin{description}[leftmargin=!,labelwidth=\widthof{\bfseries unsubscribe}]
-      \item[\texttt{notify}] Recebe a notificação da ocorrência de um evento.
-    \end{description}
-
-  \item[EventNotifier] \hfill \\
-    Classe abstrata a ser realizada por qualquer classe que deseje notificar a
-    ocorrência de eventos. Define métodos para que objetos que implementem a
-    classe abstrata \textit{EventObserver} possam registrar-se para receber
-    notificações de ocorrências de eventos. Seus métodos abstratos são:
-
-    \begin{description}[leftmargin=!,labelwidth=\widthof{\bfseries unsubscribe}]
-      \item[\texttt{subscribe}] Adiciona um \textit{observer}.
-      \item[\texttt{unsubscribe}] Remove um \textit{observer}.
-      \item[\texttt{broadcast}] Notifica todos os \textit{observers} registrados da ocorrência de um evento.
-    \end{description}
-
-  \item[EventDispatcher] \hfill \\
-    Classe concreta que realiza a interface \texttt{EventNotifier}. Possui uma
-    estrutura de dados para armazenar quais \textit{observers} se registraram
-    através dos métodos \texttt{subscribe} e \texttt{unsubscribe}.
-\end{description}
-
-Três importantes componentes do simulador podem se beneficiar desta construção:
-(1) o \textit{relógio do sistema} (classe \textit{Clock}); (2) os
-\textit{contadores estatísticos} (classe \textit{Statistics}); e (3) o
-\textit{estado do sistema} (classe \textit{Building}). Na ocorrência de um
-evento, estas três entidades devem ser notificadas e cada uma irá alterar seu
-estado interno da forma adequada. Para isto, devem implementar a interface
-\textit{EventObserver} e registrarem-se no \textit{EventDispatcher}. Assim, o
-\textit{EventDispatcher} e a \textit{EventQueue} podem, juntos, notificar aos
-componentes reativos exatamente qual evento ocorreu em cada iteração da
-simulação, na ordem correta dos eventos.
+  % if (event->getType() == EventType::finishSimulation) {
+  %   _keepRunning = false;
+  % }
 
 \section{\label{model:simulador}Simulador}
 
