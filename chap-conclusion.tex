@@ -9,17 +9,29 @@ segredos industriais e patentes~-~buscaram evoluir os sistemas de elevadores e a
 forma com que seus usuários os utilizam.
 
 Um simulador que permita a avaliação objetiva e comparação de diferentes
-estratégias em diferentes cenários foi de grande valor, tanto no escopo deste
-trabalho mas também para pesquisas futuras e para o próprio mercado de
+estratégias em diferentes cenários foi de grande valor, e espera-se que continue
+se mostrando de valor também para pesquisas futuras e para o próprio mercado de
 fabricantes de elevadores. Isto por que o simulador é uma plataforma de
 validação de estratégias~-~e não só as estratégias implementadas durante o tempo
 limitado dedicado para este estudo mas também como qualquer estratégia que venha
 a ser implementada no futuro.
 
+Notou-se que estratégias que consideram mais dados~-~como a ocupação do
+elevador~-~muitas vezes geram resultados melhores com um baixo custo
+computacional. Ainda que o ganho seja pequeno, o custo de implementação é,
+muitas vezes, essencialmente nulo.
+
 A estratégia de \textit{Planning} se mostrou muito vantajosa, principalmente
 conforme o tamanho do prédio aumenta. No entanto, o processamento necessário
 para realizá-la é bastante grande, e o custo de implementação em sistemas reais
-pode se provar proibitivo.
+pode se provar proibitivo. Além disto, o custo computacional cresce bastante
+conforme o número de andares e de elevadores aumenta. Horizontes maiores que $2$
+se mostraram proibitivamente caros, em tempo de execução, para prédios com mais
+de $100$ andares. Mesmo para prédios menores, com até $20$ andares, horizontes
+maiores que $5$ não são viáveis. No entanto, isto não é um problema tão grande,
+pois
+\unsure{Law of diminishing returns. Como exmplico isso? Cada vez ganhamos
+  ``menos a mais''. (Vanzella)}
 
 \section{Trabalhos Futuros}
 
