@@ -250,16 +250,16 @@ elevador ($e$) e o número do andar onde a chamada foi originada ($p$).
 
 \section{\label{sec:ai:planning}Planning}
 
-A idéia do algoritmo de \textit{planning} é estender o de função de custo. Neste
-algoritmo, é realizada a expansão no espaço de estados em uma árvore de
-decisões, realizando-se a valoração da função de custos para vários passos no
+Neste algoritmo, é realizada a expansão no espaço de estados em uma árvore de
+decisões, avaliando-se para cada passo o tempo que um elevador levará para
+chegar até o estado desejado, vários passos no
 futuro~\cite{Koehler00elevatorcontrol}, como em um jogo de xadrez. Em cada nodo
 desta árvore de decisões (figura~\ref{fig:planning}) é feita a pergunta:
-\textit{qual elevador deve atender a próxima chamada}?
+\textit{qual elevador deve atender qual chamada}?
 
 A expansão da árvore pode ocorrer diversas vezes, fazendo com que a árvore de
 decisões possua múltiplos níveis. No fim desta expansão, que se dá quando
-determinada condição é observada, é realizado o somatório, a partir da raiz até
+o horizonte de expansão é atingido, é realizado o somatório, a partir da raiz até
 cada folha da árvore, dos custos calculados. No fim destes somatórios, o
 algoritmo toma a decisão pelo ramo com menor custo (a partir da raiz). Assim,
 avança-se um passo na simulação e executa-se o algoritmo novamente.
@@ -271,10 +271,19 @@ chance do algoritmo tomar a melhor escolha. Porém, a complexidade de memória
 $O(N^{E})$, onde $N$ é o horizonte de cálculo e $E$ é o número de elevadores,
 é um fator limitador do horizonte de cálculo.
 
+Para cada nodo da árvore, instancia-se um simulador novo e executa-se esta
+simulação até o momento em que o elevador atenderia o chamado do cliente. Isto é
+importante para ter-se uma noção realista do comportamento dos outros
+elevadores. A única diferença deste simulador instanciado para um simulador real
+está na geração de novos eventos. Estes novos simuladores não geram eventos de
+chegada de cliente, dado que é impossível, no mundo real, prever quando um
+cliente novo chegará.\footnote{O simulador tem esta capacidade, mas isto não
+  seria justo, já que um sistema real não tem como ter este tipo de informação.}
+
 Na figura~\ref{fig:planning}, vemos um exemplo hipotético de \textit{planning}
 sendo executado com $N = 3$ e $E = 2$. Para cada nível da árvore a decisão a ser
 tomada é ``qual elevador deve atender a próxima chamada da fila?'', e, para
-isto, calcula-se a função de custo para cada elevador. O resultado da função
+isto, calcula-se o custo de tempo para cada elevador. O resultado do custo
 pode ser visto entre parênteses em cada nodo da árvore da
 figura~\ref{fig:planning}.
 
@@ -282,9 +291,11 @@ Ao atingir o horizonte (no caso da figura~\ref{fig:planning}, no nível 3 da
 árvore), soma-se os custos até cada folha (na figura~\ref{fig:planning}, os
 círculos abaixo do nível mais baixo representam a soma dos custos até aquela
 folha). O caminho que leva ao menor custo total é o que deve ser tomado. No
-exemplo da figura~\ref{fig:planning}, o elevador $E2$ atenderá a primeira e a
-segunda chamadas da fila, e então o elevador $E1$ atenderá a terceira chamada,
-como pode ser visto pelo caminho destacado.
+exemplo da figura~\ref{fig:planning}, o elevador $E2$ será agendado para atender
+a primeira chamada da fila. O agendamento das demais chamadas é gerado somente
+na próxima execução do \textit{scheduler}. Isto se dá pelo fato de que o estado
+do simulador pode ter sido alterado pela chegada de um cliente neste meio tempo.
+Mais detalhes podem ser vistos no Capítulo~\ref{chap:model}.
 
 \begin{figure}[htb!]
   \centering
@@ -292,16 +303,3 @@ como pode ser visto pelo caminho destacado.
   \caption{Exemplo de \textit{planning} com horizonte 3 e dois elevadores.}
 \label{fig:planning}
 \end{figure}
-
-O algoritmo é executado (acarretando uma reavaliação) a cada evento do sistema
-de simulação, descrito no Capítulo~\ref{chap:model}.
-
-\subsection{Função de custo como algoritmo de planning}
-
-Pode-se ver que, para cada etapa do algoritmo de \textit{planning}, estamos
-avaliando uma função de custo. Isto fica mais explícito na
-figura~\ref{fig:planning}. Considerando este algoritmo com horizonte 1, o
-resultado obtido seria idêntico ao de apenas avaliar a função de custo
-para uma única tomada de decisão, como proposto na
-seção~\ref{sec:ai:minimize-cost-function}. Ou seja, o algoritmo de função de
-custo visto anteriormente é apenas um caso especial do descrito aqui.
