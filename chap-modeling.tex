@@ -221,8 +221,9 @@ Não é possível prever em qual andar e qual momento um cliente irá chegar ao
 prédio, tampouco qual o destino desejado por ele. Portanto, é correto afirmar
 que a chegada de clientes em um prédio é um processo estocástico.
 
-\subsubsection{Horário de chegada}
+\begin{description}
 
+\item[Horário de chegada] \hfill \\
 Segundo~\cite{Ross:2006:IPM:1197141}, a taxa de chegada de clientes é um
 processo de Poisson, com razão $\lambda$. Ou seja, o tempo entre novos clientes
 são variáveis independentes, com valor esperado $\frac{1}{\lambda}$. Pode-se ver
@@ -232,7 +233,7 @@ $\lambda$ gerando diferentes distribuições.
 \begin{figure}[htb!]
   \centering
   \includegraphics[scale=1.0]{img/poisson.eps}
-  \caption{Exemplo de distribuições de Poisson.}
+  \caption{Exemplos de distribuições de Poisson.}
 \label{fig:distribution:poisson}
 \end{figure}
 
@@ -244,56 +245,83 @@ considerada neste estudo. Conforme visto na seção \ref{model:scenario}, cada
 andar do prédio possui um valor para $\lambda$, que permanece constante no
 decorrer de toda a simulação.
 
-\subsubsection{Andar de destino}
-
+\item[Andar de destino] \hfill \\
 Já a probabilidade de um cliente ir de um andar para outro, em um tráfego
 chamado de \textit{interfloor}, é um processo de Markov, com distribuições
-normais que variam de acordo com a hora do dia.
-
-Uma cadeia de Markov, utilizada para representar este processo, é por sua vez
-representada por uma matriz de probabilidades. No caso deste sistema, tem-se uma
-função com distribuição normal (\textit{i.e.} uma média e um desvio padrão) que
-varia de acordo com o horário do dia, para cada posição desta matriz.
-
-Um exemplo de matriz para um prédio de 3 andares é:
+normais (\textit{i.e.} uma média e um desvio padrão) que variam de acordo com a
+hora do dia. Para fim de simplificação, esta variação ao longo do dia não foi
+considerada neste estudo. Além disso, considera-se que a probabilidade de um
+cliente ir para qualquer andar é a mesma - com exceção do próprio em que se
+encontra, que é nula. Abaixo uma matriz de probabilidades para um prédio com 3
+andares, representada por uma cadeia de Markov na figura
+\ref{fig:distribution:markov}.
 
 \[
   \begin{bmatrix}
-    f_{11} & f_{12} & f_{13} \\
-    f_{21} & f_{22} & f_{23} \\
+    f_{11} & f_{12} & f_{13}  \\
+    f_{21} & f_{22} & f_{23}  \\
     f_{31} & f_{32} & f_{33}
+  \end{bmatrix} = \begin{bmatrix}
+    0.0 & 0.5 & 0.5  \\
+    0.5 & 0.0 & 0.5  \\
+    0.5 & 0.5 & 0.0
   \end{bmatrix}
 \]
 
-Onde cada valor é uma função $f(t)$, com $t$ sendo o momento do dia e resultando
-em um valor de média e um valor de desvio padrão para a distribuição naquele
-momento. Cada função descreve a probabilidade de um cliente estar em um andar e
-desejar ir para outro. Por exemplo, $f_{31}$ descreve a probabilidade de um
-cliente estar no terceiro andar e desejar descer para o primeiro.
-
-Além disto, a diagonal principal (\textit{i.e} $f_{11}$, $f_{22}$ e
-$f_{33}$) é sempre zero, já que não faz sentido um cliente desejar ir para o
-mesmo andar em que se encontra.
-
-Esta cadeia de Markov pode ser vista na figura~\ref{fig:distribution:markov}.
-
 \begin{figure}[htb!]
   \centering
-  \includegraphics[scale=0.6]{img/markov.eps}
+  \includegraphics[scale=0.4]{img/markov.eps}
   \caption{Exemplo de cadeia de Markov para um prédio de 3 andares.}
 \label{fig:distribution:markov}
 \end{figure}
 
-A figura~\ref{fig:diagram:generator} mostra o diagrama UML da classe que gera eventos.
+\item[EventFactory] \hfill \\
+A classe \texttt{EventFactory}, ou \textit{fábrica de eventos}, foi criada para
+ser uma unidade de coesão ao criar chegadas de clientes no prédio. Cada andar do
+prédio possui uma instância desta classe. Seus componentes são:
 
-\begin{figure}[htb!]
-  \centering
-  \includegraphics[scale=0.6]{img/EventGenerator.eps}
-  \caption{Diagrama de classes do \textit{Sistema de Geração de Eventos}.}
-\label{fig:diagram:generator}
-\end{figure}
+  \begin{description}[leftmargin=!,labelwidth=\widthof{\bfseries hasNextEvent}]
+    \item[\texttt{clock}] Referência para o relógio da simulação.
+    \item[\texttt{floor}] Referência para o andar daquele \texttt{EventFactory}.
+    \item[\texttt{random engine}] Gerador de números aleatórios.
+    \item[\texttt{destination}] Distribuição Discreta, utilizada para sortear andares de destino.
+    \item[\texttt{arrival}] Distribuição de Poisson, utilizada para sortear horários de eventos futuros.
+  \end{description}
 
-\subsection{Priorização}
+  O algoritmo \ref{alg:eventcreation} ilustra a criação de um novo evento.
+  Primeiro, o método \texttt{CreateFutureArrival} calcula o horário do novo
+  evento. Isto é feito somando-se o horário atual do \textit{relógio da
+  simulação} com um tempo sorteado pela distribuição de Poisson específica
+  daquele andar. Na sequência, é sorteado o andar destino pela distribuição
+  discreta também específica do andar. Feito isso, é criado um novo evento do
+  tipo \textbf{chegada de cliente} com as informações sorteadas e tendo como
+  origem o andar atual. No fim, o evento criado é adicionado à fila de eventos
+  (seção \ref{model:queue}).
+
+  \begin{algorithm}[htb]
+  \begin{center}
+  \begin{algorithmic}[1]
+  \Function{EventFactory::CreateFutureArrival}{$eventQueue, clock, floor, randomEngine$}
+    \State $eventTime \leftarrow clock.\Call{currentTime}{}() + \Call{getNextTime}{randomEngine}$
+    \State $destination \leftarrow \Call{getNextDestination}{randomEngine}$
+    \State $clientArrival \leftarrow \Call{ClientArrival}{floor, destination, eventTime}$
+    \State $eventQueue.\Call{push}{clientArrival}$
+  \EndFunction
+  \State
+  \Function{EventFactory::GetNextTime}{$randomEngine$}
+    \State \textbf{return} $arrival(randomEngine)$
+  \EndFunction
+  \State
+  \Function{EventFactory::GetNextDestination}{$randomEngine$}
+    \State \textbf{return} $destination(randomEngine)$
+  \EndFunction
+  \end{algorithmic}
+  \end{center}
+  \caption{\label{alg:eventcreation}Criação de um novo \textit{evento de chegada de cliente}.}
+  \end{algorithm}
+\end{description}
+
+\subsection{Priorização} \label{model:queue}
 
 Na seção~\ref{simulator:movation:discrete} foi apresentado o \textit{mecanismo
 de avanço de tempo para o próximo evento}, onde deve-se verificar, em uma lista
