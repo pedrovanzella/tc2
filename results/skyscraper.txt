@@ -9,33 +9,23 @@ Horizon.........: 2
 WAITING TIME
                                          Average         Deviant           Total
 Simple/Random                           442.2165       1775.3156   10538904.0000
-Planning/Random                          74.9480        198.3020    1786161.0000
 Simple/NearestNeighbour                 343.5988       1426.3821    8188647.0000
-Planning/NearestNeighbour               103.6866        307.8567    2471058.0000
 Simple/BetterNearestNeighbour           287.1803       1137.2342    6844080.0000
-Planning/BetterNearestNeighbour          87.0986        239.3584    2075733.0000
 Simple/Weighted                         293.8791       1018.5118    7003726.0000
-Planning/Weighted                        99.2689        314.6784    2365776.0000
+Planning                                 78.3855        230.8554    1868084.0000
 
 JOURNEY TIME
                                          Average         Deviant           Total
 Simple/Random                            54.7816        389.3520    1305554.0000
-Planning/Random                          59.1500         46.7326    1409662.0000
 Simple/NearestNeighbour                  54.9789        291.2258    1310258.0000
-Planning/NearestNeighbour                57.5756         62.5268    1372142.0000
 Simple/BetterNearestNeighbour            55.0124        235.4007    1311056.0000
-Planning/BetterNearestNeighbour          58.2380         51.9262    1387928.0000
 Simple/Weighted                          54.6163        242.3278    1301616.0000
-Planning/Weighted                        57.4469         59.3754    1369074.0000
+Planning                                 60.1728         48.8070    1434038.0000
 
 CLIENTS
                                          Arrived          Served        Duration
 Simple/Random                              23832           23832           45037
-Planning/Random                            23832           23832           43593
 Simple/NearestNeighbour                    23832           23832           45388
-Planning/NearestNeighbour                  23832           23832           43742
 Simple/BetterNearestNeighbour              23832           23832           45131
-Planning/BetterNearestNeighbour            23832           23832           43796
 Simple/Weighted                            23832           23832           44584
-Planning/Weighted                          23832           23832           44546
-
+Planning                                   23832           23832           43688
