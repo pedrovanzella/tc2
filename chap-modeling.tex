@@ -533,7 +533,6 @@ representados pelas estruturas \texttt{Arrival} e \texttt{Trip} e pela classe
         chegada de novos clientes. O algoritmo \ref{alg:statistics} ilustra este
         conceito.
     \end{description}
-\end{description}
 
 \begin{algorithm}[htb]
 \begin{center}
@@ -550,34 +549,37 @@ representados pelas estruturas \texttt{Arrival} e \texttt{Trip} e pela classe
 \caption{\label{alg:statistics}\textit{Contadores estatísticos} reagindo a um evento.}
 \end{algorithm}
 
-\section{\label{model:reactive}Componentes reativos}
-
-Durante a execução da simulação, à medida que eventos ocorrem, componentes do
-simulador devem alterar seu estado interno de acordo com o evento ocorrido,
-levando o estado do simulador a uma nova situação. A seguir são apresentadas as
-classes que representam estes componentes no simulador.
+\end{description}
 
 \section{\label{model:simulador}Simulador}
 
-O uso conjunto de todas estes componentes e classes dá forma ao simulador,
+O uso conjunto de todos estes componentes e classes dá forma ao simulador,
 conforme proposto por \cite{Law,Banks}. Entretanto, todas as interações entre as
 instâncias devem ser organizadas conforme o fluxo proposto na figura
 \ref{fig:simflow}. O componente responsável por orquestrar estas interações e
-garantir o fluxo de execução é representado pela classe \textit{Simulator}.
-
-Esta classe não possui atributos ou métodos específicos; somente as instâncias
-das outras classes e um método que realiza um laço indefinido, onde um evento é
-recuperado e notificado para os componentes reativos; estes, por sua vez,
-atualizam seu estado interno e agendam novos eventos; a simulação segue até que
-a condição de parada seja satisfeita. O algoritmo \ref{alg:sim} mostra um
-pseudo-código de como poderia ser este método de execução da simulação.
+garantir o fluxo de execução é representado pela classe \textit{Simulator}. Esta
+classe não possui atributos ou métodos específicos; somente as instâncias das
+outras classes e um método que implementa o laço de execução do simulador.
 
 \begin{figure}[htb!]
   \centering
-  \includegraphics[scale=0.6]{img/Simulator.eps}
-  \caption{Diagrama de classes do simulador}
+  \includegraphics[scale=0.6]{img/Simulator}
+  \caption{Diagrama de classes do simulador.}
 \label{fig:diagram:simulator}
 \end{figure}
+
+O algoritmo \ref{alg:sim} mostra um pseudo-código de como funciona o laço de
+execução da simulação. Na linha 2, uma instância da classe \texttt{Building}
+(seção \ref{model:state:building}) é criada baseada nos atributos definidos para
+o cenário. Nas linhas 4 a 6, os objetos \textit{observers} se registram no
+\textit{notifier} para receberem notificações de eventos. Nas linhas 8 a 10, é
+criado um evento para marcar o fim da simulação e o mesmo é adicionado à
+\textit{fila de eventos}. Na linha 12, são inicializados os eventos de chegada
+de clientes em cada um dos andares (seção \ref{model:state:building}). Por fim,
+o simulador entra em um laço indefinido nas linhas 14 a 17. A cada iteração do
+laço é retirado o próximo evento da fila e os \textit{observers} são
+notificados. O laço permanece em execução enquanto houverem eventos disponíveis
+na fila ou até atingir o tempo limite da simulação.
 
 \begin{algorithm}[H]
 \begin{center}
@@ -677,7 +679,7 @@ Parte componente de um prédio. Possui os seguintes atributos:
     \item[\texttt{passengers}] Conjunto com os passageiros que embarcaram no elevador e ainda não desembarcaram.
   \end{description}
 
-\subsection{Building}
+\subsection{Building} \label{model:state:building}
 
     Representa a composição do prédio sendo simulado. Possui um conjunto de
     elevadores, uma lista ordenada de andares e um método \texttt{reset},
