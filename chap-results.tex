@@ -29,14 +29,11 @@
 \hline
 \multicolumn{1}{|c|}{\textbf{}}                 & \multicolumn{3}{c|}{\textbf{Tempo de Espera}}                                                                    & \multicolumn{3}{c|}{\textbf{Tempo de Jornada}}                                                                                                                       \\ \hline
 \textbf{Estratégia} & \multicolumn{1}{c|}{\textit{Médio}} & \multicolumn{1}{c|}{\textit{Desvio}} & \multicolumn{1}{c|}{\textit{Total}} & \multicolumn{1}{c|}{\textit{Médio}}                   & \multicolumn{1}{c|}{\textit{Desvio}}                  & \multicolumn{1}{c|}{\textit{Total}}                  \\ \hline
-\textit{Simple / Random}          & \cellcolor[HTML]{FD6864}5.4064      & \cellcolor[HTML]{FD6864}4.1792       & \cellcolor[HTML]{FD6864}16933       & \cellcolor[HTML]{FD6864}{\color[HTML]{000000} 4.4949} & 2.8676                                                & \cellcolor[HTML]{FD6864}{\color[HTML]{000000} 14078} \\ \hline
-\textit{Planning / Random}        & \cellcolor[HTML]{67FD9A}3.1580      & \cellcolor[HTML]{67FD9A}2.8688       & \cellcolor[HTML]{67FD9A}9891        & 4.4713                                                & \cellcolor[HTML]{FD6864}{\color[HTML]{000000} 3.0005} & 14004                                                \\ \hline
-\textit{Simple / NN}              & 3.5144                              & \cellcolor[HTML]{FFFFFF}3.5768       & 11007                               & 4.4700                                                & 2.8565                                                & 14000                                                \\ \hline
-\textit{Planning / NN}            & 3.2273                              & 3.0515                               & 10108                               & 4.4770                                                & 2.9796                                                & 14022                                                \\ \hline
-\textit{Simple / BNN}             & 3.3547                              & 3.2931                               & 10507                               & 4.4674                                                & 2.9163                                                & 13992                                                \\ \hline
-\textit{Planning / BNN}           & 3.1830                              & 2.9150                               & 9969                                & \cellcolor[HTML]{67FD9A}4.4623                        & \cellcolor[HTML]{FFFFFF}2.9787                        & \cellcolor[HTML]{67FD9A}13976                        \\ \hline
-\textit{Simple / Weighted}        & 3.7149                              & 3.8036                               & 11635                               & 4.4719                                                & \cellcolor[HTML]{67FD9A}2.7997                        & 14006                                                \\ \hline
-\textit{Planning / Weighted}      & 3.2529                              & 3.0760                               & 10188                               & 4.4789                                                & 2.9714                                                & 14028                                                \\ \hline
+\textit{Simple / Random}          & 5.4064 & 4.1792 & 16933 & 4.4949 & 2.8676 & 14078 \\ \hline
+\textit{Simple / NN}              & 3.5144 & 3.5768 & 11007 & 4.4700 & 2.8565 & 14000 \\ \hline
+\textit{Simple / BNN}             & 3.3547 & 3.2931 & 10507 & \cellcolor[HTML]{67FD9A}4.4674 & 2.9163 & \cellcolor[HTML]{67FD9A}13992 \\ \hline
+\textit{Simple / Weighted}        & 3.7149 & 3.8036 & 11635 & 4.4719 & \cellcolor[HTML]{67FD9A}2.7997 & 14006 \\ \hline
+\textit{Planning}                 & \cellcolor[HTML]{67FD9A}3.1731 & \cellcolor[HTML]{67FD9A}2.9171 &  \cellcolor[HTML]{67FD9A}9938 & 4.4770 & 3.0009 & 14022 \\ \hline
 \end{tabular}
 \end{table}
 
@@ -77,14 +74,11 @@
 \hline
 \multicolumn{1}{|c|}{\textbf{}}                 & \multicolumn{3}{c|}{\textbf{Tempo de Espera}}                                                                    & \multicolumn{3}{c|}{\textbf{Tempo de Jornada}}                                                                                                                       \\ \hline
 \textbf{Estratégia} & \multicolumn{1}{c|}{\textit{Médio}} & \multicolumn{1}{c|}{\textit{Desvio}} & \multicolumn{1}{c|}{\textit{Total}} & \multicolumn{1}{c|}{\textit{Médio}}                   & \multicolumn{1}{c|}{\textit{Desvio}}                  & \multicolumn{1}{c|}{\textit{Total}}                  \\ \hline
-\textit{Simple / Random}          & 25.9981                         & 28.0464                         & 190124                          & \cellcolor[HTML]{FD6864}15.2595 & 14.9190                         & \cellcolor[HTML]{FD6864}111593  \\ \hline
-\textit{Planning / Random}        &  8.8829                         & 16.5500                         &  64961                          & 15.1742                         & 12.0139                         & 110969                          \\ \hline
-\textit{Simple / NN}              & 20.3395                         & 37.1902                         & 148743                          & 15.0993                         & 11.4479                         & 110421                          \\ \hline
-\textit{Planning / NN}            &  9.9824                         & 19.4451                         &  73001                          & 15.1991                         & 11.4878                         & 111151                          \\ \hline
-\textit{Simple / BNN}             & 13.5243                         & 23.5950                         &  98903                          & 15.0550                         & \cellcolor[HTML]{67FD9A}10.2476 & 110097                          \\ \hline
-\textit{Planning / BNN}           & \cellcolor[HTML]{67FD9A}8.8202  & \cellcolor[HTML]{67FD9A}16.1712 & \cellcolor[HTML]{67FD9A} 64502  & 15.0982                         & 11.9491                         & 110413                          \\ \hline
-\textit{Simple / Weighted}        & \cellcolor[HTML]{FD6864}31.0373 & \cellcolor[HTML]{FD6864}54.5909 & \cellcolor[HTML]{FD6864}226976  & \cellcolor[HTML]{67FD9A}14.9915 & \cellcolor[HTML]{FD6864}18.9700 & \cellcolor[HTML]{67FD9A}109633  \\ \hline
-\textit{Planning / Weighted}      & 11.3271                         & 22.3406                         &  82835                          & 15.1173                         & 10.8752                         & 110553                          \\ \hline
+\textit{Simple / Random}          & 25.9981 & 28.0464 & 190124 & 15.2595 & 14.9190 & 111593 \\ \hline
+\textit{Simple / NN}              & 20.3395 & 37.1902 & 148743 & 15.0993 & 11.4479 & 110421 \\ \hline
+\textit{Simple / BNN}             & 13.5243 & 23.5950 &  98903 & 15.0550 & \cellcolor[HTML]{67FD9A}10.2476 & 110097 \\ \hline
+\textit{Simple / Weighted}        & 31.0373 & 54.5909 & 226976 & \cellcolor[HTML]{67FD9A}14.9915 & 18.9700 & \cellcolor[HTML]{67FD9A}109633 \\ \hline
+\textit{Planning}                 &  \cellcolor[HTML]{67FD9A}8.6901 & \cellcolor[HTML]{67FD9A}16.2139 &  \cellcolor[HTML]{67FD9A}63551 & 15.1627 & 12.0920 & 110885 \\ \hline
 \end{tabular}
 \end{table}
 
@@ -125,14 +119,11 @@
 \hline
 \multicolumn{1}{|c|}{\textbf{}}                 & \multicolumn{3}{c|}{\textbf{Tempo de Espera}}                                                                    & \multicolumn{3}{c|}{\textbf{Tempo de Jornada}}                                                                                                                       \\ \hline
 \textbf{Estratégia} & \multicolumn{1}{c|}{\textit{Médio}} & \multicolumn{1}{c|}{\textit{Desvio}} & \multicolumn{1}{c|}{\textit{Total}} & \multicolumn{1}{c|}{\textit{Médio}}                   & \multicolumn{1}{c|}{\textit{Desvio}}                  & \multicolumn{1}{c|}{\textit{Total}}                  \\ \hline
-\textit{Simple / Random}          & \cellcolor[HTML]{FD6864}442.2165  & \cellcolor[HTML]{FD6864}1775.3156   & \cellcolor[HTML]{FD6864}10538904  & 54.7816                         & \cellcolor[HTML]{FD6864}389.3520  & 1305554                         \\ \hline
-\textit{Planning / Random}        & \cellcolor[HTML]{67FD9A}74.9480   & \cellcolor[HTML]{67FD9A}198.3020    & \cellcolor[HTML]{67FD9A}1786161   & \cellcolor[HTML]{FD6864}59.1500 & \cellcolor[HTML]{67FD9A}46.7326   & \cellcolor[HTML]{FD6864}1409662 \\ \hline
-\textit{Simple / NN}              & 343.5988                          & 1426.3821                           &  8188647                          & 54.9789                         & 291.2258                          & 1310258                         \\ \hline
-\textit{Planning / NN}            & 103.6866                          &  307.8567                           &  2471058                          & 57.5756                         &  62.5268                          & 1372142                         \\ \hline
-\textit{Simple / BNN}             & 287.1803                          & 1137.2342                           &  6844080                          & 55.0124                         & 235.4007                          & 1311056                         \\ \hline
-\textit{Planning / BNN}           &  87.0986                          &  239.3584                           &  2075733                          & 58.2380                         &  51.9262                          & 1387928                         \\ \hline
-\textit{Simple / Weighted}        & 293.8791                          & 1018.5118                           &  7003726                          & \cellcolor[HTML]{67FD9A}54.6163 & 242.3278                          & \cellcolor[HTML]{67FD9A}1301616 \\ \hline
-\textit{Planning / Weighted}      &  99.2689                          &  314.6784                           &  2365776                          & 57.4469                         &  59.3754                          & 1369074                         \\ \hline
+\textit{Simple / Random}          & 442.2165 & 1775.3156 & 10538904 & 54.7816 & 389.3520 & 1305554 \\ \hline
+\textit{Simple / NN}              & 343.5988 & 1426.3821 &  8188647 & 54.9789 & 291.2258 & 1310258 \\ \hline
+\textit{Simple / BNN}             & 287.1803 & 1137.2342 &  6844080 & 55.0124 & 235.4007 & 1311056 \\ \hline
+\textit{Simple / Weighted}        & 293.8791 & 1018.5118 &  7003726 & \cellcolor[HTML]{67FD9A}54.6163 & 242.3278 & \cellcolor[HTML]{67FD9A}1301616 \\ \hline
+\textit{Planning}                 &  \cellcolor[HTML]{67FD9A}78.3855 &  \cellcolor[HTML]{67FD9A}230.8554 &  \cellcolor[HTML]{67FD9A}1868084 & 60.1728 &  \cellcolor[HTML]{67FD9A}48.8070 & 1434038 \\ \hline
 \end{tabular}
 \end{table}
 
