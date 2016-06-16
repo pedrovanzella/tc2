@@ -275,7 +275,7 @@ andares, representada por uma cadeia de Markov na figura
 \label{fig:distribution:markov}
 \end{figure}
 
-\item[EventFactory] \hfill \\
+\item[EventFactory] \label{model:eventfactory} \hfill \\
 A classe \texttt{EventFactory}, ou \textit{fábrica de eventos}, foi criada para
 ser uma unidade de coesão ao criar chegadas de clientes no prédio. Cada andar do
 prédio possui uma instância desta classe. Seus componentes são:
@@ -620,19 +620,6 @@ classe é responsável por gerenciar múltiplas instâncias de elevadores (class
 \texttt{Client}) e relacionar estas instâncias entre si - reproduzindo, deste
 modo, as dinâmicas do sistema do mundo real que está sendo simulado.
 
-\subsection{Call}
-
-  Representa uma parada a ser realizada por algum elevador. É composta pelos seguintes
-  atributos:
-
-  \begin{description}[leftmargin=!,labelwidth=\widthof{\bfseries arrivalFloor}]
-    \item[\texttt{number}] Número do andar em que a parada deve ser realizada.
-    \item[\texttt{direction}] Direção na qual a parada deve ser realizada.
-  \end{description}
-
-  Por exemplo, pode existir uma parada no andar 8 para subir; uma parada no andar
-  4 para descer; etc.
-
 \subsection{Client}
 
   Representa uma pessoa que chegou a um andar e deseja se dirigir a outro andar.
@@ -650,21 +637,16 @@ modo, as dinâmicas do sistema do mundo real que está sendo simulado.
 
 Parte componente de um prédio. Possui os seguintes atributos:
 
-  \begin{description}[leftmargin=!,labelwidth=\widthof{\bfseries arrivalFloor}]
+  \begin{description}[leftmargin=!,labelwidth=\widthof{\bfseries eventFactory}]
     \item[\texttt{number}] Número do andar em que a parada deve ser realizada.
-    \item[\texttt{lambda}] Direção na qual a parada deve ser realizada.
-    \item[\texttt{upLine}] Direção na qual a parada deve ser realizada.
-    \item[\texttt{downLine}] Direção na qual a parada deve ser realizada.
-    \item[\texttt{eventFactory}] Direção na qual a parada deve ser realizada.
-  \end{description}
-
-     possuindo uma numeração e duas
-    filas\footnote{No mundo real, apesar de aparentemente as pessoas formarem
+    \item[\texttt{lambda}] Valor de entrada para a distribuição de Poisson do andar.
+    \item[\texttt{upLine}] Fila contendo os clientes que desejam subir\footnote{No mundo real, apesar de aparentemente as pessoas formarem
     uma fila única, os membros da fila respeitam o sentido de viagem do elevador
     e implicitamente separam-se em duas filas: uma para subir e outra para
-    descer.}: uma para clientes que desejam descer e outra para clientes que
-    desejam subir.
-
+    descer.} a partir do andar.
+    \item[\texttt{downLine}] Fila contendo os clientes que desejam descer a partir do andar.
+    \item[\texttt{eventFactory}] Instância da classe \texttt{EventFactory} (seção \ref{model:eventfactory}) do andar.
+  \end{description}
 \subsection{Elevator}
 
   Representa um elevador. Possui os seguintes atributos:
@@ -673,11 +655,29 @@ Parte componente de um prédio. Possui os seguintes atributos:
     \item[\texttt{number}] Número identificador do elevador.
     \item[\texttt{capacity}] Capacidade máxima do elevador (em número de clientes).
     \item[\texttt{location}] Número do andar no qual o elevador se encontra.
-    \item[\texttt{destination}] Chamada destino do elevador (classe \texttt{Call}).
+    \item[\texttt{destination}] Parada\footnote{Por exemplo, parar no andar 5 subindo é diferente de parar no andar 5 descendo.} de destino do elevador, composto pelo número do andar e a direção da parada.
     \item[\texttt{status}] Situação atual do elevador: \textit{moving} (movendo-se) ou \textit{idle} (ocioso).
     \item[\texttt{direction}] Direção na qual o elevador está se movendo (no caso de não estar ocioso).
     \item[\texttt{passengers}] Conjunto com os passageiros que embarcaram no elevador e ainda não desembarcaram.
   \end{description}
+
+\subsection{StopManager}
+
+  Classe auxiliar que implementa um gerenciador de paradas. Provê os seguintes métodos:
+
+  \begin{description}[leftmargin=!,labelwidth=\widthof{\bfseries arrivalFloor}]
+    \item[\texttt{hasStop}] Verifica se há algum elevador programado para parar em dado andar e direção.
+    \item[\texttt{set}] Adiciona uma parada em dado andar e direção à lista de paradas do elevador.
+    \item[\texttt{clear}] Remove um parada em dado andar e direção da lista de paradas do elevador.
+    \item[\texttt{getStops}] Retorna o conjunto de andares com paradas programadas para um elevador em dada direção.
+  \end{description}
+
+  \begin{figure}[htb!]
+    \centering
+    \includegraphics[scale=0.6]{img/StopManager}
+    \caption{Diagrama de classes do \textit{gerenciador de paradas}.}
+  \label{fig:diagram:stopmanager}
+  \end{figure}
 
 \subsection{Building} \label{model:state:building}
 
