@@ -4,25 +4,10 @@ Sendo os elevadores um meio de transporte presente na vida cotidiana de tantos
 habitantes de grandes centros urbanos, eles são um alvo para otimização. Porém,
 ao contrário do que acreditava-se antes da realização deste trabalho, encontrar
 uma solução para este problema está longe do trivial. Nas últimas décadas,
-diversas linhas de pesquisa científica - dentro e fora da indústria e de seus
-segredos industriais e patentes - buscaram evoluir os sistemas de elevadores e a
+diversas linhas de pesquisa científica~-~dentro e fora da indústria e de seus
+segredos industriais e patentes~-~buscaram evoluir os sistemas de elevadores e a
 forma com que seus usuários os utilizam.
 
-Com base nos artigos lidos e trabalhos relacionados, ficou claro que algumas
-idéias são mais promissoras que outras. Por exemplo, o uso de algoritmos
-genéticos~\cite{KOEHLEROTTIGER02} para a definição de zonas de atuação não é uma
-boa solução, bem como todas as outras que forçam o usuário a descobrir qual
-carro atenderá seu chamado. O mesmo artigo mostra que o sistema de controle de
-destino~\cite{KOEHLEROTTIGER02} obtém bons resultados, mas também sofre do
-problema de onerar o usuário.
-
-Já os artigos vistos trouxeram algumas das soluções mais promissoras: o
-primeiro, a utilização de lógica~\textit{fuzzy} para reconhecimento de padrões
-de tráfego e ajuste dinâmico do comportamento dos carros~\cite{marja97}; o
-segundo, propondo um modelo estatístico~\cite{DBLP:journals/corr/abs-1212-2499}
-que resultou em uma métrica para sucesso: o tempo de espera do usuário sendo
-reduzido de 5\% a 55\% em comparação com o algoritmo
-trivial~\cite{DBLP:journals/corr/abs-1212-2499}.
 
 Porém existem outras estratégias pouco abordadas pela literatura
 ou~estudadas~-~dentre elas, algoritmos de \textit{planning}. A ideia de expandir
@@ -45,3 +30,36 @@ elevadores permitirá que estratégias vantajosas sejam encontradas para cada
 cenário, permitindo que decisões a respeito da otimização e melhoria deste meio
 de transporte sejam tomadas em diferentes fases do ciclo de vida destes
 sistemas, vitais para o estilo de vida moderno nas grandes cidades.
+
+\section{Trabalhos Futuros}
+
+A literatura sugere que algumas técnicas não são vantajosas. Por exemplo, o uso
+de algoritmos genéticos~\cite{KOEHLEROTTIGER02} para a definição de zonas de
+atuação não é uma boa solução, bem como todas as outras que forçam o usuário a
+descobrir qual carro atenderá seu chamado. O mesmo artigo mostra que o sistema
+de controle de destino~\cite{KOEHLEROTTIGER02} obtém bons resultados, mas também
+sofre do problema de onerar o usuário.
+
+Já os artigos vistos trouxeram algumas das soluções mais promissoras: o
+primeiro, a utilização de lógica~\textit{fuzzy} para reconhecimento de padrões
+de tráfego e ajuste dinâmico do comportamento dos carros~\cite{marja97}; o
+segundo, propondo um modelo estatístico~\cite{DBLP:journals/corr/abs-1212-2499}
+que resultou em uma métrica para sucesso: o tempo de espera do usuário sendo
+reduzido de 5\% a 55\% em comparação com o algoritmo
+trivial~\cite{DBLP:journals/corr/abs-1212-2499}.
+
+Trabalhos futuros podem analizar estas sugestões, utilizando-se do
+\textit{framework} construído neste trabalho. Outras políticas mais simples
+também podem ser avaliadas, implementando novas funções de custo que levam em
+consideração mais dados.
+
+Há também uma gama de políticas de ociosidade dos
+elevadores\footnote{\textit{i.e.}, o que fazer quando o elevador está
+  parado~-~deixá-lo no mesmo lugar, ou levá-lo para algum outro? Como tomar esta
+decisão?}, que pode ser testada em combinação com as políticas de escolha de elevador.
+
+Simulações mais ricas podem ser obtidas variando as distribuições de
+probabilidade de chegada e saída nos andares. Por exemplo, variando os
+parâmetros com o tempo, para fazer mais clientes chegarem no lobby pela manhã ou
+simular um prédio onde há muito tráfego entre um par de andares durante algumas
+horas do dia.
