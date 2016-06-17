@@ -1,25 +1,28 @@
 \chapter{\label{chap:results}Resultados}
 
-\section{Cenário \textit{Low-rise}}
-
-\lipsum[1]
+A seção \ref{tab:cenarios} descreve os cenários de testes utilizados. No
+contexto do simulador, a tabela \ref{tab:scenarios} define os parâmetros
+utilizados para a simulação.
 
 \begin{table}[htb!]
 \centering
-\caption{Parâmetros do cenário \textit{Low-rise}.}
-\label{tab:results:lowrise:params}
-\begin{tabular}{|r|l|}
+\caption{Cenários de teste.}
+\label{tab:scenarios}
+\begin{tabular}{|r|c|c|c|}
 \hline
-\textbf{Propriedade}          & \textbf{Valor}       \\ \hline
-\textit{Nome}                 & Low-rise             \\ \hline
-\textit{Duração (s)}          & 43200                \\ \hline
-\textit{Semente}              & 54TH7hboAG1iOsDIDhJp \\ \hline
-\textit{Elevadores}           & 2                    \\ \hline
-\textit{Capacidade}           & 6                    \\ \hline
-\textit{Andares}              & 11                   \\ \hline
-\textit{Horizonte (planning)} & 5                    \\ \hline
+\multicolumn{1}{|c|}{\textbf{}} & \multicolumn{3}{c|}{\textbf{Cenário}}                        \\ \hline
+\textbf{Nome}                   & \textit{Low-rise} & \textit{High-rise} & \textit{Skyscraper} \\ \hline
+\textbf{Duração}                & \multicolumn{3}{c|}{43200 segundos (12 horas)}               \\ \hline
+\textbf{Elevadores}             & 2                 & 8                  & 16                  \\ \hline
+\textbf{Capacidade}             & 6                 & 10                 & 12                  \\ \hline
+\textbf{Andares}                & 11                & 39                 & 163                 \\ \hline
+\textbf{Horizonte}\footnote{Utilizando o algoritmo de agendamento \textit{planning}.}   & 5                 & 2                  & 2                   \\ \hline
 \end{tabular}
 \end{table}
+
+\section{Cenário \textit{Low-rise}}
+
+\lipsum[1]
 
 \begin{table}[htb!]
 \centering
@@ -37,61 +40,9 @@
 \end{tabular}
 \end{table}
 
-\begin{table}[htb]
-\centering
-\caption{Clientes atendidos no cenário \textit{Low-rise}.}
-\label{table:results:lowrise:clients}
-\begin{tabular}{|l|r|r|r|}
-\hline
-\textbf{Estratégia}        & \multicolumn{1}{l|}{\textbf{Criados}} & \multicolumn{1}{l|}{\textbf{Atendidos}} & \multicolumn{1}{l|}{\textbf{Duração}} \\ \hline
-\textit{Simple / Random}   & 3132 & 3132 & 43200 \\ \hline
-\textit{Simple / NN}       & 3132 & 3132 & 43200 \\ \hline
-\textit{Simple / BNN}      & 3132 & 3132 & 43200 \\ \hline
-\textit{Simple / Weighted} & 3132 & 3132 & 43200 \\ \hline
-\textit{Planning}          & 3132 & 3132 & 43200 \\ \hline
-\end{tabular}
-\end{table}
-
-\begin{table}[htb]
-\centering
-\caption{Tempo de decisão do \textit{planning} no cenário \textit{Low-rise}.}
-\label{table:results:lowrise:time}
-\begin{tabular}{|l|r|}
-\hline
-\textit{Mínimo}  & 0.2220 ms \\ \hline
-\textit{Mediana} & 0.2900 ms \\ \hline
-\textit{Média}   & 0.4137 ms \\ \hline
-\textit{Máximo}  & 3.6810 ms \\ \hline
-\end{tabular}
-\end{table}
-
-\begin{figure}[htb]
-  \centering
-  \includegraphics[scale=0.5]{img/chart-averages-low-rise}
-  \caption[Tempo médio de espera no cenário \textit{Low-rise}.]{Tempo médio de espera para diferentes estratégias no cenário \textit{Low-rise}.}
-  \label{fig:result:average:low-rise}
-\end{figure}
-
 \section{Cenário \textit{High-rise}}
 
 \lipsum[1]
-
-\begin{table}[htb!]
-\centering
-\caption{Parâmetros do cenário \textit{High-rise}.}
-\label{tab:results:highrise:params}
-\begin{tabular}{|r|l|}
-\hline
-\textbf{Propriedade}          & \textbf{Valor}       \\ \hline
-\textit{Nome}                 & High-rise            \\ \hline
-\textit{Duração (s)}          & 43200                \\ \hline
-\textit{Semente}              & w9JwgykwejtoL2icSgHo \\ \hline
-\textit{Elevadores}           & 8                    \\ \hline
-\textit{Capacidade}           & 10                   \\ \hline
-\textit{Andares}              & 39                   \\ \hline
-\textit{Horizonte (planning)} & 2                    \\ \hline
-\end{tabular}
-\end{table}
 
 \begin{table}[htb!]
 \centering
@@ -109,61 +60,9 @@
 \end{tabular}
 \end{table}
 
-\begin{table}[htb]
-\centering
-\caption{Clientes atendidos no cenário \textit{High-rise}.}
-\label{table:results:highrise:clients}
-\begin{tabular}{|l|r|r|r|}
-\hline
-\textbf{Estratégia}        & \multicolumn{1}{l|}{\textbf{Criados}} & \multicolumn{1}{l|}{\textbf{Atendidos}} & \multicolumn{1}{l|}{\textbf{Duração}} \\ \hline
-\textit{Simple / Random}   & 7313 & 7313 & 43275 \\ \hline
-\textit{Simple / NN}       & 7313 & 7313 & 43334 \\ \hline
-\textit{Simple / BNN}      & 7313 & 7313 & 43349 \\ \hline
-\textit{Simple / Weighted} & 7313 & 7313 & 43372 \\ \hline
-\textit{Planning}          & 7313 & 7313 & 43341 \\ \hline
-\end{tabular}
-\end{table}
-
-\begin{table}[htb]
-\centering
-\caption{Tempo de decisão do \textit{planning} no cenário \textit{High-rise}.}
-\label{table:results:highrise:time}
-\begin{tabular}{|l|r|}
-\hline
-\textit{Mínimo}  & 0.002097 s \\ \hline
-\textit{Mediana} & 0.031623 s \\ \hline
-\textit{Média}   & 0.043263 s \\ \hline
-\textit{Máximo}  & 0.358810 s \\ \hline
-\end{tabular}
-\end{table}
-
-\begin{figure}[htb]
-  \centering
-  \includegraphics[scale=0.5]{img/chart-averages-high-rise}
-  \caption[Tempo médio de espera no cenário \textit{High-rise}.]{Tempo médio de espera para diferentes estratégias no cenário \textit{High-rise}.}
-  \label{fig:result:average:high-rise}
-\end{figure}
-
 \section{Cenário \textit{Skyscraper}}
 
 \lipsum[1]
-
-\begin{table}[htb!]
-\centering
-\caption{Parâmetros do cenário \textit{Skyscraper}.}
-\label{tab:results:skyscraper:params}
-\begin{tabular}{|r|l|}
-\hline
-\textbf{Propriedade}          & \textbf{Valor}       \\ \hline
-\textit{Nome}                 & Skyscraper           \\ \hline
-\textit{Duração (s)}          & 43200                \\ \hline
-\textit{Semente}              & NimatYvEnU9QeE3GkF4J \\ \hline
-\textit{Elevadores}           & 16                   \\ \hline
-\textit{Capacidade}           & 12                   \\ \hline
-\textit{Andares}              & 163                  \\ \hline
-\textit{Horizonte (planning)} & 2                    \\ \hline
-\end{tabular}
-\end{table}
 
 \begin{table}[htb!]
 \centering
@@ -181,37 +80,59 @@
 \end{tabular}
 \end{table}
 
-\begin{table}[htb]
-\centering
-\caption{Clientes atendidos no cenário \textit{Skyscraper}.}
-\label{table:results:skyscraper:clients}
-\begin{tabular}{|l|r|r|r|}
-\hline
-\textbf{Estratégia}        & \multicolumn{1}{l|}{\textbf{Criados}} & \multicolumn{1}{l|}{\textbf{Atendidos}} & \multicolumn{1}{l|}{\textbf{Duração}} \\ \hline
-\textit{Simple / Random}   & 23832 & 23832 & 45037 \\ \hline
-\textit{Simple / NN}       & 23832 & 23832 & 45388 \\ \hline
-\textit{Simple / BNN}      & 23832 & 23832 & 45131 \\ \hline
-\textit{Simple / Weighted} & 23832 & 23832 & 44584 \\ \hline
-\textit{Planning}          & 23832 & 23832 & 43688 \\ \hline
-\end{tabular}
-\end{table}
+\section{Clientes Transportados}
 
 \begin{table}[htb]
 \centering
-\caption{Tempo de decisão do \textit{planning} no cenário \textit{Skyscraper}.}
-\label{table:results:skyscraper:time}
-\begin{tabular}{|l|r|}
+\caption{Clientes transportados.}
+\label{table:results:clients}
+\begin{tabular}{|l|c|c|c|c|c|c|}
 \hline
-\textit{Mínimo}  & 0.03882 s \\ \hline
-\textit{Mediana} & 2.35068 s \\ \hline
-\textit{Média}   & 2.12851 s \\ \hline
-\textit{Máximo}  & 4.99215 s \\ \hline
+\textbf{}                  & \multicolumn{2}{c|}{\textbf{Low-rise}} & \multicolumn{2}{c|}{\textbf{High-rise}} & \multicolumn{2}{c|}{\textbf{Skyscraper}} \\ \hline
+\textbf{Estratégia}        & \textit{Atendidos}  & \textit{Duração} & \textit{Transportados}  & \textit{Duração}  & \textit{Atendidos}   & \textit{Duração}  \\ \hline
+\textit{Simple / Random}   & 3132                & 43200            & 7313                & 43275             & 23832                & 45037             \\ \hline
+\textit{Simple / NN}       & 3132                & 43200            & 7313                & 43334             & 23832                & 45388             \\ \hline
+\textit{Simple / BNN}      & 3132                & 43200            & 7313                & 43349             & 23832                & 45131             \\ \hline
+\textit{Simple / Weighted} & 3132                & 43200            & 7313                & 43372             & 23832                & 44584             \\ \hline
+\textit{Planning}          & 3132                & 43200            & 7313                & 43341             & 23832                & 43688             \\ \hline
 \end{tabular}
 \end{table}
+
+\section{Tempo de Decisão}
+
+\begin{table}[htb]
+\centering
+\caption{Tempo de decisão do \textit{planning}.}
+\label{table:results:skyscraper:time}
+\begin{tabular}{|c|c|c|c|}
+\hline
+                 & \textbf{Low-rise} & \textbf{High-rise} & \textbf{Skyscraper} \\ \hline
+\textit{Mínimo}  & 0.2220 ms         & 0.002097 s         & 0.03882 s           \\ \hline
+\textit{Mediana} & 0.2900 ms         & 0.031623 s         & 2.35068 s           \\ \hline
+\textit{Média}   & 0.4137 ms         & 0.043263 s         & 2.12851 s           \\ \hline
+\textit{Máximo}  & 3.6810 ms         & 0.358810 s         & 4.99215 s           \\ \hline
+\end{tabular}
+\end{table}
+
+\section{Gráficos}
 
 \begin{figure}[htb]
   \centering
   \includegraphics[scale=0.5]{img/chart-averages-skyscraper}
   \caption[{Tempo médio de espera no cenário \textit{Skyscraper}.}]{Tempo médio de espera para diferentes estratégias no cenário \textit{Skyscraper}.}
   \label{fig:result:average:skyscraper}
+\end{figure}
+
+\begin{figure}[htb]
+  \centering
+  \includegraphics[scale=0.5]{img/chart-averages-low-rise}
+  \caption[Tempo médio de espera no cenário \textit{Low-rise}.]{Tempo médio de espera para diferentes estratégias no cenário \textit{Low-rise}.}
+  \label{fig:result:average:low-rise}
+\end{figure}
+
+\begin{figure}[htb]
+  \centering
+  \includegraphics[scale=0.5]{img/chart-averages-high-rise}
+  \caption[Tempo médio de espera no cenário \textit{High-rise}.]{Tempo médio de espera para diferentes estratégias no cenário \textit{High-rise}.}
+  \label{fig:result:average:high-rise}
 \end{figure}
