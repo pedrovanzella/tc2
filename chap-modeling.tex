@@ -620,9 +620,9 @@ classe é responsável por gerenciar múltiplas instâncias de elevadores (class
 \texttt{Client}) e relacionar estas instâncias entre si - reproduzindo, deste
 modo, as dinâmicas do sistema do mundo real que está sendo simulado.
 
-\subsection{Client}
-
-  Representa uma pessoa que chegou a um andar e deseja se dirigir a outro andar.
+\subsection{Cliente}
+  Uma pessoa que chegou a um andar e deseja se dirigir a outro andar é
+  representada, dentro do simulador, por um objeto da classe \texttt{Client}.
   Possui os seguintes atributos:
 
   \begin{description}[leftmargin=!,labelwidth=\widthof{\bfseries arrivalFloor}]
@@ -633,9 +633,10 @@ modo, as dinâmicas do sistema do mundo real que está sendo simulado.
     \item[\texttt{pickupTime}] Horário em que o cliente embarcou em um elevador.
   \end{description}
 
-\subsection{Floor}
+\subsection{Andar}
 
-Parte componente de um prédio. Possui os seguintes atributos:
+Parte componente de um prédio, representada pela classe \texttt{Floor}. Possui
+os seguintes atributos:
 
   \begin{description}[leftmargin=!,labelwidth=\widthof{\bfseries eventFactory}]
     \item[\texttt{number}] Número do andar em que a parada deve ser realizada.
@@ -647,9 +648,11 @@ Parte componente de um prédio. Possui os seguintes atributos:
     \item[\texttt{downLine}] Fila contendo os clientes que desejam descer a partir do andar.
     \item[\texttt{eventFactory}] Instância da classe \texttt{EventFactory} (seção \ref{model:eventfactory}) do andar.
   \end{description}
-\subsection{Elevator}
 
-  Representa um elevador. Possui os seguintes atributos:
+\subsection{Elevador}
+
+  Um elevador é representado pela classe \texttt{Elevator}. Possui os seguintes
+  atributos:
 
   \begin{description}[leftmargin=!,labelwidth=\widthof{\bfseries arrivalFloor}]
     \item[\texttt{number}] Número identificador do elevador.
@@ -663,7 +666,9 @@ Parte componente de um prédio. Possui os seguintes atributos:
 
 \subsection{StopManager}
 
-  Classe auxiliar que implementa um gerenciador de paradas. Provê os seguintes métodos:
+  Para tornar a tarefa de controlar paradas mais simples, foi criada uma classe
+  auxiliar que implementa um gerenciador de paradas chamada
+  \texttt{StopManager}. Provê os seguintes métodos:
 
   \begin{description}[leftmargin=!,labelwidth=\widthof{\bfseries arrivalFloor}]
     \item[\texttt{hasStop}] Verifica se há algum elevador programado para parar em dado andar e direção.
