@@ -84,19 +84,9 @@ cada um deles. Um cenário é composto pelas seguintes informações:
 
 \end{description}
 
-Convém salientar que, definido um cenário, será realizada uma simulação para cada
-combinação possível de algoritmo de agendamento com função de custo. Por
-exemplo, se forem especificados os algoritmos de agendamento \textit{simple} e
-\textit{planning} juntamente das funções de custo \textit{nearest neighbour} e
-\textit{weighted}, serão realizadas 4 simulações deste cenário com as seguintes
-combinações:
-
-\begin{itemize}
-  \item Agendamento \textit{simple} com função de custo \textit{nearest neighbour};
-  \item Agendamento \textit{simple} com função de custo \textit{weighted};
-  \item Agendamento \textit{planning} com função de custo \textit{nearest neighbour};
-  \item Agendamento \textit{planning} com função de custo \textit{weighted}.
-\end{itemize}
+Convém salientar que o parâmetro de função de custo só será utilizado para o
+agendamento \textit{Simple}. Desta forma, será realizada uma simulação para cada
+função de custo.
 
 \subsection{\label{model:scenario:config}Arquivo de Configuração}
 
