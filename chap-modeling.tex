@@ -735,7 +735,9 @@ void Building::initializeArrivals() {
     interim entre o momento do último evento processado (relógio atual da
     simulação) e o evento que está sendo notificado~-~como o \textit{prédio}
     recebe notificações antes do \textit{relógio do sistema}, o segundo ainda
-    está no estado referente ao evento ocorrido anteriormente.
+    está no estado referente ao evento ocorrido anteriormente. Com o estado do
+    prédio atualizado, o evento recebido pode ser processado de acordo com o seu
+    tipo (linhas 7 e 11).
 
     \begin{algorithm}[htb]
       \centering
