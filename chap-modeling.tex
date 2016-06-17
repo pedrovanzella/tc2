@@ -205,7 +205,7 @@ próximo a ocorrer e como notificar os elementos reativos disso. Portanto,
 precisamos de mecanismos para criar e ordenar eventos e notificar os componentes
 da ocorrência de um evento.
 
-\subsection{Criação}
+\subsection{Criação} \label{model:event:creation}
 
 Não é possível prever em qual andar e qual momento um cliente irá chegar ao
 prédio, tampouco qual o destino desejado por ele. Portanto, é correto afirmar
@@ -562,14 +562,15 @@ O algoritmo \ref{alg:sim} mostra um pseudocódigo de como funciona o laço de
 execução da simulação. Na linha 2, uma instância da classe \texttt{Building}
 (seção \ref{model:state:building}) é criada baseada nos atributos definidos para
 o cenário. Nas linhas 4 a 6, os objetos \textit{observers} se registram no
-\textit{notifier} para receberem notificações de eventos. Nas linhas 8 a 10, é
-criado um evento para marcar o fim da simulação e o mesmo é adicionado à
-\textit{fila de eventos}. Na linha 12, são inicializados os eventos de chegada
-de clientes em cada um dos andares (seção \ref{model:state:building}). Por fim,
-o simulador entra em um laço indefinido nas linhas 14 a 17. A cada iteração do
-laço é retirado o próximo evento da fila e os \textit{observers} são
-notificados. O laço permanece em execução enquanto houverem eventos disponíveis
-na fila ou até atingir o tempo limite da simulação.
+\textit{notifier} para receberem notificações de eventos. É importante frisar
+que a ordem na qual se registram é a mesma ordem na qual serão notificados da
+ocorrência de eventos. Nas linhas 8 a 10, é criado um evento para marcar o fim
+da simulação e o mesmo é adicionado à \textit{fila de eventos}. Na linha 12, são
+inicializados os eventos de chegada de clientes em cada um dos andares (seção
+\ref{model:state:building}). Por fim, o simulador entra em um laço indefinido
+nas linhas 14 a 17. A cada iteração do laço é retirado o próximo evento da fila
+e os \textit{observers} são notificados. O laço permanece em execução enquanto
+houverem eventos disponíveis na fila ou até atingir o tempo limite da simulação.
 
 \begin{algorithm}[H]
 \begin{center}
@@ -577,9 +578,9 @@ na fila ou até atingir o tempo limite da simulação.
 \Function{run}{$scenario, clock, statistics, dispatcher, eventQueue$}
   \State $building \leftarrow $\Call{Building}{$scenario$}
   \State
+  \State $dispatcher.$\Call{Subscribe}{$building$}
   \State $dispatcher.$\Call{Subscribe}{$clock$}
   \State $dispatcher.$\Call{Subscribe}{$statistics$}
-  \State $dispatcher.$\Call{Subscribe}{$building$}
   \State
   \State $duration \leftarrow scenario.\Call{GetDuration}{}()$
   \State $finishSimulation \leftarrow \Call{FinishSimulation}{duration}$
@@ -623,7 +624,7 @@ modo, as dinâmicas do sistema do mundo real que está sendo simulado.
     \item[\texttt{pickupTime}] Horário em que o cliente embarcou em um elevador.
   \end{description}
 
-\subsection{Andar}
+\subsection{Andar} \label{model:floor}
 
 Parte componente de um prédio, representada pela classe \texttt{Floor}. Possui
 os seguintes atributos:
@@ -676,14 +677,131 @@ os seguintes atributos:
 
 \subsection{Prédio} \label{model:state:building}
 
-    Representa a composição do prédio sendo simulado. Possui um conjunto de
-    elevadores, uma lista ordenada de andares e um método \texttt{reset},
-    utilizado para a inicialização da simulação. Um prédio é formado por no
-    mínimo um elevador e no mínimo um andar\footnote{Isto em termos conceituais;
-    porém, não há sentido na existência de um sistema de elevadores em uma
-    edificação com somente um andar. De fato, conforme afirmado na
-    seção~\ref{section:scenarios}, serão simulados prédios com, no mínimo, 4
-    andares.}.
+O \textit{prédio} sendo simulado é representado pela classe \texttt{Building}.
+Esta classe agrupa os demais componentes do prédio, possuindo um conjunto de
+andares e elevadores. Assim como o \textit{relógio da simulação} e os
+\textit{contadores estatísticos}, o \textit{prédio} também terá seu estado
+alterado na ocorrência de eventos. Portanto, a classe \texttt{Building} deve
+implementar a interface para \textit{observers}. As responsabilidades desta
+classe estão expostar para o simulador da seguinte forma:
+
+
+\begin{description}
+  \item[Inicialização da lista de chegadas de clientes] \hfill \\
+    Conforme visto nas seções \ref{model:event:creation} e \ref{model:floor}, há
+    um objeto da classe \texttt{EventFactory} para cada objeto \texttt{Floor} do
+    prédio. O objeto \texttt{Building} é responsável por realizar a invocação do
+    \texttt{EventFactory} para criar novos eventos de chegada de cliente e
+    adicioná-los à fila de eventos. O algoritmo \ref{alg:building:init} mostra
+    um excerto do código da classe \texttt{Building}, responsável por realizar
+    esta inicialização. O método \texttt{initializeArrivals} itera, nas linhas 4
+    e 5, por todos os andares do prédio e invoca a criação de um novo evento,
+    passando como parâmetro um ponteiro para a fila de eventos para que o
+    \texttt{EventFactory} consiga adicionar o evento recém criado (algoritmo
+    \ref{alg:eventcreation}).
+
+    \begin{algorithm}[htb]
+      \centering
+        \begin{minted}[linenos,fontsize=\small]{c++}
+void Building::initializeArrivals() {
+  auto simulator = _simulator.lock();
+  auto eventQueue = simulator->getEventQueue();
+  for (auto floor : *_floors)
+    floor->createFutureArrival(eventQueue);
+}
+        \end{minted}
+      \caption{Inicialização dos eventos de chegada de cliente.}
+      \label{alg:building:init}
+    \end{algorithm}
+
+  \item[Atualizar o seu estado interno] \hfill \\
+
+  \item[Reação à ocorrência de eventos] \hfill \\
+
+    Como o estado interno deve ser alterado na ocorrência de eventos, o
+    \texttt{Building} implementa a interface \texttt{EventObserver} conforme o
+    algoritmo \ref{alg:building:notify}. Nas linhas 2 a 4 do método é feita a
+    atualização do estado interno do prédio para refletir o que ocorreu no
+    interim entre o momento do último evento processado (relógio atual da
+    simulação) e o evento que está sendo notificado~-~como o \textit{prédio}
+    recebe notificações antes do \textit{relógio do sistema}, o segundo ainda
+    está no estado referente ao evento ocorrido anteriormente. Com o estado do
+    prédio atualizado, o evento recebido pode ser processado de acordo com o seu
+    tipo (linhas 7 e 11).
+
+    \begin{algorithm}[htb]
+      \centering
+        \begin{minted}[linenos,fontsize=\small]{c++}
+void Building::notify(const std::shared_ptr<const Event> event) {
+  for (int time = _clock->currentTime(); time < event->getTime(); ++time) {
+    step();
+  }
+
+  if (event->getType() == EventType::clientArrival) {
+    doClientArrival(std::static_pointer_cast<const ClientArrival>(event));
+  }
+
+  if (event->getType() == EventType::finishSimulation) {
+    doFinishSimulation(std::static_pointer_cast<const FinishSimulation>(event));
+  }
+}
+        \end{minted}
+      \caption{\textit{Prédio} reagindo a um evento.}
+      \label{alg:building:notify}
+    \end{algorithm}
+
+  \item[Processar a chegada de um novo cliente] \hfill \\
+
+    \begin{algorithm}[htb]
+      \centering
+        \begin{minted}[linenos,fontsize=\small]{c++}
+void Building::doClientArrival(std::shared_ptr<const ClientArrival> event) {
+  auto client = event->getClient();
+  auto location = _floors->at(client->getArrivalFloor());
+  auto direction = location->addClient(client);
+
+  if (!_stopManager->hasStop(location, direction)) {
+    auto elevatorNum = _scheduler->schedule(_costFunction, shared_from_this(), client);
+    auto elevator = _elevators->at(elevatorNum);
+    _stopManager->set(location, direction, elevator);
+  }
+
+  auto simulator = _simulator.lock();
+  auto eventQueue = simulator->getEventQueue();
+  location->createFutureArrival(eventQueue);
+}
+        \end{minted}
+      \caption{\textit{Prédio} reagindo a uma \textit{chegada de cliente}.}
+      \label{alg:building:arrival}
+    \end{algorithm}
+
+  \item[Processar o fim da simulação] \hfill \\
+
+    Quando ocorre o evento de \textit{fim da simulação}, não serão mais gerados
+    eventos de chegadas de clientes. Porém, ainda existirão clientes dentro do
+    prédio, seja esperando por um elevador ou dentro de um deles. O prédio deve
+    atualizar o seu estado interno e gerar estatísticas até que o último cliente
+    seja atendido - ou seja, desembarque no seu andar de destino. O algoritmo
+    \ref{alg:building:finish} mostra este comportamento, onde o prédio atualiza
+    o seu estado de forma indefinida, até que todos os clientes sejam atendidos.
+
+    \begin{algorithm}[htb]
+      \centering
+        \begin{minted}[linenos,fontsize=\small]{c++}
+void Building::doFinishSimulation(std::shared_ptr<const FinishSimulation> event) {
+  auto simulator = _simulator.lock();
+  auto statistics = simulator->getStatistics();
+  while (statistics->getClientsArrived() > statistics->getClientsServed()) {
+    step();
+  }
+}
+        \end{minted}
+      \caption{\textit{Prédio} reagindo ao \textit{fim da simulação}.}
+      \label{alg:building:finish}
+    \end{algorithm}
+
+\end{description}
+
 
 \begin{figure}[htb!]
   \centering
@@ -709,7 +827,7 @@ figura~\ref{fig:model:schedulers:uml:base}.
 \end{figure}
 
 Os \textit{schedulers} têm apenas um método público, chamado \texttt{int
-  schedule()}, que recebe como parâmetro a função de custo e um ponteiro para o
+ schedule()}, que recebe como parâmetro a função de custo e um ponteiro para o
 prédio, além de, opcionalmente, um elevador para ser excluído.
 
 \unsure{Onde falamos de por que é importante excluir elevadores do schedule às
