@@ -687,7 +687,7 @@ classe estão expostar para o simulador da seguinte forma:
 
 
 \begin{description}
-  \item[Inicialização da lista de chegadas de clientes] \hfill \\
+  \item[Inicializar da lista de chegadas de clientes] \hfill \\
     Conforme visto nas seções \ref{model:event:creation} e \ref{model:floor}, há
     um objeto da classe \texttt{EventFactory} para cada objeto \texttt{Floor} do
     prédio. O objeto \texttt{Building} é responsável por realizar a invocação do
@@ -715,9 +715,9 @@ void Building::initializeArrivals() {
     \end{algorithm}
 
   \item[Atualizar o seu estado interno] \hfill \\
+    \lipsum[2]
 
-  \item[Reação à ocorrência de eventos] \hfill \\
-
+  \item[Reagir à ocorrência de eventos] \hfill \\
     Como o estado interno deve ser alterado na ocorrência de eventos, o
     \texttt{Building} implementa a interface \texttt{EventObserver} conforme o
     algoritmo \ref{alg:building:notify}. Nas linhas 2 a 4 do método é feita a
@@ -750,7 +750,20 @@ void Building::notify(const std::shared_ptr<const Event> event) {
       \label{alg:building:notify}
     \end{algorithm}
 
-  \item[Processar a chegada de um novo cliente] \hfill \\
+  \item[Reagir à chegada de um novo cliente] \hfill \\
+
+    O algoritmo \ref{alg:building:arrival} ilustra como o \texttt{Building}
+    trata o evento de \textit{chegada de cliente}. Nas linhas 2 e 3 são
+    identificados o cliente e o andar em que ocorreu o evento de sua chegada. Na
+    linha 4 o cliente é adicionado à fila do andar correspondente a onde está -
+    retornando a direção em que vai se locomover dentro do prédio. Caso não
+    exista uma parada programada de um elevador no andar e na direção (linha 6),
+    será necessário escolher um elevador para atender este cliente. Neste
+    momento, o \textit{algoritmo de agendamento} é invocado (linha 7) e a
+    decisão é informada ao \textit{gerenciador de paradas} (linha 9). Por fim,
+    nas linhas 12 a 14 é gerado um novo evento futuro de \textit{chegada de
+    cliente} para o andar onde o evento ocorreu, de modo a repopular
+    constantemente as filas de cada andar.
 
     \begin{algorithm}[htb]
       \centering
@@ -775,8 +788,7 @@ void Building::doClientArrival(std::shared_ptr<const ClientArrival> event) {
       \label{alg:building:arrival}
     \end{algorithm}
 
-  \item[Processar o fim da simulação] \hfill \\
-
+  \item[Reagir ao fim da simulação] \hfill \\
     Quando ocorre o evento de \textit{fim da simulação}, não serão mais gerados
     eventos de chegadas de clientes. Porém, ainda existirão clientes dentro do
     prédio, seja esperando por um elevador ou dentro de um deles. O prédio deve
