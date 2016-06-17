@@ -605,7 +605,7 @@ na fila ou até atingir o tempo limite da simulação.
 \end{algorithmic}
 \end{center}
 \caption
-   {\label{alg:sim}Algoritmo de simulação.}
+   {\label{alg:sim}Laço de execução da simulação.}
 \end{algorithm}
 
 \section{Estado do sistema}
@@ -709,7 +709,7 @@ figura~\ref{fig:model:schedulers:uml:base}.
 \begin{figure}[htb]
   \centering
   \includegraphics{doc/latex/class_scheduler__inherit__graph}
-  \caption{Diagrama UML das classes Scheduler}
+  \caption{Diagrama de classes das \textit{estratégias de agendamento}.}
   \label{fig:model:schedulers:uml:base}
 \end{figure}
 
@@ -742,7 +742,7 @@ Isto pode ser visto em mais detalhes na figura~\ref{fig:model:costfunction:uml:b
 \begin{figure}[htb]
   \centering
   \includegraphics[scale=0.8]{doc/latex/class_cost_function__inherit__graph}
-  \caption{Diagrama UML das classes CostFunction}
+  \caption{Diagrama de classes das \textit{funções de custo}.}
   \label{fig:model:costfunction:uml:base}
 \end{figure}
 
@@ -779,35 +779,57 @@ na Sessão~XXX, podemos inferir a ocupação pela balança interna do elevador, 
 alguns cenários reais.}
 \unsure{Sessão XXX (Vanzella)}
 
-\section{\label{model:report}Geração de Relatórios}
-\lipsum[5]
+\section{Geração de Relatórios} \label{model:report}
 
+A cada fim de simulação, os \textit{contadores estatísticos} resultantes são
+armazenados em uma coleção dentro da classe \texttt{Reporter}. Esta classe é
+responsável por gerar relatórios da simulação. O algoritmo \ref{alg:output}
+mostra um exemplo de estrutura de diretórios e arquivos de saída.
+
+\begin{algorithm}[H]
 \dirtree{%
 .1 output.
 .2 High-rise\DTcomment{Nome do cenário.}.
 .3 1 Simple Random\DTcomment{Diretório da estratégia.}.
 .4 run.log\DTcomment{Log de execução da estratégia.}.
 .4 report.log\DTcomment{Relatório das métricas da estratégia.}.
-.4 trips.log\DTcomment{Arquivo CSV contendo os desembarques.}.
-.3 2 Simple NearestNeighbour.
-.4 run.log.
-.4 report.log.
-.4 trips.log.
-.3 3 Simple BetterNearestNeighbour.
-.4 run.log.
-.4 report.log.
-.4 trips.log.
-.3 4 Simple Weighted.
-.4 run.log.
-.4 report.log.
-.4 trips.log.
-.3 5 Planning.
-.4 run.log.
-.4 report.log.
-.4 trips.log.
-.3 arrivals.log\DTcomment{Arquivo CSV contendo as chegadas de clientes no prédio.}.
+.4 trips.log\DTcomment{Arquivo contendo os desembarques de clientes.}.
+.3 \ldots.
+.3 arrivals.log\DTcomment{Arquivo contendo as chegadas de clientes.}.
 .3 report.log\DTcomment{Relatório unificado de todas as estratégias do cenário.}.
 }
+\caption
+   {\label{alg:output}Estrutura de diretórios e arquivos de saída.}
+\end{algorithm}
+
+\begin{description}[leftmargin=!,labelwidth=\widthof{\bfseries Arquivo de Desembarques}]
+\item[Log de Execução]
+O \textit{log de execução} apresenta o histórico da simulação,
+mostrando sequencialmente o fluxo de processamento, ocorrência de eventos e
+registro de decisões realizadas dentro do simulador.
+
+\item[Métricas da Estratégia]
+O \textit{relatório de métricas da estratégia} apresenta as métricas calculadas
+para a simulação do cenário utilizando uma estratégia de agendamento específica.
+
+\item[Arquivo de Desembarques]
+O \textit{arquivo de desembarques} apresenta os dados de todos os desembarques
+realizados para a simulação do cenário utilizando uma estratégia de agendamento
+específica. Este arquivo é utilizado para a geração de gráficos.
+
+\item[Arquivo de Chegadas]
+O \textit{arquivo de chegadas} apresenta os dados de todas as chegadas de
+clientes para a simulação do cenário utilizando uma estratégia de agendamento
+específica. Este arquivo é utilizado para a geração de gráficos.
+
+\item[Relatório Unificado]
+O \textit{relatório unificado} apresenta as métricas geradas por todas as
+estratégias selecionadas para simulação de um cenário. Assim, fornece um meio de
+observar e analisar os resultados obtidos.
+
+\end{description}
 
 \subsection{\label{model:report:charts}Geração de Gráficos}
+
+\unsure{Pedro, esta seção é tua. (Taschetto)}
 \lipsum[5]
