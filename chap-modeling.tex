@@ -942,8 +942,24 @@ forma consistente.
 Esta função de custo retorna, como custo, a distância do
 elevador para o cliente. Ela ignora a direção na qual o elevador está viajando.
 
-\unsure{Colocar o código aqui? Tem 2 linhas. (Vanzella)
-Resposta: OK}
+\begin{algorithm}[htb!]
+  \centering
+  \begin{minted}[linenos,fontsize=\small]{c++}
+float NearestNeighbourCostFunction::calculate(
+      Building building,
+      Elevator elevator,
+      Client client) {
+
+    auto where_it_is = elevator->getLocation();
+    auto where_to = client->getArrivalFloor();
+
+    auto distance = where_it_is - where_to;
+
+    return std::abs(distance);
+}
+  \end{minted}
+  \caption{\label{alg:nn_cf}Algoritmo de Função de Custo \textit{Nearest Neighbour}.}
+\end{algorithm}
 
 \subsection{\label{model:costfunctions:bnn}Better Nearest Neighbour}
 A Função de Custo \textit{Better Nearest Neighbour} bonifica elevadores que
