@@ -14,8 +14,12 @@
 \usepackage{xcolor}
 \usepackage[colorinlistoftodos,prependcaption,textsize=normalsize]{todonotes}
 \usepackage{dirtree}
+\usepackage{float}
 
 \usemintedstyle{colorful}
+
+\newfloat{listing}{thp}{lop}
+\floatname{listing}{Listagem}
 
 \newcommand{\argmin}[1]{\underset{#1}{\operatorname{arg}\,\operatorname{min}}\;}
 \newcommand{\argmax}[1]{\underset{#1}{\operatorname{arg}\,\operatorname{max}}\;}

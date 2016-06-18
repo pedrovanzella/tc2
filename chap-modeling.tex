@@ -493,16 +493,17 @@ Simulator::run() {
 
 \section{\label{model:scenario}Cenário}
 
-Como entrada o simulador recebe um conjunto de cenários e realiza a simulação de
-cada um deles. Um cenário é composto pelas seguintes informações:
+Até este ponto foram apresentados componentes genéricos de um simulador. A
+partir daqui serão detalhados componentes específicos de um simulador de
+elevadores. O primeiro deles é o \textit{cenário}. Como entrada o simulador
+recebe um conjunto de cenários e realiza a simulação de cada um deles. Um
+cenário é composto pelas seguintes informações:
 
 \begin{description}[leftmargin=!,labelwidth=\widthof{\bfseries Função de Custo}]
   \item[Nome]
-
   Identificação textual do cenário.
 
   \item[Duração]
-
   Tempo durante o qual serão geradas chegadas de clientes aos andares do prédio.
   Após este tempo, não chegarão mais clientes. Porém, clientes que já entraram
   no prédio e estão distribuídos nos andares e elevadores precisam terminar suas
@@ -510,31 +511,24 @@ cada um deles. Um cenário é composto pelas seguintes informações:
   tempo real de simulação seja maior que a duração estipulada no cenário.
 
   \item[Agendamento]
-
   Lista de algoritmos de agendamento.
 
   \item[Horizonte]
-
   Horizonte de expansão do agendamento com algoritmo de \textit{planning}.
 
   \item[Função de Custo]
-
   Lista de funções de custo.
 
   \item[Semente]
-
   Semente textual para inicialização os geradores de números aleatórias.
 
   \item[Elevadores]
-
   Número de elevadores do prédio.
 
   \item[Capacidade]
-
   Capacidade dos elevadores (a mesma para cada elevador).
 
   \item[Andares]
-
   Lista com o intervalo médio\footnote{O valor médio informado é utilizado como
   parâmetro $\lambda$ de entrada para uma Distribuição de Poisson. Cada andar do
   prédio possui uma distribuição distinta.} de chegada de passageiros, em
@@ -553,9 +547,9 @@ A entrada de dados para o simulador se dá através de um arquivo de configuraç
 chamado \texttt{config.yaml}. Este arquivo obedece o padrão \textit{YAML}, um
 formato de serialização de dados legíveis por humanos.
 
-\begin{algorithm}[htb]
+\begin{listing}[htb]
   \centering
-    \begin{minted}[frame=lines,framesep=2mm,linenos,fontsize=\small]{yaml}
+    \begin{minted}[linenos,fontsize=\small]{yaml}
 scenarios:
   - name: Scenario 1
     duration: 43200 # 12 hours
@@ -575,9 +569,9 @@ scenarios:
     \end{minted}
   \caption{Exemplo de arquivo de configuração \texttt{config.yaml}.}
   \label{alg:config}
-\end{algorithm}
+\end{listing}
 
-No exemplo do Algoritmo~\ref{alg:config} \unsure{Isto não é um algoritmo. Devemos listar dentro de um algorithm? Como mudar o caption?}são definidos alguns cenários. No
+No exemplo da Listagem~\ref{alg:config} são definidos alguns cenários. No
 primeiro, chamado \texttt{Scenario 1}, clientes chegarão durante 12 horas
 distribuídos ao longo dos 8 andares do prédio e serão atendidos por 2
 elevadores, cuja capacidade é de 8 passageiros cada. Pode ser definido um número
@@ -680,11 +674,10 @@ andares e elevadores. Assim como o \textit{relógio da simulação} e os
 \textit{contadores estatísticos}, o \textit{prédio} também terá seu estado
 alterado na ocorrência de eventos. Portanto, a classe \texttt{Building} deve
 implementar a interface para \textit{observers}. As responsabilidades desta
-classe estão expostar para o simulador da seguinte forma:
-
+classe estão expostas para o simulador da seguinte forma:
 
 \begin{description}
-  \item[Inicializar da lista de chegadas de clientes] \hfill \\
+  \item[Inicializar a lista de chegadas de clientes] \hfill \\
     Conforme visto nas seções \ref{model:event:creation} e \ref{model:floor}, há
     um objeto da classe \texttt{EventFactory} para cada objeto \texttt{Floor} do
     prédio. O objeto \texttt{Building} é responsável por realizar a invocação do
@@ -747,7 +740,6 @@ Building::notify(Event event) {
     \end{algorithm}
 
   \item[Reagir à chegada de um novo cliente] \hfill \\
-
     O Algoritmo \ref{alg:building:arrival} ilustra como o \texttt{Building}
     trata o evento de \textit{chegada de cliente}. Nas linhas 2 a 4 são
     identificados o cliente, a direção em que irá se locomover e o andar em que
@@ -758,7 +750,7 @@ Building::notify(Event event) {
     invocado (linha 8) e a decisão é informada ao \textit{gerenciador de
     paradas} (linha 9). Por fim, nas linhas 12 a 13 é gerado um novo evento
     futuro de \textit{chegada de cliente} para o andar onde o evento ocorreu, de
-    modo a repopular constantemente as filas de cada andar.
+    modo a repopular as filas de cada andar.
 
     \begin{algorithm}[htb]
       \centering
@@ -804,9 +796,7 @@ Building::doFinishSimulation(FinishSimulation event) {
       \caption{\textit{Prédio} reagindo ao \textit{fim da simulação}.}
       \label{alg:building:finish}
     \end{algorithm}
-
 \end{description}
-
 
 \begin{figure}[htb!]
   \centering
@@ -902,10 +892,10 @@ alguns cenários reais.}
 
 A cada fim de simulação, os \textit{contadores estatísticos} resultantes são
 armazenados em uma coleção dentro da classe \texttt{Reporter}. Esta classe é
-responsável por gerar relatórios da simulação. O Algoritmo \ref{alg:output}
+responsável por gerar relatórios da simulação. A listagem~\ref{alg:output}
 mostra um exemplo de estrutura de diretórios e arquivos de saída.
 
-\begin{algorithm}[H]
+\begin{listing}[H]
 \dirtree{%
 .1 output.
 .2 High-rise\DTcomment{Nome do cenário.}.
@@ -919,7 +909,7 @@ mostra um exemplo de estrutura de diretórios e arquivos de saída.
 }
 \caption
    {\label{alg:output}Estrutura de diretórios e arquivos de saída.}
-\end{algorithm}
+\end{listing}
 
 \begin{description}[leftmargin=!,labelwidth=\widthof{\bfseries Arquivo de Desembarques}]
 \item[Log de Execução]

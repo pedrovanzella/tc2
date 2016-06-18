@@ -199,7 +199,7 @@ Novamente, para esta função, o elevador $E1$ é eleito para atender a chamada.
 
 \subsection{Algoritmo}
 
-O algoritmo~\ref{alg:cost-function} ilustra um algoritmo com o comportamento desta
+O Algoritmo~\ref{alg:cost-function} ilustra um algoritmo com o comportamento desta
 função. Os argumentos para este algoritmo são:
 
 \begin{description}[leftmargin=!,labelwidth=\widthof{\bfseries $costFunction$}]
@@ -209,32 +209,27 @@ função. Os argumentos para este algoritmo são:
 \end{description}
 
 \begin{algorithm}[htb]
-\begin{center}
-\begin{algorithmic}[1]
-\Function{ChooseElevator}{$client, elevatorSet, costFunction$}
-  \State $selectedElevator \leftarrow elevatorSet.$\Call{Front}{}
-  \State $bestCost \leftarrow \infty$
-  \For{\textbf{each} $elevator$ in $elevatorSet$}
-    \State $cost \leftarrow \Call{CostFunction}{$client, elevatorSet$}$
-    \If{$cost < bestCost$}
-      \State $selectedElevator \leftarrow elevator$
-      \State $bestCost \leftarrow cost$
-    \EndIf
-  \EndFor
-  \State \textbf{return} $selectedElevator$
-\EndFunction
-\end{algorithmic}
-\end{center}
-\caption
-   {\label{alg:cost-function}Minimização da \textit{função de custo}.}
+  \centering
+    \begin{minted}[linenos,fontsize=\small]{c++}
+ChooseElevator(client, elevatorSet, costFunction) {
+  selectedElevador = elevatorSet.front();
+  bestCost = infinite;
+  for each (elevador in elevatorSet) {
+    cost = costFunction(client, elevatorSet)
+    if cost < bestCost {
+      selectedElevator = elevator;
+      bestCost = cost;
+    }
+  }
+  return selectedElevator;
+}
+    \end{minted}
+  \caption{\label{alg:cost-function}Minimização da \textit{função de custo}.}
 \end{algorithm}
 
 Seu funcionamento pode ser descrito como: dada uma chamada, para cada elevador
 presente no conjunto calcula-se o retorno da função de custo e o algoritmo
-retorna o elevador com a menor função de custo correspondente. Além disso, há
-uma otimização (programação dinâmica): se algum elevador possuir custo zero, o
-algoritmo retorna imediatamente, como resultado, este elevador - pois nenhum
-outro elevador poderá ter um retorno da função de custo melhor do que zero.
+retorna o elevador com a menor função de custo correspondente.
 
 \subsection{Nearest neighbour como função de custo}
 
