@@ -1,28 +1,33 @@
 \chapter{\label{chap:results}Resultados}
 
-A seção \ref{tab:cenarios} descreve os cenários de testes utilizados. No
-contexto do simulador, a tabela \ref{tab:scenarios} define os parâmetros
-utilizados para a simulação.
-
-\begin{table}[htb!]
-\centering
-\caption{Cenários de teste.}
-\label{tab:scenarios}
-\begin{tabular}{|r|c|c|c|}
-\hline
-\multicolumn{1}{|c|}{\textbf{}} & \multicolumn{3}{c|}{\textbf{Cenário}}                        \\ \hline
-\textbf{Nome}                   & \textit{Low-rise} & \textit{High-rise} & \textit{Skyscraper} \\ \hline
-\textbf{Duração}                & \multicolumn{3}{c|}{43200 segundos (12 horas)}               \\ \hline
-\textbf{Elevadores}             & 2                 & 8                  & 16                  \\ \hline
-\textbf{Capacidade}             & 6                 & 10                 & 12                  \\ \hline
-\textbf{Andares}                & 11                & 39                 & 163                 \\ \hline
-\textbf{Horizonte}\footnote{Utilizando o algoritmo de agendamento \textit{planning}.}   & 5                 & 2                  & 2                   \\ \hline
-\end{tabular}
-\end{table}
+Para os cenários de teste definidos na Seção \ref{tab:cenarios} foram realizadas
+simulações. Os resultados são apresentados a seguir.
 
 \section{Cenário \textit{Low-rise}}
 
-\lipsum[1]
+A Listagem \ref{lst:config:lowrise} exibe um excerto do arquivo de configuração
+que define o cenário \textit{Low-rise}. A Tabela \ref{tab:results:lowrise}
+mostra os resultados\footnote{Destacados encontram-se os melhores resultados
+obtidos para cada métrica.} obtidos após a simulação.
+
+\begin{listing}[htb]
+  \centering
+    \begin{minted}[linenos,fontsize=\small]{yaml}
+  # ...
+  - name: Low-rise
+    duration: 43200
+    scheduler: [ 0, 1 ] # simple, planning
+    planningHorizon: 5
+    cost_function: [ 0, 1, 2, 3 ] # randon, nn, bnn, weighted
+    seed: 54TH7hboAG1iOsDIDhJp
+    elevators: 2
+    capacity: 2
+    floors: [ 60, 520, 360, 360, 360, 240, 240, 240, 90, 90, 90 ]
+  # ...
+    \end{minted}
+  \caption{Configuração do cenário \textit{Low-rise}.}
+  \label{lst:config:lowrise}
+\end{listing}
 
 \begin{table}[htb!]
 \centering
@@ -30,19 +35,42 @@ utilizados para a simulação.
 \label{tab:results:lowrise}
 \begin{tabular}{|l|r|r|r|r|r|r|}
 \hline
-\multicolumn{1}{|c|}{\textbf{}}                 & \multicolumn{3}{c|}{\textbf{Tempo de Espera}}                                                                    & \multicolumn{3}{c|}{\textbf{Tempo de Jornada}}                                                                                                                       \\ \hline
-\textbf{Estratégia} & \multicolumn{1}{c|}{\textit{Médio}} & \multicolumn{1}{c|}{\textit{Desvio}} & \multicolumn{1}{c|}{\textit{Total}} & \multicolumn{1}{c|}{\textit{Médio}}                   & \multicolumn{1}{c|}{\textit{Desvio}}                  & \multicolumn{1}{c|}{\textit{Total}}                  \\ \hline
-\textit{Simple / Random}          & 5.4064 & 4.1792 & 16933 & 4.4949 & 2.8676 & 14078 \\ \hline
-\textit{Simple / NN}              & 3.5144 & 3.5768 & 11007 & 4.4700 & 2.8565 & 14000 \\ \hline
-\textit{Simple / BNN}             & 3.3547 & 3.2931 & 10507 & \cellcolor[HTML]{67FD9A}4.4674 & 2.9163 & \cellcolor[HTML]{67FD9A}13992 \\ \hline
-\textit{Simple / Weighted}        & 3.7149 & 3.8036 & 11635 & 4.4719 & \cellcolor[HTML]{67FD9A}2.7997 & 14006 \\ \hline
-\textit{Planning}                 & \cellcolor[HTML]{67FD9A}3.1731 & \cellcolor[HTML]{67FD9A}2.9171 &  \cellcolor[HTML]{67FD9A}9938 & 4.4770 & 3.0009 & 14022 \\ \hline
+\multicolumn{1}{|c|}{\textbf{}} & \multicolumn{3}{c|}{\textbf{Tempo de Espera}} & \multicolumn{3}{c|}{\textbf{Tempo de Jornada}} \\ \hline
+\textbf{Estratégia} & \multicolumn{1}{c|}{\textit{Médio}} & \multicolumn{1}{c|}{\textit{Desvio}} & \multicolumn{1}{c|}{\textit{Total}} & \multicolumn{1}{c|}{\textit{Médio}} & \multicolumn{1}{c|}{\textit{Desvio}} & \multicolumn{1}{c|}{\textit{Total}} \\ \hline
+\textit{Simple / Random}   & 5.4064        & 4.1792        & 16933       & 4.4949        & 2.8676        & 14078        \\ \hline
+\textit{Simple / NN}       & 3.5144        & 3.5768        & 11007       & 4.4700        & 2.8565        & 14000        \\ \hline
+\textit{Simple / BNN}      & 3.3547        & 3.2931        & 10507       & \green 4.4674 & 2.9163        & \green 13992 \\ \hline
+\textit{Simple / Weighted} & 3.7149        & 3.8036        & 11635       & 4.4719        & \green 2.7997 & 14006        \\ \hline
+\textit{Planning}          & \green 3.1731 & \green 2.9171 & \green 9938 & 4.4770        & 3.0009        & 14022        \\ \hline
 \end{tabular}
 \end{table}
 
 \section{Cenário \textit{High-rise}}
+A Listagem \ref{lst:config:highrise} exibe um excerto do arquivo de configuração
+que define o cenário \textit{High-rise}. A Tabela \ref{tab:results:highrise}
+mostra os resultados\footnote{Destacados encontram-se os melhores resultados
+obtidos para cada métrica.} obtidos após a simulação.
 
-\lipsum[1]
+\begin{listing}[htb]
+  \centering
+    \begin{minted}[linenos,fontsize=\small]{yaml}
+  # ...
+  - name: High-rise
+    duration: 43200
+    scheduler: [ 0, 1 ]
+    planningHorizon: 2
+    cost_function: [ 0, 1, 2, 3 ]
+    seed: w9JwgykwejtoL2icSgHo
+    elevators: 8
+    capacity: 10
+    floors: [ 60, 520, 520, 520, 360, 360, 360, 360, 360, 360, 360, 360, 360,
+             360, 360, 360, 360, 360, 360, 360, 360, 360, 360, 360, 360, 360,
+             360, 360, 240, 240, 240, 240, 240, 240,  90,  90,  90,  90,  90 ]
+  # ...
+    \end{minted}
+  \caption{Configuração do cenário \textit{High-rise}.}
+  \label{lst:config:highrise}
+\end{listing}
 
 \begin{table}[htb!]
 \centering
@@ -50,19 +78,52 @@ utilizados para a simulação.
 \label{tab:results:highrise}
 \begin{tabular}{|l|r|r|r|r|r|r|}
 \hline
-\multicolumn{1}{|c|}{\textbf{}}                 & \multicolumn{3}{c|}{\textbf{Tempo de Espera}}                                                                    & \multicolumn{3}{c|}{\textbf{Tempo de Jornada}}                                                                                                                       \\ \hline
-\textbf{Estratégia} & \multicolumn{1}{c|}{\textit{Médio}} & \multicolumn{1}{c|}{\textit{Desvio}} & \multicolumn{1}{c|}{\textit{Total}} & \multicolumn{1}{c|}{\textit{Médio}}                   & \multicolumn{1}{c|}{\textit{Desvio}}                  & \multicolumn{1}{c|}{\textit{Total}}                  \\ \hline
-\textit{Simple / Random}          & 25.9981 & 28.0464 & 190124 & 15.2595 & 14.9190 & 111593 \\ \hline
-\textit{Simple / NN}              & 20.3395 & 37.1902 & 148743 & 15.0993 & 11.4479 & 110421 \\ \hline
-\textit{Simple / BNN}             & 13.5243 & 23.5950 &  98903 & 15.0550 & \cellcolor[HTML]{67FD9A}10.2476 & 110097 \\ \hline
-\textit{Simple / Weighted}        & 31.0373 & 54.5909 & 226976 & \cellcolor[HTML]{67FD9A}14.9915 & 18.9700 & \cellcolor[HTML]{67FD9A}109633 \\ \hline
-\textit{Planning}                 &  \cellcolor[HTML]{67FD9A}8.6901 & \cellcolor[HTML]{67FD9A}16.2139 &  \cellcolor[HTML]{67FD9A}63551 & 15.1627 & 12.0920 & 110885 \\ \hline
+\multicolumn{1}{|c|}{\textbf{}} & \multicolumn{3}{c|}{\textbf{Tempo de Espera}} & \multicolumn{3}{c|}{\textbf{Tempo de Jornada}} \\ \hline
+\textbf{Estratégia} & \multicolumn{1}{c|}{\textit{Médio}} & \multicolumn{1}{c|}{\textit{Desvio}} & \multicolumn{1}{c|}{\textit{Total}} & \multicolumn{1}{c|}{\textit{Médio}} & \multicolumn{1}{c|}{\textit{Desvio}} & \multicolumn{1}{c|}{\textit{Total}} \\ \hline
+\textit{Simple / Random}   & 25.9981       & 28.0464        & 190124        & 15.2595        & 14.9190        & 111593        \\ \hline
+\textit{Simple / NN}       & 20.3395       & 37.1902        & 148743        & 15.0993        & 11.4479        & 110421        \\ \hline
+\textit{Simple / BNN}      & 13.5243       & 23.5950        &  98903        & 15.0550        & \green 10.2476 & 110097        \\ \hline
+\textit{Simple / Weighted} & 31.0373       & 54.5909        & 226976        & \green 14.9915 & 18.9700        & \green 109633 \\ \hline
+\textit{Planning}          & \green 8.6901 & \green 16.2139 &  \green 63551 & 15.1627        & 12.0920        & 110885        \\ \hline
 \end{tabular}
 \end{table}
 
 \section{Cenário \textit{Skyscraper}}
+A Listagem \ref{lst:config:skyscraper} exibe um excerto do arquivo de
+configuração que define o cenário \textit{Skyscraper}. A Tabela
+\ref{tab:results:skyscraper} mostra os resultados\footnote{Destacados encontram-
+se os melhores resultados obtidos para cada métrica.} obtidos após a simulação.
 
-\lipsum[1]
+\begin{listing}[htb]
+  \centering
+    \begin{minted}[linenos,fontsize=\small]{yaml}
+  # ...
+  - name: Skyscraper
+    duration: 43200
+    scheduler: [ 0, 1 ]
+    planningHorizon: 2
+    cost_function: [ 0, 1, 2, 3 ]
+    seed: NimatYvEnU9QeE3GkF4J
+    elevators: 16
+    capacity: 12
+    floors: [ 150, 300, 450, 600, 150, 300, 450, 600, 150, 300, 450, 450, 150,
+              300, 450, 600, 150, 300, 450, 600, 150, 300, 450, 450, 150, 300,
+              450, 600, 150, 300, 450, 600, 150, 300, 450, 450, 300, 450, 450,
+              450, 150, 300, 450, 600, 150, 300, 450, 600, 150, 300, 450, 450,
+              150, 300, 450, 600, 150, 300, 450, 600, 150, 300, 450, 450, 150,
+              300, 450, 600, 150, 300, 450, 600, 150, 300, 450, 450, 300, 450,
+              450, 450, 150, 300, 450, 600, 150, 300, 450, 600, 150, 300, 450,
+              450, 150, 300, 450, 600, 150, 300, 450, 600, 150, 300, 450, 450,
+              150, 300, 450, 600, 150, 300, 450, 600, 150, 300, 450, 450, 300,
+              450, 450, 450, 150, 300, 450, 600, 150, 300, 450, 600, 150, 300,
+              450, 450, 150, 300, 450, 600, 150, 300, 450, 600, 150, 300, 450,
+              450, 150, 300, 450, 600, 150, 300, 450, 600, 150, 300, 450, 450,
+              300, 450, 450, 450, 450, 450, 450 ]
+  # ...
+    \end{minted}
+  \caption{Configuração do cenário \textit{Skyscraper}.}
+  \label{lst:config:skyscraper}
+\end{listing}
 
 \begin{table}[htb!]
 \centering
@@ -70,13 +131,13 @@ utilizados para a simulação.
 \label{tab:results:skyscraper}
 \begin{tabular}{|l|r|r|r|r|r|r|}
 \hline
-\multicolumn{1}{|c|}{\textbf{}}                 & \multicolumn{3}{c|}{\textbf{Tempo de Espera}}                                                                    & \multicolumn{3}{c|}{\textbf{Tempo de Jornada}}                                                                                                                       \\ \hline
-\textbf{Estratégia} & \multicolumn{1}{c|}{\textit{Médio}} & \multicolumn{1}{c|}{\textit{Desvio}} & \multicolumn{1}{c|}{\textit{Total}} & \multicolumn{1}{c|}{\textit{Médio}}                   & \multicolumn{1}{c|}{\textit{Desvio}}                  & \multicolumn{1}{c|}{\textit{Total}}                  \\ \hline
-\textit{Simple / Random}          & 442.2165 & 1775.3156 & 10538904 & 54.7816 & 389.3520 & 1305554 \\ \hline
-\textit{Simple / NN}              & 343.5988 & 1426.3821 &  8188647 & 54.9789 & 291.2258 & 1310258 \\ \hline
-\textit{Simple / BNN}             & 287.1803 & 1137.2342 &  6844080 & 55.0124 & 235.4007 & 1311056 \\ \hline
-\textit{Simple / Weighted}        & 293.8791 & 1018.5118 &  7003726 & \cellcolor[HTML]{67FD9A}54.6163 & 242.3278 & \cellcolor[HTML]{67FD9A}1301616 \\ \hline
-\textit{Planning}                 &  \cellcolor[HTML]{67FD9A}78.3855 &  \cellcolor[HTML]{67FD9A}230.8554 &  \cellcolor[HTML]{67FD9A}1868084 & 60.1728 &  \cellcolor[HTML]{67FD9A}48.8070 & 1434038 \\ \hline
+\multicolumn{1}{|c|}{\textbf{}} & \multicolumn{3}{c|}{\textbf{Tempo de Espera}} & \multicolumn{3}{c|}{\textbf{Tempo de Jornada}} \\ \hline
+\textbf{Estratégia} & \multicolumn{1}{c|}{\textit{Médio}} & \multicolumn{1}{c|}{\textit{Desvio}} & \multicolumn{1}{c|}{\textit{Total}} & \multicolumn{1}{c|}{\textit{Médio}} & \multicolumn{1}{c|}{\textit{Desvio}} & \multicolumn{1}{c|}{\textit{Total}} \\ \hline
+\textit{Simple / Random}   & 442.2165       & 1775.3156       & 10538904       & 54.7816        & 389.3520       & 1305554        \\ \hline
+\textit{Simple / NN}       & 343.5988       & 1426.3821       &  8188647       & 54.9789        & 291.2258       & 1310258        \\ \hline
+\textit{Simple / BNN}      & 287.1803       & 1137.2342       &  6844080       & 55.0124        & 235.4007       & 1311056        \\ \hline
+\textit{Simple / Weighted} & 293.8791       & 1018.5118       &  7003726       & \green 54.6163 & 242.3278       & \green 1301616 \\ \hline
+\textit{Planning}          & \green 78.3855 & \green 230.8554 & \green 1868084 & 60.1728        & \green 48.8070 & 1434038        \\ \hline
 \end{tabular}
 \end{table}
 
