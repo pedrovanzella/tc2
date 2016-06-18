@@ -905,14 +905,39 @@ Excluir um elevador é importante, como foi falado na Seção
 \texttt{Scheduler}, chamado \texttt{getAvailableElevators()}, que retorna uma
 lista de elevadores, excluindo aqueles que não podem ser utilizados.
 
-\unsure{Talvez seja melhor explicar estes métodos seguindo o padrão utilizado nas seções anteriores para explicar as demais classes a manter o padrão.}
-
 \subsection{\label{model:schedulers:simple}Simple}
 O \textit{Simple Scheduler}, como o nome sugere, tem um comportamento bem
 simples: itera pela lista de elevadores disponíveis, calculando a função de
 custo para cada um, e retorna o de menor custo.
 
-\unsure{Colocar algoritmo.}
+\begin{algorithm}[htb!]
+  \centering
+  \begin{minted}[linenos,fontsize=\small]{c++}
+int SimpleScheduler::schedule(
+    CostFunction costFunction,
+    Building building,
+    Client client,
+    int elevatorToExclude) {
+
+  auto elevators = getAvailableElevators(building, elevatorToExclude);
+
+  float best_cost = infinity
+  auto the_chosen_one = elevators.first();
+
+  for (auto elevator : elevators) {
+    auto cost = costFunction.calculate(building, elevator, client);
+    if (cost < best_cost) {
+      best_cost = cost;
+      the_chosen_one = elevator;
+    }
+  }
+
+  return the_chosen_one.getNumber();
+}
+  \end{minted}
+  \caption{\textit{Simple Scheduler}.}
+  \label{alg:scheduler:simple}
+\end{algorithm}
 
 \subsection{\label{model:schedulers:planning}Planning}
 \lipsum[5]
