@@ -942,7 +942,83 @@ int SimpleScheduler::schedule(
 \subsection{\label{model:schedulers:planning}Planning}
 \lipsum[5]
 
-\unsure{Colocar algoritmo.}
+\begin{algorithm}[htb!]
+  \centering
+  \begin{minted}[linenos,fontsize=\small]{c++}
+    int PlanningScheduler::schedule(
+        CostFunction costFunction,
+        Building building,
+        Client client,
+        int elevatorToExclude) {
+
+  auto simulator = building.getSimulator();
+  auto elevators = getAvailableElevators(building, elevatorToExclude);
+  auto horizon = simulator.getScenario()->getPlanningHorizon();
+  auto clients = getClients(horizon, client, building);
+
+  auto simCopy = copy(simulator);
+  simCopy.copyBuilding(simulator.getBuilding());
+
+  auto the_answer_to_life_the_universe_and_everything =
+      calculate(simCopy, clients, elevatorToExclude);
+
+  return the_answer_to_life_the_universe_and_everything.getNumber();
+}
+  \end{minted}
+  \caption{\textit{Planning Scheduler}: chamada.}
+  \label{alg:scheduler:planning:chamada}
+\end{algorithm}
+
+\begin{algorithm}[htb!]
+  \centering
+  \begin{minted}[linenos,fontsize=\small]{c++}
+pair<Elevator, float> PlanningScheduler::calculate(
+      Simulator simulator,
+      Clients clients,
+      int elevatorToExclude) {
+
+  if (clients.empty()) return {nullptr, 0.f};
+  auto client = clients.front();
+  clients.pop();
+
+  auto elevators = getAvailableElevators(simulator.getBuilding(), elevatorToExclude);
+
+  float best_cost = infinity;
+  auto the_chosen_one = elevators.front();
+
+  for (auto elevator : elevators) {
+    auto simCopy = copy(simulator);
+    simCopy.copyBuilding(simulator.getBuilding());
+
+    auto buildingCopy = simCopy.getBuilding();
+    auto elevatorCopy = buildingCopy.getElevator(elevator.getNumber());
+
+    auto arrivalFloor = client.getArrivalFloor();
+    Direction direction = client.getArrivalFloor() < client.getDestination() ?
+                          Direction::Up : Direction::Down;
+
+    auto baseCost = 0.f;
+    buildingCopy.setStop(arrivalFloor, direction, elevatorCopy);
+    while (buildingCopy.mustStop(arrivalFloor, direction, elevatorCopy)) {
+      buildingCopy.step();
+      baseCost += 1.f;
+    }
+
+    auto clientsCopy = copyClients(clients);
+    auto futureCost = calculate(simCopy, clientsCopy, elevatorToExclude).second;
+    auto cost = baseCost + futureCost;
+    if (cost < best_cost) {
+      best_cost = cost;
+      the_chosen_one = elevator;
+    }
+  }
+
+  return {the_chosen_one, best_cost};
+}
+  \end{minted}
+  \caption{\textit{Planning Scheduler}: passos seguintes.}
+  \label{alg:scheduler:planning:steps}
+\end{algorithm}
 
 \section{\label{model:costfunctions}Algoritmos de Função de Custo}
 As funções de custo herdam de uma classe base, chamada \texttt{CostFunction},
