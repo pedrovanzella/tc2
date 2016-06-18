@@ -82,7 +82,7 @@ as classes concretas que a especializam, representando os eventos de
     adicionalmente, as informações do cliente.
 
     \begin{description}[leftmargin=!,labelwidth=\widthof{\bfseries client}]
-      \item[\texttt{client}] Cliente que gerou o evento.\footnote{Tipo complexo armazenando diversas informações sobre o cliente. \unsure{Colocar referência.}}
+      \item[\texttt{client}] Cliente que gerou o evento.\footnote{Tipo complexo armazenando diversas informações sobre o cliente (Seção \ref{model:state:client}).}
     \end{description}
 
   \item[FinishSimulation] \hfill \\
@@ -603,7 +603,7 @@ classe é responsável por gerenciar múltiplas instâncias de elevadores (class
 \texttt{Client}) e relacionar estas instâncias entre si - reproduzindo, deste
 modo, as dinâmicas do sistema do mundo real que está sendo simulado.
 
-\subsection{Cliente}
+\subsection{Cliente} \label{model:state:client}
   Uma pessoa que chegou a um andar e deseja se dirigir a outro andar é
   representada, dentro do simulador, por um objeto da classe \texttt{Client}.
   Possui os seguintes atributos:
