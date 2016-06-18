@@ -881,12 +881,12 @@ Building::updateElevator(Elevator elevator) {
 \end{figure}
 
 \section{\label{model:schedulers}Algoritmos de Agendamento}
+
 Neste trabalho, dois algoritmos de agendamento foram implementados, o
 \textit{Simple Scheduler} (Seção~\ref{model:schedulers:simple}) e o
-\textit{Planning Scheduler} (Seção~\ref{model:schedulers:planning}).
-
-Ambos são implementados em classes próprias, que herdam de uma classe
-\texttt{Scheduler}. Este relacionamento pode ser visto mais claramente na
+\textit{Planning Scheduler} (Seção~\ref{model:schedulers:planning}). Ambos são
+implementados em classes próprias, que herdam de uma classe \texttt{Scheduler}.
+Este relacionamento pode ser visto mais claramente na
 Figura~\ref{fig:model:schedulers:uml:base}.
 
 \begin{figure}[htb!]
@@ -905,19 +905,27 @@ Excluir um elevador é importante, como foi falado na Seção
 \texttt{Scheduler}, chamado \texttt{getAvailableElevators()}, que retorna uma
 lista de elevadores, excluindo aqueles que não podem ser utilizados.
 
+\unsure{Talvez seja melhor explicar estes métodos seguindo o padrão utilizado nas seções anteriores para explicar as demais classes a manter o padrão.}
+
 \subsection{\label{model:schedulers:simple}Simple}
 O \textit{Simple Scheduler}, como o nome sugere, tem um comportamento bem
 simples: itera pela lista de elevadores disponíveis, calculando a função de
 custo para cada um, e retorna o de menor custo.
 
+\unsure{Colocar algoritmo.}
+
 \subsection{\label{model:schedulers:planning}Planning}
 \lipsum[5]
+
+\unsure{Colocar algoritmo.}
 
 \section{\label{model:costfunctions}Algoritmos de Função de Custo}
 As funções de custo herdam de uma classe base, chamada \texttt{CostFunction},
 que possui apenas um método público, \texttt{float calculate()}, que retorna o
 valor da função para aquela combinação entre o elevador e o cliente. Isto pode
 ser visto em mais detalhes na Figura~\ref{fig:model:costfunction:uml:base}.
+
+\unsure{Talvez seja melhor explicar estes métodos seguindo o padrão utilizado nas seções anteriores para explicar as demais classes a manter o padrão.}
 
 \begin{figure}[htb!]
   \centering
@@ -937,6 +945,8 @@ Olhando-se a Figura~\ref{fig:model:costfunction:uml:base}, nota-se que ela é a
 única função de custo com um construtor. Isto se dá por que é necessário
 inicializar-se a geração de números aleatórios, de modo a gerar estes números de
 forma consistente.
+
+\unsure{Colocar algoritmo.}
 
 \subsection{\label{model:costfunctions:nn}Nearest Neighbour}
 Esta função de custo retorna, como custo, a distância do
@@ -961,11 +971,15 @@ float NearestNeighbourCostFunction::calculate(
   \caption{\label{alg:nn_cf}Algoritmo de Função de Custo \textit{Nearest Neighbour}.}
 \end{algorithm}
 
+\unsure{Colocar algoritmo.}
+
 \subsection{\label{model:costfunctions:bnn}Better Nearest Neighbour}
 A Função de Custo \textit{Better Nearest Neighbour} bonifica elevadores que
 estão indo na direção do chamado, dividindo seu custo por $\sqrt 2$ e bonifica
 mais ainda os elevadores parados, dividindo seu custo por $2$. O custo antes
 deste bônus é calculado de maneira igual à \textit{Nearest Neighbour}.
+
+\unsure{Colocar algoritmo.}
 
 \subsection{\label{model:costfunctions:weighted}Weighted}
 A Função \textit{Weighted} toma uma decisão diferente da \textit{Better Nearest
@@ -976,6 +990,7 @@ entre o cliente e o elevador) pela ocupação do elevador.\footnote{Como foi vis
 na Seção~XXX, podemos inferir a ocupação pela balança interna do elevador, em
 alguns cenários reais.}
 \unsure{Seção XXX (Vanzella)}
+\unsure{Colocar algoritmo.}
 
 \section{Geração de Relatórios} \label{model:report}
 
