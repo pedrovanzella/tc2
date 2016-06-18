@@ -1,34 +1,29 @@
 \chapter{\label{chap:ai}Algoritmos de Agendamento para Elevadores}
 
-\unsure{Implementamos tudo como função de custo. Falamos destes algoritmos ou
-  pulamos direto pras funções de custo? (Vanzella)}
-
 A busca pela solução do problema de atribuir elevadores para atender chamadas
 feitas pelos passageiros, minimizando alguma métrica, é apresentada pela
-literatura pesquisada na forma de alguns algoritmos~\cite{KOEHLEROTTIGER02}.
+literatura pesquisada na forma de algoritmos~\cite{KOEHLEROTTIGER02}.
 Tais algoritmos possuem complexidades distintas, indo desde algoritmos
 triviais~-~mas ainda interessantes para fins de comparação~-, até soluções mais
-complexas, onde mais dados são utilizados de modo a tomar decisões mais
+complexas onde mais dados são utilizados de modo a tomar decisões mais
 complexas.
 
-Em um hipotético cenário ideal, ter-se-ia todos os dados de cada
+Em um hipotético cenário ideal, ter-se-iam todos os dados de cada
 passageiro~-~\textit{i.e.} cada pessoa que chegasse ao andar informaria de
 antemão para qual andar deseja ir antes mesmo de entrar no elevador. No entanto,
 isto não é realista no contexto dos sistemas de elevadores instalados
 atualmente, onde cada pessoa apenas informa se deseja subir ou descer. Portanto,
-os algoritmos aqui descritos tentam fazer inferências e
-abstrações\footnote{\textit{e.g.} A lotação do elevador pode ser estimada com
-base no peso reportado pela balança interna do elevador, que já se encontra nele
-por motivos de segurança, ou abstrair a capacidade e lotação em número de
-pessoas.} a respeito de dados que não possuem, quando relevante, ou tentam tomar
-decisões ignorando os dados que não estão disponíveis.
+os algoritmos aqui descritos tentam fazer inferências\footnote{\textit{e.g.} A
+  lotação do elevador pode ser estimada com base no peso reportado pela balança
+  interna do elevador, que já se encontra nele por motivos de segurança, ou
+  abstrair a capacidade e lotação em número de pessoas.} a respeito de dados que
+não possuem, quando relevante, ou tentam tomar decisões ignorando os dados que
+não estão disponíveis.
 
 A seguir são descritos, do mais simples ao mais complexo, os algoritmos
 selecionados para o desenvolvimento.
 
 \section{\label{sec:ai:nn}Nearest neighbour}
-\unsure{Vale a pena deixar esta explicação deste tamanho aqui? Nós não
-  implementamos isto, exceto como uma Função de Custo. (Vanzella)}
 
 O algoritmo de \textit{Nearest Neighbour} é o mais ingênuo de todos, e servirá
 de base para a avaliação dos demais algoritmos. Seu funcionamento é trivial: o
@@ -65,13 +60,10 @@ Neighbour}, no entanto, não leva em consideração estas informações.
 
 O único propósito deste algoritmo é servir de base de comparação com outros
 algoritmos propostos, de modo a validarmos o simulador. Espera-se que uma
-melhora clara de desempenho seja notada ao comparar-se este com o próximo dos
-mais triviais, o \textit{Nearest Neighbour Melhorado}.
+melhora clara de desempenho seja notada ao comparar-se este com o próximo
+trivial, o \textit{Nearest Neighbour Melhorado}.
 
 \section{\label{sec:ai:nnm}Nearest neighbour melhorado}
-\unsure{Vale a pena deixar esta explicação deste tamanho aqui? Nós não
-  implementamos isto, exceto como uma Função de Custo. (Vanzella)}
-
 Uma melhoria que pode ser feita ao algoritmo de \textit{Nearest Neighbour} é
 considerar o sentido em que o elevador está indo para atender a
 chamada~\cite{Friese20061908}. Isto implica em considerar-se agora a informação
@@ -88,13 +80,7 @@ sentido de onde a chamada foi originada. Neste caso, apenas os elevadores $E2$ e
 $E3$ serão considerados. O elevador $E3$ está mais próximo da chamada, então
 será escolhido.
 
-No entanto, sua escolha para este trabalho também se dá para fim de comparação
-com os outros e validação do simulador. Como seu comportamento é diferente do
-caso mais trivial, mas ainda assim bastante simples, poderá ser visto com clareza
-algum tipo de melhora no tempo de resposta do sistema simulado, bem como a validade do simulador.
-
-\section{\label{sec:ai:minimize-cost-function}Minimização da função de custo}
-\unsure{Isto é o Simple Scheduler (Vanzella)}
+\section{\label{sec:ai:minimize-cost-function}Simple Scheduler}
 
 O primeiro algoritmo de IA a ser testado é simples: define-se uma
 função de custo, inerente a cada elevador, que descreve quão custoso
