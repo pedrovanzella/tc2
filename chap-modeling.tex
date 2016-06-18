@@ -182,7 +182,7 @@ prédio possui uma instância desta classe. Seus componentes são:
   \textbf{chegada de cliente} com as informações sorteadas e tendo como origem o
   andar atual. No fim, o evento criado é adicionado à fila de eventos (Seção
   \ref{model:queue}).
-    \begin{algorithm}[htb]
+    \begin{algorithm}[htb!]
       \centering
         \begin{minted}[linenos,fontsize=\small]{c++}
 EventFactory::createFutureArrival(EventQueue eventQueue) {
@@ -334,7 +334,7 @@ O \textit{relógio da simulação} é representado pela classe \texttt{Clock}
   ocorreu. O Algoritmo \ref{alg:advanceto} ilustra este conceito.
 \end{description}
 
-\begin{algorithm}[htb]
+\begin{algorithm}[htb!]
   \centering
     \begin{minted}[linenos,fontsize=\small]{c++}
 Clock::notify(Event event) {
@@ -416,7 +416,7 @@ representados pelas estruturas \texttt{Arrival} e \texttt{Trip} e pela classe
         conceito.
     \end{description}
 
-\begin{algorithm}[htb]
+\begin{algorithm}[htb!]
   \centering
     \begin{minted}[linenos,fontsize=\small]{c++}
 Statistics::notify(Event event) {
@@ -466,7 +466,7 @@ evento da fila e os \textit{observers} são notificados. O laço permanece em
 execução enquanto houver eventos disponíveis na fila ou até atingir o tempo
 limite da simulação.
 
-\begin{algorithm}[htb]
+\begin{algorithm}[htb!]
   \centering
     \begin{minted}[linenos,fontsize=\small]{c++}
 Simulator::run() {
@@ -548,7 +548,7 @@ A entrada de dados para o simulador se dá através de um arquivo de configuraç
 chamado \texttt{config.yaml}. Este arquivo obedece o padrão \textit{YAML}, um
 formato de serialização de dados legíveis por humanos.
 
-\begin{listing}[htb]
+\begin{listing}[htb!]
   \centering
     \begin{minted}[linenos,fontsize=\small]{yaml}
 scenarios:
@@ -691,7 +691,7 @@ classe estão expostas para o simulador da seguinte forma:
     \texttt{EventFactory} consiga adicionar o evento recém criado (Algoritmo
     \ref{alg:eventcreation}).
 
-    \begin{algorithm}[htb]
+    \begin{algorithm}[htb!]
       \centering
         \begin{minted}[linenos,fontsize=\small]{c++}
 Building::initializeArrivals() {
@@ -715,7 +715,7 @@ Building::initializeArrivals() {
     evento ocorrido anteriormente. Com o estado do prédio atualizado, o evento
     recebido pode ser processado de acordo com o seu tipo (linhas 7 e 11).
 
-    \begin{algorithm}[htb]
+    \begin{algorithm}[htb!]
       \centering
         \begin{minted}[linenos,fontsize=\small]{c++}
 Building::notify(Event event) {
@@ -749,7 +749,7 @@ Building::notify(Event event) {
     futuro de \textit{chegada de cliente} para o andar onde o evento ocorreu, de
     modo a repopular as filas de cada andar.
 
-    \begin{algorithm}[htb]
+    \begin{algorithm}[htb!]
       \centering
         \begin{minted}[linenos,fontsize=\small]{c++}
 Building::doClientArrival(ClientArrival event) {
@@ -780,7 +780,7 @@ Building::doClientArrival(ClientArrival event) {
     \ref{alg:building:finish} mostra este comportamento, onde o prédio atualiza
     o seu estado de forma indefinida, até que todos os clientes sejam atendidos.
 
-    \begin{algorithm}[htb]
+    \begin{algorithm}[htb!]
       \centering
         \begin{minted}[linenos,fontsize=\small]{c++}
 Building::doFinishSimulation(FinishSimulation event) {
@@ -804,7 +804,7 @@ Building::doFinishSimulation(FinishSimulation event) {
     prédio, atualizando a situação de cada um deles ao invocar o método
     \texttt{updateElevator}.
 
-    \begin{algorithm}[htb]
+    \begin{algorithm}[htb!]
       \centering
         \begin{minted}[linenos,fontsize=\small]{c++}
 Building::step() {
@@ -839,7 +839,7 @@ Building::step() {
     vez excluindo das opções o elevador que acabou de parar ali (linhas 17 a
     22).
 
-    \begin{algorithm}[htb]
+    \begin{algorithm}[htb!]
       \centering
         \begin{minted}[linenos,fontsize=\small]{c++}
 Building::updateElevator(Elevator elevator) {
@@ -875,12 +875,10 @@ Building::updateElevator(Elevator elevator) {
 
 \begin{figure}[htb!]
   \centering
-  \includegraphics[scale=0.6]{img/Model.eps}
-  \caption{Diagrama de classes do \textit{estado do sistema}.}
+  \includegraphics[scale=0.6]{img/Building}
+  \caption{Diagrama de classes do \textit{prédio}.}
 \label{fig:diagram:model}
 \end{figure}
-
-\unsure{Refazer a figura.}
 
 \section{\label{model:schedulers}Algoritmos de Agendamento}
 Neste trabalho, dois algoritmos de agendamento foram implementados, o
@@ -891,7 +889,7 @@ Ambos são implementados em classes próprias, que herdam de uma classe
 \texttt{Scheduler}. Este relacionamento pode ser visto mais claramente na
 Figura~\ref{fig:model:schedulers:uml:base}.
 
-\begin{figure}[htb]
+\begin{figure}[htb!]
   \centering
   \includegraphics[scale=0.6]{img/Scheduler}
   \caption{Diagrama de classes das \textit{estratégias de agendamento}.}
@@ -902,12 +900,10 @@ Os \textit{schedulers} têm apenas um método público, chamado \texttt{int
  schedule()}, que recebe como parâmetro a função de custo e um ponteiro para o
 prédio, além de, opcionalmente, um elevador para ser excluído.
 
-\unsure{Onde falamos de por que é importante excluir elevadores do schedule às
-  vezes? (Vanzella)}
-Excluir um elevador é importante, como foi falado na Seção XXX. Há um método
-protegido na classe \texttt{Scheduler}, chamado
-\texttt{getAvailableElevators()}, que retorna uma lista de elevadores, excluindo
-aqueles que não podem ser utilizados.
+Excluir um elevador é importante, como foi falado na Seção
+\ref{alg:building:state:update}. Há um método protegido na classe
+\texttt{Scheduler}, chamado \texttt{getAvailableElevators()}, que retorna uma
+lista de elevadores, excluindo aqueles que não podem ser utilizados.
 
 \subsection{\label{model:schedulers:simple}Simple}
 O \textit{Simple Scheduler}, como o nome sugere, tem um comportamento bem
@@ -923,7 +919,7 @@ que possui apenas um método público, \texttt{float calculate()}, que retorna o
 valor da função para aquela combinação entre o elevador e o cliente. Isto pode
 ser visto em mais detalhes na Figura~\ref{fig:model:costfunction:uml:base}.
 
-\begin{figure}[htb]
+\begin{figure}[htb!]
   \centering
   \includegraphics[scale=0.6]{img/CostFunction}
   \caption{Diagrama de classes das \textit{funções de custo}.}
