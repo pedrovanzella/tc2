@@ -1,6 +1,6 @@
 \chapter{\label{chap:model}Modelo e Implementação}
 
-Conforme visto na seção~\ref{simulator:flow}, um sistema de simulação possui uma
+Conforme visto na Seção~\ref{simulator:flow}, um sistema de simulação possui uma
 série de componentes conceituais, cada um com suas responsabilidades bem
 definidas. Para projetar um simulador, diversas abordagens e paradigmas poderiam
 ser aplicadas. Neste estudo optou-se pelo paradigma de \textit{Programação
@@ -92,7 +92,7 @@ as classes concretas que a especializam, representando os eventos de
 
 \section{\label{sec:model:event}Gerenciamento de eventos}
 
-Na seção~\ref{simulator:flow} foram apresentados os componentes de um simulador.
+Na Seção~\ref{simulator:flow} foram apresentados os componentes de um simulador.
 Alguns destes componentes devem reagir na ocorrência de um evento, alterando o
 seu estado interno de acordo com o tipo de evento ocorrido e as informações que
 ele carrega consigo. Porém resta saber qual evento será o próximo a ocorrer e
@@ -126,7 +126,7 @@ Em um prédio no mundo real, esta distribuição varia de acordo com a hora do d
 Por exemplo, nos horários do início do turno da manhã e no início do turno da
 tarde, muito mais passageiros chegam ao térreo, com destino ao andar onde
 trabalham. Para fim de simplificação, esta variação ao longo do dia não foi
-considerada neste estudo. Conforme visto na seção \ref{model:scenario}, cada
+considerada neste estudo. Conforme visto na Seção \ref{model:scenario}, cada
 andar do prédio possui um valor para $\lambda$, que permanece constante no
 decorrer de toda a simulação.
 
@@ -180,7 +180,7 @@ prédio possui uma instância desta classe. Seus componentes são:
   sequência, é sorteado o andar de destino pela distribuição discreta também
   específica do andar. Feito isso, é criado um novo evento do tipo
   \textbf{chegada de cliente} com as informações sorteadas e tendo como origem o
-  andar atual. No fim, o evento criado é adicionado à fila de eventos (seção
+  andar atual. No fim, o evento criado é adicionado à fila de eventos (Seção
   \ref{model:queue}).
     \begin{algorithm}[htb]
       \centering
@@ -206,7 +206,7 @@ EventFactory::getNextDestination() {
 
 \subsection{Priorização} \label{model:queue}
 
-Na seção~\ref{simulator:movation:discrete} foi apresentado o \textit{mecanismo
+Na Seção~\ref{simulator:movation:discrete} foi apresentado o \textit{mecanismo
 de avanço de tempo para o próximo evento}, onde deve-se verificar, em uma lista
 de eventos, qual é o próximo evento a ocorrer. Dado um conjunto de eventos
 agendados (ou seja, ainda não ocorridos), o primeiro evento a ocorrer é
@@ -453,14 +453,14 @@ outras classes e um método que implementa o laço de execução do simulador.
 
 O Algoritmo \ref{alg:sim} mostra um pseudocódigo de como funciona o laço de
 execução da simulação. Na linha 2, uma instância da classe \texttt{Building}
-(seção \ref{model:state:building}) é criada baseada nos atributos definidos para
+(Seção \ref{model:state:building}) é criada baseada nos atributos definidos para
 o cenário \ref{model:scenario}. Nas linhas 4 a 6, os objetos \textit{observers}
 se registram no \textit{notifier} para receberem notificações de eventos. É
 importante frisar que a ordem na qual se registram é a mesma ordem na qual serão
 notificados da ocorrência de eventos. Nas linhas 8 a 10, é criado um evento para
 marcar o fim da simulação e o mesmo é adicionado à \textit{fila de eventos}. Na
 linha 12, são inicializados os eventos de chegada de clientes em cada um dos
-andares (seção \ref{model:state:building}). Por fim, o simulador entra em um
+andares (Seção \ref{model:state:building}). Por fim, o simulador entra em um
 laço indefinido nas linhas 14 a 17. A cada iteração do laço é retirado o próximo
 evento da fila e os \textit{observers} são notificados. O laço permanece em
 execução enquanto houver eventos disponíveis na fila ou até atingir o tempo
@@ -634,7 +634,7 @@ os seguintes atributos:
     e implicitamente separam-se em duas filas: uma para subir e outra para
     descer.} a partir do andar.
     \item[\texttt{downLine}] Fila contendo os clientes que desejam descer a partir do andar.
-    \item[\texttt{eventFactory}] Instância da classe \texttt{EventFactory} (seção \ref{model:eventfactory}) do andar.
+    \item[\texttt{eventFactory}] Instância da classe \texttt{EventFactory} (Seção \ref{model:eventfactory}) do andar.
   \end{description}
 
 \subsection{Elevador}
@@ -817,8 +817,8 @@ Building::doFinishSimulation(FinishSimulation event) {
 
 \section{\label{model:schedulers}Algoritmos de Agendamento}
 Neste trabalho, dois algoritmos de agendamento foram implementados, o
-\textit{Simple Scheduler} (seção~\ref{model:schedulers:simple}) e o
-\textit{Planning Scheduler} (seção~\ref{model:schedulers:planning}).
+\textit{Simple Scheduler} (Seção~\ref{model:schedulers:simple}) e o
+\textit{Planning Scheduler} (Seção~\ref{model:schedulers:planning}).
 
 Ambos são implementados em classes próprias, que herdam de uma classe
 \texttt{Scheduler}. Este relacionamento pode ser visto mais claramente na
