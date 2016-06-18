@@ -940,7 +940,37 @@ int SimpleScheduler::schedule(
 \end{algorithm}
 
 \subsection{\label{model:schedulers:planning}Planning}
-\lipsum[5]
+A idéia por trás do algoritmo de Planning é simples, ainda que sua implementação
+possa parecer complexa, como visto nos
+Algoritmos~\ref{alg:scheduler:planning:chamada}~
+e~\ref{alg:scheduler:planning:steps}.
+
+Primeiramente faz-se uma cópia profunda do simulador inteiro, contendo todo o
+estado atual da simulação, bem como uma cópia da lista de clientes, e de
+elevadores, excluindo-se um possível elevador que esteja cheio. Isto é feito
+pelo Algoritmo~\ref{alg:scheduler:planning:chamada}. Ele então chama o
+Algoritmo~\ref{alg:scheduler:planning:steps}.
+
+Este segundo algoritmo vai agendar um elevador para atender um cliente na cópia
+da simulação que recebeu, e avançar o relógio da mesma até o ponto em que o
+elevador teria atendido este chamado. Isto é feito iterativamente, já que o
+elevador pode ter uma agenda complexa, com várias paradas em diferentes andares.
+O custo calculado para este elevador é proporcional ao tempo de simulação que
+ele demora entre seu estado atual e o ponto em que atenderia o cliente.
+
+O custo total é calculado chamando-se recursivamente esta função, com uma nova
+cópia desta cópia do simulador, agora em seu estado modificado, para os demais
+elevadores e clientes.
+
+Deste modo, gera-se algo como uma árvore de execuções, onde cada nodo é uma
+combinação elevador-cliente, associado de um custo proporcional ao tempo de simulação.
+
+Cada nodo soma a si o custo do seu filho de menor custo. Desta forma, no retorno
+da recursão, tem-se sempre o menor custo para um nodo. Ao fim da
+recursão~-~\textit{i.e.} quando o horizonte de \textit{planning} for
+encontrado~-~, tem-se automaticamente o par elevador-custo de menor custo. Este
+é o próximo passo que deve ser tomado: agendar este elevador para o primeiro
+cliente da fila.
 
 \begin{algorithm}[htb!]
   \centering
@@ -1025,8 +1055,6 @@ As funções de custo herdam de uma classe base, chamada \texttt{CostFunction},
 que possui apenas um método público, \texttt{float calculate()}, que retorna o
 valor da função para aquela combinação entre o elevador e o cliente. Isto pode
 ser visto em mais detalhes na Figura~\ref{fig:model:costfunction:uml:base}.
-
-\unsure{Talvez seja melhor explicar estes métodos seguindo o padrão utilizado nas seções anteriores para explicar as demais classes a manter o padrão.}
 
 \begin{figure}[htb!]
   \centering
