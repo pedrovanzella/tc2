@@ -946,7 +946,32 @@ Olhando-se a Figura~\ref{fig:model:costfunction:uml:base}, nota-se que ela é a
 inicializar-se a geração de números aleatórios, de modo a gerar estes números de
 forma consistente.
 
-\unsure{Colocar algoritmo.}
+\begin{algorithm}[htb!]
+  \centering
+  \begin{minted}[linenos,fontsize=\small]{c++}
+
+RandomCostFunction::RandomCostFunction()
+ : _seed("54TH7hboAG1iOsDIDhJp")
+ , _seed_seq(_seed.begin(), _seed.end())
+ , _generator(_seed_seq)
+{}
+
+float RandomCostFunction::calculate(
+    Building building,
+    Elevator elevator,
+    Client client) {
+
+  if (_distribution == nullptr) {
+    auto number_of_floors = building->getSimulator()->getScenario()->getFloorCount();
+    _distribution = (0.0, number_of_floors);
+  }
+
+  auto dist = *_distribution;
+  return dist(_generator);
+}
+  \end{minted}
+  \caption{\label{alg:random_cf}Algoritmo de Função de Custo \textit{Random}.}
+\end{algorithm}
 
 \subsection{\label{model:costfunctions:nn}Nearest Neighbour}
 Esta função de custo retorna, como custo, a distância do
@@ -971,15 +996,39 @@ float NearestNeighbourCostFunction::calculate(
   \caption{\label{alg:nn_cf}Algoritmo de Função de Custo \textit{Nearest Neighbour}.}
 \end{algorithm}
 
-\unsure{Colocar algoritmo.}
-
 \subsection{\label{model:costfunctions:bnn}Better Nearest Neighbour}
 A Função de Custo \textit{Better Nearest Neighbour} bonifica elevadores que
 estão indo na direção do chamado, dividindo seu custo por $\sqrt 2$ e bonifica
 mais ainda os elevadores parados, dividindo seu custo por $2$. O custo antes
 deste bônus é calculado de maneira igual à \textit{Nearest Neighbour}.
 
-\unsure{Colocar algoritmo.}
+\begin{algorithm}[htb!]
+  \centering
+  \begin{minted}[linenos,fontsize=\small]{c++}
+float BetterNearestNeighbourCostFunction::calculate(
+      Building building,
+      Elevator elevator,
+      Client client) {
+
+    auto where_it_is = elevator->getLocation();
+    auto where_to = client->getArrivalFloor();
+    auto distance = where_it_is - where_to;
+
+    auto floors = building->getFloors();
+    auto current_floor = floors->at(where_it_is);
+    auto request_floor = floors->at(where_to);
+
+    if (elevator->getStatus() == Status::Idle)
+      return abs(distance) / std::sqrt(4.0);
+
+    if (elevator->getDirection() == current_floor->compareTo(*request_floor))
+      return abs(distance) / std::sqrt(2.0);
+
+    return abs(distance);
+}
+  \end{minted}
+  \caption{\label{alg:bnn_cf}Algoritmo de Função de Custo \textit{Better Nearest Neighbour}.}
+\end{algorithm}
 
 \subsection{\label{model:costfunctions:weighted}Weighted}
 A Função \textit{Weighted} toma uma decisão diferente da \textit{Better Nearest
@@ -987,10 +1036,26 @@ A Função \textit{Weighted} toma uma decisão diferente da \textit{Better Neare
 elevadores parados ou elevadores que estão indo na direção do cliente, esta
 função bonifica elevadores mais vazios, dividindo o custo (que é a distância
 entre o cliente e o elevador) pela ocupação do elevador.\footnote{Como foi visto
-na Seção~XXX, podemos inferir a ocupação pela balança interna do elevador, em
+no Capítulo~\ref{chap:ai}, podemos inferir a ocupação pela balança interna do elevador, em
 alguns cenários reais.}
-\unsure{Seção XXX (Vanzella)}
-\unsure{Colocar algoritmo.}
+
+\begin{algorithm}[htb!]
+  \centering
+  \begin{minted}[linenos,fontsize=\small]{c++}
+float WeightedCostFunction::calculate(
+      Building building,
+      Elevator elevator,
+      Client client) {
+
+    if (elevator->getOccupation() == 0.0)
+      return std::abs(client->getArrivalFloor() - elevator->getLocation());
+
+    return std::abs(client->getArrivalFloor() - elevator->getLocation())
+                    / std::sqrt(elevator->getOccupation());
+}
+  \end{minted}
+  \caption{\label{alg:weighted_cf}Algoritmo de Função de Custo \textit{Weighted}.}
+\end{algorithm}
 
 \section{Geração de Relatórios} \label{model:report}
 
