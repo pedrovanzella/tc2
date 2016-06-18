@@ -82,11 +82,12 @@ será escolhido.
 
 \section{\label{sec:ai:minimize-cost-function}Simple Scheduler}
 
-O primeiro algoritmo de IA a ser testado é simples: define-se uma
-função de custo, inerente a cada elevador, que descreve quão custoso
-é atender uma chamada, comparado a não atendê-la~\cite{Friese20061908}.
-A decisão de qual elevador é escolhido para atender a chamada é feita com base
-em qual deles terá o menor valor da função de custo.
+Podemos definir estes algoritmos, de forma mais genérica, como funções de custo.
+Estas funções são inerentes a cada elevador, descrevendo quão custoso é
+atender uma chamada~\cite{Friese20061908}. A decisão de qual elevador é
+escolhido para atender a chamada é feita com base em qual deles terá o menor
+valor da função de custo.
+
 
 Um exemplo de função de custo é:
 
@@ -183,16 +184,7 @@ Novamente, para esta função, o elevador $E1$ é eleito para atender a chamada.
 
 \subsection{Algoritmo}
 
-O Algoritmo~\ref{alg:cost-function} ilustra um algoritmo com o comportamento desta
-função. Os argumentos para este algoritmo são:
-
-\begin{description}[leftmargin=!,labelwidth=\widthof{\bfseries $costFunction$}]
-  \item[$client$] Abstração de um cliente;
-  \item[$elevatorset$] Conjunto de todos os elevadores do prédio;
-  \item[$costFunction$] Ponteiro para a função de cálculo de custo.
-\end{description}
-
-\begin{algorithm}[htb]
+\begin{algorithm}[htb!]
   \centering
     \begin{minted}[linenos,fontsize=\small]{c++}
 ChooseElevator(client, elevatorSet, costFunction) {
@@ -211,9 +203,19 @@ ChooseElevator(client, elevatorSet, costFunction) {
   \caption{\label{alg:cost-function}Minimização da \textit{função de custo}.}
 \end{algorithm}
 
+
+O Algoritmo~\ref{alg:cost-function} ilustra um algoritmo com o comportamento desta
+função. Os argumentos para este algoritmo são:
+
+\begin{description}[leftmargin=!,labelwidth=\widthof{\bfseries $costFunction$}]
+  \item[$client$] Abstração de um cliente;
+  \item[$elevatorset$] Conjunto de todos os elevadores do prédio;
+  \item[$costFunction$] Ponteiro para a função de cálculo de custo.
+\end{description}
+
 Seu funcionamento pode ser descrito como: dada uma chamada, para cada elevador
-presente no conjunto calcula-se o retorno da função de custo e o algoritmo
-retorna o elevador com a menor função de custo correspondente.
+presente no conjunto calcula-se a função de custo e o algoritmo retorna o
+elevador com a menor função de custo.
 
 \subsection{Nearest neighbour como função de custo}
 
