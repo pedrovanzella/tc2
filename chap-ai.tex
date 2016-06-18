@@ -39,7 +39,7 @@ chamada~\cite{Friese20061908}. Um dos problemas deste algoritmo é que ele pode
 causar muitas mudanças de direção de um elevador, o que acarreta um tempo de
 espera maior para os passageiros que estão dentro dele.
 
-Considere, por exemplo, o cenário da figura~\ref{fig:elevadores:nn:bad}. Este
+Considere, por exemplo, o cenário da Figura~\ref{fig:elevadores:nn:bad}. Este
 cenário é composto por um prédio de 8 andares com 3 elevadores. A situação dos
 elevadores é a seguinte:
 
@@ -84,7 +84,7 @@ destinos tem-se ``subir'', ``descer'' ou ``ambos''.
 Este algoritmo resolve o problema de mudanças de direção que o algoritmo de
 \textit{Nearest Neighbour} sofre.
 
-Considere, novamente, o caso ilustrado pela figura~\ref{fig:elevadores:nn:bad}.
+Considere, novamente, o caso ilustrado pela Figura~\ref{fig:elevadores:nn:bad}.
 Este algoritmo considerará apenas os elevadores que estão parados ou indo no
 sentido de onde a chamada foi originada. Neste caso, apenas os elevadores $E2$ e
 $E3$ serão considerados. O elevador $E3$ está mais próximo da chamada, então
@@ -135,7 +135,7 @@ Onde:
   \label{fig:elevadores-1}
 \end{figure}
 
-Utilizando como exemplo o cenário da figura~\ref{fig:elevadores-1}, onde uma
+Utilizando como exemplo o cenário da Figura~\ref{fig:elevadores-1}, onde uma
 chamada de corredor para descer\footnote{O sentido da chamada é representado
 pelo círculo com um \textbf{D}, de \textit{Down}.} é originada no oitavo andar.
 A situação de cada elevador é a seguinte:
@@ -189,7 +189,7 @@ seria:
 \[J(e, l, p) = l(\lambda(p - e))^{2}\]
 
 Esta função penaliza mais o movimento, elevando-o ao quadrado. Para o exemplo da
-figura~\ref{fig:elevadores-1}, tem-se:
+Figura~\ref{fig:elevadores-1}, tem-se:
 
 \[J(7, 0.2, 8) = 0.2 \times (2 \times (8-7))^2 = 0.8\]
 \[J(1, 0.1, 8) = 0.1 \times (1 \times (8-1))^2 = 6.4\]
@@ -201,8 +201,6 @@ Novamente, para esta função, o elevador $E1$ é eleito para atender a chamada.
 
 O algoritmo~\ref{alg:cost-function} ilustra um algoritmo com o comportamento desta
 função. Os argumentos para este algoritmo são:
-
-\newpage
 
 \begin{description}[leftmargin=!,labelwidth=\widthof{\bfseries $costFunction$}]
   \item[$client$] Abstração de um cliente;
@@ -240,8 +238,8 @@ outro elevador poderá ter um retorno da função de custo melhor do que zero.
 
 \subsection{Nearest neighbour como função de custo}
 
-É possível definir o algoritmo de \textit{Nearest Neighbour} (apresentado na
-seção~\ref{sec:ai:nn}) como uma função de custo:
+É possível definir o algoritmo de \textit{Nearest Neighbour}
+(Seção~\ref{sec:ai:nn}) como uma função de custo:
 
 \[J(e, p) = p - e\]
 
@@ -254,7 +252,7 @@ Neste algoritmo, é realizada a expansão no espaço de estados em uma árvore d
 decisões, avaliando-se para cada passo o tempo que um elevador levará para
 chegar até o estado desejado, vários passos no
 futuro~\cite{Koehler00elevatorcontrol}, como em um jogo de xadrez. Em cada nodo
-desta árvore de decisões (figura~\ref{fig:planning}) é feita a pergunta:
+desta árvore de decisões (Figura~\ref{fig:planning}) é feita a pergunta:
 \textit{qual elevador deve atender qual chamada}?
 
 A expansão da árvore pode ocorrer diversas vezes, fazendo com que a árvore de
@@ -280,18 +278,18 @@ chegada de cliente, dado que é impossível, no mundo real, prever quando um
 cliente novo chegará.\footnote{O simulador tem esta capacidade, mas isto não
   seria justo, já que um sistema real não tem como ter este tipo de informação.}
 
-Na figura~\ref{fig:planning}, vemos um exemplo hipotético de \textit{planning}
+Na Figura~\ref{fig:planning}, vemos um exemplo hipotético de \textit{planning}
 sendo executado com $N = 3$ e $E = 2$. Para cada nível da árvore a decisão a ser
 tomada é ``qual elevador deve atender a próxima chamada da fila?'', e, para
 isto, calcula-se o custo de tempo para cada elevador. O resultado do custo
 pode ser visto entre parênteses em cada nodo da árvore da
-figura~\ref{fig:planning}.
+Figura~\ref{fig:planning}.
 
-Ao atingir o horizonte (no caso da figura~\ref{fig:planning}, no nível 3 da
-árvore), soma-se os custos até cada folha (na figura~\ref{fig:planning}, os
+Ao atingir o horizonte (no caso da Figura~\ref{fig:planning}, no nível 3 da
+árvore), soma-se os custos até cada folha (na Figura~\ref{fig:planning}, os
 círculos abaixo do nível mais baixo representam a soma dos custos até aquela
 folha). O caminho que leva ao menor custo total é o que deve ser tomado. No
-exemplo da figura~\ref{fig:planning}, o elevador $E2$ será agendado para atender
+exemplo da Figura~\ref{fig:planning}, o elevador $E2$ será agendado para atender
 a primeira chamada da fila. O agendamento das demais chamadas é gerado somente
 na próxima execução do \textit{scheduler}. Isto se dá pelo fato de que o estado
 do simulador pode ter sido alterado pela chegada de um cliente neste meio tempo.
