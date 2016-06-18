@@ -229,7 +229,7 @@ elevador ($e$) e o número do andar onde a chamada foi originada ($p$).
 
 \section{\label{sec:ai:planning}Planning}
 
-Neste algoritmo, é realizada a expansão no espaço de estados em uma árvore de
+Neste algoritmo é realizada a expansão no espaço de estados em uma árvore de
 decisões, avaliando-se para cada passo o tempo que um elevador levará para
 chegar até o estado desejado, vários passos no
 futuro~\cite{Koehler00elevatorcontrol}, como em um jogo de xadrez. Em cada nodo
@@ -247,7 +247,7 @@ O parâmetro que limita a expansão da árvore é chamado de \textit{horizonte d
 cálculo}. O valor deste horizonte é arbitrário e representa o número de níveis
 da expansão. Em uma regra geral, quanto maior o horizonte de cálculo maior a
 chance do algoritmo tomar a melhor escolha. Porém, a complexidade de memória
-$O(N^{E})$, onde $N$ é o horizonte de cálculo e $E$ é o número de elevadores,
+$O(N^{N})$, onde $N$ é o horizonte de cálculo e $E$ é o número de elevadores,
 é um fator limitador do horizonte de cálculo.
 
 Para cada nodo da árvore, instancia-se um simulador novo e executa-se esta
@@ -269,7 +269,7 @@ Figura~\ref{fig:planning}.
 Ao atingir o horizonte (no caso da Figura~\ref{fig:planning}, no nível 3 da
 árvore), soma-se os custos até cada folha (na Figura~\ref{fig:planning}, os
 círculos abaixo do nível mais baixo representam a soma dos custos até aquela
-folha). O caminho que leva ao menor custo total é o que deve ser tomado. No
+folha). O caminho de menor custo total é o que deve ser tomado. No
 exemplo da Figura~\ref{fig:planning}, o elevador $E2$ será agendado para atender
 a primeira chamada da fila. O agendamento das demais chamadas é gerado somente
 na próxima execução do \textit{scheduler}. Isto se dá pelo fato de que o estado
