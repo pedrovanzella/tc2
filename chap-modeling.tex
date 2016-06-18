@@ -1120,5 +1120,47 @@ arquivos de saída.
 \end{listing}
 
 Um script em Python é chamado para cada arquivo de desembarques, de modo a
-processá-lo e gerar estes gráficos.
+processá-lo e gerar estes gráficos. Este script lê o arquivo, que está em
+formato CSV, e chama uma função para cada tipo de gráfico da
+Listagem~\ref{alg:graphs:output}. Exemplos destes gráficos podem ser vistos a
+seguir, nas
+Figuras~\ref{fig:graphs:arrivalsperfloor},~\ref{fig:graphs:averagewaittime},
+~\ref{fig:graphs:clientsperelevator},~\ref{fig:graphs:dropoffsPerFloor}~
+e~\ref{fig:graphs:averageTravelTime}.
+
+\begin{figure}[htb!]
+  \centering
+  \includegraphics[scale=0.8]{img/results/Low-rise/5_Planning_Random/arrivalsPerFloor.eps}
+  \caption{Chegadas por andar}
+  \label{fig:graphs:arrivalsperfloor}
+\end{figure}
+
+\begin{figure}[htb!]
+  \centering
+  \includegraphics[scale=0.8]{img/results/Low-rise/5_Planning_Random/averageWaitTime.eps}
+  \caption{Tempo médio de espera por andar}
+  \label{fig:graphs:averagewaittime}
+\end{figure}
+
+\begin{figure}[htb!]
+  \centering
+  \includegraphics[scale=0.8]{img/results/Low-rise/5_Planning_Random/clientsPerElevator.eps}
+  \caption{Clientes por elevador}
+  \label{fig:graphs:clientsperelevator}
+\end{figure}
+
+\begin{figure}[htb!]
+  \centering
+  \includegraphics[scale=0.8]{img/results/Low-rise/5_Planning_Random/dropoffsPerFloor.eps}
+  \caption{Total de clientes entregues por andar}
+  \label{fig:graphs:dropoffsPerFloor}
+\end{figure}
+
+\begin{figure}[htb!]
+  \centering
+  \includegraphics[scale=0.2]{img/results/Low-rise/5_Planning_Random/averageTravelTime.eps}
+  \caption{Tempo médio de jornada de andar para andar}
+  \label{fig:graphs:averageTravelTime}
+\end{figure}
+
 
