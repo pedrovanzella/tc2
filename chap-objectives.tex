@@ -26,11 +26,6 @@ gerar, a partir das métricas obtidas, os seguintes gráficos: \textit{Clientes
 por Elevador}, \textit{Chegadas por Andar}, \textit{Desembarques por Andar} e
 \textit{Tempo de Jornada por Andar}.
 
-\unsure{Será que também botamos um exemplo ou somente uma breve descrição,
-  pra deixar esta seção mais simples? (Vanzella)
-
-  Resposta: dizer ``mostraremos exemplos na seção XXX''}
-
 \begin{description}[leftmargin=!,labelwidth=\widthof{\bfseries Tempo de Jornada por Andar}]
   \item[Clientes por Elevador]
     Este gráfico mostra a ocupação total de cada elevador, durante o período de
@@ -48,37 +43,6 @@ por Elevador}, \textit{Chegadas por Andar}, \textit{Desembarques por Andar} e
 
 Os relatórios e gráficos dão base para análise e proposta de uma estratégia (ou
 um conjunto de estratégias) para serem implementados em prédios já existentes.
-
-\section{\label{sec:objectives:planning}Planning}
-
-\unsure{Estou na dúvida se esta seção fica e/ou se ela fica nessa posição.
-(Taschetto)
-
-Resposta: e o SIMPLE onde é descrito?
-
-Acho que sai daqui, sim.}
-
-Os algoritmos de \textit{planning} se mostraram os mais promissores para a
-realização desta tarefa, dadas as limitações de tempo de desenvolvimento e a
-quantidade de dados disponíveis em sistemas reais de elevadores.
-
-Um algoritmo de \textit{planning}, conforme descrito na
-seção~\ref{sec:ai:planning}, tenta encontrar uma sequência de eventos que gere a
-melhor solução possível. Estes eventos podem ser quaisquer eventos que o sistema
-tenha controle. No caso de sistemas de elevadores, é possível controlar, por
-exemplo, qual elevador atenderá qual chamado em uma fila. Levando-se em conta os
-dados disponíveis no momento e, talvez, fazendo inferências a respeito de
-outros, é possível avançar alguns passos no futuro (por exemplo, atendendo
-vários eventos da fila). Um exemplo deste comportamento pode ser visto na
-seção~\ref{sec:ai:planning}.
-
-O algoritmo de \textit{planning} será comparado com os comportamentos mais
-triviais, como os descritos nas seções~\ref{sec:ai:nn}~e~\ref{sec:ai:nnm}. Além
-disto, a comparação de diferentes funções de custo e diferentes
-horizontes\footnote{Horizonte é a quantidade de passos no futuro que o algoritmo
-prevê. Mais detalhes podem ser vistos na seção~\ref{sec:ai:planning}.} será
-feita, avaliando quão vantajosa é a implementação de um destes algoritmos,
-comparado com a implementação dos algoritmos triviais.
 
 \section{\label{section:scenarios}Cenários de testes}
 
