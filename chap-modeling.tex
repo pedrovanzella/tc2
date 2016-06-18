@@ -679,7 +679,7 @@ classe estão expostas para o simulador da seguinte forma:
 
 \begin{description}
   \item[Inicializar a lista de chegadas de clientes] \hfill \\
-    Conforme visto nas seções \ref{model:event:creation} e \ref{model:floor}, há
+    Conforme visto nas Seções \ref{model:event:creation} e \ref{model:floor}, há
     um objeto da classe \texttt{EventFactory} para cada objeto \texttt{Floor} do
     prédio. O objeto \texttt{Building} é responsável por realizar a invocação do
     \texttt{EventFactory} para criar novos eventos de chegada de cliente e
@@ -704,21 +704,16 @@ Building::initializeArrivals() {
       \label{alg:building:init}
     \end{algorithm}
 
-  \item[Atualizar o seu estado interno] \hfill \\
-    \lipsum[2]
-    \unsure{Seção pendente.}
-
   \item[Reagir à ocorrência de eventos] \hfill \\
     Como o estado interno deve ser alterado na ocorrência de eventos, o
     \texttt{Building} implementa a interface \texttt{EventObserver} conforme o
     Algoritmo \ref{alg:building:notify}. Nas linhas 2 a 4 do método é feita a
     atualização do estado interno do prédio para refletir o que ocorreu no
-    interim entre o momento do último evento processado (relógio atual da
-    simulação) e o evento que está sendo notificado~-~como o \textit{prédio}
-    recebe notificações antes do \textit{relógio do sistema}, o segundo ainda
-    está no estado referente ao evento ocorrido anteriormente. Com o estado do
-    prédio atualizado, o evento recebido pode ser processado de acordo com o seu
-    tipo (linhas 7 e 11).
+    interim entre o momento do último evento processadoe o que está sendo
+    notificado~-~como o \textit{prédio} recebe notificações antes do
+    \textit{relógio do sistema}, o segundo ainda está no estado referente ao
+    evento ocorrido anteriormente. Com o estado do prédio atualizado, o evento
+    recebido pode ser processado de acordo com o seu tipo (linhas 7 e 11).
 
     \begin{algorithm}[htb]
       \centering
@@ -797,6 +792,84 @@ Building::doFinishSimulation(FinishSimulation event) {
         \end{minted}
       \caption{\textit{Prédio} reagindo ao \textit{fim da simulação}.}
       \label{alg:building:finish}
+    \end{algorithm}
+
+  \item[Atualizar o seu estado interno] \hfill \\
+
+    Atualizar o estado interno do prédio é uma tarefa essencial para o correto
+    funcionamento de um simulador de elevadores. O
+    Algoritmo~\ref{alg:building:state:step} avança este estado em 1 unidade de
+    tempo no futuro. Em \texttt{step} é realizado o incremento do valor do
+    \textit{relógio da simulação} e iterado sobre cada um dos elevadores do
+    prédio, atualizando a situação de cada um deles ao invocar o método
+    \texttt{updateElevator}.
+
+    \begin{algorithm}[htb]
+      \centering
+        \begin{minted}[linenos,fontsize=\small]{c++}
+Building::step() {
+  clock.advanceBy(1);
+  for each (elevator in elevators) {
+    updateElevator(elevator);
+  }
+}
+        \end{minted}
+      \caption{\textit{Prédio} atualizando seu \textit{estado interno} em 1 \textit{unidade de tempo}.}
+      \label{alg:building:state:step}
+    \end{algorithm}
+
+    Já o Algoritmo~\ref{alg:building:state:update} detalha esta atualização no
+    contexto de um elevador. Nas linhas 2 a 5 é feita a atribuição de um novo
+    destino (se houver) para o elevador caso ele esteja ocioso (\textit{idle}).
+    Internamente, este método também já define a direção de movimento baseada na
+    localização atual do elevador e na do destino. Após, o elevador se
+    move\footnote{A menos que esteja ocioso. Neste caso, permanece no local onde
+    se encontra.} (linha 7).
+
+    Se, após mover-se, houver uma parada programada deste elevador no andar e na
+    direção em que o mesmo se encontra, esta parada é realizada marcada como
+    realizada no \textit{gerenciador de paradas} (linha 12). Após é realizado o
+    desembarque de passageiros se dirigindo ao andar atual (linha 14) e embarque
+    de novos passageiros (linha 15).
+
+    Neste momento há uma peculiaridade. Se, após o embarque, ainda houver
+    clientes na fila daquele andar naquela direção, significa que a ocupação do
+    elevador lotou e estas pessoas ainda não conseguiram embarcar. Neste caso, é
+    feita uma nova execução do \textit{algoritmo de agendamento}~-~ porém desta
+    vez excluindo das opções o elevador que acabou de parar ali (linhas 17 a
+    22).
+
+    \begin{algorithm}[htb]
+      \centering
+        \begin{minted}[linenos,fontsize=\small]{c++}
+Building::updateElevator(Elevator elevator) {
+  if (elevator.getStatus() == Idle) {
+    nextDestination = getNextDestination(elevator);
+    elevator.setDestination(nextDestination);
+  }
+
+  elevator.move();
+  location = elevator.getLocation();
+  direction = elevator.getDirection();
+
+  if (mustStop(elevator, location, direction)) {
+    stopManager.clear(location, elevator, direction);
+
+    elevator.dropPassengers();
+    location.boardElevator(elevator, direction, stopManager);
+
+    if (!location.getLine(direction).empty()) {
+      if (!stopManager.hasStop(location, direction)) {
+        client = location.getLine().front();
+        newElevator = scheduler.schedule(costFunction, building, client, elevator);
+        stopManager.set(location, direction, newElevator);
+      }
+    }
+  }
+}
+        \end{minted}
+      \caption{Atualizando o \textit{estado interno} de um \textit{elevador}.}
+      \label{alg:building:state:update}
     \end{algorithm}
 \end{description}
 

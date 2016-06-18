@@ -10,7 +10,7 @@ que define o cenário \textit{Low-rise}. A Tabela \ref{tab:results:lowrise}
 mostra os resultados\footnote{Destacados encontram-se os melhores resultados
 obtidos para cada métrica.} obtidos após a simulação.
 
-\begin{listing}[htb]
+\begin{listing}[htb!]
   \centering
     \begin{minted}[linenos,fontsize=\small]{yaml}
   # ...
@@ -45,13 +45,25 @@ obtidos para cada métrica.} obtidos após a simulação.
 \end{tabular}
 \end{table}
 
+O \textit{tempo de espera médio} do \textit{planning} foi apenas $5.41\%$ melhor
+em relação ao segundo colocado (\textit{better nearest neighbour}). Entretanto,
+somado ao fato do \textit{desvio padrão} ter sido $12\%$ melhor, é uma forte
+indicação de que \textit{planning} é a melhor estratégia para este cenário.
+
+\begin{figure}[htb!]
+  \centering
+  \includegraphics[scale=0.6]{img/low-rise-average-times-chart}
+  \caption{Gráfico de resultados para o cenário \textit{Low-rise}.}
+  \label{fig:result:average:low-rise}
+\end{figure}
+
 \section{Cenário \textit{High-rise}}
 A Listagem \ref{lst:config:highrise} exibe um excerto do arquivo de configuração
 que define o cenário \textit{High-rise}. A Tabela \ref{tab:results:highrise}
 mostra os resultados\footnote{Destacados encontram-se os melhores resultados
 obtidos para cada métrica.} obtidos após a simulação.
 
-\begin{listing}[htb]
+\begin{listing}[htb!]
   \centering
     \begin{minted}[linenos,fontsize=\small]{yaml}
   # ...
@@ -88,13 +100,26 @@ obtidos para cada métrica.} obtidos após a simulação.
 \end{tabular}
 \end{table}
 
+Em cenários maiores e com um maior número de clientes percorrendo o prédio, os
+ganhos em se utilizar \textit{planning} ficam ainda mais evidentes. Neste
+cenário, seu \textit{tempo de espera médio} foi $35.74\%$ melhor em relação ao
+segundo colocado (\textit{better nearest neighbour}). Já o \textit{desvio padrão}
+foi $31.28\%$ melhor.
+
+\begin{figure}[htb!]
+  \centering
+  \includegraphics[scale=0.6]{img/high-rise-average-times-chart}
+  \caption{Gráfico de resultados para o cenário \textit{High-rise}.}
+  \label{fig:result:average:high-rise}
+\end{figure}
+
 \section{Cenário \textit{Skyscraper}}
 A Listagem \ref{lst:config:skyscraper} exibe um excerto do arquivo de
 configuração que define o cenário \textit{Skyscraper}. A Tabela
 \ref{tab:results:skyscraper} mostra os resultados\footnote{Destacados encontram-
 se os melhores resultados obtidos para cada métrica.} obtidos após a simulação.
 
-\begin{listing}[htb]
+\begin{listing}[htb!]
   \centering
     \begin{minted}[linenos,fontsize=\small]{yaml}
   # ...
@@ -141,26 +166,18 @@ se os melhores resultados obtidos para cada métrica.} obtidos após a simulaç�
 \end{tabular}
 \end{table}
 
-\section{Clientes Transportados}
+Novamente, o crescimento do cenário - tanto em número de andares como em número
+de clientes - resultou em uma melhoria significativa dos resultados obtidos pelo
+\textit{planning}. No maior de todos os cenários simulados, obteve-se
+\textit{tempo de espera médio} e \textit{desvio padrão} $72.71\%$ e $79.70\%$
+superiores em relação ao segundo colocado, respectivamente.
 
-\unsure{Seção pendente.}
-\lipsum[5]
-
-\begin{table}[htb]
-\centering
-\caption{Clientes transportados.}
-\label{table:results:clients}
-\begin{tabular}{|l|c|c|c|c|c|c|}
-\hline
-\textbf{}                  & \multicolumn{2}{c|}{\textbf{Low-rise}} & \multicolumn{2}{c|}{\textbf{High-rise}} & \multicolumn{2}{c|}{\textbf{Skyscraper}} \\ \hline
-\textbf{Estratégia}        & \textit{Atendidos}  & \textit{Duração} & \textit{Transportados}  & \textit{Duração}  & \textit{Atendidos}   & \textit{Duração}  \\ \hline
-\textit{Simple / Random}   & 3132                & 43200            & 7313                & 43275             & 23832                & 45037             \\ \hline
-\textit{Simple / NN}       & 3132                & 43200            & 7313                & 43334             & 23832                & 45388             \\ \hline
-\textit{Simple / BNN}      & 3132                & 43200            & 7313                & 43349             & 23832                & 45131             \\ \hline
-\textit{Simple / Weighted} & 3132                & 43200            & 7313                & 43372             & 23832                & 44584             \\ \hline
-\textit{Planning}          & 3132                & 43200            & 7313                & 43341             & 23832                & 43688             \\ \hline
-\end{tabular}
-\end{table}
+\begin{figure}[htb!]
+  \centering
+  \includegraphics[scale=0.6]{img/skyscraper-average-times-chart}
+  \caption{Gráfico de resultados para o cenário \textit{Skyscraper}.}
+  \label{fig:result:average:skyscraper}
+\end{figure}
 
 \section{Tempo de Decisão do \textit{Planning}}
 
@@ -170,7 +187,7 @@ atender um cliente. Esta estatística é importante pois fornece uma medida do
 impacto pela aplicação da solução em um sistema real: o agendamento seria
 executado a cada vez que um botão de chamada é pressionado em todo o prédio.
 
-\begin{table}[htb]
+\begin{table}[htb!]
 \centering
 \caption{Tempo de decisão do \textit{planning}.}
 \label{table:results:time}
@@ -190,26 +207,3 @@ Observa-se que o tempo é muito reduzido para os cenários \textit{Low-rise} e
 considerar os resultados para tempo de espera, um tempo médio de 2.13 segundos e
 um máximo de 4.99 segundos não causam prejuízo significativo. Por estas razões,
 o desempenho do \textit{planning} foi considerado plenamente satisfatório.
-
-\section{Gráficos}
-
-\begin{figure}[htb]
-  \centering
-  \includegraphics[scale=0.8]{img/skyscraper-average-times-chart}
-  \caption[{Tempo médio de espera no cenário \textit{Skyscraper}.}]{Tempo médio de espera para diferentes estratégias no cenário \textit{Skyscraper}.}
-  \label{fig:result:average:skyscraper}
-\end{figure}
-
-\begin{figure}[htb]
-  \centering
-  \includegraphics[scale=0.8]{img/low-rise-average-times-chart}
-  \caption[Tempo médio de espera no cenário \textit{Low-rise}.]{Tempo médio de espera para diferentes estratégias no cenário \textit{Low-rise}.}
-  \label{fig:result:average:low-rise}
-\end{figure}
-
-\begin{figure}[htb]
-  \centering
-  \includegraphics[scale=0.8]{img/high-rise-average-times-chart}
-  \caption[Tempo médio de espera no cenário \textit{High-rise}.]{Tempo médio de espera para diferentes estratégias no cenário \textit{High-rise}.}
-  \label{fig:result:average:high-rise}
-\end{figure}
