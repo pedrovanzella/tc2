@@ -949,28 +949,20 @@ forma consistente.
 \begin{algorithm}[htb!]
   \centering
   \begin{minted}[linenos,fontsize=\small]{c++}
-
-RandomCostFunction::RandomCostFunction()
- : _seed("54TH7hboAG1iOsDIDhJp")
- , _seed_seq(_seed.begin(), _seed.end())
- , _generator(_seed_seq)
-{}
-
 float RandomCostFunction::calculate(
     Building building,
     Elevator elevator,
     Client client) {
 
-  if (_distribution == nullptr) {
-    auto number_of_floors = building.getSimulator().getScenario().getFloorCount();
-    _distribution = (0.0, number_of_floors);
+  if (distribution == null) {
+    number_of_floors = scenario.getFloorCount();
+    distribution = (0.0, number_of_floors);
   }
 
-  auto dist = *_distribution;
-  return dist(_generator);
+  return distribution();
 }
   \end{minted}
-  \caption{\label{alg:random_cf}Algoritmo de Função de Custo \textit{Random}.}
+  \caption{\label{alg:random_cf}Função de custo \textit{random}.}
 \end{algorithm}
 
 \subsection{\label{model:costfunctions:nn}Nearest Neighbour}
@@ -1009,15 +1001,15 @@ float BetterNearestNeighbourCostFunction::calculate(
       Elevator elevator,
       Client client) {
 
-    auto where_it_is = elevator.getLocation();
-    auto where_to = client.getArrivalFloor();
-    auto distance = where_it_is - where_to;
+    where_it_is = elevator.getLocation();
+    where_to = client.getArrivalFloor();
+    distance = where_it_is - where_to;
 
-    auto floors = building.getFloors();
-    auto current_floor = floors.at(where_it_is);
-    auto request_floor = floors.at(where_to);
+    floors = building.getFloors();
+    current_floor = floors.at(where_it_is);
+    request_floor = floors.at(where_to);
 
-    if (elevator.getStatus() == Status::Idle)
+    if (elevator.getStatus() == Idle)
       return abs(distance) / sqrt(4.0);
 
     if (elevator.getDirection() == current_floor.compareTo(request_floor))
@@ -1046,11 +1038,11 @@ float WeightedCostFunction::calculate(
       Elevator elevator,
       Client client) {
 
-    if (elevator->getOccupation() == 0.0)
+    if (elevator.getOccupation() == 0.0)
       return abs(client.getArrivalFloor() - elevator.getLocation());
 
     return abs(client.getArrivalFloor() - elevator.getLocation())
-               / sqrt(elevator->getOccupation());
+               / sqrt(elevator.getOccupation());
 }
   \end{minted}
   \caption{\label{alg:weighted_cf}Função de Custo \textit{Weighted}.}
