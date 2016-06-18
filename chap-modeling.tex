@@ -960,18 +960,16 @@ float NearestNeighbourCostFunction::calculate(
       Elevator elevator,
       Client client) {
 
-    auto where_it_is = elevator->getLocation();
-    auto where_to = client->getArrivalFloor();
+    where_it_is = elevator.getLocation();
+    where_to = client.getArrivalFloor();
+    distance = where_it_is - where_to;
 
-    auto distance = where_it_is - where_to;
-
-    return std::abs(distance);
+    return abs(distance);
 }
   \end{minted}
-  \caption{\label{alg:nn_cf}Algoritmo de Função de Custo \textit{Nearest Neighbour}.}
+  \caption{\label{alg:nn_cf}Função de custo \textit{nearest neighbour}.}
 \end{algorithm}
 
-\unsure{Colocar algoritmo.}
 
 \subsection{\label{model:costfunctions:bnn}Better Nearest Neighbour}
 A Função de Custo \textit{Better Nearest Neighbour} bonifica elevadores que
