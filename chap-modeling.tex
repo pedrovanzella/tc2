@@ -451,11 +451,11 @@ outras classes e um método que implementa o laço de execução do simulador.
 \label{fig:diagram:simulator}
 \end{figure}
 
-O Algoritmo \ref{alg:sim} mostra um pseudocódigo de como funciona o laço de
-execução da simulação. Na linha 2, uma instância da classe \texttt{Building}
-(Seção \ref{model:state:building}) é criada baseada nos atributos definidos para
-o cenário \ref{model:scenario}. Nas linhas 4 a 6, os objetos \textit{observers}
-se registram no \textit{notifier} para receberem notificações de eventos. É
+O Algoritmo \ref{alg:sim} mostra como funciona o laço de execução da simulação.
+Na linha 2, uma instância da classe \texttt{Building} (Seção
+\ref{model:state:building}) é criada baseada nos atributos definidos para o
+cenário \ref{model:scenario}. Nas linhas 4 a 6, os objetos \textit{observers} se
+registram no \textit{notifier} para receberem notificações de eventos. É
 importante frisar que a ordem na qual se registram é a mesma ordem na qual serão
 notificados da ocorrência de eventos. Nas linhas 8 a 10, é criado um evento para
 marcar o fim da simulação e o mesmo é adicionado à \textit{fila de eventos}. Na
@@ -504,11 +504,12 @@ cenário é composto pelas seguintes informações:
   Identificação textual do cenário.
 
   \item[Duração]
-  Tempo durante o qual serão geradas chegadas de clientes aos andares do prédio.
-  Após este tempo, não chegarão mais clientes. Porém, clientes que já entraram
-  no prédio e estão distribuídos nos andares e elevadores precisam terminar suas
-  viagens antes que a simulação chegue ao fim. Devido a isto, é normal que o
-  tempo real de simulação seja maior que a duração estipulada no cenário.
+  Quantidade de unidades de tempo durante a qual serão geradas chegadas de
+  clientes aos andares do prédio. Após esta duração, não chegarão mais clientes.
+  Porém, clientes que já entraram no prédio e estão distribuídos nos andares e
+  elevadores precisam terminar suas viagens antes que a simulação chegue ao fim.
+  Devido a isto, é normal que o duração final seja maior que a duração
+  estipulada no cenário.
 
   \item[Agendamento]
   Lista de algoritmos de agendamento.
@@ -552,7 +553,7 @@ formato de serialização de dados legíveis por humanos.
     \begin{minted}[linenos,fontsize=\small]{yaml}
 scenarios:
   - name: Scenario 1
-    duration: 43200 # 12 hours
+    duration: 86400
     scheduler: [ 0, 1 ] # simple, planning
     planningHorizon: 5
     cost_function: [ 0, 2, 3 ] # randon, bnn, weighted
@@ -705,6 +706,7 @@ Building::initializeArrivals() {
 
   \item[Atualizar o seu estado interno] \hfill \\
     \lipsum[2]
+    \unsure{Seção pendente.}
 
   \item[Reagir à ocorrência de eventos] \hfill \\
     Como o estado interno deve ser alterado na ocorrência de eventos, o
@@ -805,6 +807,8 @@ Building::doFinishSimulation(FinishSimulation event) {
 \label{fig:diagram:model}
 \end{figure}
 
+\unsure{Refazer a figura.}
+
 \section{\label{model:schedulers}Algoritmos de Agendamento}
 Neste trabalho, dois algoritmos de agendamento foram implementados, o
 \textit{Simple Scheduler} (Seção~\ref{model:schedulers:simple}) e o
@@ -816,7 +820,7 @@ Figura~\ref{fig:model:schedulers:uml:base}.
 
 \begin{figure}[htb]
   \centering
-  \includegraphics{doc/latex/class_scheduler__inherit__graph}
+  \includegraphics[scale=0.6]{img/Scheduler}
   \caption{Diagrama de classes das \textit{estratégias de agendamento}.}
   \label{fig:model:schedulers:uml:base}
 \end{figure}
@@ -848,7 +852,7 @@ ser visto em mais detalhes na Figura~\ref{fig:model:costfunction:uml:base}.
 
 \begin{figure}[htb]
   \centering
-  \includegraphics[scale=0.8]{doc/latex/class_cost_function__inherit__graph}
+  \includegraphics[scale=0.6]{img/CostFunction}
   \caption{Diagrama de classes das \textit{funções de custo}.}
   \label{fig:model:costfunction:uml:base}
 \end{figure}
