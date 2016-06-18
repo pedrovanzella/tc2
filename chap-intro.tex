@@ -8,19 +8,20 @@ aumente para 66\% até o ano 2050. Em números absolutos isto representa um
 acréscimo de 2,5 bilhões de pessoas à população urbana mundial nos próximos 35
 anos. Uma das consequências da alta densidade populacional em regiões
 geográficas limitadas é o crescimento do modelo de verticalização na construção
-civil. Neste cenário, onde prédios de diversos andares se tornam presença no
+civil. Neste cenário, onde prédios de diversos andares se tornam presentes no
 cotidiano da maioria da população, os elevadores\footnote{Dispositivos de
-transporte vertical que movimenta pessoas ou cargas entre andares ou níveis de
+transporte vertical que movimentam pessoas ou cargas entre andares ou níveis de
 um prédio ou estrutura.} passam a um papel de destaque.
 
-Uma pesquisa realizada pela IBM (figura \ref{fig:timecost}) no ano de 2010 em 16
+Uma pesquisa realizada pela IBM (Figura \ref{fig:timecost}) no ano de 2010 em 16
 cidades norte-americanas constatou que, durante 12 meses, o tempo estimado no
 qual trabalhadores de escritórios\footnote{Em uma força de trabalho total de 51
 milhões de trabalhadores, dos quais 12,7 milhões são usuários de elevadores
 diariamente~\cite{IBM10}.} aguardaram por elevadores foi de 92
 anos~\cite{IBM10}. Em uma economia onde o salário horário médio de um
 trabalhador é de US\$ 24,99, o tempo de espera por elevadores representa custos
-de mais de US\$ 20 bilhões em média por ano~\cite{BLS15}.
+de mais de US\$ 20 bilhões em média por ano~\cite{BLS15} somente nas cidades
+listadas.
 
 Além do impacto econômico existe o impacto psicológico. Trabalhadores em centros
 metropolitanos empreendem uma parcela significativa da sua rotina no
@@ -30,9 +31,9 @@ ruas, em carros, ônibus, bicicletas e metrôs, o tempo compreendido entre
 aguardar o elevador e desembarcar no andar desejado está longe de ser
 desprezível. De acordo com reportagem da revista Time, o \textit{everyday
 commute}, ou \textit{translado casa-trabalho e trabalho-casa} em uma tradução
-livre, pode causar uma série de efeitos físicos, como aumento nos níveis de
-açúcar, colesterol e dores nas costas, e psicológicos, como aumento na ansiedade
-e depressão \cite{Kylstra14}.
+livre, pode causar efeitos físicos, como aumento nos níveis de açúcar,
+colesterol e dores nas costas a psicológicos0 como aumento na ansiedade e
+depressão \cite{Kylstra14}.
 
 \begin{figure}[htb!]
 \centering\includegraphics{img/time-cost.eps}
@@ -45,7 +46,7 @@ primeiro, lidar com a pressão para a redução de custos na construção civil,
 construindo sistemas de grupos de elevadores mais baratos e eficientes, com
 melhorias no desempenho de transporte; segundo, competir no mercado oferecendo
 serviços novos, personalizados e com garantia de qualidade, visando revolucionar
-a maneira com que elevadores interagem e servem
+a maneira como elevadores interagem e servem
 passageiros~\cite{KOEHLEROTTIGER02}. Já sob o ponto de vista dos passageiros,
 estes esperam que suas chamadas sejam atendidas imediatamente e que sejam
 levados ao seu destino o mais rápido possível. Portanto, melhorias no desempenho
@@ -60,13 +61,12 @@ limitações na estrutura do prédio ou inviabilidade financeira. Uma solução 
 mais fácil aplicação é otimizar o sistema de controle dos elevadores.
 
 A função deste sistema é resolver um problema de otimização: atribuir elevadores
-para atender chamadas feitas pelos passageiros minimizando alguma métrica - mais
-adiante serão apresentadas as métricas de desempenho utilizadas. Entretanto,
-este problema encontra-se no conjunto de problemas NP-difícil (ou NP-hard, ou
-NP-completo)~\cite{SeKo99}. Portanto, uma solução ótima, computável em tempo
-polinomial, ainda não é conhecida para este problema.
+para atender chamadas feitas pelos passageiros minimizando alguma métrica.
+Entretanto, este problema encontra-se no conjunto de problemas NP-difícil (ou
+NP-hard, ou NP-completo)~\cite{SeKo99}. Portanto, uma solução ótima, computável
+em tempo polinomial, ainda não é conhecida para este problema.
 
-Desde meados dos anos 1980, a indústria de elevadores vem estudando e
+Desde meados dos anos 1980 a indústria de elevadores vem estudando e
 implementando estratégias para encontrar soluções sub-ótimas para o problema de
 otimização. Diversas técnicas de Inteligência Artificial foram adotadas, como
 redes neurais, algoritmos genéticos, lógicas \textit{fuzzy} e, mais
@@ -78,13 +78,12 @@ legados, i.e.,~que já estão instalados nos prédios.
 
 Ao analisar a tecnologia atual, percebe-se que houve pouca evolução nos
 elevadores desde sua concepção~-~sobretudo nos sistemas mais simples e mais
-baratos. De fato, o mecanismo que os faz mover evoluiu drasticamente, fato
+baratos. De fato, o mecanismo que os faz mover evoluiu drasticamente,
 evidenciado ao comparar máquinas de tração manual com máquinas elétricas
 modernas. No entanto, essas evoluções são de difícil percepção aos usuários de
 elevadores. O sistema de controle dos elevadores ainda é simples, utilizando-se
-muito pouco de técnicas de Inteligência Artificial para alterar seu
-comportamento em tempo de execução, apesar dos esforços da indústria ao longo
-das últimas décadas.
+muito pouco de técnicas de algoritmicas para alterar seu comportamento em tempo
+de execução, apesar dos esforços da indústria ao longo das últimas décadas.
 
 Acredita-se que tais técnicas permitam trazer uma evolução grande para os
 sistemas de controle de grupos de elevadores, assim como os motores elétricos

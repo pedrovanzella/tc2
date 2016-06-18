@@ -25,12 +25,10 @@ Orientada a Objetos}. Esta escolha se deu pelos seguintes motivos:
     a implementação.
 \end{description}
 
-Nas próximas seções serão apresentados os modelos e detalhes de implementação do
-simulador de elevadores.
-
-\textbf{Atenção: algumas simplificações foram realizadas nos modelos UML a fim
-de permitir uma melhor compreensão~-~por exemplo, omissão de métodos
-\textit{getters} e \textit{setters}.}
+Nas próximas seções serão apresentados os modelos\footnote{Algumas
+simplificações foram realizadas nos modelos UML a fim de permitir uma melhor
+compreensão~-~por exemplo, omissão de métodos \textit{getters} e
+\textit{setters}.} e detalhes de implementação do simulador de elevadores.
 
 \section{\label{model:scenario}Cenário}
 
@@ -56,7 +54,7 @@ cada um deles. Um cenário é composto pelas seguintes informações:
 
   \item[Horizonte]
 
-  Horizonte de expansão do agendamento com algoritmo de \textit{planning} (não utilizado no agendamento \textit{simple}).
+  Horizonte de expansão do agendamento com algoritmo de \textit{planning}.
 
   \item[Função de Custo]
 
@@ -84,9 +82,9 @@ cada um deles. Um cenário é composto pelas seguintes informações:
 
 \end{description}
 
-Convém salientar que o parâmetro de função de custo só será utilizado para o
-agendamento \textit{Simple}. Desta forma, será realizada uma simulação para cada
-função de custo.
+O parâmetro \textit{função de custo} será utilizado no agendamento
+\textit{Simple}\footnote{Será realizada uma simulação para cada função de
+custo.} e o parâmetro \textit{horizonte} no agendamento \textit{Planning}.
 
 \subsection{\label{model:scenario:config}Arquivo de Configuração}
 
@@ -118,11 +116,11 @@ scenarios:
   \label{alg:config}
 \end{algorithm}
 
-No exemplo do algoritmo~\ref{alg:config} são definidos alguns cenários. No
+No exemplo do algoritmo~\ref{alg:config} \unsure{Isto não é um algoritmo. Devemos listar dentro de um algorithm? Como mudar o caption?}são definidos alguns cenários. No
 primeiro, chamado \texttt{Scenario 1}, clientes chegarão durante 12 horas
-distribuídos ao longo dos 8 andares do prédio e serão atendidos por um dos 2
-elevadores, cuja capacidade é de 8 passageiros cada. Pode ser definido um
-número ilimitado de cenários no arquivo de entrada.
+distribuídos ao longo dos 8 andares do prédio e serão atendidos por 2
+elevadores, cuja capacidade é de 8 passageiros cada. Pode ser definido um número
+ilimitado de cenários no arquivo de entrada.
 
 Para representar as informações referentes a um cenário foi criada a classe
 \texttt{Scenario} (figura~\ref{fig:diagram:scenario}). Além de armazenar as
@@ -200,10 +198,10 @@ as classes concretas que a especializam, representando os eventos de
 Na seção~\ref{simulator:flow} foram apresentados os componentes de um simulador.
 Alguns destes componentes devem reagir na ocorrência de um evento, alterando o
 seu estado interno de acordo com o tipo de evento ocorrido e as informações que
-ele carrega consigo. Porém restam as questões de como saber qual evento será o
-próximo a ocorrer e como notificar os elementos reativos disso. Portanto,
-precisamos de mecanismos para criar e ordenar eventos e notificar os componentes
-da ocorrência de um evento.
+ele carrega consigo. Porém resta saber qual evento será o próximo a ocorrer e
+como notificar os elementos reativos disso. Portanto, precisamos de mecanismos
+para criar e ordenar eventos e notificar os componentes da ocorrência de um
+evento.
 
 \subsection{Criação} \label{model:event:creation}
 
@@ -217,7 +215,7 @@ que a chegada de clientes em um prédio é um processo estocástico.
 Segundo~\cite{Ross:2006:IPM:1197141}, a taxa de chegada de clientes é um
 processo de Poisson, com razão $\lambda$. Ou seja, o tempo entre novos clientes
 são variáveis independentes, com valor esperado $\frac{1}{\lambda}$. Pode-se ver
-na figura~\ref{fig:distribution:poisson} um exemplo de diferentes valores de
+na Figura~\ref{fig:distribution:poisson} um exemplo de diferentes valores de
 $\lambda$ gerando diferentes distribuições.
 
 \begin{figure}[htb!]
@@ -279,14 +277,14 @@ prédio possui uma instância desta classe. Seus componentes são:
   \end{description}
 
   O algoritmo \ref{alg:eventcreation} ilustra a criação de um novo evento.
-  Primeiro, o método \texttt{CreateFutureArrival} calcula o horário do novo
-  evento. Isto é feito somando-se o horário atual do \textit{relógio da
-  simulação} com um tempo sorteado pela distribuição de Poisson específica
-  daquele andar. Na sequência, é sorteado o andar destino pela distribuição
-  discreta também específica do andar. Feito isso, é criado um novo evento do
-  tipo \textbf{chegada de cliente} com as informações sorteadas e tendo como
-  origem o andar atual. No fim, o evento criado é adicionado à fila de eventos
-  (seção \ref{model:queue}).
+  Primeiro, \texttt{CreateFutureArrival} calcula o horário do novo evento. Isto
+  é feito somando-se o horário atual do \textit{relógio da simulação} com um
+  tempo sorteado pela distribuição de Poisson específica daquele andar. Na
+  sequência, é sorteado o andar de destino pela distribuição discreta também
+  específica do andar. Feito isso, é criado um novo evento do tipo
+  \textbf{chegada de cliente} com as informações sorteadas e tendo como origem o
+  andar atual. No fim, o evento criado é adicionado à fila de eventos (seção
+  \ref{model:queue}).
 
   \begin{algorithm}[htb]
   \begin{center}
@@ -500,8 +498,8 @@ representados pelas estruturas \texttt{Arrival} e \texttt{Trip} e pela classe
     \end{description}
 
   \item[Statistics] \hfill \\
-    Armazena as estatísticas coletadas durante a simulação e fornece cálculos
-    estatísticos sobre o volume de dados coletados no fim da simulação. Seus
+    Armazena as estatísticas coletadas durante a simulação e fornece
+    estatísticas sobre os dados coletados no fim da simulação. Seus
     métodos são:
 
     \begin{description}[leftmargin=!,labelwidth=\widthof{\bfseries destinationFloor}]
@@ -827,7 +825,7 @@ Neste trabalho, dois algoritmos de agendamento foram implementados, o
 \textit{Simple Scheduler} (seção~\ref{model:schedulers:simple}) e o
 \textit{Planning Scheduler} (seção~\ref{model:schedulers:planning}).
 
-Ambos algoritmos são implementados em classes próprias, que herdam de uma classe
+Ambos são implementados em classes próprias, que herdam de uma classe
 \texttt{Scheduler}. Este relacionamento pode ser visto mais claramente na
 figura~\ref{fig:model:schedulers:uml:base}.
 
@@ -844,7 +842,7 @@ prédio, além de, opcionalmente, um elevador para ser excluído.
 
 \unsure{Onde falamos de por que é importante excluir elevadores do schedule às
   vezes? (Vanzella)}
-Excluir um elevador é importante, como foi falado na Sessão XXX. Há um método
+Excluir um elevador é importante, como foi falado na Seção XXX. Há um método
 protegido na classe \texttt{Scheduler}, chamado
 \texttt{getAvailableElevators()}, que retorna uma lista de elevadores, excluindo
 aqueles que não podem ser utilizados.
@@ -860,9 +858,8 @@ custo para cada um, e retorna o de menor custo.
 \section{\label{model:costfunctions}Algoritmos de Função de Custo}
 As funções de custo herdam de uma classe base, chamada \texttt{CostFunction},
 que possui apenas um método público, \texttt{float calculate()}, que retorna o
-valor da função para aquela combinação entre o elevador e o cliente.
-
-Isto pode ser visto em mais detalhes na figura~\ref{fig:model:costfunction:uml:base}.
+valor da função para aquela combinação entre o elevador e o cliente. Isto pode
+ser visto em mais detalhes na Figura~\ref{fig:model:costfunction:uml:base}.
 
 \begin{figure}[htb]
   \centering
@@ -872,21 +869,23 @@ Isto pode ser visto em mais detalhes na figura~\ref{fig:model:costfunction:uml:b
 \end{figure}
 
 \subsection{\label{model:costfunctions:random}Random}
+
 A Função de Custo \textit{Random} serve como base de comparação para as demais.
-Ela retorna um valor aleatório entre zero e um cada vez que for chamada, e,
-portanto, deve resultar em um agendamento pior do que qualquer alternativa.
+Ela retorna um valor aleatório entre zero e o número de andares do prédio cada
+vez que for chamada, e, portanto, espera-se como resultado um agendamento não
+ótimo.
 
 Olhando-se a figura~\ref{fig:model:costfunction:uml:base}, nota-se que ela é a
 única função de custo com um construtor. Isto se dá por que é necessário
 inicializar-se a geração de números aleatórios, de modo a gerar estes números de
 forma consistente.
-\unsure{Vale a pena colocar o código deste construtor aqui? (Vanzella)}
 
 \subsection{\label{model:costfunctions:nn}Nearest Neighbour}
-Esta função de custo retorna, como custo, a distância em valor absoluto do
+Esta função de custo retorna, como custo, a distância do
 elevador para o cliente. Ela ignora a direção na qual o elevador está viajando.
 
-\unsure{Colocar o código aqui? Tem 2 linhas. (Vanzella)}
+\unsure{Colocar o código aqui? Tem 2 linhas. (Vanzella)
+Resposta: OK}
 
 \subsection{\label{model:costfunctions:bnn}Better Nearest Neighbour}
 A Função de Custo \textit{Better Nearest Neighbour} bonifica elevadores que
@@ -900,9 +899,9 @@ A Função \textit{Weighted} toma uma decisão diferente da \textit{Better Neare
 elevadores parados ou elevadores que estão indo na direção do cliente, esta
 função bonifica elevadores mais vazios, dividindo o custo (que é a distância
 entre o cliente e o elevador) pela ocupação do elevador.\footnote{Como foi visto
-na Sessão~XXX, podemos inferir a ocupação pela balança interna do elevador, em
+na Seção~XXX, podemos inferir a ocupação pela balança interna do elevador, em
 alguns cenários reais.}
-\unsure{Sessão XXX (Vanzella)}
+\unsure{Seção XXX (Vanzella)}
 
 \section{Geração de Relatórios} \label{model:report}
 

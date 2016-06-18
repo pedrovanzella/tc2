@@ -29,9 +29,7 @@ se encontram.} e \textbf{chamadas de cabine}\footnote{Passageiros estão dentro
 do elevador e realizam uma chamada para desembarcar em um andar destino.} em um
 dado instante. Para isto, utiliza como entrada um conjunto de dados que modelam
 o \textbf{estado atual do sistema}. Este conjunto de dados pode ser modelado,
-minimamente, pelas seguintes informações:\unsure{Devemos mostrar o ``mínimo'' aqui
-e na seção da modelagem apresentar como nós fizemos neste estudo ou já apresentar
-aqui a nossa modelagem? (Taschetto)}
+minimamente, pelas seguintes informações:
 
 \begin{itemize}
   \item Para cada andar:
@@ -45,9 +43,9 @@ aqui a nossa modelagem? (Taschetto)}
           passageiros embarcados;
     \item O andar em que se encontra;
     \item Se está parado, subindo ou descendo;
-    \item Sua lotação atual\footnote{A capacidade máxima \textbf{C} é uma
+    \item Sua lotação\footnote{A capacidade máxima \textbf{C} é uma
           propriedade do problema e é igual para todos os elevadores que compõem
-          o sistema.}.
+          o sistema.} atual estimada.
   \end{itemize}
 \end{itemize}
 
@@ -60,10 +58,6 @@ como saída:
     \item Qual elevador deverá atender esta chamada de modo a minimizar o tempo de espera.
   \end{itemize}
 \end{itemize}
-
-Para cada ocorrência deste evento devem existir estampas de tempo e informações
-adicionais associadas\footnote{Sobre o andar, o elevador e os passageiros.} para
-fins estatísticos e cálculos de métricas, conforme apresentado a seguir.
 
 \section{\label{section:data}Aquisição de dados e métricas}
 
@@ -80,18 +74,17 @@ complicadores~-~como, por exemplo, a dificuldade em lidar com as diferenças de
 iluminação, baixa qualidade de vídeo, baixa precisão de sensores, etc - e o
 resultado obtido não compensa o custo~\cite{KOEHLEROTTIGER02}.
 
-Neste contexto, a simulação de sistemas de elevadores torna-se uma alternativa
-atraente para obter métricas e avaliar o desempenho de um sistema na fase de
-projeto, antes da sua construção. Por exemplo, supondo que em um prédio de 10
-andares com 2 elevadores exista uma fila de 20 pessoas que desejam ir a andares
-variados do prédio; cada uma destas pessoas chegou à fila em um momento
-distinto; porém, a chamada de corredor foi realizada apenas pela primeira pessoa
-da fila. Como medir o tempo que cada passageiro ficou esperando pelo elevador
-chegar, sendo que somente a primeira pessoa da fila interagiu diretamente com o
-sistema? Ou como medir o tempo que cada pessoa levou para chegar ao seu destino?
-A modelagem do problema e simulação em ambiente computacional permitem obter
-dados que em um ambiente real seriam impossíveis ou muito caros de se conseguir.
-Tais dados podem compreender:
+A simulação de sistemas de elevadores torna-se uma alternativa atraente para
+obter métricas e avaliar o desempenho de um sistema na fase de projeto. Por
+exemplo, supondo que em um prédio de 10 andares com 2 elevadores exista uma fila
+de 20 pessoas que desejam ir a andares variados do prédio; cada uma destas
+pessoas chegou à fila em um momento distinto; porém, a chamada de corredor foi
+realizada apenas pela primeira pessoa da fila. Como medir o tempo que cada
+passageiro ficou esperando pelo elevador chegar, se somente a primeira
+pessoa da fila interagiu diretamente com o sistema? Ou como medir o tempo que
+cada pessoa levou para chegar ao seu destino? A modelagem do problema e
+simulação em ambiente computacional permitem obter dados que em um ambiente real
+seriam impossíveis ou muito caros de se conseguir. Tais dados podem compreender:
 
 \begin{itemize}
   \item Para cada andar:
@@ -122,8 +115,7 @@ de elevadores para avaliar o desempenho de seus sistemas podem ser calculadas:
   transportar em um intervalo de 5 minutos. Um HC\textsubscript{5\%} aceitável é
    de no mínimo 14\%~\cite{KOEHLEROTTIGER02}. Por exemplo, em um prédio cuja
    população é de 600 pessoas, este índice representa o transporte de no mínimo
-   84 pessoas em 5 minutos.\unsure{Precisamos falar disso uma vez que não
-   simulamos este tipo de situação? (Taschetto)}
+   84 pessoas em 5 minutos.
 
   \item[WT]
   \textit{Waiting Time}, ou tempo de espera; está compreendido entre a
@@ -135,7 +127,7 @@ de elevadores para avaliar o desempenho de seus sistemas podem ser calculadas:
    de um passageiro em um elevador e o posterior desembarque em seu destino.
 
   \item[ST]
-  \textit{System Time}, ou tempo de sistema; está compreendido entre entre a
+  \textit{System Time}, ou tempo de sistema; está compreendido entre a
   chegada de um passageiro e o desembarque em seu destino, ou seja, é a soma do
   tempo de espera com o tempo de jornada.
 
@@ -151,8 +143,7 @@ de elevadores para avaliar o desempenho de seus sistemas podem ser calculadas:
   \item[RTT]
   \textit{Round-trip Time}, ou tempo de ida e volta em uma tradução livre; é o
   tempo médio de uma viagem de um elevador partindo do lobby, indo até todos os
-  andares do prédio e de volta ao lobby em horário de pico.\unsure{Precisamos
-  falar disso uma vez que não simulamos este tipo de situação? (Taschetto)}
+  andares do prédio e de volta ao lobby em horário de pico.
 \end{description}
 
 O tempo médio de sistema (AST) define a qualidade do serviço, já que está ligado
@@ -165,7 +156,7 @@ que a um baixo tempo de jornada (JT) ~\cite{KOEHLEROTTIGER02}. Isto por que, uma
 vez dentro do elevador, o passageiro não se sente mais esperando: ele sente que
 já está sendo servido. Ainda assim, embora uma redução de 32 para 28 segundos de
 espera não seja considerada uma grande melhoria, é psicologicamente importante
-evitar esperas longas, i.e.,~60 segundos ou mais.
+evitar esperas longas.
 
 \section{\label{section:difficulties}Situações fora do escopo deste trabalho}
 

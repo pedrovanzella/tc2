@@ -3,7 +3,7 @@
 O objetivo deste trabalho é comparar, através de simulações, diferentes
 estratégias de controle de elevadores utilizando Inteligência Artificial em
 cenários distintos. Os resultados das simulações são avaliados e, dentre as
-opções possíveis, são verificadas quais estratégias resultam em um melhor
+opções possíveis, são verificadas quais estratégias resultam em melhor
 desempenho no transporte de passageiros para cada cenário. Tal melhora se
 reflete em duas métricas principais: \textit{Waiting Time} e \textit{Journey
 Time}. Entretanto, a meta principal é a redução do \textit{Average Waiting
@@ -17,21 +17,22 @@ e realiza a simulação de cada cenário. É possível comparar várias estraté
 um mesmo cenário. Para isto, foram implementados dois algoritmos de agendamento
 - \textit{simple} e \textit{planning}, detalhados na seção XXX - e 4 funções de
 custo - \textit{random}, \textit{nearest neighbour}, \textit{better nearest
-neighbour} e \textit{weighted}, detalhados na seção XXX -, que podem ser
-utilizadas em uma combinação entre si.
+neighbour} e \textit{weighted}, detalhados na seção XXX. Os algoritmos e as
+funções de custo podem ser utilizados em uma combinação entre si.
 
-Os algoritmos de agendamento são detalhados na seção XXX. \unsure{Colocar
-referência para a seção dos algoritmos e das funções de custo. (Taschetto)}
+\unsure{Pedro, colocar referências corretas para as seções.}
 
-Após as simulações, o simulador fornece como saída um relatório apresentando
+Após as simulações, o simulador fornece um relatório apresentando
 métricas\footnote{Seção~\ref{section:data}.} de desempenho para sistemas de
 controle de grupo de elevadores. Além do relatório, o simulador é capaz de
 gerar, a partir das métricas obtidas, os seguintes gráficos: \textit{Clientes
-  por Elevador}, \textit{Chegadas por Andar}, \textit{Desembarques por Andar} e
+por Elevador}, \textit{Chegadas por Andar}, \textit{Desembarques por Andar} e
 \textit{Tempo de Jornada por Andar}.
 
 \unsure{Será que também botamos um exemplo ou somente uma breve descrição,
-  pra deixar esta seção mais simples? (Vanzella)}
+  pra deixar esta seção mais simples? (Vanzella)
+
+  Resposta: dizer ``mostraremos exemplos na seção XXX''}
 
 \begin{description}[leftmargin=!,labelwidth=\widthof{\bfseries Tempo de Jornada por Andar}]
   \item[Clientes por Elevador]
@@ -54,22 +55,28 @@ um conjunto de estratégias) para serem implementados em prédios já existentes
 \section{\label{sec:objectives:planning}Planning}
 
 \unsure{Estou na dúvida se esta seção fica e/ou se ela fica nessa posição.
-(Taschetto)}
+(Taschetto)
+
+Resposta: e o SIMPLE onde é descrito?
+
+Acho que sai daqui, sim.}
 
 Os algoritmos de \textit{planning} se mostraram os mais promissores para a
 realização desta tarefa, dadas as limitações de tempo de desenvolvimento e a
 quantidade de dados disponíveis em sistemas reais de elevadores.
 
 Um algoritmo de \textit{planning}, conforme descrito na
-seção~\ref{sec:ai:planning}, utiliza uma função de custo (descrito na
+seção~\ref{sec:ai:planning}, utiliza uma função de custo (descrita na
 seção~\ref{sec:ai:minimize-cost-function}) e tenta encontrar uma sequência de
 eventos que gere a menor soma de custos. Estes eventos podem ser quaisquer
 eventos que o sistema tenha controle. No caso de sistemas de elevadores, é
 possível controlar, por exemplo, qual elevador atenderá qual chamado em uma
 fila. Levando-se em conta os dados disponíveis no momento e, talvez, fazendo
 inferências a respeito de outros, calcula-se o custo por alguns passos no futuro
-(por exemplo, atendendo vários eventos da fila). Um exemplo claro deste
-comportamento pode ser visto na seção~\ref{sec:ai:planning}.
+(por exemplo, atendendo vários eventos da fila). Um exemplo deste comportamento
+pode ser visto na seção~\ref{sec:ai:planning}.
+
+\unsure{Pedro, revisar pois diz que o planning usa função de custos e isso não é mais verdade.}
 
 O algoritmo de \textit{planning} será comparado com os comportamentos mais
 triviais, como os descritos nas seções~\ref{sec:ai:nn}~e~\ref{sec:ai:nnm}. Além
@@ -105,7 +112,7 @@ divisões segue a classificação \cite{Emporis15} sugerida pela empresa
 em Frankfurt. O limite inferior de 4 andares é devido à exigência legal do
 município de Porto Alegre\footnote{http://www2.portoalegre.rs.gov.br/netahtml
 /sirel/atos/Lei\%201344} onde prédios deste tamanho ou maiores (mas não menores
-que isto) de serem construídos com elevadores. O limite superior é de 163
+que isto) devem ser construídos com elevadores. O limite superior é de 163
 andares\footnote{O maior arranha-céu do mundo em 2015 é o Burj Khalif,
 localizado em Dubai, com mais de 800m de altura distribuídos em 163 andares
 habitáveis.}.
@@ -129,7 +136,7 @@ arbitrária.
 \end{tabular}
 \end{table}
 
-\subsection{Parâmetros removidos do escopo}
+\subsection{Parâmetros não utilizados}
 
 Em virtude da limitação de tempo para a elaboração deste trabalho, dois
 parâmetros foram removidos do escopo da simulação:

@@ -44,8 +44,8 @@ de um \textit{modelo do sistema}.
 modelo matemático?}
 
 Um modelo físico de um sistema de elevadores poderia ser constituído por uma
-maquete de um prédio com mini-elevadores movidos à motores de passo, que por
-sua vez seriam controlados por microcontroladores programáveis conectados à uma
+maquete de um prédio com mini-elevadores movidos a motores de passo, que por
+sua vez seriam controlados por microcontroladores programáveis conectados a uma
 rede de sensores. Este projeto por si só, entretanto, já seria grandioso
 demais~-~além de, obviamente, fugir do escopo da Ciência da Computação e ser
 mais adequado à um trabalho de conclusão de Engenharia Elétrica ou Engenharia de
@@ -103,20 +103,17 @@ sistema, quando eles chegarão e tampouco para qual andar irão. Portanto, um
 modelo de simulação válido neste escopo deve ser \textit{estocástico} de modo a
 lidar com a aleatoriedade da entrada de passageiros no sistema.
 
-\unsure{Fiquei na dúvida. Um sistema que utilize geradores pseudo-aleatórios com
-sementes pode ser considerado REALMENTE estocástico? (Taschetto)}
-
 \item \textit{Contínuo ou Discreto}
 
 A figura \ref{fig:disccont} ilustra o comportamento de uma variável de estado em
 modelos de simulação \textit{contínuos} e \textit{discretos}. O modelo
 \textit{contínuo} é aquele onde os valores das variáveis mudam continuamente ao
 longo do tempo. Já em um modelo \textit{discreto} as variáveis de estado tem seu
-valor alterado em instantes separados do tempo \cite{Banks}. Para este projeto,
-não há a necessidade informações instantâneas a respeito da movimentação de
+valor alterado em instantes separados no tempo \cite{Banks}. Para este projeto,
+não há a necessidade de informações instantâneas a respeito da movimentação de
 passageiros e elevadores, e sim de observar o comportamento do sistema dada a
-ocorrência de determinados eventos. Portanto, o modelo de simulação utilizado
-neste estudo é \textit{discreto}.
+ocorrência de eventos discretos. Portanto, o modelo de simulação utilizado neste
+estudo é \textit{discreto}.
 
 \begin{figure}[htb!]
 \centering\includegraphics{img/discrete_continuous.eps}
@@ -139,14 +136,13 @@ instantaneamente em \textbf{instantes separados no tempo}.
 A abordagem sugerida por Law é o padrão de projeto de simuladores ao utilizar-se
 um modelo de simulação \textit{dinâmico}, \textit{estocástico} e
 \textit{discreto} para representar o sistema do mundo real. Em função da
-natureza dinâmica desta abordagem, é necessário acompanhar o valor atual do
-tempo da simulação à medida que a simulação é executada, armazenando este valor
-em uma variável. Esta variável é chamada de \textit{relógio da
-simulação}\footnote{Geralmente, não há relação entre o tempo de simulação e o
-tempo necessário para a simulação ser executada. Por exemplo, um experimento
-pode simular o funcionamento de um banco entre 9h e 17h (tempo de simulação),
-mas o tempo necessário para executar a simulação poderia ser de 4 minutos.}
-\cite{Law}.
+natureza dinâmica desta abordagem, é necessário acompanhar o tempo da simulação
+à medida que a simulação é executada, armazenando este valor em uma variável.
+Esta variável é chamada de \textit{relógio da simulação}\footnote{Geralmente,
+não há relação entre o tempo de simulação e o tempo necessário para a simulação
+ser executada. Por exemplo, um experimento pode simular o funcionamento de um
+banco entre 9h e 17h (tempo de simulação), mas o tempo necessário para executar
+a simulação poderia ser de 4 minutos.} \cite{Law}.
 
 Também se faz necessário um mecanismo de avanço de tempo que gerencie o valor
 desta variável. Neste simulador é utilizada a abordagem de \textit{avanço de
@@ -159,8 +155,7 @@ modelo é atualizado de acordo com o evento que ocorreu e novas ocorrências de
 eventos futuros são agendadas. Então, o \textit{relógio da simulação} avança
 para o instante da ocorrência do \textit{novo} primeiro dos eventos futuros e o
 estado do sistema é atualizado em função da ocorrência deste evento. Este
-processo repete-se até que uma condição de parada previamente definida seja
-satisfeita.
+processo repete-se até que uma condição de parada seja satisfeita.
 
 Uma vez que toda alteração no estado do sistema ocorre na ocasião de um evento,
 os períodos de espera, que são o tempo entre a ocorrência de um evento e o
@@ -173,7 +168,7 @@ Um exemplo desta dinâmica é ilustrado pela figura \ref{fig:nextevent}. O eixo 
 tempo, iniciado em 0, marca os tempos agendados para os eventos $\{e_{0}, e_{1},
 e_{2}, e_{3}, e_{4}, e_{5}\}$. As setas indicam os valores assumidos pelo
 \textit{relógio da simulação}, ou seja, $\{t_{0}, t_{1}, t_{2}, t_{3}, t_{4},
-t_{5}\}$. Observa-se que $t_{0} = e_{0}$, $t_{1} = e_{1}$ e assim
+t_{5}\}$. Observa-se que $t_{0} = tempo(e_{0})$, $t_{1} = tempo(e_{1})$ e assim
 sucessivamente~-~ou seja, o \textit{relógio da simulação} avança diretamente
 para o momento da ocorrência do próximo evento.
 
@@ -252,8 +247,7 @@ iterações posteriores.
 \section{\label{simulator:requirements}Requisitos de Projeto}
 
 O projeto do simulador foi concebido de forma a garantir alguns requisitos
-considerados de suma importância em relação ao simulador e as simulações. São
-elas:
+considerados de importância em relação ao simulador e as simulações. São elas:
 
 \begin{description}[leftmargin=!,labelwidth=\widthof{\bfseries Determinístico}]
 
@@ -279,8 +273,8 @@ elas:
   simulações de um mesmo cenário.
 
   Para que isto fosse possível, os cenários configurados no arquivo de
-  configuração contém, dentre outras informações, uma semente textual utilizada
-  para inicializar os geradores de números aleatórios e distribuições de
+  configuração contém, dentre outras informações, uma semente utilizada para
+  inicializar os geradores de números aleatórios e distribuições de
   probabilidade dentro do simulador.
 
   \item[Escalável]
@@ -292,11 +286,10 @@ elas:
   Para que isto fosse possível, optou-se por desenvolver o simulador na
   linguagem \texttt{C++11}. Tal linguagem é tida na indústria de software como
   capaz de oferecer desempenho superior às demais linguagens de propósito
-  geral~-~devido, em grande parte, ao fato de ser compilada em linguagem de
-  máquina e permitir ao programador gerenciar diretamente o uso de memória do
-  processo. Além disso, juntamente de sua biblioteca padrão, o \texttt{C++11}
-  oferece um conjunto atraente de estruturas de dados, ferramentas de
-  desenvolvimento e depuração.
+  geral~-~devido, em grande parte, ao fato de ser compilada e permitir ao
+  programador gerenciar diretamente o uso de memória do processo. Além disso,
+  juntamente de sua biblioteca padrão, o \texttt{C++11} oferece um conjunto
+  atraente de estruturas de dados, ferramentas de desenvolvimento e depuração.
 
   \item[Rastreável]
 
