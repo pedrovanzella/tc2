@@ -92,7 +92,7 @@ valor da função de custo.
 Um exemplo de função de custo é:
 
 \[
-  J(e, l, p) = \lambda l(p - e)
+  J(e, l, p) = \lambda l(|p - e|)
 \]
 
 Onde:
@@ -134,7 +134,7 @@ A situação de cada elevador é a seguinte:
 Podemos calcular o custo de atender a esta chamada para cada elevador do prédio.
 Para o Elevador $E1$:
 
-\[J(7, 0.2, 8) = 2 \times 0.2 \times (8 - 7) = 0.4\]
+\[J(7, 0.2, 8) = 2 \times 0.2 \times (|8 - 7|) = 0.4\]
 
 Neste caso, $\boldsymbol{\lambda}$ é 2, pois o elevador deverá mudar de sentido
 (\textit{i.e.}, ele deverá subir até o oitavo andar e então voltar para o sétimo
@@ -142,7 +142,7 @@ andar, o que representa um deslocamento de dois andares).
 
 Para o Elevador $E2$:
 
-\[J(1, 0.1, 8) = 1 \times 0.1 \times (8 - 1) = 0.7\]
+\[J(1, 0.1, 8) = 1 \times 0.1 \times (|8 - 1|) = 0.7\]
 
 Neste caso $\boldsymbol{l}$ é $0.1$, pois sua lotação é 10\%\footnote{Como não
 há informações a respeito do futuro, não é possível considerar alterações na
@@ -154,7 +154,7 @@ diferente, com resultados diferentes. É um teste válido para a implementação
 
 Para o Elevador $E3$:
 
-\[J(7, 0.9, 8) = 2 \times 0.9\times (8 - 7) = 1.8\]
+\[J(7, 0.9, 8) = 2 \times 0.9\times (|8 - 7|) = 1.8\]
 
 Neste caso $\boldsymbol{l}$ é $0.9$, pois sua lotação é 90\%, e
 $\boldsymbol{\lambda}$ é $2$, pois o elevador $E3$ deve subir do sétimo para o
@@ -171,14 +171,14 @@ ainda tentar manter todos os custos o mais baixo possível, ao mesmo tempo que o
 mais próximos uns dos outros. Por exemplo, uma outra função de custo possível
 seria:
 
-\[J(e, l, p) = l(\lambda(p - e))^{2}\]
+\[J(e, l, p) = l(\lambda(|p - e|))^{2}\]
 
 Esta função penaliza mais o movimento, elevando-o ao quadrado. Para o exemplo da
 Figura~\ref{fig:elevadores-1}, tem-se:
 
-\[J(7, 0.2, 8) = 0.2 \times (2 \times (8-7))^2 = 0.8\]
-\[J(1, 0.1, 8) = 0.1 \times (1 \times (8-1))^2 = 6.4\]
-\[J(7, 0.9, 8) = 0.9 \times (2 \times (8-7))^2 = 3.6\]
+\[J(7, 0.2, 8) = 0.2 \times (2 \times (|8-7|))^2 = 0.8\]
+\[J(1, 0.1, 8) = 0.1 \times (1 \times (|8-1|))^2 = 6.4\]
+\[J(7, 0.9, 8) = 0.9 \times (2 \times (|8-7|))^2 = 3.6\]
 
 Novamente, para esta função, o elevador $E1$ é eleito para atender a chamada.
 
@@ -222,7 +222,7 @@ elevador com a menor função de custo.
 É possível definir o algoritmo de \textit{Nearest Neighbour}
 (Seção~\ref{sec:ai:nn}) como uma função de custo:
 
-\[J(e, p) = p - e\]
+\[J(e, p) = |p - e|\]
 
 Onde considera-se apenas $p - e$, que é a distância entre a posição atual do
 elevador ($e$) e o número do andar onde a chamada foi originada ($p$).
