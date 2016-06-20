@@ -185,7 +185,7 @@ prédio possui uma instância desta classe. Seus componentes são:
     \begin{algorithm}[htb!]
       \centering
         \begin{minted}[linenos,fontsize=\small]{c++}
-EventFactory::createFutureArrival(EventQueue eventQueue) {
+EventFactory::createFutureArrival(eventQueue) {
   eventTime = clock.currentTime() + getNextTime();
   destination = getNextDestination();
   clientArrival = new ClientArrival(floor, destination, eventTime);
@@ -337,7 +337,7 @@ O \textit{relógio da simulação} é representado pela classe \texttt{Clock}
 \begin{algorithm}[htb!]
   \centering
     \begin{minted}[linenos,fontsize=\small]{c++}
-Clock::notify(Event event) {
+Clock::notify(event) {
   eventTime = event.getTime();
   advanceTo(eventTime);
 }
@@ -419,7 +419,7 @@ representados pelas estruturas \texttt{Arrival} e \texttt{Trip} e pela classe
 \begin{algorithm}[htb!]
   \centering
     \begin{minted}[linenos,fontsize=\small]{c++}
-Statistics::notify(Event event) {
+Statistics::notify(event) {
   if (event.getType() == ClientArrival) {
     logArrival(event);
   }
@@ -718,8 +718,8 @@ Building::initializeArrivals() {
     \begin{algorithm}[htb!]
       \centering
         \begin{minted}[linenos,fontsize=\small]{c++}
-Building::notify(Event event) {
-  for (time = _clock.currentTime(); time < event.getTime(); ++time) {
+Building::notify(event) {
+  for (time = clock.currentTime(); time < event.getTime(); ++time) {
     step();
   }
 
@@ -752,7 +752,7 @@ Building::notify(Event event) {
     \begin{algorithm}[htb!]
       \centering
         \begin{minted}[linenos,fontsize=\small]{c++}
-Building::doClientArrival(ClientArrival event) {
+Building::doClientArrival(event) {
   client = event.getClient();
   direction = client.getDirection();
   location = client.getArrivalFloor();
@@ -783,7 +783,7 @@ Building::doClientArrival(ClientArrival event) {
     \begin{algorithm}[htb!]
       \centering
         \begin{minted}[linenos,fontsize=\small]{c++}
-Building::doFinishSimulation(FinishSimulation event) {
+Building::doFinishSimulation(event) {
   statistics = simulator.getStatistics();
   while (statistics.getClientsArrived() > statistics.getClientsServed()) {
     step();
@@ -842,7 +842,7 @@ Building::step() {
     \begin{algorithm}[htb!]
       \centering
         \begin{minted}[linenos,fontsize=\small]{c++}
-Building::updateElevator(Elevator elevator) {
+Building::updateElevator(elevator) {
   if (elevator.getStatus() == Idle) {
     nextDestination = getNextDestination(elevator);
     elevator.setDestination(nextDestination);
@@ -913,140 +913,124 @@ custo para cada um, e retorna o de menor custo.
 \begin{algorithm}[htb!]
   \centering
   \begin{minted}[linenos,fontsize=\small]{c++}
-int SimpleScheduler::schedule(
-    CostFunction costFunction,
-    Building building,
-    Client client,
-    int elevatorToExclude) {
+SimpleScheduler::schedule(costFunction, building, client, excluded) {
+  elevators = getAvailableElevators(building, excluded);
+  bestCost = infinite;
+  selectedElevator = elevators.front();
 
-  auto elevators = getAvailableElevators(building, elevatorToExclude);
-
-  float best_cost = infinity
-  auto the_chosen_one = elevators.first();
-
-  for (auto elevator : elevators) {
-    auto cost = costFunction.calculate(building, elevator, client);
+  for each (elevator in elevators) {
+    cost = costFunction.calculate(building, elevator, client);
     if (cost < best_cost) {
-      best_cost = cost;
-      the_chosen_one = elevator;
+      bestCost = cost;
+      selectedElevator = elevator;
     }
   }
 
-  return the_chosen_one.getNumber();
+  return selectedElevator;
 }
   \end{minted}
-  \caption{\textit{Simple Scheduler}.}
+  \caption{Agendamento \textit{simple}.}
   \label{alg:scheduler:simple}
 \end{algorithm}
 
 \subsection{\label{model:schedulers:planning}Planning}
-A idéia por trás do algoritmo de Planning é simples, ainda que sua implementação
-possa parecer complexa, como visto nos
+
+A ideia por trás do algoritmo de \textit{planning} é simples. O objetivo é, a
+cada ramo da árvore de decisões, criar uma cópia do simulador e avançar o seu
+estado interno até que a parada tenha sido realizada. O tempo necessário para
+isto é medido e a escolha se dá sempre pelo elevador capaz de atender no menor
+tempo. Este conceito é ilustrados nos
 Algoritmos~\ref{alg:scheduler:planning:chamada}~
 e~\ref{alg:scheduler:planning:steps}.
 
-Primeiramente faz-se uma cópia profunda do simulador inteiro, contendo todo o
-estado atual da simulação, bem como uma cópia da lista de clientes, e de
-elevadores, excluindo-se um possível elevador que esteja cheio. Isto é feito
-pelo Algoritmo~\ref{alg:scheduler:planning:chamada}. Ele então chama o
-Algoritmo~\ref{alg:scheduler:planning:steps}.
+No começo do Algoritmo~\ref{alg:scheduler:planning:chamada} recupera-se o
+horizonte parametrizado no cenário e é montada uma fila de clientes do tamanho
+do horizonte. Esta fila de clientes é composta pelo cliente que acabou de chegar
+e seguido pelos $N$ primeiros clientes que chegaram ao prédio e ainda não foram
+atendidos. São estes clientes que o \textit{planning} irá utilizar para realizar
+a sua decisão através do método recursivo \texttt{calculate}
+(Algoritmo~\ref{alg:scheduler:planning:steps}), consumindo 1 cliente por nível
+da árvore.
 
-Este segundo algoritmo vai agendar um elevador para atender um cliente na cópia
-da simulação que recebeu, e avançar o relógio da mesma até o ponto em que o
-elevador teria atendido este chamado. Isto é feito iterativamente, já que o
-elevador pode ter uma agenda complexa, com várias paradas em diferentes andares.
-O custo calculado para este elevador é proporcional ao tempo de simulação que
-ele demora entre seu estado atual e o ponto em que atenderia o cliente.
+O método recursivo \texttt{calculate} começa com a condição de parada na linha
+3, retornando no caso de não haver mais clientes. Caso ainda existam clientes na
+fila, as linhas 4 e 5 recuperam o primeiro e o retiram da fila. Este é o cliente
+referente à este nível da árvore de decisão. Nas linhas 7 a 11, a lista de
+elevadores é atualizada.
 
-O custo total é calculado chamando-se recursivamente esta função, com uma nova
-cópia desta cópia do simulador, agora em seu estado modificado, para os demais
-elevadores e clientes.
+Após, é feita uma iteração entre estes elevadores. A cada iteração é realizada
+uma nova cópia do simulador e registra-se uma nova parada para o andar e direção
+do cliente e o elevador da iteração. Então avança-se esta nova cópia da
+simulação até o instante em que esta parada registrada é atendida. O custo base
+deste elevador é proporcional à diferença do \textit{relógio da simulação} antes
+e depois deste avanço.
 
-Deste modo, gera-se algo como uma árvore de execuções, onde cada nodo é uma
-combinação elevador-cliente, associado de um custo proporcional ao tempo de simulação.
-
-Cada nodo soma a si o custo do seu filho de menor custo. Desta forma, no retorno
-da recursão, tem-se sempre o menor custo para um nodo. Ao fim da
-recursão~-~\textit{i.e.} quando o horizonte de \textit{planning} for
-encontrado~-~, tem-se automaticamente o par elevador-custo de menor custo. Este
-é o próximo passo que deve ser tomado: agendar este elevador para o primeiro
-cliente da fila.
+A este valor soma-se o seu filho de menor custo através da chamada recursiva do
+método \textit{calculate} na linha 29. Desta forma, no retorno da recursão, tem-
+se sempre o menor custo para um nodo. Ao fim da recursão~-~\textit{i.e.} quando
+todos os clientes da fila original forem atendidos~-~, tem-se o elevador de
+menor custo.
 
 \begin{algorithm}[htb!]
   \centering
   \begin{minted}[linenos,fontsize=\small]{c++}
-    int PlanningScheduler::schedule(
-        CostFunction costFunction,
-        Building building,
-        Client client,
-        int elevatorToExclude) {
+PlanningScheduler::schedule(costFunction, building, client, excluded) {
+  horizon = scenario.getPlanningHorizon();
+  clients = getClients(horizon, client, building);
 
-  auto simulator = building.getSimulator();
-  auto elevators = getAvailableElevators(building, elevatorToExclude);
-  auto horizon = simulator.getScenario()->getPlanningHorizon();
-  auto clients = getClients(horizon, client, building);
+  result = calculate(simulator, clients, excluded);
 
-  auto simCopy = copy(simulator);
-  simCopy.copyBuilding(simulator.getBuilding());
-
-  auto the_answer_to_life_the_universe_and_everything =
-      calculate(simCopy, clients, elevatorToExclude);
-
-  return the_answer_to_life_the_universe_and_everything.getNumber();
+  return result.elevator;
 }
   \end{minted}
-  \caption{\textit{Planning Scheduler}: chamada.}
+  \caption{Agendamento \textit{planning}.}
   \label{alg:scheduler:planning:chamada}
 \end{algorithm}
 
 \begin{algorithm}[htb!]
   \centering
   \begin{minted}[linenos,fontsize=\small]{c++}
-pair<Elevator, float> PlanningScheduler::calculate(
-      Simulator simulator,
-      Clients clients,
-      int elevatorToExclude) {
+PlanningScheduler::calculate(simulator, clients, excluded) {
 
-  if (clients.empty()) return {nullptr, 0.f};
-  auto client = clients.front();
+  if (clients.empty()) return { null, 0.0 };
+  client = clients.front();
   clients.pop();
 
-  auto elevators = getAvailableElevators(simulator.getBuilding(), elevatorToExclude);
+  building = simulator.getBuilding();
+  elevators = getAvailableElevators(building, elevatorToExclude);
 
-  float best_cost = infinity;
-  auto the_chosen_one = elevators.front();
+  bestCost = infinite;
+  selectedElevator = elevators.front();
 
-  for (auto elevator : elevators) {
-    auto simCopy = copy(simulator);
-    simCopy.copyBuilding(simulator.getBuilding());
+  for each (elevator in elevators) {
+    simulatorCopy = copy(simulator);
 
-    auto buildingCopy = simCopy.getBuilding();
-    auto elevatorCopy = buildingCopy.getElevator(elevator.getNumber());
+    arrivalFloor = client.getArrivalFloor();
+    direction = client.getDirection();
+    simulatorCopy.setStop(arrivalFloor, direction, elevator);
 
-    auto arrivalFloor = client.getArrivalFloor();
-    Direction direction = client.getArrivalFloor() < client.getDestination() ?
-                          Direction::Up : Direction::Down;
-
-    auto baseCost = 0.f;
-    buildingCopy.setStop(arrivalFloor, direction, elevatorCopy);
-    while (buildingCopy.mustStop(arrivalFloor, direction, elevatorCopy)) {
-      buildingCopy.step();
-      baseCost += 1.f;
+    clockBefore = simulatorCopy.getClock().currentTime();
+    while (simulatorCopy.mustStop(arrivalFloor, direction, elevator)) {
+      simulatorCopy.step();
     }
+    clockNow = clockBefore = simulatorCopy.getClock().currentTime();
 
-    auto clientsCopy = copyClients(clients);
-    auto futureCost = calculate(simCopy, clientsCopy, elevatorToExclude).second;
-    auto cost = baseCost + futureCost;
-    if (cost < best_cost) {
-      best_cost = cost;
-      the_chosen_one = elevator;
+    baseCost = clockBefore - clockNow;
+
+    clientsCopy = copy(clients);
+    futureCost = calculate(simulatorCopy, clientsCopy, elevatorToExclude).cost;
+
+    cost = baseCost + futureCost;
+    if (cost < bestCost) {
+      bestCost = cost;
+      selectedElevator = elevator;
     }
   }
 
-  return {the_chosen_one, best_cost};
+  return { selectedElevator, bestCost };
 }
   \end{minted}
-  \caption{\textit{Planning Scheduler}: passos seguintes.}
+  \caption{Recursão do agendamento \textit{planning}.}
   \label{alg:scheduler:planning:steps}
 \end{algorithm}
 
@@ -1147,7 +1131,7 @@ float BetterNearestNeighbourCostFunction::calculate(
     return abs(distance);
 }
   \end{minted}
-  \caption{\label{alg:bnn_cf}Função de Custo \textit{Better Nearest Neighbour}.}
+  \caption{\label{alg:bnn_cf}Função de custo \textit{better nearest neighbour}.}
 \end{algorithm}
 
 \subsection{\label{model:costfunctions:weighted}Weighted}
@@ -1174,7 +1158,7 @@ float WeightedCostFunction::calculate(
                / sqrt(elevator.getOccupation());
 }
   \end{minted}
-  \caption{\label{alg:weighted_cf}Função de Custo \textit{Weighted}.}
+  \caption{\label{alg:weighted_cf}Função de custo \textit{weighted}.}
 \end{algorithm}
 
 \section{Geração de Relatórios} \label{model:report}
@@ -1251,45 +1235,5 @@ arquivos de saída.
 Um script em Python é chamado para cada arquivo de desembarques, de modo a
 processá-lo e gerar estes gráficos. Este script lê o arquivo, que está em
 formato CSV, e chama uma função para cada tipo de gráfico da
-Listagem~\ref{alg:graphs:output}. Exemplos destes gráficos podem ser vistos a
-seguir, nas
-Figuras~\ref{fig:graphs:arrivalsperfloor},~\ref{fig:graphs:averagewaittime},
-~\ref{fig:graphs:clientsperelevator},~\ref{fig:graphs:dropoffsPerFloor}~
-e~\ref{fig:graphs:averageTravelTime}.
-
-\begin{figure}[htb!]
-  \centering
-  \includegraphics[scale=0.8]{img/results/Low-rise/5_Planning_Random/arrivalsPerFloor.eps}
-  \caption{Chegadas por andar}
-  \label{fig:graphs:arrivalsperfloor}
-\end{figure}
-
-\begin{figure}[htb!]
-  \centering
-  \includegraphics[scale=0.8]{img/results/Low-rise/5_Planning_Random/averageWaitTime.eps}
-  \caption{Tempo médio de espera por andar}
-  \label{fig:graphs:averagewaittime}
-\end{figure}
-
-\begin{figure}[htb!]
-  \centering
-  \includegraphics[scale=0.8]{img/results/Low-rise/5_Planning_Random/clientsPerElevator.eps}
-  \caption{Clientes por elevador}
-  \label{fig:graphs:clientsperelevator}
-\end{figure}
-
-\begin{figure}[htb!]
-  \centering
-  \includegraphics[scale=0.8]{img/results/Low-rise/5_Planning_Random/dropoffsPerFloor.eps}
-  \caption{Total de clientes entregues por andar}
-  \label{fig:graphs:dropoffsPerFloor}
-\end{figure}
-
-\begin{figure}[htb!]
-  \centering
-  \includegraphics[scale=0.2]{img/results/Low-rise/5_Planning_Random/averageTravelTime.eps}
-  \caption{Tempo médio de jornada de andar para andar}
-  \label{fig:graphs:averageTravelTime}
-\end{figure}
-
-
+Listagem~\ref{alg:graphs:output}. Exemplos destes gráficos podem ser vistos no
+Apêndice \ref{app:chart}.
