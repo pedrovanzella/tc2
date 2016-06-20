@@ -6,7 +6,7 @@ definidas. Para projetar um simulador, diversas abordagens e paradigmas poderiam
 ser aplicadas. Neste estudo optou-se pelo paradigma de \textit{Programação
 Orientada a Objetos}. Esta escolha se deu pelos seguintes motivos:
 
-\begin{description}
+\begin{description}\setlength\itemsep{0mm}
   \item[Capacidade de Abstração]\hfill \\
     Conceitos da \textit{Programação Orientada a Objetos}, como classes,
     interfaces, polimorfismo, herança e sobrecarga permitem a realização de uma
@@ -43,7 +43,7 @@ a ocorrência do evento; (3) o tipo do evento.
 
 Existem dois tipos de eventos que podem ocorrer durante uma simulação:
 
-\begin{description}
+\begin{description}\setlength\itemsep{0mm}
   \item[Chegada de cliente] Um cliente chegou na fila de um andar.
 
   \item[Fim da simulação] A simulação atingiu a duração
@@ -67,11 +67,11 @@ as classes concretas que a especializam, representando os eventos de
 \label{fig:diagram:events}
 \end{figure}
 
-\begin{description}
+\begin{description}\setlength\itemsep{0mm}
   \item[Event] \hfill \\
     Evento base composto pelo conjunto básico de informações para um evento.
 
-    \begin{description}[leftmargin=!,labelwidth=\widthof{\bfseries client}]
+    \begin{description}[leftmargin=!,labelwidth=\widthof{\bfseries client}]\setlength\itemsep{0mm}
       \item[\texttt{id}] Número identificador do evento.
       \item[\texttt{time}] Horário de ocorrência do evento.
       \item[\texttt{type}] Tipo do evento.
@@ -81,7 +81,7 @@ as classes concretas que a especializam, representando os eventos de
     Evento especializado do tipo \textbf{chegada de cliente}. Contém,
     adicionalmente, as informações do cliente.
 
-    \begin{description}[leftmargin=!,labelwidth=\widthof{\bfseries client}]
+    \begin{description}[leftmargin=!,labelwidth=\widthof{\bfseries client}]\setlength\itemsep{0mm}
       \item[\texttt{client}] Cliente que gerou o evento.\footnote{Tipo complexo armazenando diversas informações sobre o cliente (Seção \ref{model:state:client}).}
     \end{description}
 
@@ -106,7 +106,7 @@ Não é possível prever em qual andar e qual momento um cliente irá chegar ao
 prédio, tampouco qual o destino desejado por ele. Portanto, é correto afirmar
 que a chegada de clientes em um prédio é um processo estocástico.
 
-\begin{description}
+\begin{description}\setlength\itemsep{0mm}
 
 \item[Horário de chegada] \hfill \\
 Segundo~\cite{Ross:2006:IPM:1197141}, a taxa de chegada de clientes é um
@@ -165,7 +165,7 @@ A classe \texttt{EventFactory}, ou \textit{fábrica de eventos}, foi criada para
 ser uma unidade de coesão ao criar chegadas de clientes no prédio. Cada andar do
 prédio possui uma instância desta classe. Seus componentes são:
 
-  \begin{description}[leftmargin=!,labelwidth=\widthof{\bfseries hasNextEvent}]
+  \begin{description}[leftmargin=!,labelwidth=\widthof{\bfseries hasNextEvent}]\setlength\itemsep{0mm}
     \item[\texttt{clock}] Referência para o relógio da simulação.
     \item[\texttt{floor}] Referência para o andar daquele \texttt{EventFactory}.
     \item[\texttt{random engine}] Gerador de números aleatórios.
@@ -221,13 +221,13 @@ em que irá ocorrer - ou seja, quanto menor o tempo do evento maior é a sua
 prioridade -, temos uma fila na qual o próximo elemento a ser atendido sempre
 será o próximo evento a ocorrer.
 
-\begin{description}
+\begin{description}\setlength\itemsep{0mm}
   \item[EventQueue] \hfill \\
     Encapsula uma fila prioritária de eventos. Adicionalmente, utiliza a classe
     \texttt{EventComparator}, que implementa a relação de ordem entre os
     eventos.
 
-    \begin{description}[leftmargin=!,labelwidth=\widthof{\bfseries hasNextEvent}]
+    \begin{description}[leftmargin=!,labelwidth=\widthof{\bfseries hasNextEvent}]\setlength\itemsep{0mm}
       \item[\texttt{push}] Insere um evento na fila.
       \item[\texttt{top}] Recupera o próximo evento da fila.
       \item[\texttt{pop}] Recupera e remove o próximo evento da fila.
@@ -266,12 +266,12 @@ isto, foram criados os seguintes componentes:
 \label{fig:diagram:notification}
 \end{figure}
 
-\begin{description}
+\begin{description}\setlength\itemsep{0mm}
   \item[EventObserver] \hfill \\
     Classe abstrata a ser realizada por qualquer outra classe que deseje receber
     notificações de eventos. Possui um único método abstrato.
 
-    \begin{description}[leftmargin=!,labelwidth=\widthof{\bfseries unsubscribe}]
+    \begin{description}[leftmargin=!,labelwidth=\widthof{\bfseries unsubscribe}]\setlength\itemsep{0mm}
       \item[\texttt{notify}] Recebe a notificação da ocorrência de um evento.
     \end{description}
 
@@ -282,7 +282,7 @@ isto, foram criados os seguintes componentes:
     para receber notificações de ocorrências de eventos. Seus métodos abstratos
     são:
 
-    \begin{description}[leftmargin=!,labelwidth=\widthof{\bfseries unsubscribe}]
+    \begin{description}[leftmargin=!,labelwidth=\widthof{\bfseries unsubscribe}]\setlength\itemsep{0mm}
       \item[\texttt{subscribe}] Adiciona um \textit{observer}.
       \item[\texttt{unsubscribe}] Remove um \textit{observer}.
       \item[\texttt{broadcast}] Notifica todos os \textit{observers} registrados da ocorrência de um evento.
@@ -322,7 +322,7 @@ O \textit{relógio da simulação} é representado pela classe \texttt{Clock}
 \label{fig:diagram:clock}
 \end{figure}
 
-\begin{description}[leftmargin=!,labelwidth=\widthof{\bfseries currentTime}]
+\begin{description}[leftmargin=!,labelwidth=\widthof{\bfseries currentTime}]\setlength\itemsep{0mm}
   \item[\texttt{currentTime}] Retorna o horário atual do \textit{relógio da simulação}.
   \item[\texttt{advanceTo}] Avança o \textit{relógio da simulação} para um horário arbitrário.
   \item[\texttt{advanceBy}] Avança o \textit{relógio da simulação} em uma quantidade arbitrária de segundos.
@@ -366,12 +366,12 @@ representados pelas estruturas \texttt{Arrival} e \texttt{Trip} e pela classe
 \label{fig:diagram:statistics}
 \end{figure}
 
-\begin{description}
+\begin{description}\setlength\itemsep{0mm}
   \item[Arrival] \hfill \\
     Uma instância desta estrutura armazena informações coletadas quando um
     cliente chega ao prédio. Tais informações são:
 
-    \begin{description}[leftmargin=!,labelwidth=\widthof{\bfseries destinationFloor}]
+    \begin{description}[leftmargin=!,labelwidth=\widthof{\bfseries destinationFloor}]\setlength\itemsep{0mm}
       \item[\texttt{clientId}] Número identificador do cliente.
       \item[\texttt{arrivalTime}] Horário em que o cliente chegou ao prédio.
       \item[\texttt{arrivalFloor}] Número do andar no qual o cliente chegou.
@@ -382,7 +382,7 @@ representados pelas estruturas \texttt{Arrival} e \texttt{Trip} e pela classe
     Uma instância desta estrutura armazena informações coletadas quando um
     cliente desembarca de um elevador. Tais informações são:
 
-    \begin{description}[leftmargin=!,labelwidth=\widthof{\bfseries destinationFloor}]
+    \begin{description}[leftmargin=!,labelwidth=\widthof{\bfseries destinationFloor}]\setlength\itemsep{0mm}
       \item[\texttt{clientId}] Número identificador do cliente.
       \item[\texttt{dropoffTime}] Horário em que o cliente desembarcou do elevador.
       \item[\texttt{createTime}] Horário em que o cliente chegou ao prédio.
@@ -396,7 +396,7 @@ representados pelas estruturas \texttt{Arrival} e \texttt{Trip} e pela classe
     estatísticas sobre os dados coletados no fim da simulação. Seus
     métodos são:
 
-    \begin{description}[leftmargin=!,labelwidth=\widthof{\bfseries destinationFloor}]
+    \begin{description}[leftmargin=!,labelwidth=\widthof{\bfseries destinationFloor}]\setlength\itemsep{0mm}
       \item[\texttt{logDropOff}] Registra a ocorrência de um desembarque.
       \item[\texttt{logTrip}] Registra a ocorrência de uma chegada de um cliente.
       \item[\texttt{getAvgWT}] Calcula o tempo de espera médio.
@@ -499,7 +499,7 @@ elevadores. O primeiro deles é o \textit{cenário}. Como entrada o simulador
 recebe um conjunto de cenários e realiza a simulação de cada um deles. Um
 cenário é composto pelas seguintes informações:
 
-\begin{description}[leftmargin=!,labelwidth=\widthof{\bfseries Função de Custo}]
+\begin{description}[leftmargin=!,labelwidth=\widthof{\bfseries Função de Custo}]\setlength\itemsep{0mm}
   \item[Nome]
   Identificação textual do cenário.
 
@@ -608,7 +608,7 @@ modo, as dinâmicas do sistema do mundo real que está sendo simulado.
   representada, dentro do simulador, por um objeto da classe \texttt{Client}.
   Possui os seguintes atributos:
 
-  \begin{description}[leftmargin=!,labelwidth=\widthof{\bfseries arrivalFloor}]
+  \begin{description}[leftmargin=!,labelwidth=\widthof{\bfseries arrivalFloor}]\setlength\itemsep{0mm}
     \item[\texttt{id}] Número identificador do cliente.
     \item[\texttt{destination}] Número do andar ao qual o cliente deseja dirigir-se.
     \item[\texttt{arrivalFloor}] Número do andar no qual o cliente chegou.
@@ -621,7 +621,7 @@ modo, as dinâmicas do sistema do mundo real que está sendo simulado.
 Parte componente de um prédio, representada pela classe \texttt{Floor}. Possui
 os seguintes atributos:
 
-  \begin{description}[leftmargin=!,labelwidth=\widthof{\bfseries eventFactory}]
+  \begin{description}[leftmargin=!,labelwidth=\widthof{\bfseries eventFactory}]\setlength\itemsep{0mm}
     \item[\texttt{number}] Número do andar em que a parada deve ser realizada.
     \item[\texttt{lambda}] Valor de entrada para a distribuição de Poisson do andar.
     \item[\texttt{upLine}] Fila contendo os clientes que desejam subir\footnote{No mundo real, apesar de aparentemente as pessoas formarem
@@ -637,7 +637,7 @@ os seguintes atributos:
   Um elevador é representado pela classe \texttt{Elevator}. Possui os seguintes
   atributos:
 
-  \begin{description}[leftmargin=!,labelwidth=\widthof{\bfseries arrivalFloor}]
+  \begin{description}[leftmargin=!,labelwidth=\widthof{\bfseries arrivalFloor}]\setlength\itemsep{0mm}
     \item[\texttt{number}] Número identificador do elevador.
     \item[\texttt{capacity}] Capacidade máxima do elevador (em número de clientes).
     \item[\texttt{location}] Número do andar no qual o elevador se encontra.
@@ -653,7 +653,7 @@ os seguintes atributos:
   auxiliar que implementa um gerenciador de paradas chamada
   \texttt{StopManager}. Expõe as seguintes funcionalidades:
 
-  \begin{description}[leftmargin=!,labelwidth=\widthof{\bfseries arrivalFloor}]
+  \begin{description}[leftmargin=!,labelwidth=\widthof{\bfseries arrivalFloor}]\setlength\itemsep{0mm}
     \item[\texttt{hasStop}] Verifica se há algum elevador programado para parar em dado andar e direção.
     \item[\texttt{set}] Adiciona uma parada em dado andar e direção à lista de paradas do elevador.
     \item[\texttt{clear}] Remove um parada em dado andar e direção da lista de paradas do elevador.
@@ -677,7 +677,7 @@ alterado na ocorrência de eventos. Portanto, a classe \texttt{Building} deve
 implementar a interface para \textit{observers}. As responsabilidades desta
 classe estão expostas para o simulador da seguinte forma:
 
-\begin{description}
+\begin{description}\setlength\itemsep{0mm}
   \item[Inicializar a lista de chegadas de clientes] \hfill \\
     Conforme visto nas Seções \ref{model:event:creation} e \ref{model:floor}, há
     um objeto da classe \texttt{EventFactory} para cada objeto \texttt{Floor} do
@@ -1184,7 +1184,7 @@ mostra um exemplo de estrutura de diretórios e arquivos de saída.
    {\label{alg:output}Estrutura de diretórios e arquivos de saída.}
 \end{listing}
 
-\begin{description}[leftmargin=!,labelwidth=\widthof{\bfseries Arquivo de Desembarques}]
+\begin{description}[leftmargin=!,labelwidth=\widthof{\bfseries Arquivo de Desembarques}]\setlength\itemsep{0mm}
 \item[Log de Execução]
 O \textit{log de execução} apresenta o histórico da simulação,
 mostrando sequencialmente o fluxo de processamento, ocorrência de eventos e

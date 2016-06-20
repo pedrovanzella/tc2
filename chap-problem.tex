@@ -32,13 +32,14 @@ o \textbf{estado atual do sistema}. Este conjunto de dados pode ser modelado,
 minimamente, pelas seguintes informações:
 
 \begin{itemize}
+  \setlength\itemsep{0mm}
   \item Para cada andar:
-  \begin{itemize}
+  \begin{itemize}\setlength\itemsep{0mm}
     \item Se existe uma \textbf{chamada de corredor} a partir deste andar e o
           sentido (subir, descer ou ambos);
   \end{itemize}
   \item Para cada elevador:
-  \begin{itemize}
+  \begin{itemize}\setlength\itemsep{0mm}
     \item Um conjunto de \textbf{chamadas de cabine} solicitadas pelos
           passageiros embarcados;
     \item O andar em que se encontra;
@@ -52,9 +53,9 @@ minimamente, pelas seguintes informações:
 Com base nestes dados o EGCS utiliza-se de algoritmos e técnicas para fornecer
 como saída:
 
-\begin{itemize}
+\begin{itemize}\setlength\itemsep{0mm}
   \item Para uma nova \textbf{chamada de corredor}:
-  \begin{itemize}
+  \begin{itemize}\setlength\itemsep{0mm}
     \item Qual elevador deverá atender esta chamada de modo a minimizar o tempo de espera.
   \end{itemize}
 \end{itemize}
@@ -86,14 +87,14 @@ cada pessoa levou para chegar ao seu destino? A modelagem do problema e
 simulação em ambiente computacional permitem obter dados que em um ambiente real
 seriam impossíveis ou muito caros de se conseguir. Tais dados podem compreender:
 
-\begin{itemize}
+\begin{itemize}\setlength\itemsep{0mm}
   \item Para cada andar:
-  \begin{itemize}
+  \begin{itemize}\setlength\itemsep{0mm}
     \item Uma fila dos passageiros que encontram-se esperando naquele andar e querem subir;
     \item Uma fila dos passageiros que encontram-se esperando naquele andar e querem descer;
   \end{itemize}
   \item Para cada passageiro:
-  \begin{itemize}
+  \begin{itemize}\setlength\itemsep{0mm}
     \item A hora de sua chegada na fila;
     \item O seu andar de origem;
     \item O seu andar de destino;
@@ -101,7 +102,7 @@ seriam impossíveis ou muito caros de se conseguir. Tais dados podem compreender
     \item A hora de desembarque no andar de destino;
   \end{itemize}
   \item Para cada elevador:
-  \begin{itemize}
+  \begin{itemize}\setlength\itemsep{0mm}
     \item O conjunto dos passageiros que encontram-se dentro daquele elevador e suas informações associadas (vide item anterior).
   \end{itemize}
 \end{itemize}
@@ -109,7 +110,7 @@ seriam impossíveis ou muito caros de se conseguir. Tais dados podem compreender
 A partir destes dados, algumas das principais métricas utilizadas pela indústria
 de elevadores para avaliar o desempenho de seus sistemas podem ser calculadas:
 
-\begin{description}[leftmargin=!,labelwidth=\widthof{\bfseries HC\textsubscript{5\%}}]
+\begin{description}[leftmargin=!,labelwidth=\widthof{\bfseries HC\textsubscript{5\%}}]\setlength\itemsep{0mm}
   \item[HC\textsubscript{5\%}]
   Percentual da população total do prédio que um sistema de elevadores consegue
   transportar em um intervalo de 5 minutos. Um HC\textsubscript{5\%} aceitável é
@@ -164,7 +165,7 @@ Existem fatores humanos cujas ocorrências geram situações especiais que aumen
 a complexidade do problema e podem prejudicar o desempenho geral do sistema. Por
 exemplo, podem ser destacadas as seguintes situações:
 
-\begin{itemize}
+\begin{itemize}\setlength\itemsep{0mm}
   \item Um passageiro segura a porta do elevador aberta para alguém atrasado~-~
         deste modo, o passageiro que segura a porta está sendo altruísta com o
         atrasado, porém egoísta em relação aos outros passageiros que estão

@@ -36,7 +36,7 @@ Considere, por exemplo, o cenário da Figura~\ref{fig:elevadores:nn:bad}. Este
 cenário é composto por um prédio de 8 andares com 3 elevadores. A situação dos
 elevadores é a seguinte:
 
-\begin{itemize}
+\begin{itemize}\setlength\itemsep{0mm}
 \item $E1$ no sexto andar, com ocupação\footnote{A ocupação do elevador é representada pelo percentual dentro do círculo.} de 20\% e como destino\footnote{O destino do elevador é representado pela seta.} o segundo andar;
 \item $E2$ no primeiro andar, com ocupação 10\% e como destino o sexto andar;
 \item $E3$ no quarto andar, com ocupação 90\% e como destino o sétimo andar.
@@ -96,12 +96,12 @@ Um exemplo de função de custo é:
 \]
 
 Onde:
-\begin{description}[leftmargin=!,labelwidth=\widthof{\bfseries Pu}]
+\begin{description}[leftmargin=!,labelwidth=\widthof{\bfseries Pu}]\setlength\itemsep{0mm}
 \item[$\boldsymbol{e}$] Número do andar onde o elevador se encontra
 \item[$\boldsymbol{l}$] Percentual de ocupação do elevador
 \item[$\boldsymbol{p}$] Número do andar onde a chamada foi originada
 \item[$\boldsymbol{\lambda}$] Fator de multiplicação, que assume os seguintes valores:
-  \begin{itemize}
+  \begin{itemize}\setlength\itemsep{0mm}
     \item $0$, caso o programa atual do elevador faça com que ele passe por
       aquele andar;
     \item $1$, caso o elevador não tenha um programa (\textit{i.e.},
@@ -125,7 +125,7 @@ chamada de corredor para descer\footnote{O sentido da chamada é representado
 pelo círculo com um \textbf{D}, de \textit{Down}.} é originada no oitavo andar.
 A situação de cada elevador é a seguinte:
 
-\begin{itemize}
+\begin{itemize}\setlength\itemsep{0mm}
 \item $E1$ no sétimo andar, com ocupação de 20\% e como destino o segundo andar;
 \item $E2$ no primeiro andar, com ocupação 10\% e como destino o sexto andar;
 \item $E3$ no sétimo andar, com ocupação 90\% e como destino o primeiro andar.
@@ -207,7 +207,7 @@ ChooseElevator(client, elevatorSet, costFunction) {
 O Algoritmo~\ref{alg:cost-function} ilustra um algoritmo com o comportamento desta
 função. Os argumentos para este algoritmo são:
 
-\begin{description}[leftmargin=!,labelwidth=\widthof{\bfseries $costFunction$}]
+\begin{description}[leftmargin=!,labelwidth=\widthof{\bfseries $costFunction$}]\setlength\itemsep{0mm}
   \item[$client$] Abstração de um cliente;
   \item[$elevatorset$] Conjunto de todos os elevadores do prédio;
   \item[$costFunction$] Ponteiro para a função de cálculo de custo.
