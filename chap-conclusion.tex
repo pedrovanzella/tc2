@@ -1,36 +1,54 @@
 \chapter{\label{chap:conclusion}Conclusão}
 
-Sendo os elevadores um meio de transporte presente na vida cotidiana de tantos
-habitantes de centros urbanos, eles são um alvo para otimização. Porém, ao
-contrário do que acreditava-se antes da realização deste trabalho, encontrar uma
-solução para este problema está longe do trivial. Nas últimas décadas, diversas
-linhas de pesquisa científica~-~dentro e fora da indústria~-~buscaram evoluir os
-sistemas de elevadores e a forma com que seus usuários os utilizam.
+Após a realização deste estudo, foi possível enxergar claramente a simulação
+como uma excelente ferramenta para estudar e experimentar sistemas. No objeto
+deste estudo, os resultados obtidos através das simulações evidenciam que é
+possível diminuir o tempo médio de espera de sistemas de elevadores substituindo
+o software do sistema de controle dos mesmos por alternativas que utilizem
+técnicas algorítmicas mais avançadas em relação às utilizadas pela indústria.
+Deste modo, é possível beneficiar não só usuários de futuras instalações, mas
+também usuários de sistemas já existentes.
 
-Um simulador que permita a avaliação e comparação de diferentes estratégias em
-diferentes cenários foi de grande valor, e espera-se que continue se mostrando
-de valor também para pesquisas futuras e para o próprio mercado de fabricantes
-de elevadores. Isto por que o simulador é uma plataforma de validação de
-estratégias~-~e não só as estratégias implementadas durante o tempo limitado
-dedicado para este estudo mas também como qualquer estratégia que venha a ser
-implementada no futuro.
+Neste contexto, a escolha da uma estratégia de agendamento adequada possui alta
+relevância. Conforme as estatísticas apresentadas no
+Capítulo~\ref{chap:results}, a utilização de uma estratégia inadequada para
+determinado cenário pode causar um aumento significativo no tempo de espera
+médio. Pode-se verificar a validade desta afirmação ao notar que, nos cenários
+\textit{low-rise}, \textit{high-rise} e \textit{skyscraper}, a melhor estratégia
+foi 41.31\%, 66.57\% e 82.27\% superior à pior opção, respectivamente.
 
-Notou-se que estratégias que consideram mais dados~-~como a ocupação do
-elevador~-~muitas vezes geram resultados melhores com um baixo custo
-computacional. Ainda que o ganho seja pequeno, o custo de implementação é,
-muitas vezes, essencialmente insignificante.
+Dentre as estratégias construídas durante este trabalho, o \textit{Planning}
+obteve destaque positivo nos resultados. Ao avaliar esta estratégia obteve-se o
+menor tempo de espera médio em todos os cenários. Os resultados foram 5.41\%,
+35.74\% e 72.71\% superiores em relação à segunda melhor estratégia nos cenários
+\textit{low-rise}, \textit{high-rise} e \textit{skyscraper}, respectivamente.
+Embora estes números sejam positivos, é preciso observar que cenário com menos
+andares (\textit{low-rise}), os benefícios de tal estratégia foram menos
+expressivos. Porém, o ganho de desempenho cresce à medida que o prédio cresce.
+Em fase disto, pode ser que os a implantação desta solução em prédios menores
+não compense o benefício de sua utilização - embora esta análise esteja fora do
+escopo deste trabalho. Após o \textit{Planning}, a estratégia que obteve
+melhores resultados foi o \textit{Better Nearest Neighbour} - uma opção de
+implementação trivial e baixo custo computacional que pode ser uma opção
+interessante para prédios menores. Isto mostra que estratégias triviais
+possivelmente já sejam suficientes para prédios pequenos, enquanto estratégias
+mais complexas tornam-se mais atraentes à medida que os prédios e o número de
+elevadores aumentam
 
-A estratégia de \textit{Planning} se mostrou muito vantajosa, principalmente
-conforme o tamanho do prédio aumenta. No entanto, o processamento necessário
-para realizá-la é bastante grande, e o custo de implementação em sistemas reais
-pode se provar proibitivo. Além disto, o custo computacional cresce bastante
-conforme o número de andares e de elevadores aumenta. Horizontes maiores que $2$
-se mostraram caros, em tempo de execução, para prédios com mais de $100$
-andares. Mesmo para prédios menores, com até $20$ andares, horizontes maiores
-que $5$ não são viáveis. No entanto, isto não é um problema tão grande, pois
-tende-se a ganhar cada vez menos com cada aumento de horizonte, ao ponto que um
-aumento de $4$ para $5$ gera um ganho relativo de uma fração de ponto
-percentual.
+Devido ao cronograma enxuto para a elaboração deste estudo, não houve tempo
+hábil para expandir as possibilidades de algoritmos aplicáveis a este problema.
+De fato, a maior parcela do tempo destinado a este projeto foi consumida pelo
+projeto, implementação e validação do simulador. Isto se justifica pelo fato de,
+para gerar resultados confiáveis e dignos de comparação entre si, o simulador e
+o sua modelagem devem estar corretas. Do contrário, os dados gerados pela
+simulação estariam postos em xeque.
+
+Sendo assim, fica em aberto a questão: podemos melhorar ainda mais? Este
+questionamento faz valer a pena o tempo e esforço dedicados a criação do
+simulador. Pois, ao mesmo tempo em que serve como ferramenta para validação das
+estratégias propostas e implementadas, este também serve como uma plataforma
+flexível e expansível para construção e validação de novas estratégias no
+futuro.
 
 \section{Trabalhos Futuros}
 
