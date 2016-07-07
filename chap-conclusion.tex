@@ -2,53 +2,58 @@
 
 Após a realização deste estudo, foi possível enxergar claramente a simulação
 como uma excelente ferramenta para estudar e experimentar sistemas. No objeto
-deste estudo, os resultados obtidos através das simulações evidenciam que é
+deste trabalho, os resultados obtidos através das simulações evidenciam que é
 possível diminuir o tempo médio de espera de sistemas de elevadores substituindo
 o software do sistema de controle dos mesmos por alternativas que utilizem
 técnicas algorítmicas mais avançadas em relação às utilizadas pela indústria.
 Deste modo, é possível beneficiar não só usuários de futuras instalações, mas
 também usuários de sistemas já existentes.
 
-Neste contexto, a escolha da uma estratégia de agendamento adequada possui alta
-relevância. Conforme as estatísticas apresentadas no
-Capítulo~\ref{chap:results}, a utilização de uma estratégia inadequada para
-determinado cenário pode causar um aumento significativo no tempo de espera
-médio. Pode-se verificar a validade desta afirmação ao notar que, nos cenários
-\textit{low-rise}, \textit{high-rise} e \textit{skyscraper}, a melhor estratégia
-foi 41.31\%, 66.57\% e 82.27\% superior à pior opção, respectivamente.
+Neste contexto, a escolha adequada de uma estratégia de agendamento possui alta
+relevância. Conforme as estatísticas apresentadas no Capítulo~\ref{chap:results}
+mostram, a utilização de uma estratégia equivocada para determinado cenário pode
+causar um aumento significativo no tempo de espera médio. Pode-se verificar a
+validade desta afirmação ao notar que, nos cenários \textit{low-rise}, \textit
+{high-rise} e \textit{skyscraper}, a melhor estratégia foi 41.31\%, 66.57\% e
+82.27\% superior à pior opção, respectivamente.
 
 Dentre as estratégias construídas durante este trabalho, o \textit{Planning}
 obteve destaque positivo nos resultados. Ao avaliar esta estratégia obteve-se o
 menor tempo de espera médio em todos os cenários. Os resultados foram 5.41\%,
 35.74\% e 72.71\% superiores em relação à segunda melhor estratégia nos cenários
 \textit{low-rise}, \textit{high-rise} e \textit{skyscraper}, respectivamente.
-Embora estes números sejam positivos, é preciso observar que cenário com menos
-andares (\textit{low-rise}), os benefícios de tal estratégia foram menos
-expressivos. Porém, o ganho de desempenho cresce à medida que o prédio cresce.
-Em face disto, pode ser que os a implantação desta solução em prédios menores
-não compense o benefício de sua utilização - embora esta análise esteja fora do
-escopo deste trabalho. Após o \textit{Planning}, a estratégia que obteve
-melhores resultados foi o \textit{Better Nearest Neighbour} - uma opção de
-implementação trivial e baixo custo computacional que pode ser uma opção
-interessante para prédios menores. Isto mostra que estratégias triviais
-possivelmente já sejam suficientes para prédios pequenos, enquanto estratégias
-mais complexas tornam-se mais atraentes à medida que os prédios e o número de
-elevadores aumentam
+Embora estes números sejam positivos, é preciso observar que, em cenário com
+menos andares (\textit{low-rise}), os benefícios de tal estratégia foram menos
+expressivos. Em face disto, é possível que o benefício da utilização desta
+solução nesta categoria de prédios não compense os custos da sua implantação -
+embora esta análise esteja fora do escopo deste trabalho. Após o
+\textit{Planning}, a estratégia que obteve melhores resultados foi o
+\textit{Better Nearest Neighbour} - uma opção de implementação trivial e baixo
+custo computacional. Isto denota que estratégias triviais possivelmente já sejam
+suficientes para prédios pequenos, enquanto estratégias mais complexas tornam-se
+mais atraentes à medida que os prédios tornam-se mais altos.
 
-Devido ao cronograma enxuto para a elaboração deste estudo, não houve tempo
-hábil para expandir as possibilidades de algoritmos aplicáveis a este problema.
-De fato, a maior parcela do tempo destinado a este projeto foi consumida pelo
-projeto, implementação e validação do simulador. Isto se justifica pelo fato de,
-para gerar resultados confiáveis e dignos de comparação entre si, o simulador e
-o sua modelagem devem estar corretas. Do contrário, os dados gerados pela
-simulação estariam postos em xeque.
+Não houve tempo hábil para explorar outras possibilidades algorítmicas
+aplicáveis a este problema devido à limitação de tempo para a realização deste
+estudo. De fato, a maior parcela do tempo disponível foi consumida pelo projeto,
+implementação e validação do simulador. Isto pois, para gerar dados confiáveis e
+dignos de comparação entre si, o simulador e o sua modelagem devem estar
+corretas. Do contrário, os dados gerados pela simulação estariam postos em
+xeque.
 
-Sendo assim, fica em aberto a questão: podemos melhorar ainda mais? Este
-questionamento faz valer a pena o tempo e esforço dedicados a criação do
+Sendo assim, fica em aberto a seguinte questão: podemos melhorar ainda mais?
+Este questionamento faz valer a pena o tempo e esforço dedicados a criação do
 simulador. Pois, ao mesmo tempo em que serve como ferramenta para validação das
 estratégias propostas e implementadas, este também serve como uma plataforma
-flexível e expansível para construção e validação de novas estratégias no
-futuro.
+flexível e expansível para construção, validação e \textit{benchmarking} de
+novas estratégias no futuro.
+
+Por fim, conclui-se que os objetivos listados no Capítulo~\ref{chap:objectives}
+foram atingidos. Foi projetado e implementado um simulador de elevadores
+flexível, parametrizável e expansível; bem como estratégias de agendamento
+utilizando variadas técnicas algorimicas. Com base nisto, foi possível realizar
+a comparação destas estratégias nos cenários propostos e elencar quais
+estratégias possuem o menor tempo de espera médio.
 
 \section{Trabalhos Futuros}
 
