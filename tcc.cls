@@ -448,6 +448,102 @@ e-mails <rfbpiccoli at gmail dot com> e <marcelo dot cohen at pucrs dot br>^^J
         }}\par\nointerlineskip
         \kern7.5ex\par
         %----------------------------------------------------------------------------------
+        % Cidade / ano
+        %----------------------------------------------------------------------------------
+        \vbox{%
+            \leftskip0pt plus1fil
+            \rightskip0pt plus1fil
+            \noindent\hbox{\PP@Cid}\par
+            \noindent\hbox{\number\year}%
+        }\par\nointerlineskip
+        \kern3ex\par
+    }%
+  \end{titlepage}
+
+  \newpage
+\thispagestyle{empty}
+\mbox{}
+    % ---------------------------
+    % Folha de rosto
+    % ---------------------------
+\begin{titlepage}%
+    \renewcommand*{\baselinestretch}{1.0}%
+    \hoffset=-1in
+    \voffset=0in
+    \hsize=\paperwidth
+    \vsize=\paperheight
+    \textwidth=\paperwidth
+    \textheight=\paperheight
+    \evensidemargin0pt
+    \oddsidemargin0pt
+    \topmargin0pt
+    \headheight0pt
+    \headsep0pt
+    \topskip0pt
+    \footskip0pt
+    \columnsep0pt
+    \columnseprule0pt
+    \columnwidth0pt
+    \marginparpush0pt
+    \marginparsep0pt
+    \marginparwidth0pt
+    \global\let\thanks\relax
+    \global\let\date\relax
+    \global\let\@thanks\@empty
+    \global\let\@date\@empty
+    \let\footnote\thanks
+    \normalfont\normalsize
+    \vbox to \vsize{%
+        \boxmaxdepth=0pt
+        \parindent0pt
+        \parfillskip0pt
+        \parskip0pt
+        \leftskip0pt
+        \rightskip0pt
+        \lineskiplimit0pt
+        \lineskip0pt
+        \kern4ex\par
+        %----------------------------------------------------------------------------------
+        % Cabeçalho (universidade + faculdade + programa)
+        %----------------------------------------------------------------------------------
+        \setbox\PP@tmpbox=\vbox{%
+            \leftskip0pt plus1fil
+            \rightskip0pt plus1fil
+            \hyphenpenalty 10000\relax
+            \noindent\MakeUppercase{\PP@Uni}\par
+            \noindent\MakeUppercase{\PP@Fac}\par
+            \noindent\MakeUppercase{\PP@Dep}\par
+        }%
+        \PP@tmpdim=9.5cm
+        \advance\PP@tmpdim by-4ex
+        \advance\PP@tmpdim by-\ht\PP@tmpbox
+        \advance\PP@tmpdim by-\dp\PP@tmpbox
+        \box\PP@tmpbox\par\nointerlineskip
+        \kern\PP@tmpdim\par
+        %----------------------------------------------------------------------------------
+        % Retângulo central (título + autor)
+        %----------------------------------------------------------------------------------
+        \hbox{\kern5cm\vbox to 7.7cm{%
+            \hsize=11.5cm
+            \parskip6ex
+            \parindent0pt
+            \leftskip0pt plus1fil
+            \rightskip0pt plus1fil
+            \leavevmode\kern2.5em\vbox{%
+                \advance\hsize by-5em
+                %\lineskip.25\baselineskip
+                \baselineskip1.2\baselineskip
+                \lineskip0pt
+                \lineskiplimit0pt
+                \noindent\hbox{}\par\nointerlineskip
+                \noindent{\expandafter\uppercase\expandafter{\@author}}\par\nointerlineskip
+                \bfseries
+                \noindent{\expandafter\uppercase\expandafter{\@title}}\par
+                \vfil\hbox{}%
+            }\kern2.5em
+        }}\par\nointerlineskip
+        \kern7.5ex\par
+        %----------------------------------------------------------------------------------
         % Descrição da monografia ("Tese apresentada como requisito...")
         %----------------------------------------------------------------------------------
         \hbox{}\hfill\vbox{%
