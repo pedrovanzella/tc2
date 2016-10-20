@@ -114,9 +114,8 @@ e-mails <rfbpiccoli at gmail dot com> e <marcelo dot cohen at pucrs dot br>^^J
 \RequirePackage[english,brazil]{babel}[2008/07/06]
 \RequirePackage[a4paper]{geometry}[2010/09/12]
 \RequirePackage{textcomp}[2005/09/27]
-%\RequirePackage{helvet}[2005/04/12]
-%\RequirePackage[helvet]{sfmath}[2007/08/27]
-\RequirePackage{sfmath}
+\RequirePackage{helvet}[2005/04/12]
+\RequirePackage[helvet]{sfmath}[2007/08/27]
 %\RequirePackage{lmodern}[2009/10/30]
 %\RequirePackage[lm]{sfmath}[2007/08/27]
 \RequirePackage{indentfirst}[1995/11/23]
@@ -126,8 +125,7 @@ e-mails <rfbpiccoli at gmail dot com> e <marcelo dot cohen at pucrs dot br>^^J
 \RequirePackage{float}[2001/11/08]
 \RequirePackage{amsmath}[2000/07/18]
 \RequirePackage{amssymb}[2009/06/22]
-%\RequirePackage{amsfonts}[2009/06/22]
-\RequirePackage{amsfonts}
+\RequirePackage{amsfonts}[2009/06/22]
 \RequirePackage{url}
 \RequirePackage[table]{xcolor}[2007/01/21]
 \RequirePackage{array}[2008/09/09]
@@ -375,7 +373,7 @@ e-mails <rfbpiccoli at gmail dot com> e <marcelo dot cohen at pucrs dot br>^^J
 \begin{titlepage}%
     \renewcommand*{\baselinestretch}{1.0}%
     \hoffset=-1in
-    \voffset=-1in
+    \voffset=0in
     \hsize=\paperwidth
     \vsize=\paperheight
     \textwidth=\paperwidth
@@ -416,7 +414,6 @@ e-mails <rfbpiccoli at gmail dot com> e <marcelo dot cohen at pucrs dot br>^^J
             \leftskip0pt plus1fil
             \rightskip0pt plus1fil
             \hyphenpenalty 10000\relax
-            \bfseries
             \noindent\MakeUppercase{\PP@Uni}\par
             \noindent\MakeUppercase{\PP@Fac}\par
             \noindent\MakeUppercase{\PP@Dep}\par
@@ -438,14 +435,14 @@ e-mails <rfbpiccoli at gmail dot com> e <marcelo dot cohen at pucrs dot br>^^J
             \rightskip0pt plus1fil
             \leavevmode\kern2.5em\vbox{%
                 \advance\hsize by-5em
-                \bfseries
                 %\lineskip.25\baselineskip
                 \baselineskip1.2\baselineskip
                 \lineskip0pt
                 \lineskiplimit0pt
                 \noindent\hbox{}\par\nointerlineskip
-                \noindent{\Large\expandafter\uppercase\expandafter{\@title}}\par
-                \noindent{\large\expandafter\uppercase\expandafter{\@author}}\par\nointerlineskip
+                \noindent{\expandafter\uppercase\expandafter{\@author}}\par\nointerlineskip
+                \bfseries
+                \noindent{\expandafter\uppercase\expandafter{\@title}}\par
                 \vfil\hbox{}%
             }\kern2.5em
         }}\par\nointerlineskip
@@ -1202,7 +1199,7 @@ e-mails <rfbpiccoli at gmail dot com> e <marcelo dot cohen at pucrs dot br>^^J
 }
 
 \AtEndOfClass{%
-   %\renewcommand*{\familydefault}{\sfdefault}
+   \renewcommand*{\familydefault}{\sfdefault}
    \renewcommand{\chaptername}{}
    \urlstyle{same}
    \normalfont\normalsize
