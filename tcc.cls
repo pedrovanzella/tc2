@@ -418,7 +418,7 @@ e-mails <rfbpiccoli at gmail dot com> e <marcelo dot cohen at pucrs dot br>^^J
             \noindent\MakeUppercase{\PP@Fac}\par
             \noindent\MakeUppercase{\PP@Dep}\par
         }%
-        \PP@tmpdim=9.5cm
+        \PP@tmpdim=6.5cm
         \advance\PP@tmpdim by-4ex
         \advance\PP@tmpdim by-\ht\PP@tmpbox
         \advance\PP@tmpdim by-\dp\PP@tmpbox
@@ -427,7 +427,7 @@ e-mails <rfbpiccoli at gmail dot com> e <marcelo dot cohen at pucrs dot br>^^J
         %----------------------------------------------------------------------------------
         % Retângulo central (título + autor)
         %----------------------------------------------------------------------------------
-        \hbox{\kern5cm\vbox to 7.7cm{%
+        \hbox{\kern5cm\vbox to 14.7cm{%
             \hsize=11.5cm
             \parskip6ex
             \parindent0pt
@@ -441,6 +441,7 @@ e-mails <rfbpiccoli at gmail dot com> e <marcelo dot cohen at pucrs dot br>^^J
                 \lineskiplimit0pt
                 \noindent\hbox{}\par\nointerlineskip
                 \noindent{\expandafter\uppercase\expandafter{\@author}}\par\nointerlineskip
+                \vspace*{4\baselineskip}
                 \bfseries
                 \noindent{\expandafter\uppercase\expandafter{\@title}}\par
                 \vfil\hbox{}%
@@ -460,6 +461,9 @@ e-mails <rfbpiccoli at gmail dot com> e <marcelo dot cohen at pucrs dot br>^^J
     }%
   \end{titlepage}
 
+  % ------------
+  % Blank page
+  % ------------
   \newpage
 \thispagestyle{empty}
 \mbox{}
