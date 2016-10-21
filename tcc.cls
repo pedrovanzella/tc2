@@ -508,26 +508,24 @@ e-mails <rfbpiccoli at gmail dot com> e <marcelo dot cohen at pucrs dot br>^^J
         \lineskip0pt
         \kern4ex\par
         %----------------------------------------------------------------------------------
-        % Cabeçalho (universidade + faculdade + programa)
+        % Cabeçalho (Nome dos autores)
         %----------------------------------------------------------------------------------
         \setbox\PP@tmpbox=\vbox{%
             \leftskip0pt plus1fil
             \rightskip0pt plus1fil
             \hyphenpenalty 10000\relax
-            \noindent\MakeUppercase{\PP@Uni}\par
-            \noindent\MakeUppercase{\PP@Fac}\par
-            \noindent\MakeUppercase{\PP@Dep}\par
+                \noindent{\expandafter\uppercase\expandafter{\@author}}\par\nointerlineskip
         }%
-        \PP@tmpdim=9.5cm
+        \PP@tmpdim=4.5cm
         \advance\PP@tmpdim by-4ex
         \advance\PP@tmpdim by-\ht\PP@tmpbox
         \advance\PP@tmpdim by-\dp\PP@tmpbox
         \box\PP@tmpbox\par\nointerlineskip
         \kern\PP@tmpdim\par
         %----------------------------------------------------------------------------------
-        % Retângulo central (título + autor)
+        % título
         %----------------------------------------------------------------------------------
-        \hbox{\kern5cm\vbox to 7.7cm{%
+        \hbox{\kern5cm\vbox to 3.7cm{%
             \hsize=11.5cm
             \parskip6ex
             \parindent0pt
@@ -540,7 +538,6 @@ e-mails <rfbpiccoli at gmail dot com> e <marcelo dot cohen at pucrs dot br>^^J
                 \lineskip0pt
                 \lineskiplimit0pt
                 \noindent\hbox{}\par\nointerlineskip
-                \noindent{\expandafter\uppercase\expandafter{\@author}}\par\nointerlineskip
                 \bfseries
                 \noindent{\expandafter\uppercase\expandafter{\@title}}\par
                 \vfil\hbox{}%
@@ -564,21 +561,21 @@ e-mails <rfbpiccoli at gmail dot com> e <marcelo dot cohen at pucrs dot br>^^J
         %----------------------------------------------------------------------------------
         % Orientador / Co-Orientador
         %----------------------------------------------------------------------------------
-        \vbox{%
+        \vbox to 8.5cm{%
             \leftskip0pt plus1fil
             \rightskip0pt plus1fil
+            \bfseries
             \noindent\hbox{\PP@orientadorname{}: Prof.\ \PP@orientador}%
             \ifx\PP@coorientador\PP@undef\relax
             \else\par\noindent\hbox{Co-\PP@orientadorname{}: Prof.\ \PP@coorientador}\fi
         }\par\nointerlineskip%
-        \vfill\par
+        %\vfill\par
         %----------------------------------------------------------------------------------
         % Cidade / ano
         %----------------------------------------------------------------------------------
         \vbox{%
             \leftskip0pt plus1fil
             \rightskip0pt plus1fil
-            \bfseries
             \noindent\hbox{\PP@Cid}\par
             \noindent\hbox{\number\year}%
         }\par\nointerlineskip
