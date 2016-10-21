@@ -758,7 +758,6 @@ e-mails <rfbpiccoli at gmail dot com> e <marcelo dot cohen at pucrs dot br>^^J
        \centering
        \normalfont
        \interlinepenalty\@M
-       \large\bfseries\MakeUppercase{#3}\par\nointerlineskip\nobreak
        \normalfont\normalsize
        \vskip 19.5ex
       }%
@@ -769,7 +768,7 @@ e-mails <rfbpiccoli at gmail dot com> e <marcelo dot cohen at pucrs dot br>^^J
        \interlinepenalty\@M
        \bfseries\MakeUppercase{#1}\par\nointerlineskip\nobreak
        \normalfont\normalsize
-       \vskip 19.5ex
+       \vskip 10.5ex
       }%
       \@afterheading
    }%
@@ -1022,7 +1021,7 @@ e-mails <rfbpiccoli at gmail dot com> e <marcelo dot cohen at pucrs dot br>^^J
   {\parindent\z@ \raggedright
     \normalfont
     \interlinepenalty\@M
-    \leavevmode\hbox to 4em{\large\bfseries\thechapter.\ }%
+    \leavevmode\hbox to 4em{\large\bfseries\thechapter\ }%
 %    \large\bfseries\expandafter\uppercase\expandafter{#1}\par\nointerlineskip\nobreak%
     % Aqui
     \large\bfseries\MakeTextUppercase{#1}\par\nointerlineskip\nobreak
